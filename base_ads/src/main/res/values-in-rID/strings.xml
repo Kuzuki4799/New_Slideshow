@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exit_app">Anda yakin ingin keluar dari aplikasi?</string>
+
+    <string name="watching_ads">Tonton Iklan Video</string>
+    <string name="update_version">Perbarui Versi Baru</string>
+    <string name="update_version_content">%s memiliki versi baru. Harap Perbarui Sekarang</string>
+    <string name="watching_video">Apakah Anda ingin menonton iklan untuk terus menggunakan fitur ini?</string>
+
+    <string name="update">Update</string>
+    <string name="rate_app">Rate App</string>
+    <string name="write_your_feedback_here">Tulis tanggapan Anda di sini…</string>
+    <string name="rate_app_dis">Dukung kami dengan memberikan bintang 5 dan tulis ulasan Anda</string>
+    <string name="pls_rate">Tolong Dukung kami dengan memberikan 5 bintang</string>
+    <string name="rate_now">Rate now</string>
+    <string name="maybe_latter">Maybe later</string>
+
+    <string name="send_mail">Mengirim email</string>
+    <string name="enter_your_feedback">Silakan masukkan umpan balik Anda!</string>
+    <string name="close">Close</string>
+    <string name="accept">Accept</string>
+    <string name="not_have_permission">Anda tidak memiliki izin, berikan izin aplikasi agar Anda dapat merasakan aplikasi tersebut</string>
+
+    <string name="watching_video_">Apakah Anda ingin menonton iklan untuk terus mendownload lagu ini?</string>
+    <string name="feedback">Feedback</string>
+    <string name="warning">Peringatan</string>
+    <string name="strYes">Ya</string>
+    <string name="strNo">Tidak</string>
+    <string name="strThanks">Terima kasih</string>
+    <string name="see_you_again">Sampai jumpa lagi</string>
+    <string name="feedback_app">Tulis tanggapan Anda tentang aplikasi ini</string>
+</resources>

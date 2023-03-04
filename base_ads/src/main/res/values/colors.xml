@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gnt_test_background_color">#00F4F4F4</color>
+    <color name="gnt_black">#000000</color>
+    <color name="gnt_white">#FFFFFF</color>
+    <color name="gnt_gray">#808080</color>
+
+
+    <color name="colorPrimary">#00d2ff</color>
+    <color name="colorPrimaryDark">#009cff</color>
+    <color name="gradient_left">#00d2ff</color>
+    <color name="gradient_right">#009cff</color>
+    <color name="colorAccent">#7f00ff</color>
+    <color name="bg_disable">#dde4e4</color>
+    <color name="transparent">#00ffffff</color>
+
+    <color name="main_black_blur">#1A000000</color>
+    <color name="main_white_blur">#33FFFFFF</color>
+    <color name="main_black">#B3000000</color>
+    <color name="main_black_2">#D9000000</color>
+    <color name="main_white">#B3FFFFFF</color>
+
+    <color name="bg_main_blur">#0D000000</color>
+    <color name="bg_placeholder">#33808080</color>
+
+    <color name="rate_active_color">#FFFEBA39</color>
+    <color name="rate_normal_color">#FFA5A5A5</color>
+
+    <color name="color_text">#000000</color>
+    <color name="color_sub">#80000000</color>
+    <color name="color_text_fill">#FFFFFF</color>
+    <color name="color_sub_fill">#B3FFFFFF</color>
+    <color name="color_main">#B3000000</color>
+    <color name="color_main_blur">#1A000000</color>
+    <color name="color_dialog">#FFFFFF</color>
+    <color name="colorBackground">#FFFFFF</color>
+
+</resources>

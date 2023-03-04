@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_border"
+    android:padding="@dimen/_1sdp">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_border"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="@dimen/_116sdp"
+            android:layout_height="@dimen/_116sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/ratting" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            style="@style/textNormalBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@string/rate_app"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_14sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/message"
+            style="@style/textNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_11sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@string/rate_app_dis"
+            android:textColor="@color/color_sub"
+            android:textSize="@dimen/_12sdp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_border_rating"
+            android:focusable="true"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:hint="@string/write_your_feedback_here"
+            android:importantForAutofill="no"
+            android:lines="4"
+            android:padding="@dimen/_6sdp"
+            android:visibility="gone" />
+
+        <RatingBar
+            android:id="@+id/rb_stars"
+            style="@style/AppRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:numStars="5"
+            android:stepSize="1.0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNo"
+                style="@style/BtnTransparent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:text="@string/maybe_latter"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtYes"
+                style="@style/BtnPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rate_now"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

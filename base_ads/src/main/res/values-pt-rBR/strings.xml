@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exit_app">Tem certeza de que deseja sair do aplicativo?</string>
+
+    <string name="watching_ads">Assista a anúncios em vídeo</string>
+    <string name="update_version">Atualizar nova versão</string>
+    <string name="update_version_content">%s tem nova versão. Atualize agora</string>
+    <string name="watching_video">Gostaria de assistir a anúncios para continuar experimentando esses recursos?</string>
+
+    <string name="update">Atualizar</string>
+    <string name="rate_app">Avaliar aplicativo</string>
+    <string name="write_your_feedback_here">Escreva seu comentário aqui…</string>
+    <string name="rate_app_dis">Apoie-nos dando 5 estrelas e escreva sua avaliação</string>
+    <string name="pls_rate">Por favor, apoie-nos dando 5 estrelas</string>
+    <string name="rate_now">Avalie agora</string>
+    <string name="maybe_latter">Talvez mais tarde</string>
+
+    <string name="send_mail">Enviar email</string>
+    <string name="enter_your_feedback">Insira seus comentários!</string>
+    <string name="close">Perto</string>
+    <string name="accept">Aceitar</string>
+    <string name="not_have_permission">Você não tem permissão, dê permissões ao aplicativo para que você possa experimentar o aplicativo</string>
+
+    <string name="watching_video_">Gostaria de assistir a anúncios para continuar baixando esta música?</string>
+    <string name="feedback">Feedback</string>
+    <string name="warning">Warning</string>
+    <string name="strYes">Sim</string>
+    <string name="strNo">Não</string>
+    <string name="strThanks">Obrigado</string>
+    <string name="see_you_again">Ver você de novo</string>
+    <string name="feedback_app">Escreva seus comentários sobre este aplicativo</string>
+</resources>

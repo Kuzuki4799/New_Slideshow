@@ -30,7 +30,7 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
         const val MUSIC_RETURN_DATA_KEY = "SelectMusicActivity.MUSIC_RETURN_DATA_KEY"
     }
 
-    override fun getContentResId(): Int = R.layout.activity_select_music
+    override fun getLayoutId(): Int = R.layout.activity_select_music
 
     override val kodein by closestKodein()
 
@@ -172,7 +172,7 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
                         }
                         setResult(Activity.RESULT_OK, returnIntent)
                         dismissProgressDialog()
-                        finish()
+                        finishAds()
                     }
                 } catch (e :Exception) {
                     runOnUiThread {

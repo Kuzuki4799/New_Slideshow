@@ -48,7 +48,7 @@ import kotlin.math.roundToInt
 
 abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     override val kodein by closestKodein()
-    override fun getContentResId(): Int = R.layout.activity_base_tools_edit
+    override fun getLayoutId(): Int = R.layout.activity_base_tools_edit
     protected var onEditSticker = false
     private val mAudioManager: AudioManagerV3 by instance<AudioManagerV3>()
     private var mCurrentMusicData: MusicReturnData? = null
@@ -197,7 +197,9 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
                     }
                 }
 
-                startActivityForResult(intent, SelectMusicActivity.SELECT_MUSIC_REQUEST_CODE)
+                openNewActivityForResult(intent, SelectMusicActivity.SELECT_MUSIC_REQUEST_CODE,
+                    isShowAds = true, isFinish = false
+                )
 
                 object :CountDownTimer(1000, 1000) {
                     override fun onFinish() {

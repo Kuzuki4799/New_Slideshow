@@ -24,6 +24,7 @@ import androidx.loader.content.CursorLoader
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.acatapps.videomaker.BuildConfig
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.ItemTouchHelperCallback
 import com.acatapps.videomaker.adapter.MediaPickedAdapter
@@ -49,8 +50,8 @@ import org.kodein.di.generic.instance
 import java.io.File
 import kotlin.math.roundToInt
 
-class PickMediaActivity : BaseActivity(), KodeinAware {
-    override fun getContentResId(): Int = R.layout.activity_pick_media
+open class PickMediaActivity : BaseActivity(), KodeinAware {
+    override fun getLayoutId(): Int = R.layout.activity_pick_media
     private var mMediaKind = MediaKind.PHOTO
 
     private val mPickMediaViewModelFactory: PickMediaViewModelFactory by instance<PickMediaViewModelFactory>()
@@ -64,6 +65,7 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
         updateNumberImageSelected()
     }
     var flag = false
+
     companion object {
         const val TAKE_PICTURE = 1001
         const val RECORD_CAMERA = 1991
@@ -81,15 +83,19 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
             val intent = Intent(activity, PickMediaActivity::class.java).apply {
                 putExtra("MediaKind", mediaKind.toString())
             }
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
 
-        fun gotoActivity(activity: Activity, mediaKind: MediaKind, themePath:String) {
+        fun gotoActivity(activity: Activity, mediaKind: MediaKind, themePath: String) {
             val intent = Intent(activity, PickMediaActivity::class.java).apply {
                 putExtra("MediaKind", mediaKind.toString())
                 putExtra("themePath", themePath)
             }
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
 
         fun gotoActivity(activity: Activity, videoActionKind: VideoActionKind) {
@@ -97,9 +103,10 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
                 putExtra("MediaKind", MediaKind.VIDEO.toString())
                 putExtra("VideoActionKind", videoActionKind.toString())
             }
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
-
     }
 
     override fun isShowAds(): Boolean {
@@ -115,30 +122,28 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
     private var mThemeFileName = ""
     override fun initViews() {
 
-        mPickMediaViewModel = ViewModelProvider(this, mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
+        mPickMediaViewModel =
+            ViewModelProvider(this, mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
         listen()
 
         val action = intent.getIntExtra("action", -1)
-        if(action != ADD_MORE_PHOTO && action != ADD_MORE_VIDEO) {
-            VideoMakerApplication.instance.showAdsFull()
-        }
         mActionCode = action
         Logger.e("action = $action")
-        if(action == ADD_MORE_PHOTO) {
+        if (action == ADD_MORE_PHOTO) {
             setScreenTitle(getString(R.string.photo))
-             intent.getStringArrayListExtra("list-photo")?.let {
-                 for (path in it) {
-                     mListPhotoPath.add(path)
-                 }
+            intent.getStringArrayListExtra("list-photo")?.let {
+                for (path in it) {
+                    mListPhotoPath.add(path)
+                }
             }
             mMediaKind = MediaKind.PHOTO
-        } else if(action == ADD_MORE_VIDEO){
+        } else if (action == ADD_MORE_VIDEO) {
             setScreenTitle(getString(R.string.video))
             intent.getStringArrayListExtra("list-video")?.let {
                 mListPhotoPath.addAll(it)
             }
             mMediaKind = MediaKind.VIDEO
-        }else {
+        } else {
             if (intent.getStringExtra("MediaKind") == MediaKind.VIDEO.toString())
                 mMediaKind = MediaKind.VIDEO
             val actionKind = intent.getStringExtra("VideoActionKind")
@@ -173,10 +178,10 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
         mPickMediaViewModel.localStorageData.getAllMedia(mMediaKind)
 
         for (path in mListPhotoPath) {
-             mMediaPickedAdapter.addItem(MediaPickedDataModel(path))
-             imagePickedArea.visibility = View.VISIBLE
-             mediaPickedListView.scrollToPosition(mMediaPickedAdapter.itemCount - 1)
-             updateNumberImageSelected()
+            mMediaPickedAdapter.addItem(MediaPickedDataModel(path))
+            imagePickedArea.visibility = View.VISIBLE
+            mediaPickedListView.scrollToPosition(mMediaPickedAdapter.itemCount - 1)
+            updateNumberImageSelected()
         }
 
     }
@@ -197,13 +202,14 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
         mMediaPickedAdapter.registerItemTouch(itemTouchHelper)
     }
 
-    private fun requestCameraPermission(){
+    private fun requestCameraPermission() {
         ActivityCompat.requestPermissions(
             this,
             arrayOf(Manifest.permission.CAMERA),
             CAMERA_PERMISSION_REQUEST
         )
     }
+
     override fun initActions() {
 
         setRightButton(R.drawable.ic_camera_vector) {
@@ -222,35 +228,47 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
         }
 
         startButton.setClick {
-            if(startAvailable) {
+            if (startAvailable) {
                 startAvailable = false
                 if (mMediaPickedAdapter.itemCount < 2) {
                     if (mMediaKind == MediaKind.PHOTO)
-                        Toast.makeText(this, getString(R.string.select_at_least_2_image), Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this,
+                            getString(R.string.select_at_least_2_image),
+                            Toast.LENGTH_LONG
+                        ).show()
                     else {
-                        if(mVideoActionKind == VideoActionKind.SLIDE) {
-                            if(mMediaPickedAdapter.itemCount > 0) {
+                        if (mVideoActionKind == VideoActionKind.SLIDE) {
+                            if (mMediaPickedAdapter.itemCount > 0) {
                                 val items = arrayListOf<String>()
                                 for (item in mMediaPickedAdapter.itemList) {
                                     items.add(item.path)
                                 }
-                                if(mActionCode == ADD_MORE_VIDEO) {
+                                if (mActionCode == ADD_MORE_VIDEO) {
                                     val intent = Intent().apply {
                                         putStringArrayListExtra("Video picked list", items)
                                     }
                                     setResult(Activity.RESULT_OK, intent)
-                                    finish()
+                                    finishAds()
                                 } else {
                                     val intent = Intent(this, VideoSlideActivity2::class.java)
                                     intent.putStringArrayListExtra("Video picked list", items)
-                                    startActivity(intent)
+                                    openNewActivity(intent, isShowAds = true, isFinish = false)
                                 }
 
                             } else {
-                                Toast.makeText(this, getString(R.string.select_at_least_1_video), Toast.LENGTH_LONG).show()
+                                Toast.makeText(
+                                    this,
+                                    getString(R.string.select_at_least_1_video),
+                                    Toast.LENGTH_LONG
+                                ).show()
                             }
                         } else {
-                            Toast.makeText(this, getString(R.string.select_at_least_2_videos), Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                getString(R.string.select_at_least_2_videos),
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
 
@@ -261,39 +279,46 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
                     }
                     Logger.e("items size = ${items.size}")
                     if (mMediaKind == MediaKind.PHOTO) {
-                        if(mActionCode == ADD_MORE_PHOTO) {
+                        if (mActionCode == ADD_MORE_PHOTO) {
                             val intent = Intent().apply {
-                                putStringArrayListExtra(ImageSlideShowActivity.imagePickedListKey, items)
+                                putStringArrayListExtra(
+                                    ImageSlideShowActivity.imagePickedListKey,
+                                    items
+                                )
                             }
                             setResult(Activity.RESULT_OK, intent)
-                            finish()
+                            finishAds()
                         } else {
                             val intent = Intent(this, ImageSlideShowActivity::class.java)
-                            intent.putStringArrayListExtra(ImageSlideShowActivity.imagePickedListKey, items)
-                            if(mThemeFileName.isNotEmpty()) intent.putExtra("themeFileName", mThemeFileName)
-                            startActivity(intent)
+                            intent.putStringArrayListExtra(
+                                ImageSlideShowActivity.imagePickedListKey,
+                                items
+                            )
+                            if (mThemeFileName.isNotEmpty()) intent.putExtra(
+                                "themeFileName",
+                                mThemeFileName
+                            )
+                            openNewActivity(intent, true, isFinish = false)
                         }
 
                     } else {
                         if (mVideoActionKind == VideoActionKind.JOIN) {
                             JoinVideoActivity2.gotoActivity(this, items)
-                        } else if(mActionCode == ADD_MORE_VIDEO){
+                        } else if (mActionCode == ADD_MORE_VIDEO) {
                             val intent = Intent().apply {
                                 putStringArrayListExtra("Video picked list", items)
                             }
                             setResult(Activity.RESULT_OK, intent)
-                            finish()
-                        }else {
+                            finishAds()
+                        } else {
                             val intent = Intent(this, VideoSlideActivity2::class.java)
                             intent.putStringArrayListExtra("Video picked list", items)
-                            startActivity(intent)
+                            openNewActivity(intent, isShowAds = true, isFinish = false)
                         }
-
                     }
-
                 }
 
-                object :CountDownTimer(1000,3000) {
+                object : CountDownTimer(1000, 3000) {
                     override fun onFinish() {
                         startAvailable = true
                     }
@@ -315,20 +340,26 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
             takePhoto()
         }
     }
+
     private var mMediaCapturePath = ""
     private fun takePhoto() {
         performTakePhoto()
     }
+
     private fun performTakePhoto() {
         val intentCamera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (intentCamera.resolveActivity(packageManager) != null) {
             val imageFile = createImageFile()
-            val photoUri: Uri
-            photoUri = FileProvider.getUriForFile(this, "com.acatapps.videomaker.fileprovider", imageFile)
+            val photoUri: Uri = FileProvider.getUriForFile(
+                this,
+                "${BuildConfig.APPLICATION_ID}.provider",
+                imageFile
+            )
             intentCamera.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
             startActivityForResult(intentCamera, TAKE_PICTURE)
         }
     }
+
     private fun createImageFile(): File {
         val fileName = "image-"
         val file =
@@ -340,9 +371,11 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
         mMediaCapturePath = file.absolutePath
         return file
     }
+
     private fun recordVideo() {
         performRecordCamera()
     }
+
     private fun performRecordCamera() {
         Intent(MediaStore.ACTION_VIDEO_CAPTURE).also { takeVideoIntent ->
             takeVideoIntent.resolveActivity(packageManager)?.also {
@@ -350,13 +383,14 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
             }
         }
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == Activity.RESULT_OK && requestCode == TAKE_PICTURE) {
             doSendBroadcast(mMediaCapturePath)
             showProgressDialog()
-            object :CountDownTimer(1000, 1000) {
+            object : CountDownTimer(1000, 1000) {
                 override fun onFinish() {
                     doAddNewMediaData(mMediaCapturePath)
 
@@ -380,16 +414,29 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
                 val cursor = loader.loadInBackground()
                 if (cursor != null && cursor.moveToFirst()) {
 
-                    val folderContainName = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.BUCKET_DISPLAY_NAME)) ?: ""
-                    val dateAdded = cursor.getLong(cursor.getColumnIndex(MediaStore.Video.Media.DATE_ADDED))
-                    val path = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA)) ?: ""
-                    val duration = cursor.getLong(cursor.getColumnIndex(MediaStore.Video.Media.DURATION))
+                    val folderContainName =
+                        cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.BUCKET_DISPLAY_NAME))
+                            ?: ""
+                    val dateAdded =
+                        cursor.getLong(cursor.getColumnIndex(MediaStore.Video.Media.DATE_ADDED))
+                    val path =
+                        cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA)) ?: ""
+                    val duration =
+                        cursor.getLong(cursor.getColumnIndex(MediaStore.Video.Media.DURATION))
                     Logger.e("file path = $path")
                     val file = File(path)
                     val folderContainId = file.parentFile?.absolutePath ?: ""
                     doSendBroadcast(path)
-                    val mediaData = MediaData(dateAdded * 1000, path, file.name, MediaKind.VIDEO, folderContainId, folderContainName, duration)
-                    if(mVideoActionKind == VideoActionKind.TRIM) {
+                    val mediaData = MediaData(
+                        dateAdded * 1000,
+                        path,
+                        file.name,
+                        MediaKind.VIDEO,
+                        folderContainId,
+                        folderContainName,
+                        duration
+                    )
+                    if (mVideoActionKind == VideoActionKind.TRIM) {
                         mPickMediaViewModel.addNewMediaData(mediaData)
                         TrimVideoActivity.gotoActivity(this, path)
                     } else {
@@ -429,11 +476,17 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
 
     @SuppressLint("SetTextI18n")
     fun updateNumberImageSelected() {
-        val firstText = getString(R.string.selected) +" ("
+        val firstText = getString(R.string.selected) + " ("
         val numberText = mMediaPickedAdapter.itemCount.toString()
-        val endText = ") "+if (mMediaKind == MediaKind.VIDEO) getString(R.string.video) else getString(R.string.photos)
-        val spannable = SpannableString(firstText+numberText+endText)
-        spannable.setSpan(ForegroundColorSpan(ContextCompat.getColor(this, R.color.orangeA01)), firstText.length, firstText.length+numberText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        val endText =
+            ") " + if (mMediaKind == MediaKind.VIDEO) getString(R.string.video) else getString(R.string.photos)
+        val spannable = SpannableString(firstText + numberText + endText)
+        spannable.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(this, R.color.orangeA01)),
+            firstText.length,
+            firstText.length + numberText.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
 
         numberMediaPicked.text = spannable
 
@@ -450,14 +503,22 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
 
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == CAMERA_PERMISSION_REQUEST) {
             if (grantResults.isNotEmpty()) {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     openCamera()
                 } else {
-                    if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            this,
+                            Manifest.permission.CAMERA
+                        )
+                    ) {
                         requestCameraPermission()
                     } else {
                         openActSetting()
@@ -466,24 +527,27 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
             }
         }
     }
-    protected fun openActSetting() {
 
-        val view = showYesNoDialogForOpenSetting(getString(R.string.you_can_use_this_feature)+"\n"+getString(R.string.goto_setting_and_grant_camera_permission), {
-            Logger.e("click Yes")
-            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-            val uri = Uri.fromParts("package", packageName, null)
-            intent.data = uri
-            startActivity(intent)
-        },{finishAfterTransition();},{finishAfterTransition();})
-
+    private fun openActSetting() {
+        showYesNoDialogForOpenSetting(
+            getString(R.string.you_can_use_this_feature) + "\n" + getString(
+                R.string.goto_setting_and_grant_camera_permission
+            ), {
+                Logger.e("click Yes")
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                val uri = Uri.fromParts("package", packageName, null)
+                intent.data = uri
+                startActivity(intent)
+            }, { finishAfterTransition(); }, { finishAfterTransition(); })
     }
+
     private var isExpanded = false
 
     override fun onResume() {
         super.onResume()
         mPickMediaViewModel.localStorageData.getAllMedia(mMediaKind)
         mMediaPickedAdapter.checkFile()
-        if(mMediaPickedAdapter.itemCount <= 0) {
+        if (mMediaPickedAdapter.itemCount <= 0) {
             imagePickedArea.visibility = View.GONE
         } else {
             updateNumberImageSelected()
@@ -517,9 +581,8 @@ class PickMediaActivity : BaseActivity(), KodeinAware {
     }
 
 
-
     override fun onBackPressed() {
-        if(mPickMediaViewModel.folderIsShowing) {
+        if (mPickMediaViewModel.folderIsShowing) {
             mPickMediaViewModel.hideFolder()
         } else {
             super.onBackPressed()

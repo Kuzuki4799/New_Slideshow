@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.FinishActivity">
+
+    <LinearLayout
+        android:id="@+id/animatedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormalBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strThanks"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_30sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormalBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/see_you_again"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16sdp" />
+    </LinearLayout>
+</RelativeLayout>

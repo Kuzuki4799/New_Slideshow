@@ -1,0 +1,209 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.hope_studio.base_ads.widget.ShimmerLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.ads.NativeAdLayout
+            android:id="@+id/native_ad_view_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gnt_outline_shape_new">
+
+            <com.google.android.gms.ads.nativead.NativeAdView
+                android:id="@+id/native_ad_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gnt_outline_shape_new">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:id="@+id/rlMedia"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_9sdp"
+                        android:layout_marginRight="@dimen/_7sdp"
+                        app:layout_constraintBottom_toTopOf="@id/middle"
+                        app:layout_constraintDimensionRatio="7:3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.facebook.ads.MediaView
+                            android:id="@+id/media_view_facebook"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gnt_outline_button_place_holder" />
+
+                        <com.google.android.gms.ads.nativead.MediaView
+                            android:id="@+id/media_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gnt_outline_button_place_holder" />
+                    </RelativeLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/middle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_46sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/cta"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rlMedia">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintEnd_toStartOf="@id/content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.facebook.ads.MediaView
+                                android:id="@+id/icon_facebook"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/gnt_avatar_placeholder"
+                                android:scaleType="fitCenter" />
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:id="@+id/icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/gnt_avatar_placeholder"
+                                android:scaleType="fitCenter"
+                                app:riv_corner_radius="@dimen/_7sdp" />
+                        </RelativeLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/content"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/rlIcon"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/gnt_test_background_color"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/ad_notification_view_facebook"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="horizontal"
+                                        android:paddingEnd="@dimen/_3sdp"
+                                        android:paddingRight="@dimen/_3sdp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/ll_notification_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/ad_notification_view"
+                                            android:layout_width="22dp"
+                                            android:layout_height="18dp"
+                                            android:layout_marginEnd="@dimen/_3sdp"
+                                            android:layout_marginRight="@dimen/_3sdp"
+                                            android:background="@drawable/gnt_rounded_corners_shape_place_holder"
+                                            android:gravity="center"
+                                            android:text="@string/ad"
+                                            android:textColor="@color/bg_placeholder"
+                                            android:textSize="@dimen/_6sdp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/primary"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/gnt_avatar_placeholder"
+                                        android:ellipsize="end"
+                                        android:lines="1"
+                                        android:textColor="@color/gnt_black"
+                                        android:textSize="@dimen/_12sdp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/secondary"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:background="@drawable/gnt_avatar_placeholder"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textColor="@color/gnt_gray"
+                                    android:textSize="@dimen/_8sdp" />
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cta"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:background="@drawable/gnt_outline_button_place_holder"
+                        android:elevation="@dimen/_3sdp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text="@string/install"
+                        android:textAllCaps="false"
+                        android:textColor="@color/gnt_white"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.473"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/middle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.gms.ads.nativead.NativeAdView>
+        </com.facebook.ads.NativeAdLayout>
+    </com.hope_studio.base_ads.widget.ShimmerLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutAddAds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</FrameLayout>

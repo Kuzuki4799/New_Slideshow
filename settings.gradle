@@ -1,2 +1,3 @@
 include ':app', ':mobile-ffmpeg1125', ':gpuv2'
 rootProject.name='Video Maker V4'
+include ':base_ads'

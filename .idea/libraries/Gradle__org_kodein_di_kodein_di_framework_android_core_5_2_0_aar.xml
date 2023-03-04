@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.kodein.di:kodein-di-framework-android-core:5.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76d9491f0530b2e8f27041fdeec60d6c/jetified-kodein-di-framework-android-core-5.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76d9491f0530b2e8f27041fdeec60d6c/jetified-kodein-di-framework-android-core-5.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76d9491f0530b2e8f27041fdeec60d6c/jetified-kodein-di-framework-android-core-5.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f0e5b5ca7a5d4e7192233e372a653d27/jetified-kodein-di-framework-android-core-5.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/378c7fd1fd7e7816f15376d5fb068368/jetified-kodein-di-framework-android-core-5.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/378c7fd1fd7e7816f15376d5fb068368/jetified-kodein-di-framework-android-core-5.2.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/378c7fd1fd7e7816f15376d5fb068368/jetified-kodein-di-framework-android-core-5.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

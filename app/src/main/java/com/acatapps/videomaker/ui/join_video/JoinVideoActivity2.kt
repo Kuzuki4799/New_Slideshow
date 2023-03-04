@@ -2,7 +2,6 @@ package com.acatapps.videomaker.ui.join_video
 
 import android.app.Activity
 import android.content.Intent
-import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -10,28 +9,22 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.source.ExtractorMediaSource
-import com.google.android.exoplayer2.source.TrackGroupArray
-import com.google.android.exoplayer2.trackselection.TrackSelectionArray
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.acatapps.videomaker.MainActivity
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.VideoInJoinerAdapter
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseActivity
 import com.acatapps.videomaker.custom_view.VideoControllerView
-import com.acatapps.videomaker.data.VideoInSlideData
 import com.acatapps.videomaker.models.VideoForJoinDataModel
 import com.acatapps.videomaker.ui.process_video.ProcessVideoActivity
 import com.acatapps.videomaker.utils.Logger
 import com.acatapps.videomaker.utils.MediaUtils
 import com.acatapps.videomaker.utils.Utils
-import com.acatapps.videomaker.video_player_slide.VideoPlayerSlideRenderer
 import kotlinx.android.synthetic.main.activity_join_video.*
 import java.io.File
 
 class JoinVideoActivity2 : BaseActivity() {
-    override fun getContentResId(): Int = R.layout.activity_join_video
+    override fun getLayoutId(): Int = R.layout.activity_join_video
 
     private var mCurrentVideoIndex = 0
 
@@ -52,14 +45,15 @@ class JoinVideoActivity2 : BaseActivity() {
                 putStringArrayList("videoPathList", videoPathList)
             }
             intent.putExtra("bundle", bundle)
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
     }
 
     override fun isShowAds(): Boolean = true
 
     override fun initViews() {
-
         setScreenTitle(getString(R.string.join))
         videoPlayerView.useController = false
         intent.getBundleExtra("bundle")?.let {
@@ -71,28 +65,25 @@ class JoinVideoActivity2 : BaseActivity() {
             }
         }
         needShowDialog = true
-        VideoMakerApplication.instance.releaseRewardAd()
     }
 
 
-    private var mPlayer:ExoPlayer?=null
+    private var mPlayer: ExoPlayer? = null
 
-    private fun changeVideo(path:String) {
+    private fun changeVideo(path: String) {
         mVideoInJoinerAdapter.highlightItem(mVideoDataList[mCurrentVideoIndex].id)
-        if(mPlayer == null) {
+        if (mPlayer == null) {
 
             mPlayer = ExoPlayerFactory.newSimpleInstance(this)
             videoPlayerView.player = mPlayer
             mPlayer?.playWhenReady = true
             mPlayer?.repeatMode = Player.REPEAT_MODE_OFF
-            mPlayer?.addListener(object : Player.EventListener{
+            mPlayer?.addListener(object : Player.EventListener {
 
 
                 override fun onSeekProcessed() {
 
                 }
-
-
 
 
                 override fun onLoadingChanged(isLoading: Boolean) {
@@ -112,13 +103,12 @@ class JoinVideoActivity2 : BaseActivity() {
                 }
 
 
-
                 override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
 
-                    if(playbackState == Player.STATE_ENDED) {
+                    if (playbackState == Player.STATE_ENDED) {
 
                         Logger.e("on end video ----> Player.STATE_ENDED ${mCurrentVideoIndex}")
-                        if(mCurrentVideoIndex == mVideoPathList.size -1) {
+                        if (mCurrentVideoIndex == mVideoPathList.size - 1) {
                             doRestartVideo()
                         } else {
                             onNextVideo()
@@ -142,14 +132,16 @@ class JoinVideoActivity2 : BaseActivity() {
     }
 
     private fun listenVideoTime() {
-        mTimer = object :CountDownTimer(60*60*1000, 40) {
+        mTimer = object : CountDownTimer(60 * 60 * 1000, 40) {
             override fun onFinish() {
 
             }
 
             override fun onTick(millisUntilFinished: Long) {
                 runOnUiThread {
-                    videoControllerView.setCurrentDuration(mTimelineOffset+(mPlayer?.currentPosition ?: 0))
+                    videoControllerView.setCurrentDuration(
+                        mTimelineOffset + (mPlayer?.currentPosition ?: 0)
+                    )
                 }
             }
 
@@ -158,10 +150,11 @@ class JoinVideoActivity2 : BaseActivity() {
 
     private fun doRestartVideo() {
         mTimelineOffset = 0
-        mCurrentVideoIndex=0
+        mCurrentVideoIndex = 0
         changeVideo(mVideoPathList[mCurrentVideoIndex])
         doPlayVideo()
     }
+
     override fun initActions() {
         videoControllerView.onChangeListener = object : VideoControllerView.OnChangeListener {
             override fun onUp(timeMilSec: Int) {
@@ -177,27 +170,25 @@ class JoinVideoActivity2 : BaseActivity() {
 
         buttonJoinVideo.setClick {
             doPauseVideo()
-
-            if(Utils.checkStorageSpace(mVideoPathList)) {
-
+            if (Utils.checkStorageSpace(mVideoPathList)) {
                 showProgressDialog()
-
                 Thread {
-                    VideoMakerApplication.instance.releaseRewardAd()
                     mPlayer?.release()
                     mPlayer = null
                     Thread.sleep(500)
                     runOnUiThread {
-                        VideoMakerApplication.instance.releaseRewardAd()
                         dismissProgressDialog()
-                        val intent = Intent(this@JoinVideoActivity2, ProcessVideoActivity::class.java)
+                        val intent =
+                            Intent(this@JoinVideoActivity2, ProcessVideoActivity::class.java)
                         intent.putStringArrayListExtra("joinVideoList", mVideoPathList)
-                        intent.putExtra(ProcessVideoActivity.action, ProcessVideoActivity.joinVideoActon)
-                        startActivity(intent)
+                        intent.putExtra(
+                            ProcessVideoActivity.action,
+                            ProcessVideoActivity.joinVideoActon
+                        )
+                        openNewActivity(intent, isShowAds = true, isFinish = false)
                         mDoJoin = true
                     }
                 }.start()
-
 
 
             } else {
@@ -208,7 +199,7 @@ class JoinVideoActivity2 : BaseActivity() {
         }
 
         bgView.setOnClickListener {
-            if(mDoJoin) {
+            if (mDoJoin) {
                 doRestartVideo()
             } else {
                 if (mIsPlaying) doPauseVideo()
@@ -233,7 +224,7 @@ class JoinVideoActivity2 : BaseActivity() {
 
 
                 changeVideo(mVideoPathList[mCurrentVideoIndex])
-                mPlayer?.seekTo((timeMilSec-time).toLong())
+                mPlayer?.seekTo((timeMilSec - time).toLong())
                 mVideoInJoinerAdapter.highlightItem(mVideoDataList[mCurrentVideoIndex].id)
                 doPlayVideo()
                 break
@@ -245,13 +236,13 @@ class JoinVideoActivity2 : BaseActivity() {
         updateTimelineOffset()
     }
 
-    private fun onSelectItem(videoId:Int) {
+    private fun onSelectItem(videoId: Int) {
         var time = 0
         var targetIndex = 0
         icPlay.visibility = View.GONE
         mIsPlaying = true
         for (item in mVideoDataList) {
-            if(item.id == videoId) {
+            if (item.id == videoId) {
                 mCurrentVideoIndex = targetIndex
                 changeVideo(mVideoPathList[mCurrentVideoIndex])
                 mVideoInJoinerAdapter.highlightItem(mVideoDataList[mCurrentVideoIndex].id)
@@ -267,7 +258,7 @@ class JoinVideoActivity2 : BaseActivity() {
 
 
         showProgressDialog()
-        Thread{
+        Thread {
             mVideoPathList.clear()
             mVideoPathList.addAll(imageList)
 
@@ -287,6 +278,7 @@ class JoinVideoActivity2 : BaseActivity() {
         }.start()
 
     }
+
     private var mCurrentDuration = 0
     private fun setupListView() {
         videoListView.apply {
@@ -294,7 +286,7 @@ class JoinVideoActivity2 : BaseActivity() {
             layoutManager =
                 LinearLayoutManager(this@JoinVideoActivity2, LinearLayoutManager.HORIZONTAL, false)
         }
-        for(item in mVideoDataList) {
+        for (item in mVideoDataList) {
             mVideoInJoinerAdapter.addItem(item)
         }
         mVideoInJoinerAdapter.highlightItem(mVideoDataList[0].id)
@@ -302,11 +294,9 @@ class JoinVideoActivity2 : BaseActivity() {
     }
 
 
-
-
     private fun onNextVideo() {
 
-        if(mCurrentVideoIndex == mVideoPathList.size-1) {
+        if (mCurrentVideoIndex == mVideoPathList.size - 1) {
             onRestartVideo()
             //doSeekTo(0)
         } else {
@@ -365,10 +355,10 @@ class JoinVideoActivity2 : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        if(mDoJoin) {
+        if (mDoJoin) {
             mDoJoin = false
             showProgressDialog()
-            Thread{
+            Thread {
                 Thread.sleep(500)
                 runOnUiThread {
                     dismissProgressDialog()

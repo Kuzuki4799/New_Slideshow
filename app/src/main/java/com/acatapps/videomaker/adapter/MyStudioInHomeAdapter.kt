@@ -39,10 +39,9 @@ class MyStudioInHomeAdapter : BaseAdapter<MyStudioDataModel>() {
                 view.durationLabel.text = Utils.convertSecToTimeString(duration / 1000)
             } catch (e: Exception) {
                 File(item.filePath).delete()
-                VideoMakerApplication.getContext().sendBroadcast(
+                view.context.sendBroadcast(
                     Intent(
-                        Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                        Uri.fromFile(File(item.filePath))
+                        Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(File(item.filePath))
                     )
                 )
             }

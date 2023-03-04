@@ -7,6 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.main.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.main.iml" />

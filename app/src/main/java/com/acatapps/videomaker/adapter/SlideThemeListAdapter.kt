@@ -38,10 +38,10 @@ class SlideThemeListAdapter(val callback: (ThemeData)->Unit) : BaseAdapter<Theme
         }
         if(item.selected) {
             view.strokeBg.visibility = View.VISIBLE
-            view.blackBgOfTitleView.setBackgroundColor(VideoMakerApplication.getContext().resources.getColor(R.color.orangeA02))
+            view.blackBgOfTitleView.setBackgroundColor(view.context.resources.getColor(R.color.orangeA02))
         } else {
             view.strokeBg.visibility = View.GONE
-            view.blackBgOfTitleView.setBackgroundColor(VideoMakerApplication.getContext().resources.getColor(R.color.blackAlpha45))
+            view.blackBgOfTitleView.setBackgroundColor(view.context.resources.getColor(R.color.blackAlpha45))
         }
 
 

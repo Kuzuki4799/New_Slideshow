@@ -45,7 +45,7 @@ class MediaFolderFragment : Fragment(), KodeinAware {
 
         kodein = (context as KodeinAware).kodein
 
-        mPickMediaViewModel = ViewModelProvider(activity!!, mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
+        mPickMediaViewModel = ViewModelProvider(requireActivity(), mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
 
         initView()
         listen()
@@ -71,13 +71,13 @@ class MediaFolderFragment : Fragment(), KodeinAware {
             mediaItems.sort()
             mMediaListAdapter = MediaListAdapter{mediaDataModel->
                 if(mIsActionTrim) {
-                    TrimVideoActivity.gotoActivity(activity!!, mediaDataModel.filePath)
+                    TrimVideoActivity.gotoActivity(requireActivity(), mediaDataModel.filePath)
                     return@MediaListAdapter
                 }
                 mPickMediaViewModel.onPickImage(mediaDataModel)
             }
-            val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE* DimenUtils.density(context!!)
-            val numberCols = DimenUtils.screenWidth(context!!)/colSize
+            val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE* DimenUtils.density(requireContext())
+            val numberCols = DimenUtils.screenWidth(requireContext())/colSize
             mMediaListAdapter.setItemList(mediaItems)
             if(mIsActionTrim) {
                 mMediaListAdapter.activeCounter = false
@@ -135,8 +135,8 @@ class MediaFolderFragment : Fragment(), KodeinAware {
 
 
     private fun setFolderListView() {
-        val colSize = PickMediaActivity.COLS_ALBUM_LIST_SIZE* DimenUtils.density(context!!)
-        val numberCols = DimenUtils.screenWidth(context!!)/colSize
+        val colSize = PickMediaActivity.COLS_ALBUM_LIST_SIZE* DimenUtils.density(requireContext())
+        val numberCols = DimenUtils.screenWidth(requireContext())/colSize
 
         mediaFolderListView.adapter = mMediaFolderAdapter
         mediaFolderListView.layoutManager = GridLayoutManager(context, numberCols.toInt(), LinearLayoutManager.VERTICAL, false)

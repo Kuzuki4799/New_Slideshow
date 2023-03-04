@@ -34,7 +34,7 @@ class MediaListFragment : Fragment(), KodeinAware {
 
     private val mMediaListAdapter = MediaListAdapter{
         if(mIsActionTrim) {
-            TrimVideoActivity.gotoActivity(activity!!, it.filePath)
+            TrimVideoActivity.gotoActivity(requireActivity(), it.filePath)
             return@MediaListAdapter
         }
         mPickMediaViewModel.onPickImage(it)
@@ -55,18 +55,18 @@ class MediaListFragment : Fragment(), KodeinAware {
 
         kodein = (context as KodeinAware).kodein
 
-        mPickMediaViewModel = ViewModelProvider(activity!!, mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
+        mPickMediaViewModel = ViewModelProvider(requireActivity(), mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
         listen()
         initView()
 
-        activity!!.intent.getStringArrayListExtra("list-photo")?.let {
+        requireActivity().intent.getStringArrayListExtra("list-photo")?.let {
             for(path in it) {
               extraPathList.add(path)
             }
             Logger.e("add more count fragment = ${it.size}")
         }
 
-        activity!!.intent.getStringArrayListExtra("list-video")?.let {
+        requireActivity().intent.getStringArrayListExtra("list-video")?.let {
             for(path in it) {
                 extraPathList.add(path)
             }
@@ -76,8 +76,8 @@ class MediaListFragment : Fragment(), KodeinAware {
 
 
     private fun initView() {
-        val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE* DimenUtils.density(context!!)
-        val numberCols = DimenUtils.screenWidth(context!!)/colSize
+        val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE* DimenUtils.density(requireContext())
+        val numberCols = DimenUtils.screenWidth(requireContext())/colSize
 
         allMediaListView.apply {
             adapter = mMediaListAdapter

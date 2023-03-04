@@ -30,20 +30,23 @@ import kotlin.math.roundToLong
 
 class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
 
-    override fun getContentResId(): Int = R.layout.activity_trim_video
+    override fun getLayoutId(): Int = R.layout.activity_trim_video
 
-    private var mTimer:CountDownTimer? = null
+    private var mTimer: CountDownTimer? = null
 
     var mTotalDuration = 0
 
     private var mStartOffset = 0
     private var mEndOffset = 0
     private var mVideoPath = ""
+
     companion object {
-        fun gotoActivity(activity:Activity, videoPath:String) {
+        fun gotoActivity(activity: Activity, videoPath: String) {
             val intent = Intent(activity, TrimVideoActivity::class.java)
             intent.putExtra("VideoPath", videoPath)
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
     }
 
@@ -52,30 +55,34 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
     override fun initViews() {
         val scale = DimenUtils.videoScaleInTrim()
         Logger.e("scale in trim = $scale")
-        bgView.layoutParams.width = (DimenUtils.screenWidth(this)*scale).toInt()
-        bgView.layoutParams.height = (DimenUtils.screenWidth(this)*scale).toInt()
+        bgView.layoutParams.width = (DimenUtils.screenWidth(this) * scale).toInt()
+        bgView.layoutParams.height = (DimenUtils.screenWidth(this) * scale).toInt()
         needShowDialog = true
         setScreenTitle(getString(R.string.trim_video))
         playerViewInTrim.hideController()
         val videoPath = intent.getStringExtra("VideoPath")
-        videoPath?.let {videoPath ->
+        videoPath?.let { videoPath ->
             val duration = MediaUtils.getAudioDuration(videoPath)
             mStartOffset = 0
             mEndOffset = duration.toInt()
             videoControllerView.setMaxDuration(duration.toInt())
-            cropTimeView.loadImage(videoPath, DimenUtils.screenWidth(this)-(76*DimenUtils.density(this)).roundToInt())
+            cropTimeView.loadImage(
+                videoPath,
+                DimenUtils.screenWidth(this) - (76 * DimenUtils.density(this)).roundToInt()
+            )
         }
-        videoControllerView.onChangeListener = object :VideoControllerView.OnChangeListener {
+        videoControllerView.onChangeListener = object : VideoControllerView.OnChangeListener {
             override fun onUp(timeMilSec: Int) {
 
                 mPlayer?.seekTo(timeMilSec.toLong())
             }
+
             override fun onMove(progress: Float) {
-                mPlayer?.seekTo((mTotalDuration*progress/100).toLong())
+                mPlayer?.seekTo((mTotalDuration * progress / 100).toLong())
             }
         }
 
-        cropTimeView.onChangeListener = object :CropVideoTimeView.OnChangeListener {
+        cropTimeView.onChangeListener = object : CropVideoTimeView.OnChangeListener {
             override fun onSwipeLeft(startTimeMilSec: Float) {
                 mStartOffset = startTimeMilSec.roundToInt()
                 mPlayer?.seekTo(startTimeMilSec.toLong())
@@ -90,12 +97,12 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
 
             override fun onSwipeRight(endTimeMilSec: Float) {
                 mEndOffset = endTimeMilSec.roundToInt()
-                mPlayer?.seekTo(endTimeMilSec.toLong()-2000)
+                mPlayer?.seekTo(endTimeMilSec.toLong() - 2000)
             }
 
             override fun onUpRight(endTimeMilSec: Float) {
                 mEndOffset = endTimeMilSec.roundToInt()
-                mPlayer?.seekTo(endTimeMilSec.toLong()-2000)
+                mPlayer?.seekTo(endTimeMilSec.toLong() - 2000)
             }
 
         }
@@ -103,24 +110,24 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         buttonPlayAndPause.setOnClickListener {
             mPlayer?.playWhenReady = !(mPlayer?.playWhenReady ?: true)
         }
-        bgView.setOnClickListener {  mPlayer?.playWhenReady = !(mPlayer?.playWhenReady ?: true)}
+        bgView.setOnClickListener { mPlayer?.playWhenReady = !(mPlayer?.playWhenReady ?: true) }
         buttonTrimVideo.setClick {
-            if(checkCutTime()) {
+            if (checkCutTime()) {
 
-                if(trimAvailable) {
+                if (trimAvailable) {
                     trimAvailable = false
                     mPlayer?.playWhenReady = false
                     mPlayer?.release()
                     mPlayer = null
-                    val intent = Intent(this,  ProcessVideoActivity::class.java).apply {
+                    val intent = Intent(this, ProcessVideoActivity::class.java).apply {
                         putExtra(ProcessVideoActivity.action, ProcessVideoActivity.trimVideoActon)
                         putExtra("path", mVideoPath)
                         putExtra("startTime", mStartOffset)
                         putExtra("endTime", mEndOffset)
                     }
-                    startActivity(intent)
+                    openNewActivity(intent, isShowAds = true, isFinish = false)
 
-                    object :CountDownTimer(1000,1000) {
+                    object : CountDownTimer(1000, 1000) {
                         override fun onFinish() {
                             trimAvailable = true
                         }
@@ -140,9 +147,9 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
     }
 
     private val limitTime = 5000
-    private fun checkCutTime():Boolean {
+    private fun checkCutTime(): Boolean {
 
-        if((mEndOffset - mStartOffset ) < limitTime) {
+        if ((mEndOffset - mStartOffset) < limitTime) {
             showToast(getString(R.string.minimum_time_is_5_s))
             return false
         }
@@ -152,16 +159,16 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
 
 
     private fun listenVideoPosition() {
-        mTimer = object :CountDownTimer(120000000, 100) {
+        mTimer = object : CountDownTimer(120000000, 100) {
             override fun onFinish() {
                 this.start()
             }
 
             override fun onTick(millisUntilFinished: Long) {
                 val currentPosition = mPlayer?.currentPosition ?: 0
-                if(currentPosition > mEndOffset ) {
+                if (currentPosition > mEndOffset) {
                     mPlayer?.seekTo(mStartOffset.toLong())
-                } else if(currentPosition <= mStartOffset) {
+                } else if (currentPosition <= mStartOffset) {
                     mPlayer?.seekTo(mStartOffset.toLong())
                 }
                 runOnUiThread {
@@ -185,7 +192,7 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
 
     override fun onPause() {
         super.onPause()
-       onPauseVideo()
+        onPauseVideo()
         mTimer?.cancel()
         mPlayer?.playWhenReady = false
 
@@ -216,27 +223,26 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
     }
 
     private var mPlayer: SimpleExoPlayer? = null
-    private fun initVideoPlayer(path:String) {
+    private fun initVideoPlayer(path: String) {
         mPlayer = SimpleExoPlayer.Builder(VideoMakerApplication.getContext()).build()
 
         playerViewInTrim.player = mPlayer
-        val bandwidthMeter = DefaultBandwidthMeter.Builder(VideoMakerApplication.getContext()).build()
+        val bandwidthMeter =
+            DefaultBandwidthMeter.Builder(VideoMakerApplication.getContext()).build()
         val dataSourceFactory = DefaultDataSourceFactory(this, "videomaker", bandwidthMeter)
         val mediaSource = ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(
             Uri.fromFile(
                 File(path)
-            ))
+            )
+        )
         mPlayer?.playWhenReady = true
 
-        mPlayer?.addListener(object : Player.EventListener{
+        mPlayer?.addListener(object : Player.EventListener {
 
 
             override fun onSeekProcessed() {
 
             }
-
-
-
 
 
             override fun onLoadingChanged(isLoading: Boolean) {
@@ -256,10 +262,9 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
             }
 
 
-
             override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
                 onStateChange.invoke(playWhenReady)
-                if(playbackState == Player.STATE_ENDED) {
+                if (playbackState == Player.STATE_ENDED) {
                     onEnd.invoke()
                 }
 
@@ -278,8 +283,8 @@ class TrimVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         mPlayer?.playWhenReady = false
     }
 
-    private val onStateChange = { isPlay:Boolean ->
-        if(isPlay) {
+    private val onStateChange = { isPlay: Boolean ->
+        if (isPlay) {
             onPlayVideo()
         } else {
             onPauseVideo()

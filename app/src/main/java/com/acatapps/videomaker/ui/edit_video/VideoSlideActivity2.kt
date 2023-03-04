@@ -434,7 +434,9 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 putExtra("action", PickMediaActivity.ADD_MORE_VIDEO)
                 putStringArrayListExtra("list-video", mVideoPathList)
             }
-            startActivityForResult(intent, PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE)
+            openNewActivityForResult(intent, PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE, true,
+                isFinish = false
+            )
             object : CountDownTimer(1000, 1000) {
                 override fun onFinish() {
                     addMoreVideoAvailable = true
@@ -488,7 +490,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 )
                 val view = findViewById<View>(item.stickerViewId)
 
-                if(view is StickerView) view.getOutBitmap(Canvas(bitmap))
+                if (view is StickerView) view.getOutBitmap(Canvas(bitmap))
 
 
                 val outPath = if (isImageSlideShow()) {
@@ -514,7 +516,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
                     Bitmap.Config.ARGB_8888
                 )
                 val view = findViewById<View>(item.viewId)
-                if(view is EditTextSticker) view.getOutBitmap(Canvas(bitmap))
+                if (view is EditTextSticker) view.getOutBitmap(Canvas(bitmap))
 
 
                 val outPath = if (isImageSlideShow()) {
@@ -557,7 +559,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
                     runOnUiThread {
                         dismissProgressDialog()
-                        startActivity(intent)
+                        openNewActivity(intent, isShowAds = true, isFinish = false)
                         mIsDoExport = true
                     }
                 }
@@ -579,7 +581,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 }
                 runOnUiThread {
                     dismissProgressDialog()
-                    startActivity(intent)
+                    openNewActivity(intent, isShowAds = true, isFinish = false)
                     mIsDoExport = true
                 }
             }
@@ -691,7 +693,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 }
 
 
-
             }
 
         }
@@ -726,12 +727,11 @@ class VideoSlideActivity2 : BaseSlideShow() {
             mVideoPathList.forEach {
                 if (!File(it).exists()) {
                     runOnUiThread {
-                        finish()
+                        finishAds()
                     }
                 }
             }
         }.start()
-
     }
 
 

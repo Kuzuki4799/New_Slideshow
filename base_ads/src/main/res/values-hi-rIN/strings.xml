@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="strYes">हाँ</string>
+    <string name="strNo">नहीं</string>
+    <string name="exit_app">क्या आप वाकई ऐप से बाहर निकलना चाहते हैं?</string>
+    <string name="strThanks">आपको धन्यवाद</string>
+    <string name="see_you_again">फिर मिलेंगे</string>
+
+    <string name="watching_ads">वीडियो विज्ञापन देखें</string>
+    <string name="update_version">नया संस्करण अपडेट करें</string>
+    <string name="update_version_content">%s का नया संस्करण है। कृपया अभी अपडेट करें</string>
+    <string name="watching_video">क्या आप इन सुविधाओं का अनुभव जारी रखने के लिए विज्ञापन देखना चाहेंगे?</string>
+    <string name="watching_video_">क्या आप इस गीत को डाउनलोड करना जारी रखने के लिए विज्ञापन देखना चाहेंगे?</string>
+
+    <string name="update">अद्यतन</string>
+    <string name="rate_app">एप्प का मूल्यांकन</string>
+    <string name="write_your_feedback_here">अपनी प्रतिक्रिया यहां लिखें...</string>
+    <string name="rate_app_dis">5 स्टार देकर हमारा समर्थन करें और अपनी समीक्षा लिखें</string>
+    <string name="pls_rate">कृपया 5 स्टार देकर हमारा समर्थन करें</string>
+    <string name="rate_now">अब रेट करें</string>
+    <string name="maybe_latter">शायद बाद में</string>
+    <string name="feedback">प्रतिपुष्टि</string>
+
+    <string name="send_mail">ईमेल भेजें</string>
+    <string name="enter_your_feedback">कृपया अपनी प्रतिक्रिया दर्ज करें!</string>
+    <string name="close">बंद करना</string>
+    <string name="accept">स्वीकार करना</string>
+    <string name="not_have_permission">आपके पास अनुमति नहीं है, एप्लिकेशन को अनुमति दें ताकि आप एप्लिकेशन का अनुभव कर सकें</string>
+    <string name="warning">चेतावनी</string>
+    <string name="feedback_app">इस एप्लिकेशन के बारे में अपनी राय लिखें</string>
+</resources>

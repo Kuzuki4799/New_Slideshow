@@ -6,12 +6,12 @@ import android.media.MediaExtractor
 import android.media.MediaMuxer
 import android.util.Size
 import android.view.View
+import android.view.ViewTreeObserver
 import com.daasuu.gpuv.composer.FillMode
 import com.daasuu.gpuv.composer.GPUMp4Composer
 import com.daasuu.gpuv.egl.filter.*
 import com.daasuu.gpuv.egl.more_filter.filters.*
 import com.daasuu.gpuv.player.StickerInfo
-import com.google.android.gms.ads.formats.UnifiedNativeAdView
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseActivity
@@ -22,7 +22,6 @@ import com.acatapps.videomaker.ffmpeg.FFmpegCmd
 import com.acatapps.videomaker.gs_effect.GSEffectUtils
 import com.acatapps.videomaker.image_slide_show.drawer.ImageSlideData
 import com.acatapps.videomaker.modules.encode.ImageSlideEncode
-import com.acatapps.videomaker.modules.rate.RatingManager
 import com.acatapps.videomaker.slide_show_theme.data.ThemeData
 import com.acatapps.videomaker.slide_show_transition.transition.GSTransition
 import com.acatapps.videomaker.ui.share_video.ShareVideoActivity
@@ -30,6 +29,7 @@ import com.acatapps.videomaker.utils.FileUtils
 import com.acatapps.videomaker.utils.Logger
 import com.acatapps.videomaker.utils.MediaUtils
 import com.acatapps.videomaker.utils.Utils
+import com.hope_studio.base_ads.ads.BaseAds
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -52,22 +52,23 @@ class ProcessVideoActivity : BaseActivity() {
         const val trimVideoActon = 1004
     }
 
-    override fun getContentResId(): Int = R.layout.activity_process_video
+    override fun getLayoutId(): Int = R.layout.activity_process_video
 
     val mComPoDisposable = CompositeDisposable()
 
     private var mIsCancel = false
 
     private fun showNativeAds() {
-
-        val ad = VideoMakerApplication.instance.getNativeAds()
-        Logger.e("native ad in process = ${ad}")
-        if(ad != null) {
-            Utils.bindBigNativeAds(ad, (nativeAdViewInProcess as UnifiedNativeAdView))
-            nativeAdViewInProcess.visibility = View.VISIBLE
-        } else {
-            nativeAdViewInProcess.visibility = View.GONE
-        }
+        llNative.viewTreeObserver.addOnGlobalLayoutListener(object :
+            ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                llNative.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                BaseAds.loadBaseNativeAd(
+                    this@ProcessVideoActivity,
+                    0, nativeAdViewInProcess, llNative.width
+                )
+            }
+        })
 
     }
 
@@ -212,13 +213,9 @@ class ProcessVideoActivity : BaseActivity() {
                             Thread.sleep(500)
                             runOnUiThread {
                                 ShareVideoActivity.gotoActivity(this, outVideoPath, true, false)
-
                                 finish()
                             }
                         }.start()
-
-
-
                     }
 
                 }})
@@ -325,7 +322,7 @@ class ProcessVideoActivity : BaseActivity() {
             showYesNoDialog(getString(R.string.do_you_want_to_cancel)) {
                 mIsCancel = true
                 mGPUMp4Composer?.cancel()
-                finish()
+                finishAds()
             }
         }
 
@@ -370,8 +367,7 @@ class ProcessVideoActivity : BaseActivity() {
             if(!onPause) {
 
                 ShareVideoActivity.gotoActivity(this, filePath,
-                    showRating = true,
-                    fromProcess = true
+                    showRating = true, fromProcess = true
                 )
                 showToast(filePath)
                 runOnUiThread {
@@ -381,8 +377,6 @@ class ProcessVideoActivity : BaseActivity() {
                 doSendBroadcast(filePath)
                 finish()
             }
-
-
         }
     }
 
@@ -755,56 +749,12 @@ class ProcessVideoActivity : BaseActivity() {
         } catch (e:Exception) {
 
         }
-
     }
 
     override fun onBackPressed() {
         showYesNoDialog(getString(R.string.do_you_want_to_cancel)) {
             mIsCancel = true
-            finish()
+            finishAds()
         }
-
     }
-
-    private fun trimVideoByMuxer(inPath:String, outPath:String):Boolean {
-        val muxer = MediaMuxer(outPath, MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4)
-        val extractor = MediaExtractor().apply { setDataSource(inPath) }
-        try {
-
-            val videoFormat = MediaUtils.selectVideoTrack(extractor)
-            val videoTrack = muxer.addTrack(videoFormat)
-            val buffer = ByteBuffer.allocate(1024*1024)
-            val bufferInfo = MediaCodec.BufferInfo()
-            muxer.start()
-            MediaUtils.selectVideoTrack(extractor)
-            extractor.seekTo(1000000, MediaExtractor.SEEK_TO_CLOSEST_SYNC)
-            while (true) {
-                val chunkSize = extractor.readSampleData(buffer, 0)
-
-                if(chunkSize >= 0) {
-                    bufferInfo.presentationTimeUs = extractor.sampleTime
-                    bufferInfo.flags = extractor.sampleFlags
-                    bufferInfo.size = chunkSize
-                    muxer.writeSampleData(videoTrack, buffer, bufferInfo)
-                    extractor.advance()
-                    Logger.e("time ms = ${extractor.sampleTime}")
-                    if(extractor.sampleTime > 2000000) break
-                } else {
-                    break
-                }
-            }
-
-            return false
-
-        } catch (e:java.lang.Exception) {
-            return true
-        } finally {
-        }
-
-
-
-
-
-    }
-
 }

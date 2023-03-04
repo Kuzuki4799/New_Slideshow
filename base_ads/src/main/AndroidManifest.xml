@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hope_studio.base_ads">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.hope_studio.base_ads.activity.Finish2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hope_studio.base_ads.activity.FinishActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_Id" />
+
+        <meta-data android:name="applovin.sdk.key"
+            android:value="@string/applovin_Id"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
+
+        <service
+            android:name="com.hope_studio.base_ads.fcm.FirebaseMessageService"
+            android:exported="false"
+            tools:node="merge">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_icon_notifi" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@android:color/transparent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+    </application>
+
+</manifest>

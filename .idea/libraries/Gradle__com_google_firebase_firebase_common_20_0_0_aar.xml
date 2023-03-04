@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-common:20.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/295265c73e1f6383b6888cbb8aebda67/jetified-firebase-common-20.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b92f0788d21282b59b06fec74a97a105/jetified-firebase-common-20.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30b6c9f713c1ef1a894f66075fd70906/jetified-firebase-common-20.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30b6c9f713c1ef1a894f66075fd70906/jetified-firebase-common-20.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30b6c9f713c1ef1a894f66075fd70906/jetified-firebase-common-20.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common/20.0.0/35a489d6cdcfa34dd756120fe574500e30a62d8a/firebase-common-20.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common/20.0.0/a2cc0a72ed0bc6d121c9bb18517266f1abb36845/firebase-common-20.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

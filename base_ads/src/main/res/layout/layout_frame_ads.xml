@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/animationView"
+    style="@style/textNormal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gnt_black"
+    android:gravity="center"
+    android:padding="@dimen/_1sdp"
+    android:text="ADVERTISEMENT"
+    android:textColor="@color/gnt_white"
+    android:textSize="@dimen/_7sdp" />

@@ -31,7 +31,7 @@ import kotlinx.android.synthetic.main.activity_base_tools_edit.*
 import kotlinx.android.synthetic.main.activity_base_tools_edit.videoControllerView
 import kotlinx.android.synthetic.main.layout_change_effect_tools.view.*
 
-class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
+class VideoSlideActivity : BaseSlideShow(), MediaPlayer.OnCompletionListener {
 
     private val mVideoPathList = ArrayList<String>()
     private var mIsPlaying = true
@@ -42,7 +42,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
 
     private var mTimelineOffset = 0
 
-    private var totalDuration  = 0
+    private var totalDuration = 0
     private var mCurrentTime = 0
     private var mVideoVolume = 1f
     override fun isImageSlideShow(): Boolean = false
@@ -71,16 +71,26 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
         }
         for (item in mVideoPathList) {
             totalDuration += (MediaUtils.getVideoDuration(item))
-            mVideoSlideDataList.add(VideoInSlideData(item, View.generateViewId(), GSEffectUtils.EffectType.NONE))
+            mVideoSlideDataList.add(
+                VideoInSlideData(
+                    item,
+                    View.generateViewId(),
+                    GSEffectUtils.EffectType.NONE
+                )
+            )
         }
         videoControllerView.setMaxDuration(totalDuration)
         mVideoPlayerSlideGLView = VideoPlayerSlideGLView(this, null)
-        mVideoSlideRenderer = VideoPlayerSlideRenderer(mVideoPathList[mCurrentVideoIndex], this, mVideoPlayerSlideGLView) {
-            mCurrentTime = mTimelineOffset+it
+        mVideoSlideRenderer = VideoPlayerSlideRenderer(
+            mVideoPathList[mCurrentVideoIndex],
+            this,
+            mVideoPlayerSlideGLView
+        ) {
+            mCurrentTime = mTimelineOffset + it
 
             runOnUiThread {
-                videoControllerView.setCurrentDuration(mTimelineOffset+it)
-                checkInTime(mTimelineOffset+it)
+                videoControllerView.setCurrentDuration(mTimelineOffset + it)
+                checkInTime(mTimelineOffset + it)
             }
 
         }
@@ -96,7 +106,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
 
     override fun doInitActions() {
 
-        setRightButton (R.drawable.ic_save_vector){
+        setRightButton(R.drawable.ic_save_vector) {
             doExportVideo()
         }
         videoControllerView.onChangeListener = object : VideoControllerView.OnChangeListener {
@@ -110,8 +120,8 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
 
         }
         mVideoPlayerSlideGLView.setOnClickListener {
-            if(onEditSticker) return@setOnClickListener
-            if(mDoExport) {
+            if (onEditSticker) return@setOnClickListener
+            if (mDoExport) {
                 mDoExport = false
                 mIsPlaying = true
                 icPlay.visibility = View.GONE
@@ -131,17 +141,17 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
 
         mSlideSourceAdapter.onClickItem = {
             var timeMs = 0
-            for(item in 0 until it) {
+            for (item in 0 until it) {
                 timeMs += MediaUtils.getVideoDuration(mVideoPathList[item])
             }
             doSeekTo(timeMs)
             mGSEffectListAdapter.selectEffect(mVideoSlideDataList[it].gsEffectType)
         }
 
-        mGSEffectListAdapter.onSelectEffectCallback = {position, gsEffectType ->
+        mGSEffectListAdapter.onSelectEffectCallback = { position, gsEffectType ->
             mVideoSlideDataList[mCurrentVideoIndex].gsEffectType = gsEffectType
             var timeMs = 0
-            for(item in 0 until mCurrentVideoIndex) {
+            for (item in 0 until mCurrentVideoIndex) {
                 timeMs += MediaUtils.getVideoDuration(mVideoPathList[item])
             }
             doSeekTo(timeMs)
@@ -159,7 +169,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
         doPauseVideo()
     }
 
-    override fun getMaxDuration(): Int=totalDuration
+    override fun getMaxDuration(): Int = totalDuration
 
     override fun performSeekTo(timeMs: Int) {
         doSeekTo(timeMs)
@@ -208,12 +218,12 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
     }
 
     override fun onCompletion(mp: MediaPlayer?) {
-     onNextVideo()
+        onNextVideo()
     }
 
 
     private fun onNextVideo() {
-        if(mDestroy) return
+        if (mDestroy) return
         Logger.e("current index = $mCurrentVideoIndex")
         if (mCurrentVideoIndex + 1 >= mVideoPathList.size) {
             mCurrentVideoIndex = 0
@@ -230,6 +240,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
         mSlideSourceAdapter.changeVideo(mCurrentVideoIndex)
 
     }
+
     private fun updateTimelineOffset() {
         mTimelineOffset = 0
         if (mCurrentVideoIndex == 0) mTimelineOffset = 0
@@ -238,6 +249,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
                 mTimelineOffset += (MediaUtils.getVideoDuration(mVideoPathList[index]))
             }
     }
+
     private fun doSeekTo(timeMilSec: Int) {
         var time = 0
         var targetIndex = 0
@@ -245,7 +257,11 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
             val duration = MediaUtils.getVideoDuration(item)
             if (time + duration > timeMilSec) {
                 mCurrentVideoIndex = targetIndex
-                mVideoPlayerSlideGLView.seekTo(mVideoSlideDataList[mCurrentVideoIndex], timeMilSec - time, mIsPlaying)
+                mVideoPlayerSlideGLView.seekTo(
+                    mVideoSlideDataList[mCurrentVideoIndex],
+                    timeMilSec - time,
+                    mIsPlaying
+                )
                 break
             } else {
                 targetIndex++
@@ -257,34 +273,42 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
         updateTimelineOffset()
         onSeekTo(timeMilSec)
     }
-    private fun updateEffectHighlight(){
+
+    private fun updateEffectHighlight() {
         Logger.e("effect in ${mCurrentVideoIndex} = ${mVideoSlideDataList[mCurrentVideoIndex].gsEffectType}")
         mGSEffectListAdapter.selectEffect(mVideoSlideDataList[mCurrentVideoIndex].gsEffectType)
     }
+
     private fun showLayoutChangeEffect() {
         val view = View.inflate(this, R.layout.layout_change_effect_tools, null)
         showToolsActionLayout(view)
 
         view.videoInChangeEffect.adapter = mSlideSourceAdapter
         mSlideSourceAdapter.addImagePathList(mVideoPathList)
-        view.videoInChangeEffect.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.videoInChangeEffect.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         view.effectListView.adapter = mGSEffectListAdapter
-        view.effectListView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.effectListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         view.icAddPhotoInChangeEffect.setOnClickListener {
             doAddMoreVideo()
         }
     }
-    private var addMoreVideoAvailable =true
+
+    private var addMoreVideoAvailable = true
     private fun doAddMoreVideo() {
-        if(addMoreVideoAvailable) {
+        if (addMoreVideoAvailable) {
             addMoreVideoAvailable = false
             val intent = Intent(this, PickMediaActivity::class.java).apply {
                 putExtra("action", PickMediaActivity.ADD_MORE_VIDEO)
                 putStringArrayListExtra("list-video", mVideoPathList)
             }
-            startActivityForResult(intent, PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE)
-            object :CountDownTimer(1000,1000) {
+            openNewActivityForResult(intent, PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE,
+                isShowAds = true,
+                isFinish = false
+            )
+            object : CountDownTimer(1000, 1000) {
                 override fun onFinish() {
                     addMoreVideoAvailable = true
                 }
@@ -300,10 +324,10 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
 
     private fun doExportVideo() {
         doPauseVideo()
-        if(Utils.checkStorageSpace(mVideoPathList)) {
+        if (Utils.checkStorageSpace(mVideoPathList)) {
 
-            showExportDialog(true) {quality, ratio ->
-                if(quality < 1) {
+            showExportDialog(true) { quality, ratio ->
+                if (quality < 1) {
                     showToast(getString(R.string.please_choose_video_quality))
                 } else {
                     setOffAllStickerAndText()
@@ -321,10 +345,10 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
     }
 
 
-    private fun prepareForExport(quality: Int, ratio:Int) {
+    private fun prepareForExport(quality: Int, ratio: Int) {
         showProgressDialog()
 
-        Thread{
+        Thread {
             val stickerAddedForRender = ArrayList<StickerForRenderData>()
             val stickerContainerWidth = stickerContainer.width
             val stickerContainerHeight = stickerContainer.height
@@ -336,7 +360,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
                 )
                 val view = findViewById<View>(item.stickerViewId)
                 view.draw(Canvas(bitmap))
-                val outPath = if(isImageSlideShow()) {
+                val outPath = if (isImageSlideShow()) {
                     FileUtils.saveStickerToTemp(bitmap)
                 } else {
                     val outBitmap = getOutSticker(bitmap, ratio)
@@ -352,7 +376,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
                 )
             }
 
-            for(item in getTextAddedList()) {
+            for (item in getTextAddedList()) {
                 val bitmap = Bitmap.createBitmap(
                     stickerContainer.width,
                     stickerContainer.height,
@@ -361,7 +385,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
                 val view = findViewById<View>(item.viewId)
                 view.draw(Canvas(bitmap))
 
-                val outPath = if(isImageSlideShow()) {
+                val outPath = if (isImageSlideShow()) {
                     FileUtils.saveStickerToTemp(bitmap)
                 } else {
                     val outBitmap = getOutSticker(bitmap, ratio)
@@ -380,7 +404,7 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
             val musicPath = getMusicData()
             val musicVolume = getMusicVolume()
             val finalAudio = FileUtils.getTempMp3OutPutFile()
-            if(MediaUtils.getAudioDuration(musicPath) > totalDuration) {
+            if (MediaUtils.getAudioDuration(musicPath) > totalDuration) {
                 val cmd = FFmpegCmd.trimAudio(musicPath, 0, totalDuration.toLong(), finalAudio)
                 FFmpeg(cmd).runCmd {
                     val intent = Intent(this, ProcessVideoActivity::class.java)
@@ -393,12 +417,15 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
                         putInt("videoSlideOutRatio", ratio)
                         putSerializable("VideoInSlideData", mVideoSlideDataList)
                         intent.putExtra("bundle", this)
-                        intent.putExtra(ProcessVideoActivity.action, ProcessVideoActivity.renderVideoSlideAction)
+                        intent.putExtra(
+                            ProcessVideoActivity.action,
+                            ProcessVideoActivity.renderVideoSlideAction
+                        )
                     }
 
                     runOnUiThread {
                         dismissProgressDialog()
-                        startActivity(intent)
+                        openNewActivity(intent, isShowAds = true, isFinish = false)
                     }
                 }
             } else {
@@ -412,30 +439,41 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
                     putInt("videoSlideOutRatio", ratio)
                     putSerializable("VideoInSlideData", mVideoSlideDataList)
                     intent.putExtra("bundle", this)
-                    intent.putExtra(ProcessVideoActivity.action, ProcessVideoActivity.renderVideoSlideAction)
+                    intent.putExtra(
+                        ProcessVideoActivity.action,
+                        ProcessVideoActivity.renderVideoSlideAction
+                    )
                 }
                 runOnUiThread {
                     dismissProgressDialog()
-                    startActivity(intent)
+                    openNewActivity(intent, true, isFinish = false)
                 }
             }
 
         }.start()
     }
 
-    private fun getOutSticker(bitmap: Bitmap, ratio:Int):Bitmap {
+    private fun getOutSticker(bitmap: Bitmap, ratio: Int): Bitmap {
         val stickerContainerWidth = stickerContainer.width
         val stickerContainerHeight = stickerContainer.height
-        if(ratio == 2) {
-            val outBitmap = Bitmap.createBitmap( stickerContainerWidth*9/16,stickerContainerHeight, Bitmap.Config.ARGB_8888)
+        if (ratio == 2) {
+            val outBitmap = Bitmap.createBitmap(
+                stickerContainerWidth * 9 / 16,
+                stickerContainerHeight,
+                Bitmap.Config.ARGB_8888
+            )
             Canvas(outBitmap).apply {
-                drawBitmap(bitmap, -stickerContainerWidth*7f/32, 0f,null)
+                drawBitmap(bitmap, -stickerContainerWidth * 7f / 32, 0f, null)
             }
             return outBitmap
-        } else if(ratio == 1) {
-            val outBitmap = Bitmap.createBitmap( stickerContainerWidth,stickerContainerHeight*9/16, Bitmap.Config.ARGB_8888)
+        } else if (ratio == 1) {
+            val outBitmap = Bitmap.createBitmap(
+                stickerContainerWidth,
+                stickerContainerHeight * 9 / 16,
+                Bitmap.Config.ARGB_8888
+            )
             Canvas(outBitmap).apply {
-                drawBitmap(bitmap, 0f,-stickerContainerWidth*7f/32,null)
+                drawBitmap(bitmap, 0f, -stickerContainerWidth * 7f / 32, null)
             }
             return outBitmap
         } else return bitmap
@@ -445,12 +483,12 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         Logger.e("request code = $requestCode")
-        if(requestCode == PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE) {
-            if(resultCode == Activity.RESULT_OK) {
+        if (requestCode == PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
                 data?.let {
                     val pathList = it.getStringArrayListExtra("Video picked list") ?: ArrayList()
                     Logger.e("size = ${pathList.size}")
-                    pathList.let {pathList->
+                    pathList.let { pathList ->
                         Logger.e("video add more = ${pathList.size}")
                         doPauseVideo()
                         mVideoPathList.clear()
@@ -459,20 +497,26 @@ class VideoSlideActivity : BaseSlideShow() , MediaPlayer.OnCompletionListener {
 
                         totalDuration = 0
                         val videoEffectHashMap = HashMap<String, GSEffectUtils.EffectType>()
-                        for(item in mVideoSlideDataList) {
+                        for (item in mVideoSlideDataList) {
                             videoEffectHashMap[item.path] = item.gsEffectType
                         }
                         mVideoSlideDataList.clear()
                         for (item in mVideoPathList) {
                             totalDuration += (MediaUtils.getVideoDuration(item))
-                            mVideoSlideDataList.add(VideoInSlideData(item, View.generateViewId(), videoEffectHashMap[item] ?: GSEffectUtils.EffectType.NONE))
+                            mVideoSlideDataList.add(
+                                VideoInSlideData(
+                                    item,
+                                    View.generateViewId(),
+                                    videoEffectHashMap[item] ?: GSEffectUtils.EffectType.NONE
+                                )
+                            )
                         }
                         videoControllerView.setMaxDuration(totalDuration)
 
                     }
                 }
                 showProgressDialog()
-                object :CountDownTimer(1000, 1000) {
+                object : CountDownTimer(1000, 1000) {
                     override fun onFinish() {
                         doSeekTo(0)
                         runOnUiThread {

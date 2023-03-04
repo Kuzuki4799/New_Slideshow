@@ -5,22 +5,20 @@ import android.content.Intent
 import android.net.Uri
 import android.os.CountDownTimer
 import android.view.View
+import android.view.ViewTreeObserver
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.gms.ads.formats.UnifiedNativeAdView
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseActivity
 import com.acatapps.videomaker.custom_view.VideoControllerView
-import com.acatapps.videomaker.modules.rate.RatingManager
 import com.acatapps.videomaker.modules.share.Share
 import com.acatapps.videomaker.ui.HomeActivity
-import com.acatapps.videomaker.utils.Logger
 import com.acatapps.videomaker.utils.MediaUtils
-import com.acatapps.videomaker.utils.Utils
+import com.hope_studio.base_ads.ads.BaseAds
 import kotlinx.android.synthetic.main.activity_share_video.*
 import java.io.File
 
@@ -30,34 +28,41 @@ class ShareVideoActivity : BaseActivity() {
     var mTotalDuration = 0
 
     companion object {
-        fun gotoActivity(activity: Activity, videoPath: String, showRating:Boolean=false, fromProcess:Boolean = false) {
+        fun gotoActivity(
+            activity: Activity,
+            videoPath: String,
+            showRating: Boolean = false,
+            fromProcess: Boolean = false
+        ) {
             val intent = Intent(activity, ShareVideoActivity::class.java)
             intent.putExtra("VideoPath", videoPath)
             intent.putExtra("ShowRating", showRating)
             intent.putExtra("fromProcess", fromProcess)
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
     }
 
-    override fun getContentResId(): Int = R.layout.activity_share_video
+    override fun getLayoutId(): Int = R.layout.activity_share_video
 
 
     private fun showNativeAds() {
-        val ad = VideoMakerApplication.instance.getNativeAds()
-        if(ad != null) {
-            Utils.bindBigNativeAds(ad, (nativeAdViewInShare as UnifiedNativeAdView))
-        } else {
-            nativeAdViewInShare.visibility = View.GONE
-        }
+        llNative.viewTreeObserver.addOnGlobalLayoutListener(object :
+            ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                llNative.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                BaseAds.loadBaseNativeAd(
+                    this@ShareVideoActivity,
+                    0, nativeAdViewInProcess, llNative.width
+                )
+            }
+        })
     }
 
     override fun initViews() {
         showNativeAds()
 
-        val fromProcess = intent.getBooleanExtra("fromProcess", false)
-        if(fromProcess) {
-            VideoMakerApplication.instance.showAdsFull()
-        }
         val videoPath = intent.getStringExtra("VideoPath")
         setScreenTitle(getString(R.string.share))
 
@@ -68,7 +73,7 @@ class ShareVideoActivity : BaseActivity() {
                 mTotalDuration = MediaUtils.getVideoDuration(mVideoPath)
                 videoControllerView.setMaxDuration(mTotalDuration)
                 initVideoPlayer(mVideoPath)
-            } catch (e:Exception) {
+            } catch (e: Exception) {
                 mTotalDuration = 1
 
             }
@@ -104,6 +109,7 @@ class ShareVideoActivity : BaseActivity() {
             }
         }
     }
+
     val mShare = Share()
     override fun initActions() {
         setRightButton(R.drawable.ic_home_white) {
@@ -111,29 +117,27 @@ class ShareVideoActivity : BaseActivity() {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 putExtra("play-splash", false)
             }
-            startActivity(intent)
+            openNewActivity(intent, isShowAds = true, isFinish = false)
         }
         bgViewInShare.setOnClickListener {
             mPlayer?.playWhenReady = !(mPlayer?.playWhenReady ?: false)
         }
 
         logoYouTube.setOnClickListener {
-            mShare.shareTo(this, mVideoPath,Share.YOUTUBE_PACKAGE)
+            mShare.shareTo(this, mVideoPath, Share.YOUTUBE_PACKAGE)
         }
 
         logoInstagram.setOnClickListener {
-            mShare.shareTo(this, mVideoPath,Share.INSTAGRAM_PACKAGE)
+            mShare.shareTo(this, mVideoPath, Share.INSTAGRAM_PACKAGE)
         }
         logoFacebook.setOnClickListener {
-            mShare.shareTo(this, mVideoPath,Share.FACEBOOK_PACKAGE)
+            mShare.shareTo(this, mVideoPath, Share.FACEBOOK_PACKAGE)
         }
 
         logoMore.setOnClickListener {
             shareVideoFile(mVideoPath)
         }
-
     }
-
 
 
     override fun onDestroy() {
@@ -170,23 +174,25 @@ class ShareVideoActivity : BaseActivity() {
     }
 
     private var mPlayer: SimpleExoPlayer? = null
-    private fun initVideoPlayer(path:String) {
+    private fun initVideoPlayer(path: String) {
         mPlayer = SimpleExoPlayer.Builder(VideoMakerApplication.getContext()).build()
         exoPlayerView.player = mPlayer
-        val bandwidthMeter = DefaultBandwidthMeter.Builder(VideoMakerApplication.getContext()).build()
+        val bandwidthMeter =
+            DefaultBandwidthMeter.Builder(VideoMakerApplication.getContext()).build()
         val dataSourceFactory = DefaultDataSourceFactory(this, "videomaker-2", bandwidthMeter)
         val mediaSource = ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(
             Uri.fromFile(
                 File(path)
-            ))
+            )
+        )
         mPlayer?.playWhenReady = false
         exoPlayerView.useController = false
         mPlayer?.repeatMode = Player.REPEAT_MODE_OFF
-        mPlayer?.addListener(object : Player.EventListener{
+        mPlayer?.addListener(object : Player.EventListener {
 
             override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
                 onStateChange.invoke(playWhenReady)
-                if(playbackState == Player.STATE_ENDED) {
+                if (playbackState == Player.STATE_ENDED) {
                     onEnd.invoke()
                 }
 
@@ -195,7 +201,7 @@ class ShareVideoActivity : BaseActivity() {
 
         mPlayer?.prepare(mediaSource, true, true)
         listenVideoPosition()
-        Thread{
+        Thread {
             Thread.sleep(500)
             runOnUiThread {
                 mPlayer?.playWhenReady = true
@@ -209,8 +215,8 @@ class ShareVideoActivity : BaseActivity() {
         mPlayer?.playWhenReady = false
     }
 
-    private val onStateChange = { isPlay:Boolean ->
-        if(isPlay) {
+    private val onStateChange = { isPlay: Boolean ->
+        if (isPlay) {
             onPlayVideo()
         } else {
             onPauseVideo()
@@ -218,7 +224,6 @@ class ShareVideoActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        finish()
+        finishAds()
     }
-
 }

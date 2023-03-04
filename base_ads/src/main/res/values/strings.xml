@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name" translatable="false">Base Ads</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="ad" translatable="false">Ad</string>
+    <string name="app_ratting" translatable="false">App %s Rating...!</string>
+    <string name="install" translatable="false">Install</string>
+    <string name="content_feedback" translatable="false">From Device: %s \n\n App Name: %s \n\n Link Store: %s \n\n Stars: %d \n\n Feedback: %s</string>
+    <string name="content_feedback_2" translatable="false">From Device: %s \n\n App Name: %s \n\n Link Store: %s \n\n Feedback: </string>
+
+    <string name="watching_ads">Watch Video Ads</string>
+    <string name="update_version">Update New Version</string>
+    <string name="update_version_content">%s has new version. Please Update Now</string>
+    <string name="watching_video">Would you like to watch ads to continue experiencing this features?</string>
+
+    <string name="update">Update</string>
+    <string name="rate_app">Rate App</string>
+    <string name="write_your_feedback_here">Write your feedback here…</string>
+    <string name="feedback_app">Write your feedback about this app</string>
+    <string name="rate_app_dis">Support us by give 5 star and write your review</string>
+    <string name="pls_rate">Please Support us by give 5 star</string>
+    <string name="rate_now">Rate now</string>
+    <string name="maybe_latter">Maybe later</string>
+    <string name="exit_app">Are you sure want to exit app?</string>
+
+
+    <string name="send_mail">Send email</string>
+    <string name="enter_your_feedback">Please enter your feedback!</string>
+    <string name="close">Close</string>
+    <string name="accept">Accept</string>
+    <string name="not_have_permission">You don\'t have permission, give the application permissions so you can experience the application</string>
+
+    <string name="watching_video_">Would you like to watch ads to continue to download this song?</string>
+    <string name="feedback">Feedback</string>
+    <string name="warning">Warning</string>
+    <string name="strYes">Yes</string>
+    <string name="strNo">No</string>
+    <string name="strThanks">Thank you</string>
+    <string name="see_you_again">See you, again</string>
+</resources>

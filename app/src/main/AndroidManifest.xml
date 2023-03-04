@@ -15,26 +15,25 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"
-        />
+<!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />-->
 
     <application
         android:name=".application.VideoMakerApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="false"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning,LockedOrientationActivity">
+        tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity"
+        tools:replace="android:allowBackup">
 
         <activity
-
             android:name=".ui.splash.SplashActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,23 +43,23 @@
         </activity>
         <activity
             android:name=".ui.my_studio.MyStudioActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.edit_video.VideoSlideActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".ui.edit_video.VideoSlideActivity2"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".ui.slide_show_v2.ImageSlideShowActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".ui.join_video.JoinVideoActivity"
             android:exported="false"
@@ -79,8 +78,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.pick_media.PickMediaActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/PickPhotoScreenTheme" />
         <activity
             android:name=".ui.process_video.ProcessVideoActivity"
@@ -93,42 +92,23 @@
         <activity
             android:name=".ui.HomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".MainActivity" android:exported="false"/>
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.acatapps.videomaker.fileprovider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/provider_paths" />
         </provider>
-
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/application_id" />
 
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
-            android:exported="false"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-
-        <receiver
-            android:name=".broadcast.InternetStateChange"
             android:exported="false"
-            android:enabled="true">
-            <intent-filter>
-
-                <!-- Intent filters for broadcast receiver -->
-
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-                <action android:name="android.net.wifi.STATE_CHANGE" />
-            </intent-filter>
-        </receiver>
+            android:theme="@android:style/Theme.Translucent" />
     </application>
 
 </manifest>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_border"
+    android:padding="@dimen/_1sdp">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_border"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="@dimen/_116sdp"
+            android:layout_height="@dimen/_116sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/gif" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            style="@style/textNormalBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@string/watching_ads"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_14sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/message"
+            style="@style/textNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_11sdp"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@string/watching_video"
+            android:textColor="@color/color_sub"
+            android:textSize="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNo"
+                style="@style/BtnTransparent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:text="@string/strNo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtYes"
+                style="@style/BtnPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/strYes"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

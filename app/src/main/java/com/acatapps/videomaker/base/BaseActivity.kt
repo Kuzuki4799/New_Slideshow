@@ -11,13 +11,9 @@ import android.os.CountDownTimer
 import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
@@ -26,31 +22,25 @@ import com.bumptech.glide.Glide
 import com.downloader.Error
 import com.downloader.OnDownloadListener
 import com.downloader.PRDownloader
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.formats.UnifiedNativeAdView
 import com.acatapps.videomaker.BuildConfig
 import com.acatapps.videomaker.R
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.data.ThemeLinkData
-import com.acatapps.videomaker.extentions.fadeInAnimation
-import com.acatapps.videomaker.extentions.openAppInStore
-import com.acatapps.videomaker.extentions.scaleAnimation
 import com.acatapps.videomaker.modules.rate.RatingManager
 import com.acatapps.videomaker.utils.FileUtils
 import com.acatapps.videomaker.utils.Logger
 import com.acatapps.videomaker.utils.Utils
+import com.hope_studio.base_ads.ads.BaseAds
+import com.hope_studio.base_ads.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_base_layout.*
 import kotlinx.android.synthetic.main.base_header_view.*
 import kotlinx.android.synthetic.main.base_header_view.view.*
 import kotlinx.android.synthetic.main.layout_download_theme_dialog.view.*
 import kotlinx.android.synthetic.main.layout_export_video_dialog.view.*
-import kotlinx.android.synthetic.main.layout_rate_dialog.view.*
 import kotlinx.android.synthetic.main.layout_yes_no_dialog.view.*
 import java.io.File
 import kotlin.math.roundToInt
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : BaseActivity() {
 
     private var mProgressIsShowing = false
     protected var mExportDialogShowing = false
@@ -72,7 +62,7 @@ abstract class BaseActivity : AppCompatActivity() {
         comebackStatus = getString(R.string.do_you_want_to_come_back)
         mainContentLayout.apply {
             removeAllViews()
-            addView(View.inflate(context, getContentResId(), null))
+            addView(View.inflate(context, getLayoutId(), null))
         }
         showHeader()
 
@@ -100,8 +90,7 @@ abstract class BaseActivity : AppCompatActivity() {
             shareIntent.putExtra(
                 Intent.EXTRA_STREAM,
                 FileProvider.getUriForFile(
-                    this,
-                    BuildConfig.APPLICATION_ID + ".fileprovider",
+                    this, BuildConfig.APPLICATION_ID + ".provider",
                     File(filePath)
                 )
             )
@@ -119,26 +108,29 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun showAds() {
-
-
-        bannerAdsView.loadAd(AdRequest.Builder().build())
-        bannerAdsView.adListener = object : AdListener() {
-
-            override fun onAdLoaded() {
-                super.onAdLoaded()
-                if (isShowAds()) {
-                    visibilityAds()
+        if (isShowAds()) {
+            visibilityAds()
+            adView.viewTreeObserver.addOnGlobalLayoutListener(object :
+                ViewTreeObserver.OnGlobalLayoutListener {
+                override fun onGlobalLayout() {
+                    adView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    BaseAds.loadBaseNativeOrBanner(
+                        this@BaseActivity, 0, adView,
+                        frame_native_banner, adView.width
+                    )
                 }
-            }
+            })
+        }else{
+            hideAds()
         }
     }
 
-    fun visibilityAds() {
-        bannerAdsView.visibility = View.VISIBLE
+    private fun visibilityAds() {
+        adView.visibility = View.VISIBLE
     }
 
-    fun hideAds() {
-        bannerAdsView.visibility = View.GONE
+    private fun hideAds() {
+        adView.visibility = View.GONE
     }
 
     open fun isShowAds() = false
@@ -333,26 +325,13 @@ abstract class BaseActivity : AppCompatActivity() {
             dismissYesNoDialog()
         }
 
-        val ad = VideoMakerApplication.instance.getNativeAds()
-        Logger.e("native ad in yes no dialog = ${ad}")
-        if (ad != null) {
-            Utils.bindBigNativeAds(ad, (view.nativeAdViewInYesNoDialog as UnifiedNativeAdView))
-            view.nativeAdViewInYesNoDialog.visibility = View.VISIBLE
-
-        } else {
-            view.nativeAdViewInYesNoDialog.visibility = View.GONE
-            VideoMakerApplication.instance.loadAd()
-        }
-
         scaleAnimation(view.dialogContentOnYesNo)
         alphaInAnimation(view.bgBlackOnYesNo)
         mYesNoDialogShowing = true
     }
 
     protected fun showYesNoDialog(
-        title: String,
-        onClickYes: () -> Unit,
-        onClickNo: (() -> Unit)? = null
+        title: String, onClickYes: () -> Unit, onClickNo: (() -> Unit)? = null
     ): View? {
         if (mYesNoDialogShowing) return null
 
@@ -371,16 +350,6 @@ abstract class BaseActivity : AppCompatActivity() {
             dismissYesNoDialog()
         }
 
-        val ad = VideoMakerApplication.instance.getNativeAds()
-        if (ad != null) {
-            Utils.bindBigNativeAds(ad, (view.nativeAdViewInYesNoDialog as UnifiedNativeAdView))
-            view.nativeAdViewInYesNoDialog.visibility = View.VISIBLE
-
-        } else {
-            view.nativeAdViewInYesNoDialog.visibility = View.GONE
-
-        }
-
         scaleAnimation(view.dialogContentOnYesNo)
         alphaInAnimation(view.bgBlackOnYesNo)
         mYesNoDialogShowing = true
@@ -389,9 +358,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun showYesNoDialog(
         title: String,
-        onClickYes: () -> Unit,
-        onClickNo: (() -> Unit)? = null,
-        onClickBg: (() -> Unit)? = null
+        onClickYes: () -> Unit, onClickNo: (() -> Unit)? = null, onClickBg: (() -> Unit)? = null
     ): View? {
         if (mYesNoDialogShowing) return null
 
@@ -411,15 +378,6 @@ abstract class BaseActivity : AppCompatActivity() {
             onClickBg?.invoke()
         }
 
-        val ad = VideoMakerApplication.instance.getNativeAds()
-        if (ad != null) {
-            Utils.bindBigNativeAds(ad, (view.nativeAdViewInYesNoDialog as UnifiedNativeAdView))
-            view.nativeAdViewInYesNoDialog.visibility = View.VISIBLE
-        } else {
-            view.nativeAdViewInYesNoDialog.visibility = View.GONE
-
-        }
-
         scaleAnimation(view.dialogContentOnYesNo)
         alphaInAnimation(view.bgBlackOnYesNo)
         mYesNoDialogShowing = true
@@ -428,9 +386,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun showYesNoDialogForOpenSetting(
         title: String,
-        onClickYes: () -> Unit,
-        onClickNo: (() -> Unit)? = null,
-        onClickBg: (() -> Unit)? = null
+        onClickYes: () -> Unit, onClickNo: (() -> Unit)? = null, onClickBg: (() -> Unit)? = null
     ) {
         if (mYesNoDialogShowing) return
 
@@ -450,14 +406,6 @@ abstract class BaseActivity : AppCompatActivity() {
         view.bgBlackOnYesNo.setOnClickListener {
         }
 
-        val ad = VideoMakerApplication.instance.getNativeAds()
-        if (ad != null) {
-            Utils.bindBigNativeAds(ad, (view.nativeAdViewInYesNoDialog as UnifiedNativeAdView))
-            view.nativeAdViewInYesNoDialog.visibility = View.VISIBLE
-        } else {
-            view.nativeAdViewInYesNoDialog.visibility = View.GONE
-        }
-
         scaleAnimation(view.dialogContentOnYesNo)
         alphaInAnimation(view.bgBlackOnYesNo)
         mYesNoDialogShowing = true
@@ -465,13 +413,10 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     protected fun dismissYesNoDialog() {
-
         if (mYesNoDialogShowing) {
             baseRootView.removeViewAt(baseRootView.childCount - 1)
             mYesNoDialogShowing = false
         }
-
-
     }
 
     protected fun dismissExportDialog() {
@@ -479,53 +424,9 @@ abstract class BaseActivity : AppCompatActivity() {
             baseRootView.removeViewAt(baseRootView.childCount - 1)
             mExportDialogShowing = false
         }
-
-
     }
-
 
     private var mAutoShowRating = false
-    protected fun showRatingDialog(autoShow:Boolean=true) {
-        if (mRateDialogShowing) return
-        mRateDialogShowing = true
-        val view = LayoutInflater.from(this).inflate(R.layout.layout_rate_dialog, baseRootView, true)
-        view.bgBlackViewInRate.setOnClickListener {
-        }
-
-        view.mainRatingContentLayout.setOnClickListener {
-
-        }
-
-        view.bgBlackViewInRate.fadeInAnimation()
-        view.layoutRateDialogMainContentGroup.scaleAnimation()
-
-        view.layoutRateDialogRateUsButton.setOnClickListener {
-            openAppInStore()
-            RatingManager.getInstance().setRated()
-            dismissRatingDialog()
-            if(autoShow)
-            finishAfterTransition()
-
-        }
-
-        view.layoutRateDialogNoThankButton.setOnClickListener {
-            RatingManager.getInstance().setRated()
-            dismissRatingDialog()
-            if(autoShow)
-                finishAfterTransition()
-
-        }
-
-        view.layoutRateDialogLaterButton.setOnClickListener {
-            RatingManager.getInstance().setTimeShowRating(30*60*1000)
-            dismissRatingDialog()
-            if(autoShow)
-            finishAfterTransition()
-        }
-
-    }
-
-
 
     private fun highlightStar(targetIndex: Int, groupStar: ArrayList<LottieAnimationView>) {
         for (index in 0..targetIndex) {
@@ -590,12 +491,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     }
 
-    abstract fun getContentResId(): Int
     abstract fun initViews()
     abstract fun initActions()
     override fun onBackPressed() {
         hideKeyboard()
-        if(mRateDialogShowing) return
+        if (mRateDialogShowing) return
         if (mDownloadDialogIsShow) {
             return
         }
@@ -620,12 +520,9 @@ abstract class BaseActivity : AppCompatActivity() {
             showYesNoDialog(comebackStatus) {
                 super.onBackPressed()
             }
-
-
         } else {
             super.onBackPressed()
         }
-
     }
 
     private fun checkRate(): Boolean {
@@ -709,13 +606,8 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun hideKeyboard() {
-
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm!!.hideSoftInputFromWindow(baseRootView.applicationWindowToken, 0)
-    }
-
-    fun showFullAds() {
-
     }
 
     private val downloadViewHashMap = HashMap<String, View?>()
@@ -751,18 +643,6 @@ abstract class BaseActivity : AppCompatActivity() {
             view.doneButton.setOnClickListener {
                 dismissDownloadDialog()
                 onClickDone.invoke()
-
-            }
-
-            val ad = VideoMakerApplication.instance.getNativeAds()
-            if (ad != null) {
-                Utils.bindBigNativeAds(
-                    ad,
-                    (view.nativeAdViewInDownloadDialog as UnifiedNativeAdView)
-                )
-                view.nativeAdViewInDownloadDialog.visibility = View.VISIBLE
-            } else {
-                view.nativeAdViewInDownloadDialog.visibility = View.GONE
             }
 
             view.tryAgainButton.setOnClickListener {
@@ -773,33 +653,26 @@ abstract class BaseActivity : AppCompatActivity() {
 
             view.watchVideoButton.setOnClickListener {
 
-                Logger.e("load ad")
-                showProgressDialog()
-                VideoMakerApplication.instance.loadAdFullForTheme {
-                    runOnUiThread {
-                        view.watchVideoButton.visibility = View.GONE
-                        view.downloadingViewContainer.visibility = View.VISIBLE
-                        dismissProgressDialog()
-                    }
-                    onDownloadTheme(linkData.link, linkData.fileName, onDownloadComplete, view)
-                }
-
-
+//                Logger.e("load ad")
+//                showProgressDialog()
+//                VideoMakerApplication.instance.loadAdFullForTheme {
+//                    runOnUiThread {
+//                        view.watchVideoButton.visibility = View.GONE
+//                        view.downloadingViewContainer.visibility = View.VISIBLE
+//                        dismissProgressDialog()
+//                    }
+//                    onDownloadTheme(linkData.link, linkData.fileName, onDownloadComplete, view)
+//                }
             }
         }
 
         scaleAnimation(view.downloadThemeDialogContent)
         alphaInAnimation(view.blackViewInDownloadThemeDialog)
-
     }
 
     private fun onDownloadTheme(
-        link: String,
-        fileName: String,
-        onComplete: () -> Unit,
-        view: View
+        link: String, fileName: String, onComplete: () -> Unit, view: View
     ) {
-
         PRDownloader.download(link, FileUtils.themeFolderPath, "${fileName}.mp4")
             .build()
             .setOnProgressListener {
@@ -847,6 +720,4 @@ abstract class BaseActivity : AppCompatActivity() {
             mDownloadDialogIsShow = false
         }
     }
-
-
 }

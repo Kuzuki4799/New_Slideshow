@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exit_app">¿Seguro que quieres salir de la aplicación?</string>
+
+    <string name="watching_ads">Ver anuncios de video</string>
+    <string name="update_version">Actualizar nueva versión</string>
+    <string name="update_version_content">%s tiene una nueva versión. Actualice ahora</string>
+    <string name="watching_video">¿Le gustaría ver anuncios para continuar experimentando estas características?</string>
+
+    <string name="update">Actualizar</string>
+    <string name="rate_app">Calificar aplicacion</string>
+    <string name="write_your_feedback_here">Escribe tus comentarios aquí...</string>
+    <string name="rate_app_dis">Apóyanos dando 5 estrellas y escribe tu reseña</string>
+    <string name="pls_rate">Por favor apóyenos dando 5 estrellas</string>
+    <string name="rate_now">Califica ahora</string>
+    <string name="maybe_latter">Maybe later</string>
+
+    <string name="send_mail">Quizas mas tarde</string>
+    <string name="enter_your_feedback">¡Por favor ingrese sus comentarios!</string>
+    <string name="close">Cerca</string>
+    <string name="accept">Aceptar</string>
+    <string name="not_have_permission">No tiene permiso, otorgue permisos a la aplicación para que pueda experimentar la aplicación.</string>
+
+    <string name="watching_video_">¿Te gustaría ver anuncios para continuar descargando esta canción?</string>
+    <string name="feedback">Feedback</string>
+    <string name="warning">Advertencia</string>
+    <string name="strYes">Sí</string>
+    <string name="strNo">No</string>
+    <string name="strThanks">Gracias</string>
+    <string name="see_you_again">Hasta luego</string>
+    <string name="feedback_app">Escribe tus comentarios sobre esta aplicación</string>
+</resources>

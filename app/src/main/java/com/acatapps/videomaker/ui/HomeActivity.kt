@@ -7,36 +7,33 @@ import android.net.Uri
 import android.os.CountDownTimer
 import android.provider.Settings
 import android.view.View
-import android.widget.VideoView
+import android.view.ViewTreeObserver
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.acatapps.videomaker.BaseMActivity
 import com.acatapps.videomaker.BuildConfig
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.MyStudioInHomeAdapter
 import com.acatapps.videomaker.adapter.ThemeInHomeAdapter
-import com.acatapps.videomaker.application.VideoMakerApplication
-import com.acatapps.videomaker.base.BaseActivity
 import com.acatapps.videomaker.enum_.MediaKind
 import com.acatapps.videomaker.enum_.VideoActionKind
 import com.acatapps.videomaker.models.MyStudioDataModel
-import com.acatapps.videomaker.modules.rate.RatingManager
 import com.acatapps.videomaker.modules.share.Share
 import com.acatapps.videomaker.ui.my_studio.MyStudioActivity
 import com.acatapps.videomaker.ui.pick_media.PickMediaActivity
 import com.acatapps.videomaker.ui.share_video.ShareVideoActivity
 import com.acatapps.videomaker.utils.*
-import kotlinx.android.synthetic.main.activity_base_layout.*
+import com.hope_studio.base_ads.ads.BaseAds
+import com.hope_studio.base_ads.dialog.DialogRating
 import kotlinx.android.synthetic.main.activity_home.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 
-class HomeActivity : BaseActivity() {
+open class HomeActivity : BaseMActivity() {
 
     companion object {
-        const val TAKE_PICTURE = 1001
-        const val RECORD_CAMERA = 1991
         const val CAMERA_PERMISSION_REQUEST = 1002
         const val STORAGE_PERMISSION_REQUEST = 1003
     }
@@ -45,28 +42,34 @@ class HomeActivity : BaseActivity() {
 
     private val mMyStudioAdapter = MyStudioInHomeAdapter()
 
-    override fun getContentResId(): Int = R.layout.activity_home
-    var mVideoView:VideoView?=null
-
     private var onSplashComplete = false
-    override fun initViews() {
 
+    override fun getLayoutId(): Int {
+        return R.layout.activity_home
+    }
+
+    override fun versionName(): String {
+        return BuildConfig.VERSION_NAME
+    }
+
+    override fun emailStr(): String {
+        return BuildConfig.EMAIL
+    }
+
+    override fun initViews() {
         comebackStatus = getString(R.string.do_you_want_to_leave)
         hideHeader()
 
-
-
-
-
-
         myStudioListView.apply {
             adapter = mMyStudioAdapter
-            layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
         }
 
         newThemeListView.apply {
             adapter = mThemeInHomeAdapter
-            layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL,false)
+            layoutManager =
+                LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
         }
 
         ThemeLinkUtils.linkThemeList.forEach {
@@ -75,20 +78,20 @@ class HomeActivity : BaseActivity() {
 
         mThemeInHomeAdapter.onItemClick = { linkData ->
 
-            val themFilePath = FileUtils.themeFolderPath+"/${linkData.fileName}.mp4"
+            val themFilePath = FileUtils.themeFolderPath + "/${linkData.fileName}.mp4"
 
-            if(linkData.link == "none" ) {
+            if (linkData.link == "none") {
 
             } else {
-                if(File(themFilePath).exists()) {
+                if (File(themFilePath).exists()) {
                     gotoPickMedia(MediaKind.PHOTO, linkData.fileName)
                 } else {
 
-                    if(checkSettingAutoUpdateTime() == false) {
+                    if (!checkSettingAutoUpdateTime()) {
                         showToast(getString(R.string.please_set_auto_update_time))
                     } else {
-                        if(Utils.isInternetAvailable()) {
-                            showDownloadThemeDialog(linkData,{
+                        if (Utils.isInternetAvailable()) {
+                            showDownloadThemeDialog(linkData, {
                                 mThemeInHomeAdapter.notifyDataSetChanged()
                             }, {
                                 mThemeInHomeAdapter.notifyDataSetChanged()
@@ -105,46 +108,30 @@ class HomeActivity : BaseActivity() {
 
 
         Logger.e("check storage permission in on create = ${checkStoragePermission()}")
-        if(!checkStoragePermission()) {
+        if (!checkStoragePermission()) {
             requestStoragePermission()
         }
 
-    }
-
-
-    fun showAdsAndRemoveVideoView() {
-        if(VideoMakerApplication.instance.showInterHome(){
-                baseRootView.removeView(mVideoView)
-                onInit()
-
-            }) else {
-            baseRootView.removeView(mVideoView)
-            onInit()
-        }
     }
 
     private fun onInit() {
         onSplashComplete = true
         needShowDialog = true
 
-        if(checkStoragePermission()) {
-
-            Thread{
+        if (checkStoragePermission()) {
+            Thread {
                 try {
                     initThemeData()
                     initDefaultAudio()
                     getAllMyStudioItem()
                     FileUtils.clearTemp()
-                }catch (e:Exception) {
-
+                } catch (e: Exception) {
+                    e.printStackTrace()
                 }
-
             }.start()
-
-        } else {
-
         }
     }
+
     private fun requestStoragePermission() {
         Logger.e("request permission ")
         ActivityCompat.requestPermissions(
@@ -153,46 +140,29 @@ class HomeActivity : BaseActivity() {
             STORAGE_PERMISSION_REQUEST
         )
     }
-    val mShare = Share()
+
+    private val mShare = Share()
 
     override fun initActions() {
         bgButtonSlideShow.setOnClickListener {
-            VideoMakerApplication.instance.releaseRewardAd()
             gotoPickMedia(MediaKind.PHOTO)
         }
         bgButtonEditVideo.setOnClickListener {
-            VideoMakerApplication.instance.releaseRewardAd()
             gotoPickMedia(MediaKind.VIDEO)
         }
         bgTrimVideo.setClick {
-            VideoMakerApplication.instance.releaseRewardAd()
             gotoPickMedia(VideoActionKind.TRIM)
         }
         bgJoinVideo.setClick {
-            VideoMakerApplication.instance.releaseRewardAd()
             gotoPickMedia(VideoActionKind.JOIN)
         }
 
         bgRating.setClick {
-            if(mRateAvailable) {
-                mRateAvailable = false
-                showRatingDialog(false)
-                object :CountDownTimer(2000,2000) {
-                    override fun onFinish() {
-                        mRateAvailable = true
-                    }
-
-                    override fun onTick(millisUntilFinished: Long) {
-
-                    }
-
-                }.start()
-            }
-
+            DialogRating(this, BuildConfig.EMAIL).show()
         }
 
         bgShare.setClick {
-            if(pickMediaAvailable) {
+            if (pickMediaAvailable) {
                 pickMediaAvailable = false
                 mShare.shareApp(this, BuildConfig.APPLICATION_ID)
                 countDownAvailable()
@@ -201,9 +171,9 @@ class HomeActivity : BaseActivity() {
         }
 
         buttonMore.setClick {
-            if(pickMediaAvailable) {
+            if (pickMediaAvailable) {
                 pickMediaAvailable = false
-                startActivity(Intent(this, MyStudioActivity::class.java))
+                openNewActivity(MyStudioActivity::class.java, isShowAds = true, isFinish = false)
                 countDownAvailable()
             }
 
@@ -217,7 +187,7 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun countDownAvailable() {
-        object :CountDownTimer(1000,1000) {
+        object : CountDownTimer(1000, 1000) {
             override fun onFinish() {
                 pickMediaAvailable = true
             }
@@ -229,36 +199,37 @@ class HomeActivity : BaseActivity() {
         }.start()
     }
 
-    private fun gotoPickMedia(actionKind:VideoActionKind) {
-        if(!checkStoragePermission()) {
+    private fun gotoPickMedia(actionKind: VideoActionKind) {
+        if (!checkStoragePermission()) {
             requestStoragePermission()
             return
         }
 
-        if(Utils.getAvailableSpaceInMB() < 100) {
+        if (Utils.getAvailableSpaceInMB() < 100) {
             showToast(getString(R.string.free_space_too_low))
             return
         }
-        if(pickMediaAvailable) {
+        if (pickMediaAvailable) {
             pickMediaAvailable = false
             PickMediaActivity.gotoActivity(this, actionKind)
             countDownAvailable()
         }
 
     }
-    private var pickMediaAvailable = true
-    private fun gotoPickMedia(mediaKind:MediaKind) {
 
-        if(!checkStoragePermission()) {
+    private var pickMediaAvailable = true
+    private fun gotoPickMedia(mediaKind: MediaKind) {
+
+        if (!checkStoragePermission()) {
             requestStoragePermission()
             return
         }
 
-        if(Utils.getAvailableSpaceInMB() < 200) {
+        if (Utils.getAvailableSpaceInMB() < 200) {
             showToast(getString(R.string.free_space_too_low))
             return
         }
-        if(pickMediaAvailable) {
+        if (pickMediaAvailable) {
             pickMediaAvailable = false
             PickMediaActivity.gotoActivity(this, mediaKind)
             countDownAvailable()
@@ -267,30 +238,27 @@ class HomeActivity : BaseActivity() {
 
     }
 
-    private fun gotoPickMedia(mediaKind:MediaKind, themePath:String) {
+    private fun gotoPickMedia(mediaKind: MediaKind, themePath: String) {
 
-        if(!checkStoragePermission()) {
+        if (!checkStoragePermission()) {
             requestStoragePermission()
             return
         }
 
-        if(Utils.getAvailableSpaceInMB() < 200) {
+        if (Utils.getAvailableSpaceInMB() < 200) {
             showToast(getString(R.string.free_space_too_low))
             return
         }
-        if(pickMediaAvailable) {
+        if (pickMediaAvailable) {
             pickMediaAvailable = false
             PickMediaActivity.gotoActivity(this, mediaKind, themePath)
             countDownAvailable()
 
         }
-
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
+        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
     ) {
         if (requestCode == CAMERA_PERMISSION_REQUEST) {
             return
@@ -300,7 +268,11 @@ class HomeActivity : BaseActivity() {
 
                     onInit()
                 } else {
-                    if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            this,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        )
+                    ) {
                         requestStoragePermission()
                     } else {
                         openActSetting()
@@ -312,23 +284,29 @@ class HomeActivity : BaseActivity() {
             return
         }
     }
-    private var showSetting = false
-    protected fun openActSetting() {
 
-        val view = showYesNoDialogForOpenSetting(getString(R.string.anser_grant_permission)+"\n"+getString(R.string.goto_setting_and_grant_permission), {
-            Logger.e("click Yes")
-            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-            showToast(getString(R.string.please_grant_read_external_storage))
-            val uri = Uri.fromParts("package", packageName, null)
-            intent.data = uri
-            startActivity(intent)
-            showSetting = true
-        },{finishAfterTransition();},{finishAfterTransition();})
+    private var showSetting = false
+
+    private fun openActSetting() {
+        showYesNoDialogForOpenSetting(
+            getString(R.string.anser_grant_permission) + "\n" + getString(R.string.goto_setting_and_grant_permission),
+            {
+                Logger.e("click Yes")
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                showToast(getString(R.string.please_grant_read_external_storage))
+                val uri = Uri.fromParts("package", packageName, null)
+                intent.data = uri
+                startActivity(intent)
+                showSetting = true
+            },
+            { finishAfterTransition(); },
+            { finishAfterTransition(); })
 
     }
+
     private fun initThemeData() {
         val themeFolder = File(FileUtils.themeFolderPath)
-        if(!themeFolder.exists()) {
+        if (!themeFolder.exists()) {
             themeFolder.mkdirs()
         }
         copyDefaultTheme()
@@ -337,20 +315,20 @@ class HomeActivity : BaseActivity() {
     private fun copyDefaultTheme() {
         val fileInAsset = assets.list("theme-default")
         fileInAsset?.let {
-           for(fileName in fileInAsset) {
-               val fileOut = File("${FileUtils.themeFolderPath}/$fileName")
-               if(!fileOut.exists()) {
-                   val inputStream = assets.open("theme-default/$fileName")
-                   val outputStream = FileOutputStream(fileOut)
-                   copyFile(inputStream, outputStream)
-               }
-           }
+            for (fileName in fileInAsset) {
+                val fileOut = File("${FileUtils.themeFolderPath}/$fileName")
+                if (!fileOut.exists()) {
+                    val inputStream = assets.open("theme-default/$fileName")
+                    val outputStream = FileOutputStream(fileOut)
+                    copyFile(inputStream, outputStream)
+                }
+            }
         }
     }
 
-    fun initDefaultAudio() {
+    private fun initDefaultAudio() {
         val audioFolder = File(FileUtils.audioDefaultFolderPath)
-        if(!audioFolder.exists()) {
+        if (!audioFolder.exists()) {
             audioFolder.mkdirs()
         }
         copyDefaultAudio()
@@ -359,9 +337,9 @@ class HomeActivity : BaseActivity() {
     private fun copyDefaultAudio() {
         val fileInAsset = assets.list("audio")
         fileInAsset?.let {
-            for(fileName in fileInAsset) {
+            for (fileName in fileInAsset) {
                 val fileOut = File("${FileUtils.audioDefaultFolderPath}/$fileName")
-                if(!fileOut.exists()) {
+                if (!fileOut.exists()) {
                     val inputStream = assets.open("audio/$fileName")
                     val outputStream = FileOutputStream(fileOut)
                     copyFile(inputStream, outputStream)
@@ -372,7 +350,7 @@ class HomeActivity : BaseActivity() {
 
     private fun copyFile(inputStream: InputStream, outputStream: FileOutputStream) {
         val buffer = ByteArray(1024)
-        var read:Int
+        var read: Int
         while (inputStream.read(buffer).also { read = it } != -1) {
             outputStream.write(buffer, 0, read)
         }
@@ -381,21 +359,28 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun checkStoragePermission(): Boolean {
-        return ContextCompat.checkSelfPermission(this,
+        return ContextCompat.checkSelfPermission(
+            this,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
         ) == PackageManager.PERMISSION_GRANTED
     }
 
     private fun getAllMyStudioItem() {
-        Thread{
+        Thread {
             val folder = File(FileUtils.myStuioFolderPath)
             val myStudioDataList = ArrayList<MyStudioDataModel>()
-            if(folder.exists() && folder.isDirectory) {
-                for(item in folder.listFiles()) {
+            if (folder.exists() && folder.isDirectory) {
+                for (item in folder.listFiles()!!) {
                     try {
                         val duration = MediaUtils.getVideoDuration(item.absolutePath)
-                        myStudioDataList.add(MyStudioDataModel(item.absolutePath, item.lastModified(),duration))
-                    } catch (e:Exception) {
+                        myStudioDataList.add(
+                            MyStudioDataModel(
+                                item.absolutePath,
+                                item.lastModified(),
+                                duration
+                            )
+                        )
+                    } catch (e: Exception) {
                         item.delete()
                         doSendBroadcast(item.absolutePath)
                         continue
@@ -406,7 +391,7 @@ class HomeActivity : BaseActivity() {
 
             runOnUiThread {
                 mMyStudioAdapter.setItemList(myStudioDataList)
-                if(mMyStudioAdapter.itemCount < 1) {
+                if (mMyStudioAdapter.itemCount < 1) {
                     icNoProject.visibility = View.VISIBLE
                     buttonMore.visibility = View.GONE
                 } else {
@@ -424,60 +409,26 @@ class HomeActivity : BaseActivity() {
     override fun onPause() {
         super.onPause()
         mOnPause = true
-        VideoMakerApplication.instance.onRewardLoaded = {
-            VideoMakerApplication.instance.releaseRewardAd()
-        }
-
-    }
-
-    override fun onBackPressed() {
-
-        if(mRateDialogShowing) return
-
-        if(RatingManager.getInstance().canShowRate()) {
-            showRatingDialog ()
-            return
-        }
-
-        if(!checkStoragePermission()) {
-            return
-        }
-        isHome = true
-        super.onBackPressed()
     }
 
     override fun onResume() {
         super.onResume()
-
-        if(onSplashComplete == false && mOnPause) {
-        }
-
-        Logger.e("""shouldShowRequestPermissionRationale = ${ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)}""")
+        Logger.e(
+            """shouldShowRequestPermissionRationale = ${
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            }"""
+        )
         mThemeInHomeAdapter.notifyDataSetChanged()
-        if(checkStoragePermission()) {
+        if (checkStoragePermission()) {
             getAllMyStudioItem()
             onInit()
-        } else {
-
         }
-        if(mOnPause) {
-        }
-        if(showSetting && !checkStoragePermission()) {
+        if (showSetting && !checkStoragePermission()) {
             showSetting = false
             openActSetting()
         }
-
-        VideoMakerApplication.instance.onRewardLoaded = {
-            mThemeInHomeAdapter.rewardIsLoaded = true
-            mThemeInHomeAdapter.notifyDataSetChanged()
-        }
-
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        VideoMakerApplication.instance.releaseRewardAd()
-    }
-
-
 }

@@ -37,10 +37,10 @@ import java.io.File
 
 class ImageSlideShowActivity : BaseSlideShow() {
 
-    private lateinit var mImageGLView:ImageSlideGLView
+    private lateinit var mImageGLView: ImageSlideGLView
     private lateinit var mImageSlideRenderer: ImageSlideRenderer
 
-    companion object{
+    companion object {
         val imagePickedListKey = "Image picked list"
     }
 
@@ -48,7 +48,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     private lateinit var mImageSlideDataContainer: ImageSlideDataContainer
 
     private val mImageList = ArrayList<String>()
-    private var mTimer:CountDownTimer? = null
+    private var mTimer: CountDownTimer? = null
     private var mCurrentTimeMs = 0
     private var mIsPlaying = false
     private var mShouldReload = false
@@ -56,12 +56,11 @@ class ImageSlideShowActivity : BaseSlideShow() {
     private var mThemeData = ThemeData()
     private var mGsTransition = getRandomTransition()
 
-    private fun getRandomTransition():GSTransition {
+    private fun getRandomTransition(): GSTransition {
         val randomType = GSTransitionUtils.TransitionType.values().random()
         Logger.e("random type = $randomType")
         return GSTransitionUtils.getTransitionByType(randomType)
     }
-
 
 
     private val mNewThemeListAdapter = ThemeInHomeAdapter()
@@ -76,7 +75,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     }
 
 
-    private val mLookupListAdapter = LookupListAdapter{
+    private val mLookupListAdapter = LookupListAdapter {
         mImageWithLookupAdapter.changeLookupOfCurretItem(it)
         reloadInTime(mCurrentTimeMs)
     }
@@ -90,8 +89,12 @@ class ImageSlideShowActivity : BaseSlideShow() {
         changeTrimsTools.visibility = View.GONE
         needShowDialog = true
         val themeFileName = intent.getStringExtra("themeFileName") ?: ""
-        if(themeFileName.isNotEmpty()) {
-            mThemeData = ThemeData(FileUtils.themeFolderPath+"/${themeFileName}.mp4", ThemeData.ThemType.NOT_REPEAT, themeFileName)
+        if (themeFileName.isNotEmpty()) {
+            mThemeData = ThemeData(
+                FileUtils.themeFolderPath + "/${themeFileName}.mp4",
+                ThemeData.ThemType.NOT_REPEAT,
+                themeFileName
+            )
         }
 
         mImageGLView = ImageSlideGLView(this, null)
@@ -103,7 +106,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
 
 
 
-        if(imageList == null || imageList.size < 1) {
+        if (imageList == null || imageList.size < 1) {
             finishAfterTransition()
         } else {
             onInitSlide(imageList)
@@ -114,46 +117,46 @@ class ImageSlideShowActivity : BaseSlideShow() {
 
     }
 
-    private fun onInitSlide(pathList:ArrayList<String>) {
+    private fun onInitSlide(pathList: ArrayList<String>) {
         mImageList.clear()
         mCurrentTimeMs = 0
         mImageList.addAll(pathList)
         mSlideSourceAdapter.addImagePathList(mImageList)
-        Thread{
+        Thread {
             mImageSlideDataContainer = ImageSlideDataContainer(mImageList)
             runOnUiThread {
                 setMaxTime(mImageSlideDataContainer.getMaxDurationMs())
                 dismissProgressDialog()
                 doPlayVideo()
                 playVideo()
-                if(mThemeData.themeVideoFilePath != "none")
-                performChangeTheme(mThemeData)
+                if (mThemeData.themeVideoFilePath != "none")
+                    performChangeTheme(mThemeData)
             }
         }.start()
     }
 
     private var mCurrentFrameId = 0L
     private fun playVideo() {
-        mTimer = object :CountDownTimer(4000000, 40) {
+        mTimer = object : CountDownTimer(4000000, 40) {
             override fun onFinish() {
                 start()
             }
 
             override fun onTick(millisUntilFinished: Long) {
-                if(mIsPlaying) {
+                if (mIsPlaying) {
                     mCurrentTimeMs += 40
-                    if(mCurrentTimeMs >= mImageSlideDataContainer.getMaxDurationMs()) {
+                    if (mCurrentTimeMs >= mImageSlideDataContainer.getMaxDurationMs()) {
 
                         doRepeat()
                     } else {
                         updateTimeline()
                         val frameData = mImageSlideDataContainer.getFrameDataByTime(mCurrentTimeMs)
-                        if(frameData.slideId != mCurrentFrameId) {
+                        if (frameData.slideId != mCurrentFrameId) {
                             mImageSlideRenderer.resetData()
                             mCurrentFrameId = frameData.slideId
                         }
                         mImageSlideRenderer.changeFrameData(frameData)
-                       onStick()
+                        onStick()
 
                     }
 
@@ -164,7 +167,8 @@ class ImageSlideShowActivity : BaseSlideShow() {
 
     private var mCurrentLookupType = LookupUtils.LookupType.NONE
     private fun onStick() {
-        val position = mCurrentTimeMs/(mImageSlideDataContainer.transitionTimeMs+mImageSlideDataContainer.delayTimeMs)
+        val position =
+            mCurrentTimeMs / (mImageSlideDataContainer.transitionTimeMs + mImageSlideDataContainer.delayTimeMs)
         mSlideSourceAdapter.changeHighlightItem(position)
         mCurrentLookupType = mImageWithLookupAdapter.changeHighlightItem(position)
         mLookupListAdapter.highlightItem(mCurrentLookupType)
@@ -174,12 +178,11 @@ class ImageSlideShowActivity : BaseSlideShow() {
     override fun doInitActions() {
 
 
-
         setRightButton(R.drawable.ic_save_vector) {
             doExportVideo()
         }
 
-        videoControllerView.onChangeListener = object :VideoControllerView.OnChangeListener {
+        videoControllerView.onChangeListener = object : VideoControllerView.OnChangeListener {
             override fun onUp(timeMilSec: Int) {
                 doSeekTo(timeMilSec)
             }
@@ -191,12 +194,12 @@ class ImageSlideShowActivity : BaseSlideShow() {
         }
 
         mImageGLView.setOnClickListener {
-            if(onEditSticker) return@setOnClickListener
-            if(mShouldReload) {
+            if (onEditSticker) return@setOnClickListener
+            if (mShouldReload) {
                 mCurrentTimeMs = 0
                 mShouldReload = false
             }
-            if(mIsPlaying) {
+            if (mIsPlaying) {
                 doPauseVideo()
             } else {
                 doPlayVideo()
@@ -228,7 +231,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
         }
 
         mSlideSourceAdapter.onClickItem = {
-            doSeekTo(it*(mImageSlideDataContainer.delayTimeMs+mImageSlideDataContainer.transitionTimeMs))
+            doSeekTo(it * (mImageSlideDataContainer.delayTimeMs + mImageSlideDataContainer.transitionTimeMs))
         }
     }
 
@@ -241,11 +244,11 @@ class ImageSlideShowActivity : BaseSlideShow() {
         doPauseVideo()
     }
 
-    override fun getMaxDuration(): Int =mImageSlideDataContainer.getMaxDurationMs()
+    override fun getMaxDuration(): Int = mImageSlideDataContainer.getMaxDurationMs()
 
     override fun performSeekTo(timeMs: Int, showProgress: Boolean) {
         Logger.e("timeMs = $timeMs")
-        if(timeMs >= mImageSlideDataContainer.getMaxDurationMs()) {
+        if (timeMs >= mImageSlideDataContainer.getMaxDurationMs()) {
             doRepeat()
         } else {
             doSeekTo(timeMs)
@@ -254,7 +257,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     }
 
     override fun performSeekTo(timeMs: Int) {
-        if(timeMs >= mImageSlideDataContainer.getMaxDurationMs()) {
+        if (timeMs >= mImageSlideDataContainer.getMaxDurationMs()) {
             doRepeat()
             Logger.e("performSeekTo -> doRepeat()")
             return
@@ -284,7 +287,8 @@ class ImageSlideShowActivity : BaseSlideShow() {
         view.imageOfSlideShowListViewInChangeTheme.adapter = mSlideSourceAdapter
 
         view.themeListView.adapter = mNewThemeListAdapter
-        view.themeListView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.themeListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         mNewThemeListAdapter.itemList.clear()
         mNewThemeListAdapter.notifyDataSetChanged()
@@ -296,25 +300,33 @@ class ImageSlideShowActivity : BaseSlideShow() {
         mNewThemeListAdapter.notifyDataSetChanged()
         mNewThemeListAdapter.onItemClick = { linkData ->
             doPauseVideo()
-            val themFilePath = FileUtils.themeFolderPath+"/${linkData.fileName}.mp4"
+            val themFilePath = FileUtils.themeFolderPath + "/${linkData.fileName}.mp4"
 
-            if(linkData.link == "none") {
+            if (linkData.link == "none") {
                 val themeData = ThemeData()
                 mThemeData = themeData
                 performChangeTheme(themeData)
 
             } else {
-                if(File(themFilePath).exists()) {
-                    val themeData = ThemeData(FileUtils.themeFolderPath+"/${linkData.fileName}.mp4", ThemeData.ThemType.NOT_REPEAT, linkData.fileName)
+                if (File(themFilePath).exists()) {
+                    val themeData = ThemeData(
+                        FileUtils.themeFolderPath + "/${linkData.fileName}.mp4",
+                        ThemeData.ThemType.NOT_REPEAT,
+                        linkData.fileName
+                    )
                     mThemeData = themeData
                     performChangeTheme(themeData)
                 } else {
-                    if(checkSettingAutoUpdateTime() == false) {
+                    if (checkSettingAutoUpdateTime() == false) {
                         showToast(getString(R.string.please_set_auto_update_time))
                     } else {
-                        if(Utils.isInternetAvailable()) {
+                        if (Utils.isInternetAvailable()) {
                             showDownloadThemeDialog(linkData, {
-                                val themeData = ThemeData(FileUtils.themeFolderPath+"/${linkData.fileName}.mp4", ThemeData.ThemType.NOT_REPEAT, linkData.fileName)
+                                val themeData = ThemeData(
+                                    FileUtils.themeFolderPath + "/${linkData.fileName}.mp4",
+                                    ThemeData.ThemType.NOT_REPEAT,
+                                    linkData.fileName
+                                )
                                 mThemeData = themeData
                                 performChangeTheme(themeData)
                                 runOnUiThread {
@@ -332,14 +344,13 @@ class ImageSlideShowActivity : BaseSlideShow() {
                     }
 
 
-
                 }
             }
 
         }
 
         view.icAddPhotoInChangeTheme.setOnClickListener {
-           doAddMoreImage()
+            doAddMoreImage()
         }
 
     }
@@ -353,24 +364,29 @@ class ImageSlideShowActivity : BaseSlideShow() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         view.imageOfSlideShowListViewInChangeTransition.adapter = mSlideSourceAdapter
         view.gsTransitionListView.adapter = mGSTransitionListAdapter
-        view.gsTransitionListView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.gsTransitionListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         mGSTransitionListAdapter.highlightItem(mGsTransition)
 
         view.icAddPhotoInChangeTransition.setOnClickListener {
-           doAddMoreImage()
+            doAddMoreImage()
         }
     }
 
     private var addMoreAvailable = true
     private fun doAddMoreImage() {
-        if(addMoreAvailable) {
+        if (addMoreAvailable) {
             addMoreAvailable = false
             val intent = Intent(this, PickMediaActivity::class.java).apply {
                 putExtra("action", PickMediaActivity.ADD_MORE_PHOTO)
                 putStringArrayListExtra("list-photo", mImageList)
             }
-            startActivityForResult(intent, PickMediaActivity.ADD_MORE_PHOTO_REQUEST_CODE)
-            object :CountDownTimer(1000,1000) {
+            openNewActivityForResult(
+                intent, PickMediaActivity.ADD_MORE_PHOTO_REQUEST_CODE,
+                isShowAds = true,
+                isFinish = false
+            )
+            object : CountDownTimer(1000, 1000) {
                 override fun onFinish() {
                     addMoreAvailable = true
                 }
@@ -387,16 +403,19 @@ class ImageSlideShowActivity : BaseSlideShow() {
     private fun showLayoutChangeDuration() {
         val view = View.inflate(this, R.layout.layout_change_duration_tools, null)
         showToolsActionLayout(view)
-        val totalTimeMs = (mImageSlideDataContainer.getCurrentDelayTimeMs()+mImageSlideDataContainer.transitionTimeMs)
-        view.changeDurationSeekBar.setCurrentDuration(totalTimeMs/1000)
-        view.totalDurationLabel.text = Utils.convertSecToTimeString(mImageSlideDataContainer.getMaxDurationMs() / 1000)
+        val totalTimeMs =
+            (mImageSlideDataContainer.getCurrentDelayTimeMs() + mImageSlideDataContainer.transitionTimeMs)
+        view.changeDurationSeekBar.setCurrentDuration(totalTimeMs / 1000)
+        view.totalDurationLabel.text =
+            Utils.convertSecToTimeString(mImageSlideDataContainer.getMaxDurationMs() / 1000)
 
         view.changeDurationSeekBar.setDurationChangeListener({
             doPauseVideo()
             doChangeDelayTime(it)
             mShouldReload = true
             videoControllerView.setCurrentDuration(0)
-            view.totalDurationLabel.text = Utils.convertSecToTimeString(mImageSlideDataContainer.getMaxDurationMs()/ 1000)
+            view.totalDurationLabel.text =
+                Utils.convertSecToTimeString(mImageSlideDataContainer.getMaxDurationMs() / 1000)
             videoControllerView.setMaxDuration(mImageSlideDataContainer.getMaxDurationMs())
         }, {
             doRepeat()
@@ -411,18 +430,22 @@ class ImageSlideShowActivity : BaseSlideShow() {
         showToolsActionLayout(view)
 
         view.lookupListView.adapter = mLookupListAdapter
-        view.lookupListView.layoutManager =  LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.lookupListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         view.imageListView.adapter = mImageWithLookupAdapter.apply {
             setItemList(mImageSlideDataContainer.getSlideList())
         }
-        view.numberImageLabel.text = "${mImageWithLookupAdapter.itemCount} ${getString(R.string.photos)}"
-        view.imageListView.layoutManager =  LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.numberImageLabel.text =
+            "${mImageWithLookupAdapter.itemCount} ${getString(R.string.photos)}"
+        view.imageListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         onStick()
     }
 
-    private fun doChangeDelayTime(time:Int) {
-        mImageSlideDataContainer.delayTimeMs = time*1000-mImageSlideDataContainer.transitionTimeMs
+    private fun doChangeDelayTime(time: Int) {
+        mImageSlideDataContainer.delayTimeMs =
+            time * 1000 - mImageSlideDataContainer.transitionTimeMs
     }
 
     private fun performChangeTheme(themeData: ThemeData) {
@@ -431,7 +454,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
         mNewThemeListAdapter.changeCurrentThemeName(themeData.themeName)
         mImageGLView.changeTheme(themeData)
         doRepeat()
-        object :CountDownTimer(100,100) {
+        object : CountDownTimer(100, 100) {
             override fun onFinish() {
                 doPlayVideo()
             }
@@ -449,7 +472,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     }
 
     private fun doPauseVideo() {
-        if(mIsPlaying == false) return
+        if (mIsPlaying == false) return
         mIsPlaying = false
         mImageSlideRenderer.onPause()
         onPauseVideo()
@@ -461,16 +484,16 @@ class ImageSlideShowActivity : BaseSlideShow() {
         onPlayVideo()
     }
 
-    private fun doSeekTo(timeMs:Int, showProgress: Boolean=true) {
+    private fun doSeekTo(timeMs: Int, showProgress: Boolean = true) {
         val autoPlay = mIsPlaying
         doPauseVideo()
 
         mImageSlideRenderer.setUpdateTexture(true)
         mCurrentTimeMs = timeMs
         mImageSlideRenderer.seekTheme(mCurrentTimeMs)
-        if(showProgress)
-        showProgressDialog()
-        Thread{
+        if (showProgress)
+            showProgressDialog()
+        Thread {
             val frameData = mImageSlideDataContainer.seekTo(timeMs)
             mCurrentFrameId = 1L
             mImageSlideRenderer.resetData()
@@ -480,7 +503,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
                 mImageSlideRenderer.changeFrameData(frameData)
 
                 onSeekTo(timeMs)
-                if(autoPlay) doPlayVideo()
+                if (autoPlay) doPlayVideo()
                 else doPauseVideo()
 
 
@@ -489,22 +512,22 @@ class ImageSlideShowActivity : BaseSlideShow() {
 
     }
 
-    private fun reloadInTime(timeMs:Int) {
+    private fun reloadInTime(timeMs: Int) {
         val autoPlay = mIsPlaying
         doPauseVideo()
-        Thread{
-            val frameData = mImageSlideDataContainer.seekTo(timeMs,true)
+        Thread {
+            val frameData = mImageSlideDataContainer.seekTo(timeMs, true)
             mCurrentTimeMs = timeMs
             runOnUiThread {
                 mImageSlideRenderer.changeFrameData(frameData)
                 doSeekTo(timeMs, false)
-                if(autoPlay) doPlayVideo()
+                if (autoPlay) doPlayVideo()
                 else doPauseVideo()
             }
         }.start()
     }
 
-    private fun doSeekById(id:Long) {
+    private fun doSeekById(id: Long) {
         doPauseVideo()
         val timeMs = mImageSlideDataContainer.getStartTimeById(id)
         doSeekTo(timeMs)
@@ -531,13 +554,12 @@ class ImageSlideShowActivity : BaseSlideShow() {
         super.onResume()
         mImageGLView.onResume()
 
-        Thread{
+        Thread {
             mImageList.forEach {
-                if(!File(it).exists()) {
+                if (!File(it).exists()) {
                     runOnUiThread {
-                        finish()
+                        finishAds()
                     }
-
                 }
             }
         }.start()
@@ -553,8 +575,8 @@ class ImageSlideShowActivity : BaseSlideShow() {
     private fun doExportVideo() {
         doPauseVideo()
 
-        showExportDialog() {quality, ratio ->
-            if(quality < 1) {
+        showExportDialog() { quality, ratio ->
+            if (quality < 1) {
                 showToast(getString(R.string.please_choose_video_quality))
             } else {
                 dismissExportDialog()
@@ -564,9 +586,9 @@ class ImageSlideShowActivity : BaseSlideShow() {
         }
     }
 
-    private fun prepareForExport(quality:Int) {
+    private fun prepareForExport(quality: Int) {
         showProgressDialog()
-        Thread{
+        Thread {
             val stickerAddedForRender = ArrayList<StickerForRenderData>()
             for (item in getStickerAddedList()) {
                 val bitmap = Bitmap.createBitmap(
@@ -577,7 +599,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
                 val view = findViewById<View>(item.stickerViewId)
 
 
-                if(view is StickerView) view.getOutBitmap(Canvas(bitmap))
+                if (view is StickerView) view.getOutBitmap(Canvas(bitmap))
 
 
                 val outPath = FileUtils.saveStickerToTemp(bitmap)
@@ -590,7 +612,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
                 )
             }
 
-            for(item in getTextAddedList()) {
+            for (item in getTextAddedList()) {
                 val bitmap = Bitmap.createBitmap(
                     stickerContainer.width,
                     stickerContainer.height,
@@ -598,7 +620,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
                 )
                 val view = findViewById<View>(item.viewId)
 
-                if(view is EditTextSticker) view.getOutBitmap(Canvas(bitmap))
+                if (view is EditTextSticker) view.getOutBitmap(Canvas(bitmap))
                 val outPath = FileUtils.saveStickerToTemp(bitmap)
                 stickerAddedForRender.add(
                     StickerForRenderData(
@@ -630,7 +652,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
             }
             runOnUiThread {
                 dismissProgressDialog()
-                startActivity(intent)
+                openNewActivity(intent, true, false)
             }
         }.start()
     }
@@ -642,15 +664,15 @@ class ImageSlideShowActivity : BaseSlideShow() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         Logger.e("request code = $requestCode")
-        if(requestCode == PickMediaActivity.ADD_MORE_PHOTO_REQUEST_CODE) {
-            if(resultCode == Activity.RESULT_OK) {
+        if (requestCode == PickMediaActivity.ADD_MORE_PHOTO_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
                 data?.let {
                     val pathList = it.getStringArrayListExtra("Image picked list")
 
-                    pathList?.let {paths ->
+                    pathList?.let { paths ->
                         Logger.e("size result= ${paths.size}")
                         showProgressDialog()
-                        Thread{
+                        Thread {
                             mImageSlideDataContainer.setNewImageList(paths)
                             runOnUiThread {
                                 mImageSlideRenderer.setUpdateTexture(true)
@@ -669,7 +691,6 @@ class ImageSlideShowActivity : BaseSlideShow() {
             }
         }
     }
-
 
 
 }

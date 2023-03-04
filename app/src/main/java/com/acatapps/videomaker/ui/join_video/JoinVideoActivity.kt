@@ -7,13 +7,10 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.acatapps.videomaker.MainActivity
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.VideoInJoinerAdapter
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseActivity
 import com.acatapps.videomaker.custom_view.VideoControllerView
-import com.acatapps.videomaker.data.VideoInSlideData
 import com.acatapps.videomaker.models.VideoForJoinDataModel
 import com.acatapps.videomaker.ui.process_video.ProcessVideoActivity
 import com.acatapps.videomaker.utils.DimenUtils
@@ -24,7 +21,7 @@ import com.acatapps.videomaker.video_player_slide.VideoPlayerSlideRenderer
 import kotlinx.android.synthetic.main.activity_join_video.*
 
 class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
-    override fun getContentResId(): Int = R.layout.activity_join_video
+    override fun getLayoutId(): Int = R.layout.activity_join_video
 
     private var mCurrentVideoIndex = 0
     private val mVideoPathList = ArrayList<String>()
@@ -44,8 +41,11 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
             val bundle = Bundle().apply {
                 putStringArrayList("videoPathList", videoPathList)
             }
+
             intent.putExtra("bundle", bundle)
-            activity.startActivity(intent)
+            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
+                intent, isShowAds = true, isFinish = false
+            )
         }
     }
 
@@ -53,8 +53,8 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
 
     override fun initViews() {
         val scale = DimenUtils.videoScaleInTrim()
-        bgView.layoutParams.width = (DimenUtils.screenWidth(this)*scale).toInt()
-        bgView.layoutParams.height = (DimenUtils.screenWidth(this)*scale).toInt()
+        bgView.layoutParams.width = (DimenUtils.screenWidth(this) * scale).toInt()
+        bgView.layoutParams.height = (DimenUtils.screenWidth(this) * scale).toInt()
         setScreenTitle(getString(R.string.join))
         intent.getBundleExtra("bundle")?.let {
             it.getStringArrayList("videoPathList")?.let { pathList ->
@@ -67,7 +67,6 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         needShowDialog = true
 
     }
-
 
 
     override fun initActions() {
@@ -86,15 +85,14 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         buttonJoinVideo.setClick {
             doPauseVideo()
 
-            if(Utils.checkStorageSpace(mVideoPathList)) {
+            if (Utils.checkStorageSpace(mVideoPathList)) {
                 mVideoSlideRenderer.onDestroy()
                 mDoJoin = true
 
                 val intent = Intent(this@JoinVideoActivity, ProcessVideoActivity::class.java)
                 intent.putStringArrayListExtra("joinVideoList", mVideoPathList)
                 intent.putExtra(ProcessVideoActivity.action, ProcessVideoActivity.joinVideoActon)
-                startActivity(intent)
-
+                openNewActivity(intent, true, isFinish = false)
 
 
             } else {
@@ -105,7 +103,7 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         }
 
         videoPlayerView.setOnClickListener {
-            if(mDoJoin) {
+            if (mDoJoin) {
                 onRestartVideo()
             } else {
                 if (mIsPlaying) doPauseVideo()
@@ -141,13 +139,13 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         updateTimelineOffset()
     }
 
-    private fun onSelectItem(videoId:Int) {
+    private fun onSelectItem(videoId: Int) {
         var time = 0
         var targetIndex = 0
         icPlay.visibility = View.GONE
         mIsPlaying = true
         for (item in mVideoDataList) {
-            if(item.id == videoId) {
+            if (item.id == videoId) {
                 mCurrentVideoIndex = targetIndex
                 mVideoInJoinerAdapter.highlightItem(mVideoDataList[mCurrentVideoIndex].id)
             } else {
@@ -176,6 +174,7 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         videoControllerView.setMaxDuration(totalDuration)
 
     }
+
     private var mCurrentDuration = 0
     private fun setupListView() {
         videoListView.apply {
@@ -183,7 +182,7 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
             layoutManager =
                 LinearLayoutManager(this@JoinVideoActivity, LinearLayoutManager.HORIZONTAL, false)
         }
-        for(item in mVideoDataList) {
+        for (item in mVideoDataList) {
             mVideoInJoinerAdapter.addItem(item)
         }
         mVideoInJoinerAdapter.highlightItem(mVideoDataList[0].id)
@@ -231,7 +230,6 @@ class JoinVideoActivity : BaseActivity(), MediaPlayer.OnCompletionListener {
         super.onPause()
         doPauseVideo()
     }
-
 
 
     private var mDoJoin = false

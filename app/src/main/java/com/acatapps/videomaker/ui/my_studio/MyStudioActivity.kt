@@ -21,14 +21,14 @@ import kotlinx.android.synthetic.main.base_header_view.view.*
 import java.io.File
 
 class MyStudioActivity : BaseActivity() {
-    override fun getContentResId(): Int = R.layout.activity_my_studio
+    override fun getLayoutId(): Int = R.layout.activity_my_studio
 
     private val mAllMyStudioAdapter = AllMyStudioAdapter()
 
     override fun initViews() {
         setRightButton(R.drawable.ic_delete_white) {
             Logger.e("delete")
-            if(mAllMyStudioAdapter.getNumberItemSelected()<1) {
+            if (mAllMyStudioAdapter.getNumberItemSelected() < 1) {
                 showToast(getString(R.string.nothing_item_selected))
                 return@setRightButton
             }
@@ -40,14 +40,14 @@ class MyStudioActivity : BaseActivity() {
         setSubRightButton(R.drawable.ic_check_all_none) {
             Logger.e("check all")
             var allItemChecked = true
-            for(item in mAllMyStudioAdapter.itemList) {
-                if(!item.checked && item.filePath.length > 5) {
+            for (item in mAllMyStudioAdapter.itemList) {
+                if (!item.checked && item.filePath.length > 5) {
                     allItemChecked = false
                     break
                 }
             }
             Logger.e("allItemChecked = $allItemChecked")
-            if(allItemChecked) {
+            if (allItemChecked) {
                 mAllMyStudioAdapter.setOffAll()
                 headerView.subRightButton.setImageResource(R.drawable.ic_check_all_none)
             } else {
@@ -59,11 +59,16 @@ class MyStudioActivity : BaseActivity() {
 
         hideButton()
         setScreenTitle(getString(R.string.my_studio))
-        val colSize = 110*DimenUtils.density(this)
-        val numberCols = DimenUtils.screenWidth(this)/colSize
+        val colSize = 110 * DimenUtils.density(this)
+        val numberCols = DimenUtils.screenWidth(this) / colSize
         allMyStudioListView.apply {
             adapter = mAllMyStudioAdapter
-            layoutManager = GridLayoutManager(context, numberCols.toInt(), LinearLayoutManager.VERTICAL, false).apply {
+            layoutManager = GridLayoutManager(
+                context,
+                numberCols.toInt(),
+                LinearLayoutManager.VERTICAL,
+                false
+            ).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
                         return if (mAllMyStudioAdapter.getItemViewType(position) == R.layout.item_all_my_studio) {
@@ -78,20 +83,21 @@ class MyStudioActivity : BaseActivity() {
         }
         //getAllMyStudioItem()
     }
+
     private var mSelectMode = false
     override fun initActions() {
         mAllMyStudioAdapter.onLongPress = {
-            if(!mSelectMode) {
+            if (!mSelectMode) {
                 openSelectMode()
             }
         }
         mAllMyStudioAdapter.onSelectChange = {
-           Thread{
+            Thread {
 
                 val number = mAllMyStudioAdapter.getNumberItemSelected()
                 val total = mAllMyStudioAdapter.getTotalItem()
 
-                if(number == total) {
+                if (number == total) {
                     runOnUiThread {
                         headerView.subRightButton.setImageResource(R.drawable.ic_check_all)
                     }
@@ -104,11 +110,11 @@ class MyStudioActivity : BaseActivity() {
             }.start()
         }
         mAllMyStudioAdapter.onClickItem = {
-            if(!mSelectMode)
-            ShareVideoActivity.gotoActivity(this, it.filePath)
+            if (!mSelectMode)
+                ShareVideoActivity.gotoActivity(this, it.filePath)
         }
 
-        mAllMyStudioAdapter.onClickOpenMenu = {view, myStudioDataModel ->
+        mAllMyStudioAdapter.onClickOpenMenu = { view, myStudioDataModel ->
             val popupMenu = PopupMenu(this@MyStudioActivity, view)
             popupMenu.menuInflater.inflate(R.menu.item_my_studio_menu, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
@@ -121,28 +127,20 @@ class MyStudioActivity : BaseActivity() {
                         }
 
                         R.id.edit -> {
-                            if(VideoMakerApplication.instance.showAdsFull{
-                                    val intent = Intent(this@MyStudioActivity, VideoSlideActivity2::class.java)
-                                    intent.putStringArrayListExtra("Video picked list", arrayListOf(myStudioDataModel.filePath))
-                                    startActivity(intent)
-                                }) {}else {
-                                val intent = Intent(this@MyStudioActivity, VideoSlideActivity2::class.java)
-                                intent.putStringArrayListExtra("Video picked list", arrayListOf(myStudioDataModel.filePath))
-                                startActivity(intent)
-                            }
-
-
+                            val intent =
+                                Intent(this@MyStudioActivity, VideoSlideActivity2::class.java)
+                            intent.putStringArrayListExtra(
+                                "Video picked list",
+                                arrayListOf(myStudioDataModel.filePath)
+                            )
+                            openNewActivity(intent, true, isFinish = false)
                         }
 
                         R.id.trim -> {
-                            if(VideoMakerApplication.instance.showAdsFull{
-                                    VideoMakerApplication.instance.showAdsFull()
-                                    TrimVideoActivity.gotoActivity(this@MyStudioActivity, myStudioDataModel.filePath)
-                                }) {}else {
-                                VideoMakerApplication.instance.showAdsFull()
-                                TrimVideoActivity.gotoActivity(this@MyStudioActivity, myStudioDataModel.filePath)
-                            }
-
+                            TrimVideoActivity.gotoActivity(
+                                this@MyStudioActivity,
+                                myStudioDataModel.filePath
+                            )
                         }
                         R.id.share -> {
                             shareVideoFile(myStudioDataModel.filePath)
@@ -158,7 +156,7 @@ class MyStudioActivity : BaseActivity() {
         }
     }
 
-    private fun onDeleteItem(path:String) {
+    private fun onDeleteItem(path: String) {
         showYesNoDialog(getString(R.string.do_you_want_delete_item)) {
             val file = File(path)
             if (file.exists()) {
@@ -185,7 +183,7 @@ class MyStudioActivity : BaseActivity() {
         showButton()
     }
 
-    private fun closeSelectMode(){
+    private fun closeSelectMode() {
         mSelectMode = false
         mAllMyStudioAdapter.selectMode = false
         mAllMyStudioAdapter.notifyDataSetChanged()
@@ -193,28 +191,31 @@ class MyStudioActivity : BaseActivity() {
         mAllMyStudioAdapter.setOffAll()
 
     }
+
     private fun showButton() {
         showRightButton()
         showSubRightButton()
     }
+
     private fun hideButton() {
         hideRightButton()
         hideSubRightButton()
     }
+
     private fun selectAll() {
         mAllMyStudioAdapter.selectAll()
     }
 
     private fun deleteItemSelected() {
         showProgressDialog()
-        Thread{
+        Thread {
             val selectedItems = ArrayList<MyStudioDataModel>()
-            for(item in mAllMyStudioAdapter.itemList) {
-                if(item.checked && item.filePath.isNotEmpty()) {
+            for (item in mAllMyStudioAdapter.itemList) {
+                if (item.checked && item.filePath.isNotEmpty()) {
                     selectedItems.add(item)
                 }
             }
-            for(item in selectedItems) {
+            for (item in selectedItems) {
                 val file = File(item.filePath)
                 file.delete()
                 doSendBroadcast(item.filePath)
@@ -235,22 +236,22 @@ class MyStudioActivity : BaseActivity() {
 
     private fun getAllMyStudioItem() {
 
-        Thread{
-            if(mAllMyStudioAdapter.itemCount > 0) {
+        Thread {
+            if (mAllMyStudioAdapter.itemCount > 0) {
                 val deletePathList = ArrayList<String>()
                 mAllMyStudioAdapter.itemList.forEachIndexed { index, myStudioDataModel ->
 
-                    if(myStudioDataModel.filePath.length > 5 && !File(myStudioDataModel.filePath).exists()) {
+                    if (myStudioDataModel.filePath.length > 5 && !File(myStudioDataModel.filePath).exists()) {
                         deletePathList.add(myStudioDataModel.filePath)
                     }
 
                 }
 
-               runOnUiThread {
-                   deletePathList.forEach {
-                       mAllMyStudioAdapter.onDeleteItem(it)
-                   }
-               }
+                runOnUiThread {
+                    deletePathList.forEach {
+                        mAllMyStudioAdapter.onDeleteItem(it)
+                    }
+                }
 
             } else {
                 runOnUiThread {
@@ -258,12 +259,18 @@ class MyStudioActivity : BaseActivity() {
                 }
                 val folder = File(FileUtils.myStuioFolderPath)
                 val myStudioDataList = ArrayList<MyStudioDataModel>()
-                if(folder.exists() && folder.isDirectory) {
-                    for(item in folder.listFiles()) {
+                if (folder.exists() && folder.isDirectory) {
+                    for (item in folder.listFiles()) {
                         try {
-                          val duration =  MediaUtils.getVideoDuration(item.absolutePath)
-                            if(item.exists())
-                                myStudioDataList.add(MyStudioDataModel(item.absolutePath, item.lastModified(),duration))
+                            val duration = MediaUtils.getVideoDuration(item.absolutePath)
+                            if (item.exists())
+                                myStudioDataList.add(
+                                    MyStudioDataModel(
+                                        item.absolutePath,
+                                        item.lastModified(),
+                                        duration
+                                    )
+                                )
 
                         } catch (e: java.lang.Exception) {
                             item.delete()
@@ -277,7 +284,7 @@ class MyStudioActivity : BaseActivity() {
 
                 runOnUiThread {
                     mAllMyStudioAdapter.setItemList(myStudioDataList)
-                    if(myStudioDataList.size > 0) {
+                    if (myStudioDataList.size > 0) {
                         mAllMyStudioAdapter.notifyDataSetChanged()
                         iconNoItem.visibility = View.GONE
                     } else {
@@ -294,9 +301,9 @@ class MyStudioActivity : BaseActivity() {
     }
 
     private fun updateEmptyIcon() {
-        Thread{
+        Thread {
             val total = mAllMyStudioAdapter.getTotalItem()
-            if(total <= 0) {
+            if (total <= 0) {
                 runOnUiThread {
                     iconNoItem.visibility = View.VISIBLE
                     allMyStudioListView.visibility = View.GONE
@@ -313,11 +320,11 @@ class MyStudioActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        if(mYesNoDialogShowing) {
+        if (mYesNoDialogShowing) {
             dismissYesNoDialog()
             return
         }
-        if(mSelectMode) {
+        if (mSelectMode) {
             closeSelectMode()
         } else {
             super.onBackPressed()

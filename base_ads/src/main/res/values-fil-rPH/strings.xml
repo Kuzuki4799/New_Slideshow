@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exit_app">Sigurado ka bang gusto mong lumabas sa app?</string>
+
+    <string name="watching_ads">Manood ng Mga Video na Ad</string>
+    <string name="update_version">I-update ang Bagong Bersyon</string>
+    <string name="update_version_content">May bagong bersyon si %s. Mangyaring Mag-update Ngayon</string>
+    <string name="watching_video">Gusto mo bang manood ng mga ad upang patuloy na maranasan ang mga feature na ito?</string>
+
+    <string name="update">Update</string>
+    <string name="rate_app">I-rate ang App</string>
+    <string name="write_your_feedback_here">Isulat ang iyong feedback dito...</string>
+    <string name="rate_app_dis">Suportahan kami sa pamamagitan ng pagbibigay ng 5 star at isulat ang iyong review</string>
+    <string name="pls_rate">Mangyaring Suportahan kami sa pamamagitan ng pagbibigay ng 5 bituin</string>
+    <string name="rate_now">I-rate ngayon</string>
+    <string name="maybe_latter">Baka mamaya</string>
+
+    <string name="send_mail">Magpadala ng email</string>
+    <string name="enter_your_feedback">Pakilagay ang iyong feedback!</string>
+    <string name="close">Isara</string>
+    <string name="accept">Tanggapin</string>
+    <string name="not_have_permission">Wala kang pahintulot, ibigay ang mga pahintulot sa application para maranasan mo ang application</string>
+
+    <string name="watching_video_">Gusto mo bang manood ng mga ad upang patuloy na ma-download ang kantang ito?</string>
+    <string name="feedback">Feedback</string>
+    <string name="warning">Babala</string>
+    <string name="strYes">Oo</string>
+    <string name="strNo">Hindi</string>
+    <string name="strThanks">Salamat</string>
+    <string name="see_you_again">Sa muling pagkikita</string>
+    <string name="feedback_app">Isulat ang iyong opinyon tungkol sa application na ito</string>
+</resources>

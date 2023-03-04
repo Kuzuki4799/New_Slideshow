@@ -41,11 +41,18 @@ class Share {
                     type = shareType
 
                 }
-                if(Build.VERSION.SDK_INT < 24) {
+                if (Build.VERSION.SDK_INT < 24) {
                     shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(File(filePath)))
                 } else {
                     shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    shareIntent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID+".fileprovider", File(filePath)))
+                    shareIntent.putExtra(
+                        Intent.EXTRA_STREAM,
+                        FileProvider.getUriForFile(
+                            context,
+                            BuildConfig.APPLICATION_ID + ".provider",
+                            File(filePath)
+                        )
+                    )
                 }
                 context.startActivity(shareIntent)
             } catch (e: java.lang.Exception) {
@@ -56,21 +63,6 @@ class Share {
         } else {
             openStore(context, packageId)
         }
-    }
-
-    fun openMoreShare(context: Context, filePath: String) {
-        val shareIntent = Intent().apply {
-            action = Intent.ACTION_SEND
-            type = shareType
-
-        }
-        if(Build.VERSION.SDK_INT < 24) {
-            shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(File(filePath)))
-        } else {
-            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            shareIntent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID+".fileprovider", File(filePath)))
-        }
-        context.startActivity(shareIntent)
     }
 
     fun shareApp(context: Context, appId: String) {
@@ -95,7 +87,7 @@ class Share {
                 data = Uri.parse("market://details?id=$packageId")
             }
             context.startActivity(intent)
-        }catch (e:java.lang.Exception) {
+        } catch (e: java.lang.Exception) {
             Logger.e(e.toString())
         }
     }

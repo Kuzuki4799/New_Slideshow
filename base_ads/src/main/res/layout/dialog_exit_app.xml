@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_border"
+    android:padding="@dimen/_1sdp">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_border"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/textNormalBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@string/exit_app"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:id="@+id/llNative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_7sdp"
+            android:orientation="vertical">
+
+            <com.hope_studio.base_ads.ads.widget.NativeAds
+                android:id="@+id/my_template_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNo"
+                style="@style/BtnTransparent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_weight="1"
+                android:text="@string/strNo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtYes"
+                style="@style/BtnPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/strYes"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
