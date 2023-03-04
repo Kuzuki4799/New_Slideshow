@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.formats.UnifiedNativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/unified_native"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    android:background="@drawable/bg_native_ad">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
+
+        <ImageView
+            android:id="@+id/ad_app_icon_small"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@null"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/ad_headline_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/ad_app_icon_small"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normalTextSize" />
+
+        <TextView
+            android:id="@+id/ad_body_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_headline_small"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/ad_app_icon_small"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textSize="@dimen/smallTextSize" />
+
+        <TextView
+            android:id="@+id/ad_attribution_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:layout_toEndOf="@+id/ad_app_icon_small"
+            android:background="#698f84"
+            android:gravity="center"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="AD"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/smallTextSize" />
+
+
+        <Button
+            android:id="@+id/ad_call_to_action_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_body_small"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</com.google.android.gms.ads.formats.UnifiedNativeAdView>
+
+

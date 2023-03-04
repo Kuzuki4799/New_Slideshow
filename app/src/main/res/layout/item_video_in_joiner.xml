@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mediaThumb"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_margin="4dp"
+        android:src="@drawable/demo_transition"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/durationLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:gravity="end"
+        android:paddingEnd="6dp"
+        android:paddingStart="6dp"
+        android:lines="1"
+        android:textSize="@dimen/smallTextSize"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@color/blackAlpha20"
+        app:layout_constraintStart_toStartOf="@id/mediaThumb"
+        app:layout_constraintEnd_toEndOf="@id/mediaThumb"
+        app:layout_constraintBottom_toBottomOf="@id/mediaThumb"/>
+
+    <View
+        android:id="@+id/strokeBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_stroke"
+        app:layout_constraintTop_toTopOf="@id/mediaThumb"
+        app:layout_constraintStart_toStartOf="@id/mediaThumb"
+        app:layout_constraintBottom_toBottomOf="@id/mediaThumb"
+        app:layout_constraintEnd_toEndOf="@id/mediaThumb"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

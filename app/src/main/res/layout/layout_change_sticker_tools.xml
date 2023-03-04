@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layoutDirection="ltr">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonPlayAndPause"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_play"
+        android:padding="8dp"
+        android:visibility="invisible"
+        app:cornerRadiusImageView="100dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        app:rippleColor="@color/whiteAlpha70"
+        app:layout_constraintTop_toTopOf="@id/cropTimeView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cropTimeView"/>
+
+    <com.acatapps.videomaker.custom_view.CropVideoTimeView
+        android:id="@+id/cropTimeView"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/buttonAddSticker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonPlayAndPause"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonAddSticker"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:text="@string/add_sticker"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normalTextSize"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_button_add_sticker"
+        app:layout_constraintBottom_toTopOf="@id/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cancelAddSticker"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+
+        android:src="@drawable/ic_cancel_added_sticker"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stickerAddedListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/cancelAddSticker"
+        app:layout_constraintBottom_toBottomOf="@id/cancelAddSticker"
+        app:layout_constraintStart_toEndOf="@id/cancelAddSticker"
+        app:layout_constraintEnd_toStartOf="@id/confirmAddSticker"
+        tools:listitem="@layout/item_sticker_added"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/confirmAddSticker"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:padding="12dp"
+        android:background="@color/orangeA01"
+        android:src="@drawable/ic_confirm_added_sticker"
+        app:layout_constraintTop_toTopOf="@id/cancelAddSticker"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/grayA03"
+        app:layout_constraintBottom_toTopOf="@id/cancelAddSticker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

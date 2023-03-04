@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:mobile-ffmpeg1125:unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mobile-ffmpeg1125/build/.transforms/fde5e20471f8ee32f57a78d1fdbaf711/jetified-mobile-ffmpeg1125/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/mobile-ffmpeg1125/build/.transforms/fde5e20471f8ee32f57a78d1fdbaf711/jetified-mobile-ffmpeg1125/res" />
+      <root url="file://$PROJECT_DIR$/mobile-ffmpeg1125/build/.transforms/fde5e20471f8ee32f57a78d1fdbaf711/jetified-mobile-ffmpeg1125/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

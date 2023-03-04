@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/rootView"
+    android:background="@color/white">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayBg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrayBg"
+        tools:context=".ui.HomeActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bannerInHomeScreen"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/home_banner_bg_vector"
+            app:layout_constraintDimensionRatio="720:312"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <View
+            android:id="@+id/bgButtonSlideShow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_button_slide_show_in_home"
+            app:layout_constraintDimensionRatio="33:23"
+            app:layout_constraintEnd_toStartOf="@id/centerVerticalGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bannerInHomeScreen"
+            app:layout_constraintBottom_toBottomOf="@id/bannerInHomeScreen"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconSlideShow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_slide_show_vector"
+            app:layout_constraintBottom_toBottomOf="@id/bgButtonSlideShow"
+            app:layout_constraintEnd_toEndOf="@id/bgButtonSlideShow"
+            app:layout_constraintStart_toStartOf="@id/bgButtonSlideShow"
+            app:layout_constraintTop_toTopOf="@id/bgButtonSlideShow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/slide_show"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normalTextSize"
+            app:layout_constraintBottom_toBottomOf="@id/bgButtonSlideShow"
+            app:layout_constraintEnd_toEndOf="@id/bgButtonSlideShow"
+            app:layout_constraintStart_toStartOf="@id/bgButtonSlideShow"
+            app:layout_constraintTop_toBottomOf="@id/iconSlideShow" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerVerticalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+        <View
+            android:id="@+id/bgButtonEditVideo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_button_edit_video_in_home"
+            app:layout_constraintDimensionRatio="330:230"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/centerVerticalGuideline"
+            app:layout_constraintTop_toTopOf="@id/bgButtonSlideShow" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconEditVideo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_edit_video_vector"
+            app:layout_constraintBottom_toBottomOf="@id/bgButtonEditVideo"
+            app:layout_constraintEnd_toEndOf="@id/bgButtonEditVideo"
+            app:layout_constraintStart_toStartOf="@id/bgButtonEditVideo"
+            app:layout_constraintTop_toTopOf="@id/bgButtonEditVideo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/edit_video"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normalTextSize"
+            app:layout_constraintBottom_toBottomOf="@id/bgButtonEditVideo"
+            app:layout_constraintEnd_toEndOf="@id/bgButtonEditVideo"
+            app:layout_constraintStart_toStartOf="@id/bgButtonEditVideo"
+            app:layout_constraintTop_toBottomOf="@id/iconEditVideo" />
+
+        <View
+            android:id="@+id/bgWhite"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/trimVideoLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bgButtonEditVideo" />
+
+        <com.acatapps.videomaker.base.RippleView
+            android:id="@+id/bgTrimVideo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="12dp"
+            app:cornerRadius="4dp"
+            android:background="@drawable/bg_button_trim_video_in_home"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/bgJoinVideo"
+            app:layout_constraintStart_toStartOf="@id/bgWhite"
+            app:layout_constraintTop_toTopOf="@id/bgWhite" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_trim_video_vector"
+            app:layout_constraintBottom_toBottomOf="@id/bgTrimVideo"
+            app:layout_constraintEnd_toEndOf="@id/bgTrimVideo"
+            app:layout_constraintStart_toStartOf="@id/bgTrimVideo"
+            app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/trimVideoLabel"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:lines="2"
+            android:ellipsize="end"
+            android:gravity="center|top"
+            android:text= "@string/trim_video"
+            android:textColor="@color/black"
+            android:textSize="@dimen/smallTextSize"
+            app:layout_constraintEnd_toEndOf="@id/bgTrimVideo"
+            app:layout_constraintStart_toStartOf="@id/bgTrimVideo"
+            app:layout_constraintTop_toBottomOf="@id/bgTrimVideo" />
+
+        <com.acatapps.videomaker.base.RippleView
+            android:id="@+id/bgJoinVideo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_button_join_video_in_home"
+            app:cornerRadius="4dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/bgRating"
+            app:layout_constraintStart_toEndOf="@id/bgTrimVideo"
+            app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_join_video_vector"
+            app:layout_constraintBottom_toBottomOf="@id/bgJoinVideo"
+            app:layout_constraintEnd_toEndOf="@id/bgJoinVideo"
+            app:layout_constraintStart_toStartOf="@id/bgJoinVideo"
+            app:layout_constraintTop_toTopOf="@id/bgJoinVideo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/joinVideoLabel"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:lines="2"
+            android:text="@string/join_video"
+            android:textColor="@color/black"
+            android:textSize="@dimen/smallTextSize"
+            android:ellipsize="end"
+            android:gravity="center|top"
+            app:layout_constraintEnd_toEndOf="@id/bgJoinVideo"
+            app:layout_constraintStart_toStartOf="@id/bgJoinVideo"
+            app:layout_constraintTop_toBottomOf="@id/bgJoinVideo" />
+
+        <com.acatapps.videomaker.base.RippleView
+            android:id="@+id/bgRating"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_button_rating_in_home"
+            app:cornerRadius="4dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/bgShare"
+            app:layout_constraintStart_toEndOf="@id/bgJoinVideo"
+            app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_rating_vecotr"
+            app:layout_constraintBottom_toBottomOf="@id/bgRating"
+            app:layout_constraintEnd_toEndOf="@id/bgRating"
+            app:layout_constraintStart_toStartOf="@id/bgRating"
+            app:layout_constraintTop_toTopOf="@id/bgRating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:lines="2"
+            android:gravity="center|top"
+            android:text="@string/rate_5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/smallTextSize"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/bgRating"
+            app:layout_constraintStart_toStartOf="@id/bgRating"
+            app:layout_constraintTop_toBottomOf="@id/bgRating" />
+
+        <com.acatapps.videomaker.base.RippleView
+            android:id="@+id/bgShare"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_button_share_in_home"
+            app:cornerRadius="4dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/bgWhite"
+            app:layout_constraintStart_toEndOf="@id/bgRating"
+            app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/shareIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_share_vector"
+            app:layout_constraintBottom_toBottomOf="@id/bgShare"
+            app:layout_constraintEnd_toEndOf="@id/bgShare"
+            app:layout_constraintStart_toStartOf="@id/bgShare"
+            app:layout_constraintTop_toTopOf="@id/bgShare" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:lines="2"
+            android:text="@string/share"
+            android:gravity="center|top"
+            android:textColor="@color/black"
+            android:textSize="@dimen/smallTextSize"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/bgShare"
+            app:layout_constraintStart_toStartOf="@id/bgShare"
+            app:layout_constraintTop_toBottomOf="@id/bgShare" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/myStudioLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_studio"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginTop="42dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@id/bgWhite"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <FrameLayout
+            android:id="@+id/myStudioContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/myStudioLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+
+            <LinearLayout
+                android:id="@+id/icNoProject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_margin="12dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:src="@drawable/ic_no_project"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_project"/>
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myStudioListView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_my_studio_in_home"
+                tools:itemCount="2"/>
+
+        </FrameLayout>
+
+        <com.acatapps.videomaker.custom_view.RippleTextView
+            android:id="@+id/buttonMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more"
+            android:textColor="@color/pinkA01"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="@dimen/largeTextSize"
+            app:layout_constraintTop_toTopOf="@id/myStudioLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingEnd="12dp"
+            android:paddingStart="12dp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/newThemeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_theme"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@id/myStudioContainer"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newThemeListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/newThemeLabel"
+            tools:listitem="@layout/item_theme_in_home"
+            tools:itemCount="2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
