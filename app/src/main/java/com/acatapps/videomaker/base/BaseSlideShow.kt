@@ -1,9 +1,7 @@
 package com.acatapps.videomaker.base
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Rect
 import android.media.MediaRecorder
 import android.opengl.GLSurfaceView
@@ -11,14 +9,11 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
-import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.daasuu.gpuv.player.GPUPlayerView
-import com.google.android.exoplayer2.ui.PlayerView
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.RecordListAdapter
 import com.acatapps.videomaker.adapter.StickerAddedAdapter
@@ -101,14 +96,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
 
     override fun initActions() {
-
-
-
-        changeThemeTools.setOnLongClickListener {
-            showToast(getString(R.string.change_theme))
-            return@setOnLongClickListener true
-        }
-
         changeTransitionTools.setOnLongClickListener {
             showToast("Change transition effect")
             return@setOnLongClickListener true
@@ -743,13 +730,9 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             performSeekTo(it.startOffset)
             view.videoTimelineView.moveTo(it.startOffset)
         }
-        view.buttonRecord.setOnTouchListener { v, event ->
-
-
-            return@setOnTouchListener true
+        view.buttonRecord.setOnClickListener{
+            startRecordAudio()
         }
-
-
     }
 
     override fun onResume() {
@@ -798,9 +781,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     protected fun releaseExoPlayerView() {
         slideGlViewContainer.removeAllViews()
 
-    }
-    protected fun removeGLiew() {
-        slideGlViewContainer.removeAllViews()
     }
 
     fun updateTimeline() {

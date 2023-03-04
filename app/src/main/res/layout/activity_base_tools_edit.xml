@@ -108,11 +108,6 @@
             android:gravity="center" >
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/changeThemeTools"
-                style="@style/button_tools_in_slide_show_activity"
-                android:src="@drawable/ic_btn_theme" />
-
-            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/changeTransitionTools"
                 style="@style/button_tools_in_slide_show_activity"
                 android:src="@drawable/ic_btn_transition" />

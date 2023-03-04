@@ -302,7 +302,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/myStudioLabel">
 
-
                 <LinearLayout
                     android:id="@+id/icNoProject"
                     android:layout_width="wrap_content"
@@ -322,7 +321,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/no_project" />
-
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -331,7 +329,6 @@
                     android:layout_height="wrap_content"
                     tools:itemCount="2"
                     tools:listitem="@layout/item_my_studio_in_home" />
-
             </FrameLayout>
 
             <com.acatapps.videomaker.custom_view.RippleTextView
@@ -346,29 +343,6 @@
                 android:textSize="@dimen/largeTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/myStudioLabel" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/newThemeLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/new_theme"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/myStudioContainer" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/newThemeListView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/newThemeLabel"
-                tools:itemCount="2"
-                tools:listitem="@layout/item_theme_in_home" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

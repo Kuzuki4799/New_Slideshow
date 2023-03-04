@@ -7,7 +7,6 @@ import android.net.Uri
 import android.os.CountDownTimer
 import android.provider.Settings
 import android.view.View
-import android.view.ViewTreeObserver
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +14,6 @@ import com.acatapps.videomaker.BaseMActivity
 import com.acatapps.videomaker.BuildConfig
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.MyStudioInHomeAdapter
-import com.acatapps.videomaker.adapter.ThemeInHomeAdapter
 import com.acatapps.videomaker.enum_.MediaKind
 import com.acatapps.videomaker.enum_.VideoActionKind
 import com.acatapps.videomaker.models.MyStudioDataModel
@@ -24,7 +22,6 @@ import com.acatapps.videomaker.ui.my_studio.MyStudioActivity
 import com.acatapps.videomaker.ui.pick_media.PickMediaActivity
 import com.acatapps.videomaker.ui.share_video.ShareVideoActivity
 import com.acatapps.videomaker.utils.*
-import com.hope_studio.base_ads.ads.BaseAds
 import com.hope_studio.base_ads.dialog.DialogRating
 import kotlinx.android.synthetic.main.activity_home.*
 import java.io.File
@@ -37,8 +34,6 @@ open class HomeActivity : BaseMActivity() {
         const val CAMERA_PERMISSION_REQUEST = 1002
         const val STORAGE_PERMISSION_REQUEST = 1003
     }
-
-    private val mThemeInHomeAdapter = ThemeInHomeAdapter()
 
     private val mMyStudioAdapter = MyStudioInHomeAdapter()
 
@@ -65,48 +60,6 @@ open class HomeActivity : BaseMActivity() {
             layoutManager =
                 LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
         }
-
-        newThemeListView.apply {
-            adapter = mThemeInHomeAdapter
-            layoutManager =
-                LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
-        }
-
-        ThemeLinkUtils.linkThemeList.forEach {
-            mThemeInHomeAdapter.addItem(it)
-        }
-
-        mThemeInHomeAdapter.onItemClick = { linkData ->
-
-            val themFilePath = FileUtils.themeFolderPath + "/${linkData.fileName}.mp4"
-
-            if (linkData.link == "none") {
-
-            } else {
-                if (File(themFilePath).exists()) {
-                    gotoPickMedia(MediaKind.PHOTO, linkData.fileName)
-                } else {
-
-                    if (!checkSettingAutoUpdateTime()) {
-                        showToast(getString(R.string.please_set_auto_update_time))
-                    } else {
-                        if (Utils.isInternetAvailable()) {
-                            showDownloadThemeDialog(linkData, {
-                                mThemeInHomeAdapter.notifyDataSetChanged()
-                            }, {
-                                mThemeInHomeAdapter.notifyDataSetChanged()
-                            })
-
-                        } else {
-                            showToast(getString(R.string.no_internet_connection_please_connect_to_the_internet_and_try_again))
-                        }
-                    }
-                }
-            }
-
-        }
-
-
         Logger.e("check storage permission in on create = ${checkStoragePermission()}")
         if (!checkStoragePermission()) {
             requestStoragePermission()
@@ -121,7 +74,6 @@ open class HomeActivity : BaseMActivity() {
         if (checkStoragePermission()) {
             Thread {
                 try {
-                    initThemeData()
                     initDefaultAudio()
                     getAllMyStudioItem()
                     FileUtils.clearTemp()
@@ -304,28 +256,6 @@ open class HomeActivity : BaseMActivity() {
 
     }
 
-    private fun initThemeData() {
-        val themeFolder = File(FileUtils.themeFolderPath)
-        if (!themeFolder.exists()) {
-            themeFolder.mkdirs()
-        }
-        copyDefaultTheme()
-    }
-
-    private fun copyDefaultTheme() {
-        val fileInAsset = assets.list("theme-default")
-        fileInAsset?.let {
-            for (fileName in fileInAsset) {
-                val fileOut = File("${FileUtils.themeFolderPath}/$fileName")
-                if (!fileOut.exists()) {
-                    val inputStream = assets.open("theme-default/$fileName")
-                    val outputStream = FileOutputStream(fileOut)
-                    copyFile(inputStream, outputStream)
-                }
-            }
-        }
-    }
-
     private fun initDefaultAudio() {
         val audioFolder = File(FileUtils.audioDefaultFolderPath)
         if (!audioFolder.exists()) {
@@ -421,7 +351,6 @@ open class HomeActivity : BaseMActivity() {
                 )
             }"""
         )
-        mThemeInHomeAdapter.notifyDataSetChanged()
         if (checkStoragePermission()) {
             getAllMyStudioItem()
             onInit()

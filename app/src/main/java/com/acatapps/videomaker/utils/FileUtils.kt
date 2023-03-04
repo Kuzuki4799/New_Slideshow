@@ -13,7 +13,6 @@ object FileUtils {
     private val txtTempFolderPath = "$internalPath/Android/data/${BuildConfig.APPLICATION_ID}/tempText"
     private val videoTempFolder = "$internalPath/Android/data/${BuildConfig.APPLICATION_ID}/tempvideo"
     private val tempRecordAudioFolder = "$internalPath/Android/data/${BuildConfig.APPLICATION_ID}/tempRecordAudio"
-    val themeFolderPath = "$internalPath/Android/data/${BuildConfig.APPLICATION_ID}/theme"
     val audioDefaultFolderPath = "$internalPath/Android/data/${BuildConfig.APPLICATION_ID}/audio"
     val defaultAudio = "$audioDefaultFolderPath/default_bg_sound.mp3"
     private val musicTempDataFolderPath = "$internalPath/Android/data/${BuildConfig.APPLICATION_ID}/musicTempData"

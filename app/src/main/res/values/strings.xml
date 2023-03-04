@@ -2,16 +2,6 @@
     <string name="app_name" translatable="false">Video Maker</string>
 
 
-    <string name="application_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
-
-    <string name="full_open_app_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-        <string name="full_ads_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-        <string name="ads_banner_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-        <string name="ads_native" translatable="false">ca-app-pub-3940256099942544/1044960115</string>
-        <string name="reward_ads_id" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
-        <string name="full_load_theme" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-
-
     <string name="slide_show">Slide show</string>
     <string name="edit_video">Edit video</string>
     <string name="trim_video">Trim video</string>
@@ -36,15 +26,6 @@
     <string name="add_text">Add Text</string>
     <string name="text_editor">Text editor</string>
     <string name="text_color">Text Color</string>
-    <string name="center">Center</string>
-    <string name="left">Left</string>
-    <string name="right">Right</string>
-    <string name="regular">Regular</string>
-    <string name="bold">Bold</string>
-    <string name="bold_italic">Bold Italic</string>
-    <string name="italic">Italic</string>
-    <string name="strike">Strike</string>
-    <string name="underline">Underline</string>
     <string name="select_at_least_2_image">select at least 2 images</string>
     <string name="select_at_least_2_videos">select at least 2 videos</string>
     <string name="select_at_least_1_video">select at least 1 video</string>
@@ -56,19 +37,13 @@
     <string name="save">Save</string>
     <string name="exporting_video">Exporting Video</string>
     <string name="please_wait_for_a_few_minutes_nwe_are_processing_your_video">Please wait for a few minutes...\n We are processing your video</string>
-    <string name="choose_output_video_quality">Choose video quality</string>
     <string name="type_your_text">Type your text</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="video">Video</string>
     <string name="share_to">Share to</string>
     <string name="facebook">Facebook</string>
     <string name="instagram">Instagram</string>
     <string name="youtube">YouTube</string>
-    <string name="joiner">Joiner</string>
     <string name="join">Join</string>
-    <string name="please_try_again">Please try again later</string>
-    <string name="start_recording">Start Recording</string>
-    <string name="stop_recording">Stop Recording</string>
     <string name="please_choose_video_quality">Please choose video quality</string>
     <string name="total">Total</string>
     <string name="my_studio">My studio</string>
@@ -79,19 +54,14 @@
     <string name="do_you_want_delete_items">Do you want to delete items?</string>
     <string name="do_you_want_delete_item">Do you want to delete the item?</string>
     <string name="nothing_item_selected">No item selected.</string>
-    <string name="are_you_want_back_to_home">Do you want to go to Home screen?</string>
     <string name="do_you_want_to_come_back">Do you want to come back?</string>
     <string name="do_you_want_to_save">Do you want to save?</string>
     <string name="do_you_want_to_leave">Do you want to leave the app?</string>
     <string name="do_you_want_to_cancel">Do you want to cancel?</string>
-    <string name="minimum_time_is_3_s">Minimum duration 3 seconds!</string>
     <string name="minimum_time_is_10_s">Minimum duration 10 seconds!</string>
     <string name="minimum_time_is_5_s">Minimum duration 5 seconds!</string>
     <string name="search">Search</string>
     <string name="delete">Delete</string>
-    <string name="we_are_working_hard_to_bring_a_better_experience_for_users">We are working hard to bring users a better experience</string>
-    <string name="please_support_us_with_5_star_rating_so_we_can_keep_improving_the_app">Please support us with 5-star rating so that we can keep improving the app!</string>
-    <string name="open_camera">open camera</string>
     <string name="default_">Default</string>
     <string name="free_space_too_low">Too low free space! Please clear your device\'s memory to use this feature</string>
     <string name="do_you_want_delete_all_sticker">Do you want to delete all the stickers?</string>
@@ -101,9 +71,7 @@
     <string name="done">Done</string>
     <string name="downloading">Downloading</string>
     <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">No internet connection. Please connect to the internet and try again</string>
-    <string name="ad_is_not_loaded">Ad is not loaded. Please try again!</string>
     <string name="have_an_error_try_another_music_file">Error! Try another music file.</string>
-    <string name="resume">Resume</string>
     <string name="try_again">Try again</string>
     <string name="change_theme">Change theme</string>
     <string name="change_music">Change music</string>
@@ -126,7 +94,5 @@
     <string name="goto_setting_and_grant_camera_permission">Goto Setting -> Permission and grant camera permission !</string>
 
     <string name="please_set_auto_update_time">Please set auto update time in setting</string>
-    <string name="rate_us_5_stars">Rate us 5 stars</string>
-    <string name="later">Later</string>
 
 </resources>

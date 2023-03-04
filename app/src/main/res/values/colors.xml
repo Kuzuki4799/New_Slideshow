@@ -10,13 +10,11 @@
     <color name="black">#000000</color>
     <color name="blackAlpha20">#33000000</color>
     <color name="blackAlpha45">#73000000</color>
-    <color name="blackAlpha70">#b3000000</color>
 
     <color name="blackA01">#344B67</color>
 
     <color name="white">#ffffff</color>
     <color name="whiteAlpha20">#33ffffff</color>
-    <color name="whiteAlpha90">#e6ffffff</color>
     <color name="whiteAlpha70">#b3ffffff</color>
 
     <color name="blueA01">#73A6FF</color>
@@ -31,7 +29,6 @@
     <color name="grayA02">#888888</color>
     <color name="grayA03">#78909c</color>
     <color name="grayA04">#f1f1f1</color>
-    <color name="grayA05">#627388</color>
 
     <color name="purpleA01">#AC97FF</color>
 

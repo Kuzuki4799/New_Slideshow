@@ -54,9 +54,7 @@ class VideoSlideActivity : BaseSlideShow(), MediaPlayer.OnCompletionListener {
     override fun doInitViews() {
         needShowDialog = true
 
-
         setScreenTitle(getString(R.string.edit_video))
-        changeThemeTools.visibility = View.GONE
         changeTransitionTools.visibility = View.GONE
         changeDurationTools.visibility = View.GONE
         changeFilterTools.visibility = View.GONE

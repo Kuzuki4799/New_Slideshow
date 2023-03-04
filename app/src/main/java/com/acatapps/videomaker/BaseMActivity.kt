@@ -12,34 +12,21 @@ import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
-import com.acatapps.videomaker.application.VideoMakerApplication
-import com.bumptech.glide.Glide
-import com.downloader.Error
-import com.downloader.OnDownloadListener
-import com.downloader.PRDownloader
-import com.acatapps.videomaker.data.ThemeLinkData
-import com.acatapps.videomaker.utils.FileUtils
 import com.acatapps.videomaker.utils.Logger
-import com.acatapps.videomaker.utils.Utils
 import com.hope_studio.base_ads.activity.BaseMainActivity
 import com.hope_studio.base_ads.ads.BaseAds
-import com.hope_studio.base_ads.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_base_layout.*
 import kotlinx.android.synthetic.main.base_header_view.*
 import kotlinx.android.synthetic.main.base_header_view.view.*
-import kotlinx.android.synthetic.main.layout_download_theme_dialog.view.*
 import kotlinx.android.synthetic.main.layout_yes_no_dialog.view.*
 import java.io.File
-import kotlin.math.roundToInt
 
 abstract class BaseMActivity : BaseMainActivity() {
 
     private var mProgressIsShowing = false
-    protected var mYesNoDialogShowing = false
-    protected var mRateDialogShowing = false
+    private var mYesNoDialogShowing = false
     var needShowDialog = false
     var comebackStatus = ""
-    var mRateAvailable = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -187,18 +174,11 @@ abstract class BaseMActivity : BaseMainActivity() {
     }
 
     fun showToast(message: String) {
-        runOnUiThread {
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-        }
+        runOnUiThread { Toast.makeText(this, message, Toast.LENGTH_LONG).show() }
     }
 
     fun doSendBroadcast(filePath: String) {
-        sendBroadcast(
-            Intent(
-                Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                Uri.fromFile(File(filePath))
-            )
-        )
+        sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(File(filePath))))
     }
 
     override fun onPause() {
@@ -209,116 +189,5 @@ abstract class BaseMActivity : BaseMainActivity() {
     private fun hideKeyboard() {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm!!.hideSoftInputFromWindow(baseRootView.applicationWindowToken, 0)
-    }
-
-    private val downloadViewHashMap = HashMap<String, View?>()
-    var mDownloadDialogIsShow = false
-    fun showDownloadThemeDialog(
-        linkData: ThemeLinkData,
-        onClickDone: () -> Unit,
-        onDownloadComplete: () -> Unit
-    ) {
-        if (mDownloadDialogIsShow) return
-        mDownloadDialogIsShow = true
-        val view = if (downloadViewHashMap[linkData.link] != null) {
-            downloadViewHashMap[linkData.link]!!
-        } else {
-            LayoutInflater.from(this).inflate(R.layout.layout_download_theme_dialog, null, false)
-        }
-        baseRootView.addView(view)
-        if (downloadViewHashMap[linkData.link] == null) {
-            downloadViewHashMap[linkData.link] = view
-
-            view.themeNameLabel.text = linkData.name
-            val uriString = "file:///android_asset/theme-icon/${linkData.fileName}.jpg"
-            Glide.with(this)
-                .load(Uri.parse(uriString))
-                .into(view.themeIconInDownloadDialog)
-
-            view.blackViewInDownloadThemeDialog.setOnClickListener {
-
-            }
-            view.icClose.setOnClickListener {
-                dismissDownloadDialog()
-            }
-            view.doneButton.setOnClickListener {
-                dismissDownloadDialog()
-                onClickDone.invoke()
-            }
-
-            view.tryAgainButton.setOnClickListener {
-                view.tryAgainButton.visibility = View.INVISIBLE
-                view.downloadingViewContainer.visibility = View.VISIBLE
-                onDownloadTheme(linkData.link, linkData.fileName, onDownloadComplete, view)
-            }
-
-            view.watchVideoButton.setOnClickListener {
-
-//                Logger.e("load ad")
-//                showProgressDialog()
-//                VideoMakerApplication.instance.loadAdFullForTheme {
-//                    runOnUiThread {
-//                        view.watchVideoButton.visibility = View.GONE
-//                        view.downloadingViewContainer.visibility = View.VISIBLE
-//                        dismissProgressDialog()
-//                    }
-//                    onDownloadTheme(linkData.link, linkData.fileName, onDownloadComplete, view)
-//                }
-            }
-        }
-
-        scaleAnimation(view.downloadThemeDialogContent)
-        alphaInAnimation(view.blackViewInDownloadThemeDialog)
-    }
-
-    private fun onDownloadTheme(
-        link: String, fileName: String, onComplete: () -> Unit, view: View
-    ) {
-        PRDownloader.download(link, FileUtils.themeFolderPath, "${fileName}.mp4")
-            .build()
-            .setOnProgressListener {
-                Logger.e("progess = $it")
-                val progress = it.currentBytes.toFloat() / it.totalBytes
-                Logger.e("progress = ${(progress * 100f).roundToInt()}")
-                if (mDownloadDialogIsShow)
-                    runOnUiThread {
-                        view.downloadingProgressBar?.setProgress((progress * 100f).roundToInt())
-                    }
-
-            }
-            .start(object : OnDownloadListener {
-                override fun onDownloadComplete() {
-
-                    view.doneButton?.visibility = View.VISIBLE
-                    view.tryAgainButton?.visibility = View.INVISIBLE
-                    view.downloadingViewContainer.visibility = View.GONE
-                    downloadViewHashMap.remove(link)
-                    onComplete.invoke()
-                }
-
-                override fun onError(error: Error?) {
-                    Logger.e("download error --> ${error?.connectionException?.message}")
-                    runOnUiThread {
-                        view.tryAgainButton?.visibility = View.VISIBLE
-                        view.downloadingViewContainer.visibility = View.GONE
-                    }
-                    Thread {
-                        if (!Utils.isInternetAvailable()) {
-                            runOnUiThread {
-                                showToast(getString(R.string.no_internet_connection_please_connect_to_the_internet_and_try_again))
-                            }
-
-                        }
-                    }.start()
-
-                }
-            })
-    }
-
-    fun dismissDownloadDialog() {
-        if (mDownloadDialogIsShow) {
-            baseRootView.removeViewAt(baseRootView.childCount - 1)
-            mDownloadDialogIsShow = false
-        }
     }
 }

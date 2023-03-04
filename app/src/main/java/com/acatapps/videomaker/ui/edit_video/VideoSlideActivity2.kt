@@ -8,17 +8,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.FrameLayout
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.daasuu.gpuv.egl.filter.*
 import com.daasuu.gpuv.egl.more_filter.filters.*
 import com.daasuu.gpuv.player.GPUPlayerView
-import com.daasuu.gpuv.player.PlayerScaleType
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.source.ExtractorMediaSource
-import com.google.android.exoplayer2.source.TrackGroupArray
-import com.google.android.exoplayer2.trackselection.TrackSelectionArray
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.acatapps.videomaker.R
@@ -67,7 +62,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
 
         setScreenTitle(getString(R.string.edit_video))
-        changeThemeTools.visibility = View.GONE
         changeTransitionTools.visibility = View.GONE
         changeDurationTools.visibility = View.GONE
         changeFilterTools.visibility = View.GONE
@@ -254,7 +248,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
     }
 
     private fun updateEffectHighlight() {
-        Logger.e("effect in ${mCurrentVideoIndex} = ${mVideoSlideDataList[mCurrentVideoIndex].gsEffectType}")
+        Logger.e("effect in $mCurrentVideoIndex = ${mVideoSlideDataList[mCurrentVideoIndex].gsEffectType}")
         mGSEffectListAdapter.selectEffect(mVideoSlideDataList[mCurrentVideoIndex].gsEffectType)
     }
 
@@ -592,29 +586,33 @@ class VideoSlideActivity2 : BaseSlideShow() {
     private fun getOutSticker(bitmap: Bitmap, ratio: Int): Bitmap {
         val stickerContainerWidth = stickerContainer.width
         val stickerContainerHeight = stickerContainer.height
-        if (ratio == 2) {
+        when (ratio) {
+            2 -> {
 
-            val outBitmap = Bitmap.createBitmap(
-                stickerContainerWidth,
-                stickerContainerHeight * 16 / 9,
-                Bitmap.Config.ARGB_8888
-            )
-            Canvas(outBitmap).apply {
-                drawBitmap(bitmap, 0f, stickerContainerHeight * 7f / 18, null)
+                val outBitmap = Bitmap.createBitmap(
+                    stickerContainerWidth,
+                    stickerContainerHeight * 16 / 9,
+                    Bitmap.Config.ARGB_8888
+                )
+                Canvas(outBitmap).apply {
+                    drawBitmap(bitmap, 0f, stickerContainerHeight * 7f / 18, null)
+                }
+                return outBitmap
             }
-            return outBitmap
-        } else if (ratio == 1) {
+            1 -> {
 
-            val outBitmap = Bitmap.createBitmap(
-                stickerContainerWidth * 16 / 9,
-                stickerContainerHeight,
-                Bitmap.Config.ARGB_8888
-            )
-            Canvas(outBitmap).apply {
-                drawBitmap(bitmap, stickerContainerHeight * 7f / 18, 0f, null)
+                val outBitmap = Bitmap.createBitmap(
+                    stickerContainerWidth * 16 / 9,
+                    stickerContainerHeight,
+                    Bitmap.Config.ARGB_8888
+                )
+                Canvas(outBitmap).apply {
+                    drawBitmap(bitmap, stickerContainerHeight * 7f / 18, 0f, null)
+                }
+                return outBitmap
             }
-            return outBitmap
-        } else return bitmap
+            else -> return bitmap
+        }
 
     }
 
@@ -637,7 +635,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
                             mSlideSourceAdapter.addImagePathList(pathList)
 
                             totalDuration = 0
-
 
                             val oldVideoEffectList = ArrayList<OldEffectData>()
                             for (item in mVideoSlideDataList) {

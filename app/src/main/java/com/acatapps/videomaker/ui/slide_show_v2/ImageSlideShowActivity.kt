@@ -2,10 +2,8 @@ package com.acatapps.videomaker.ui.slide_show_v2
 
 import android.app.Activity
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Rect
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -17,7 +15,6 @@ import com.acatapps.videomaker.custom_view.EditTextSticker
 import com.acatapps.videomaker.custom_view.StickerView
 import com.acatapps.videomaker.custom_view.VideoControllerView
 import com.acatapps.videomaker.data.StickerForRenderData
-import com.acatapps.videomaker.data.ThemeLinkData
 import com.acatapps.videomaker.image_slide_show.ImageSlideGLView
 import com.acatapps.videomaker.image_slide_show.ImageSlideRenderer
 import com.acatapps.videomaker.image_slide_show.drawer.ImageSlideDataContainer
@@ -27,11 +24,9 @@ import com.acatapps.videomaker.slide_show_transition.transition.GSTransition
 import com.acatapps.videomaker.ui.pick_media.PickMediaActivity
 import com.acatapps.videomaker.ui.process_video.ProcessVideoActivity
 import com.acatapps.videomaker.utils.*
-import kotlinx.android.synthetic.main.activity_base_layout.*
 import kotlinx.android.synthetic.main.activity_base_tools_edit.*
 import kotlinx.android.synthetic.main.layout_change_duration_tools.view.*
 import kotlinx.android.synthetic.main.layout_change_filter_tools.view.*
-import kotlinx.android.synthetic.main.layout_change_theme_tools.view.*
 import kotlinx.android.synthetic.main.layout_change_transition_tools.view.*
 import java.io.File
 
@@ -62,9 +57,6 @@ class ImageSlideShowActivity : BaseSlideShow() {
         return GSTransitionUtils.getTransitionByType(randomType)
     }
 
-
-    private val mNewThemeListAdapter = ThemeInHomeAdapter()
-
     private val mGSTransitionListAdapter = GSTransitionListAdapter {
         mGsTransition = it.gsTransition
         performChangeTransition(it.gsTransition)
@@ -90,11 +82,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
         needShowDialog = true
         val themeFileName = intent.getStringExtra("themeFileName") ?: ""
         if (themeFileName.isNotEmpty()) {
-            mThemeData = ThemeData(
-                FileUtils.themeFolderPath + "/${themeFileName}.mp4",
-                ThemeData.ThemType.NOT_REPEAT,
-                themeFileName
-            )
+            mThemeData = ThemeData("none")
         }
 
         mImageGLView = ImageSlideGLView(this, null)
@@ -112,9 +100,8 @@ class ImageSlideShowActivity : BaseSlideShow() {
             onInitSlide(imageList)
         }
 
-        toolType = ToolType.THEME
-        showLayoutChangeTheme()
-
+        toolType = ToolType.TRANSITION
+        showLayoutChangeTransition()
     }
 
     private fun onInitSlide(pathList: ArrayList<String>) {
@@ -206,12 +193,6 @@ class ImageSlideShowActivity : BaseSlideShow() {
             }
         }
 
-        changeThemeTools.setOnClickListener {
-            if (toolType == ToolType.THEME || !mTouchEnable) return@setOnClickListener
-            toolType = ToolType.THEME
-            showLayoutChangeTheme()
-        }
-
         changeTransitionTools.setOnClickListener {
             if (toolType == ToolType.TRANSITION || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.TRANSITION
@@ -275,86 +256,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     }
 
     override fun performChangeVideoVolume(volume: Float) {
-
     }
-
-    private fun showLayoutChangeTheme() {
-        val view = View.inflate(this, R.layout.layout_change_theme_tools, null)
-        showToolsActionLayout(view)
-
-        view.imageOfSlideShowListViewInChangeTheme.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        view.imageOfSlideShowListViewInChangeTheme.adapter = mSlideSourceAdapter
-
-        view.themeListView.adapter = mNewThemeListAdapter
-        view.themeListView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        mNewThemeListAdapter.itemList.clear()
-        mNewThemeListAdapter.notifyDataSetChanged()
-        mNewThemeListAdapter.addItem(ThemeLinkData("none", "None", "None"))
-        ThemeLinkUtils.linkThemeList.forEach {
-            mNewThemeListAdapter.addItem(it)
-        }
-        mNewThemeListAdapter.rewardIsLoaded = true
-        mNewThemeListAdapter.notifyDataSetChanged()
-        mNewThemeListAdapter.onItemClick = { linkData ->
-            doPauseVideo()
-            val themFilePath = FileUtils.themeFolderPath + "/${linkData.fileName}.mp4"
-
-            if (linkData.link == "none") {
-                val themeData = ThemeData()
-                mThemeData = themeData
-                performChangeTheme(themeData)
-
-            } else {
-                if (File(themFilePath).exists()) {
-                    val themeData = ThemeData(
-                        FileUtils.themeFolderPath + "/${linkData.fileName}.mp4",
-                        ThemeData.ThemType.NOT_REPEAT,
-                        linkData.fileName
-                    )
-                    mThemeData = themeData
-                    performChangeTheme(themeData)
-                } else {
-                    if (checkSettingAutoUpdateTime() == false) {
-                        showToast(getString(R.string.please_set_auto_update_time))
-                    } else {
-                        if (Utils.isInternetAvailable()) {
-                            showDownloadThemeDialog(linkData, {
-                                val themeData = ThemeData(
-                                    FileUtils.themeFolderPath + "/${linkData.fileName}.mp4",
-                                    ThemeData.ThemType.NOT_REPEAT,
-                                    linkData.fileName
-                                )
-                                mThemeData = themeData
-                                performChangeTheme(themeData)
-                                runOnUiThread {
-                                    mNewThemeListAdapter.notifyDataSetChanged()
-                                }
-
-                            }, {
-                                runOnUiThread {
-                                    mNewThemeListAdapter.notifyDataSetChanged()
-                                }
-                            })
-                        } else {
-                            showToast(getString(R.string.can_t_connect_to_internet))
-                        }
-                    }
-
-
-                }
-            }
-
-        }
-
-        view.icAddPhotoInChangeTheme.setOnClickListener {
-            doAddMoreImage()
-        }
-
-    }
-
 
     private fun showLayoutChangeTransition() {
         val view = View.inflate(this, R.layout.layout_change_transition_tools, null)
@@ -449,9 +351,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     }
 
     private fun performChangeTheme(themeData: ThemeData) {
-
         doPauseVideo()
-        mNewThemeListAdapter.changeCurrentThemeName(themeData.themeName)
         mImageGLView.changeTheme(themeData)
         doRepeat()
         object : CountDownTimer(100, 100) {
