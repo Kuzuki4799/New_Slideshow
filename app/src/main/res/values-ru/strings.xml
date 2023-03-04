@@ -46,8 +46,7 @@
   <string name="my_studio">Моя студия</string>
   <string name="no_project">Нет проекта</string>
   <string name="more">Больше</string>
-  <string name="new_theme">Новые темы</string>
-  <string name="yes">да</string>
+    <string name="yes">да</string>
   <string name="do_you_want_delete_items">Вы хотите удалить элементы?</string>
   <string name="do_you_want_delete_item">Вы хотите удалить элемент?</string>
   <string name="nothing_item_selected">Элемент не выбран.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Слишком мало свободного места! Пожалуйста, очистите память вашего устройства, чтобы использовать эту функцию</string>
   <string name="do_you_want_delete_all_sticker">Вы хотите удалить все наклейки?</string>
   <string name="do_you_want_delete_all_text">Вы хотите удалить весь текст?</string>
-  <string name="download_theme">Скачать тему</string>
-  <string name="watch_video_to_download_theme">Смотреть видео для загрузки темы</string>
-  <string name="done">Выполнено</string>
-  <string name="downloading">загрузка</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Подключение к Интернету отсутствует. Пожалуйста, подключитесь к Интернету и попробуйте снова</string>
     <string name="have_an_error_try_another_music_file">Ошибка! Попробуйте другой музыкальный файл.</string>
-    <string name="try_again">Попробуйте еще раз</string>
-  <string name="change_theme">Поменять тему</string>
-  <string name="change_music">Сменить музыку</string>
+    <string name="change_music">Сменить музыку</string>
   <string name="change_image_filter">Изменить фильтр изображений</string>
   <string name="change_video_effect">Изменить видео эффект</string>
   <string name="change_duration">Изменить продолжительность</string>
-  <string name="can_t_connect_to_internet">Не удается подключиться к интернету</string>
-  <string name="wide_screen">Широкий экран (16: 9)</string>
+    <string name="wide_screen">Широкий экран (16: 9)</string>
   <string name="vertical">Вертикальный (9:16)</string>
   <string name="square">Площадь (1: 1)</string>
   <string name="ratio">соотношение</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Если вы не даете разрешение, вы не можете использовать это приложение.</string>
   <string name="goto_setting_and_grant_permission">Перейти к настройке -&gt; Разрешение и предоставить разрешение на чтение для внешнего хранилища!</string>
   <string name="setting">настройка</string>
-  <string name="you_can_use_this_feature">Если вы не дадите разрешение, вы не сможете использовать эту функцию.</string>
-  <string name="goto_setting_and_grant_camera_permission">Перейти к настройке -&gt; Разрешение и предоставить разрешение камеры!</string>
-  <string name="please_set_auto_update_time">Пожалуйста, установите время автоматического обновления в настройках</string>
 </resources>

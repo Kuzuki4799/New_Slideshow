@@ -46,8 +46,7 @@
   <string name="my_studio">ನನ್ನ ಸ್ಟುಡಿಯೋ</string>
   <string name="no_project">ಪ್ರಾಜೆಕ್ಟ್ ಇಲ್ಲ</string>
   <string name="more">ಇನ್ನಷ್ಟು</string>
-  <string name="new_theme">ಹೊಸ ವಿಷಯಗಳು</string>
-  <string name="yes">ಹೌದು</string>
+    <string name="yes">ಹೌದು</string>
   <string name="do_you_want_delete_items">ನೀವು ವಸ್ತುಗಳನ್ನು ಅಳಿಸಲು ಬಯಸುವಿರಾ?</string>
   <string name="do_you_want_delete_item">ನೀವು ಐಟಂ ಅನ್ನು ಅಳಿಸಲು ಬಯಸುವಿರಾ?</string>
   <string name="nothing_item_selected">ಯಾವುದೇ ಐಟಂ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">ತುಂಬಾ ಕಡಿಮೆ ಉಚಿತ ಸ್ಥಳ! ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಾಧನದ ಮೆಮೊರಿಯನ್ನು ತೆರವುಗೊಳಿಸಿ</string>
   <string name="do_you_want_delete_all_sticker">ನೀವು ಎಲ್ಲಾ ಸ್ಟಿಕ್ಕರ್‌ಗಳನ್ನು ಅಳಿಸಲು ಬಯಸುವಿರಾ?</string>
   <string name="do_you_want_delete_all_text">ನೀವು ಎಲ್ಲಾ ಪಠ್ಯವನ್ನು ಅಳಿಸಲು ಬಯಸುವಿರಾ?</string>
-  <string name="download_theme">ಥೀಮ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</string>
-  <string name="watch_video_to_download_theme">ಥೀಮ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವೀಡಿಯೊ ನೋಡಿ</string>
-  <string name="done">ಮುಗಿದಿದೆ</string>
-  <string name="downloading">ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲ. ದಯವಿಟ್ಟು ಇಂಟರ್ನೆಟ್‌ಗೆ ಸಂಪರ್ಕಪಡಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="have_an_error_try_another_music_file">ದೋಷ! ಮತ್ತೊಂದು ಸಂಗೀತ ಫೈಲ್ ಅನ್ನು ಪ್ರಯತ್ನಿಸಿ.</string>
-    <string name="try_again">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸು</string>
-  <string name="change_theme">ಥೀಮ್ ಬದಲಾಯಿಸಿ</string>
-  <string name="change_music">ಸಂಗೀತವನ್ನು ಬದಲಾಯಿಸಿ</string>
+    <string name="change_music">ಸಂಗೀತವನ್ನು ಬದಲಾಯಿಸಿ</string>
   <string name="change_image_filter">ಇಮೇಜ್ ಫಿಲ್ಟರ್ ಬದಲಾಯಿಸಿ</string>
   <string name="change_video_effect">ವೀಡಿಯೊ ಪರಿಣಾಮವನ್ನು ಬದಲಾಯಿಸಿ</string>
   <string name="change_duration">ಅವಧಿಯನ್ನು ಬದಲಾಯಿಸಿ</string>
-  <string name="can_t_connect_to_internet">ಇಂಟರ್ನೆಟ್ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
-  <string name="wide_screen">ವೈಡ್ ಸ್ಕ್ರೀನ್ (16: 9)</string>
+    <string name="wide_screen">ವೈಡ್ ಸ್ಕ್ರೀನ್ (16: 9)</string>
   <string name="vertical">ಲಂಬ (9:16)</string>
   <string name="square">ಚೌಕ (1: 1)</string>
   <string name="ratio">ಅನುಪಾತ</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ನೀವು ಅನುಮತಿ ನೀಡದಿದ್ದರೆ, ನೀವು ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಬಳಸಲಾಗುವುದಿಲ್ಲ.</string>
   <string name="goto_setting_and_grant_permission">ಗೊಟೊ ಸೆಟ್ಟಿಂಗ್ -&gt; ಅನುಮತಿ ಮತ್ತು ಓದಲು ಬಾಹ್ಯ ಶೇಖರಣಾ ಅನುಮತಿಯನ್ನು ನೀಡಿ!</string>
   <string name="setting">ಹೊಂದಿಸಲಾಗುತ್ತಿದೆ</string>
-  <string name="you_can_use_this_feature">ನೀವು ಅನುಮತಿ ನೀಡದಿದ್ದರೆ, ನೀವು ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲಾಗುವುದಿಲ್ಲ.</string>
-  <string name="goto_setting_and_grant_camera_permission">ಗೊಟೊ ಸೆಟ್ಟಿಂಗ್ -&gt; ಅನುಮತಿ ಮತ್ತು ಕ್ಯಾಮೆರಾ ಅನುಮತಿ ನೀಡಿ!</string>
-  <string name="please_set_auto_update_time">ಸೆಟ್ಟಿಂಗ್‌ನಲ್ಲಿ ಸ್ವಯಂ ನವೀಕರಣ ಸಮಯವನ್ನು ದಯವಿಟ್ಟು ಹೊಂದಿಸಿ</string>
 </resources>

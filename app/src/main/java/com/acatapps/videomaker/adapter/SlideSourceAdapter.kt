@@ -12,22 +12,23 @@ import kotlinx.android.synthetic.main.item_image_list_in_slide_show.view.*
 
 class SlideSourceAdapter : BaseAdapter<SlideSourceDataModel>() {
 
-    var onClickItem:((Int)->Unit)?=null
+    var onClickItem: ((Int) -> Unit)? = null
 
     override fun doGetViewType(position: Int): Int = R.layout.item_image_list_in_slide_show
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val view = holder.itemView
         val item = mItemList[position]
-        val imageSize = DimenUtils.density(view.context)*64
-        if(item.isSelect) {
+        val imageSize = DimenUtils.density(view.context) * 64
+        if (item.isSelect) {
             view.strokeBg.visibility = View.VISIBLE
         } else {
             view.strokeBg.visibility = View.GONE
         }
-        Glide.with(view.context).load(item.path).apply(RequestOptions().override(imageSize.toInt())).into(view.imagePreview)
+        Glide.with(view.context).load(item.path).apply(RequestOptions().override(imageSize.toInt()))
+            .into(view.imagePreview)
         view.setOnClickListener {
-           setOffAll()
+            setOffAll()
 
             item.isSelect = true
             notifyDataSetChanged()
@@ -35,33 +36,33 @@ class SlideSourceAdapter : BaseAdapter<SlideSourceDataModel>() {
         }
     }
 
-    private fun setOffAll(){
-        for(item in mItemList) item.isSelect = false
+    private fun setOffAll() {
+        for (item in mItemList) item.isSelect = false
 
     }
 
     fun addImagePathList(arrayList: ArrayList<String>) {
         mItemList.clear()
         notifyDataSetChanged()
-        for(item in arrayList) {
+        for (item in arrayList) {
             mItemList.add(SlideSourceDataModel(item))
         }
         notifyDataSetChanged()
     }
 
-    fun changeVideo(position:Int) {
-        if(position >= 0 && position < mItemList.size) {
+    fun changeVideo(position: Int) {
+        if (position >= 0 && position < mItemList.size) {
 
             setOffAll()
-            mItemList[position].isSelect =true
+            mItemList[position].isSelect = true
             notifyDataSetChanged()
         }
     }
 
-    fun changeHighlightItem(position:Int) {
-        if(position >= 0 && position < mItemList.size) {
+    fun changeHighlightItem(position: Int) {
+        if (position >= 0 && position < mItemList.size) {
             setOffAll()
-            mItemList[position].isSelect =true
+            mItemList[position].isSelect = true
             notifyDataSetChanged()
         }
     }

@@ -46,8 +46,7 @@
   <string name="my_studio">Mo stiúideo</string>
   <string name="no_project">Gan Tionscadal</string>
   <string name="more">Níos mó</string>
-  <string name="new_theme">Téamaí nua</string>
-  <string name="yes">Is féidir</string>
+    <string name="yes">Is féidir</string>
   <string name="do_you_want_delete_items">Ar mhaith leat míreanna a scriosadh?</string>
   <string name="do_you_want_delete_item">Ar mhaith leat an mhír a scriosadh?</string>
   <string name="nothing_item_selected">Níor roghnaíodh aon earra.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Spás saor in aisce ró-íseal! Glan cuimhne do ghléis le do thoil chun an ghné seo a úsáid</string>
   <string name="do_you_want_delete_all_sticker">Ar mhaith leat na greamáin go léir a scriosadh?</string>
   <string name="do_you_want_delete_all_text">Ar mhaith leat an téacs go léir a scriosadh?</string>
-  <string name="download_theme">Íoslódáil téama</string>
-  <string name="watch_video_to_download_theme">Féach físeán chun Téama a íoslódáil</string>
-  <string name="done">Arna dhéanamh</string>
-  <string name="downloading">Íoslódáil</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Gan aon nasc idirlín. Ceangail leis an idirlíon le do thoil agus bain triail eile as</string>
     <string name="have_an_error_try_another_music_file">Earráid! Bain triail as comhad ceoil eile.</string>
-    <string name="try_again">Déan iarracht arís</string>
-  <string name="change_theme">Athraigh téama</string>
-  <string name="change_music">Athraigh ceol</string>
+    <string name="change_music">Athraigh ceol</string>
   <string name="change_image_filter">Athraigh scagaire íomhá</string>
   <string name="change_video_effect">Athraigh éifeacht físe</string>
   <string name="change_duration">Athraigh fad</string>
-  <string name="can_t_connect_to_internet">Ní féidir ceangal leis an idirlíon</string>
-  <string name="wide_screen">Scáileán Leathan (16: 9)</string>
+    <string name="wide_screen">Scáileán Leathan (16: 9)</string>
   <string name="vertical">Ingearach (9:16)</string>
   <string name="square">Cearnóg (1: 1)</string>
   <string name="ratio">Cóimheas</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Mura dtugann tú cead, ní féidir leat an aip seo a úsáid.</string>
   <string name="goto_setting_and_grant_permission">Socrú Goto -&gt; Cead stórála seachtrach a cheadú agus a dheonú!</string>
   <string name="setting">Suíomh</string>
-  <string name="you_can_use_this_feature">Mura dtugann tú cead, ní féidir leat an ghné seo a úsáid.</string>
-  <string name="goto_setting_and_grant_camera_permission">Socrú Goto -&gt; Cead agus cead ceamara a dheonú!</string>
-  <string name="please_set_auto_update_time">Socraigh am nuashonraithe uathoibríoch le do thoil sa socrú</string>
 </resources>

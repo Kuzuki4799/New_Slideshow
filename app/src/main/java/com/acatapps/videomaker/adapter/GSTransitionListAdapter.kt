@@ -11,7 +11,8 @@ import com.acatapps.videomaker.slide_show_transition.GSTransitionUtils
 import com.acatapps.videomaker.slide_show_transition.transition.GSTransition
 import kotlinx.android.synthetic.main.item_gs_transition_list.view.*
 
-class GSTransitionListAdapter(private val onSelectTransition:(GSTransitionDataModel)->Unit) : BaseAdapter<GSTransitionDataModel>() {
+class GSTransitionListAdapter(private val onSelectTransition: (GSTransitionDataModel) -> Unit) :
+    BaseAdapter<GSTransitionDataModel>() {
 
     init {
         addGSTransitionData(GSTransitionUtils.getGSTransitionList())
@@ -24,7 +25,7 @@ class GSTransitionListAdapter(private val onSelectTransition:(GSTransitionDataMo
         val item = mItemList[position]
 
         view.transitionNameLabel.text = item.gsTransition.transitionName
-        if(item.selected) {
+        if (item.selected) {
             view.strokeBg.visibility = View.VISIBLE
         } else {
             view.strokeBg.visibility = View.GONE
@@ -38,20 +39,19 @@ class GSTransitionListAdapter(private val onSelectTransition:(GSTransitionDataMo
             .into(view.imagePreview)
     }
 
-    fun addGSTransitionData(gsTransitionList:ArrayList<GSTransition>) {
+    private fun addGSTransitionData(gsTransitionList: ArrayList<GSTransition>) {
         mItemList.clear()
         notifyDataSetChanged()
-        for(gsTransition in gsTransitionList) {
+        for (gsTransition in gsTransitionList) {
             mItemList.add(GSTransitionDataModel(gsTransition))
         }
         notifyDataSetChanged()
     }
 
     fun highlightItem(gsTransition: GSTransition) {
-        for(item in mItemList) {
+        for (item in mItemList) {
             item.selected = item.gsTransition.transitionCodeId == gsTransition.transitionCodeId
         }
         notifyDataSetChanged()
     }
-
 }

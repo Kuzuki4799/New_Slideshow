@@ -46,8 +46,7 @@
   <string name="my_studio">የእኔ ስቱዲዮ</string>
   <string name="no_project">ፕሮጀክት የለም</string>
   <string name="more">ተጨማሪ</string>
-  <string name="new_theme">አዲስ ገጽታዎች</string>
-  <string name="yes">አዎ</string>
+    <string name="yes">አዎ</string>
   <string name="do_you_want_delete_items">ንጥሎችን መሰረዝ ይፈልጋሉ?</string>
   <string name="do_you_want_delete_item">እቃውን መሰረዝ ይፈልጋሉ?</string>
   <string name="nothing_item_selected">ምንም ነገር አልተመረጠም ፡፡</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">በጣም ዝቅተኛ ነፃ ቦታ! ይህንን ባህሪ ለመጠቀም እባክዎ የመሣሪያዎን ማህደረ ትውስታ ያጽዱ</string>
   <string name="do_you_want_delete_all_sticker">ሁሉንም ተለጣፊዎች መሰረዝ ይፈልጋሉ?</string>
   <string name="do_you_want_delete_all_text">ሁሉንም ጽሑፍ ለመሰረዝ ይፈልጋሉ?</string>
-  <string name="download_theme">ገጽታ ያውርዱ</string>
-  <string name="watch_video_to_download_theme">ጭብጥ ለማውረድ ቪዲዮን ይመልከቱ</string>
-  <string name="done">ተጠናቅቋል</string>
-  <string name="downloading">በማውረድ ላይ</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ምንም የበይነመረብ ግንኙነት የለም። እባክዎ ከበይነመረቡ ጋር ይገናኙ እና እንደገና ይሞክሩ</string>
     <string name="have_an_error_try_another_music_file">ስህተት! ሌላ የሙዚቃ ፋይል ሞክር።</string>
-    <string name="try_again">ድጋሚ ሞክር</string>
-  <string name="change_theme">ገጽታ ቀይር</string>
-  <string name="change_music">ሙዚቃን ቀይር</string>
+    <string name="change_music">ሙዚቃን ቀይር</string>
   <string name="change_image_filter">የምስል ማጣሪያ ቀይር</string>
   <string name="change_video_effect">የቪዲዮ ውጤት ለውጥ</string>
   <string name="change_duration">ቆይታ ለውጥ</string>
-  <string name="can_t_connect_to_internet">ከበይነመረቡ ጋር መገናኘት አልተቻለም</string>
-  <string name="wide_screen">ሰፊ ማያ ገጽ (16 9)</string>
+    <string name="wide_screen">ሰፊ ማያ ገጽ (16 9)</string>
   <string name="vertical">አቀባዊ (9:16)</string>
   <string name="square">ካሬ (1: 1)</string>
   <string name="ratio">ሬሾ</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ፈቃድ ካልሰጡ ይህንን መተግበሪያ መጠቀም አይችሉም።</string>
   <string name="goto_setting_and_grant_permission">ጎቶ ማቀናበር -&gt; የውጭ ማከማቻ ማከማቻ ፈቃድ አንብብ እና ያንብቡ!</string>
   <string name="setting">ማዋቀር</string>
-  <string name="you_can_use_this_feature">ፈቃድ ካልሰጡ ይህንን ባህርይ መጠቀም አይችሉም ፡፡</string>
-  <string name="goto_setting_and_grant_camera_permission">ጎቶ ማቀናበር -&gt; ፈቃድ መስጠት እና የካሜራ ፈቃድ መስጠት!</string>
-  <string name="please_set_auto_update_time">እባክዎ በማቀናበር ላይ የራስ-አዘምን ሰዓት ያዘጋጁ</string>
 </resources>

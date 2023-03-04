@@ -46,8 +46,7 @@
   <string name="my_studio">Studio ime</string>
   <string name="no_project">Asnjë projekt</string>
   <string name="more">më shumë</string>
-  <string name="new_theme">Temat e reja</string>
-  <string name="yes">po</string>
+    <string name="yes">po</string>
   <string name="do_you_want_delete_items">A doni të fshini artikujt?</string>
   <string name="do_you_want_delete_item">A doni të fshini artikullin?</string>
   <string name="nothing_item_selected">Asnjë artikull i zgjedhur.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Hapësirë shumë e ulët e lirë! Ju lutemi pastroni kujtesën e pajisjes tuaj për të përdorur këtë funksion</string>
   <string name="do_you_want_delete_all_sticker">A doni të fshini të gjitha ngjitësit?</string>
   <string name="do_you_want_delete_all_text">Dëshiron të fshish të gjithë tekstin?</string>
-  <string name="download_theme">Tema e shkarkimit</string>
-  <string name="watch_video_to_download_theme">Shikoni videon për të shkarkuar Tema</string>
-  <string name="done">Done</string>
-  <string name="downloading">Shkarkim</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Asnjë lidhje interneti. Ju lutemi lidheni në internet dhe provoni përsëri</string>
     <string name="have_an_error_try_another_music_file">Error! Provoni një skedar tjetër muzikor.</string>
-    <string name="try_again">Provo përsëri</string>
-  <string name="change_theme">Ndrysho temën</string>
-  <string name="change_music">Ndryshoni muzikë</string>
+    <string name="change_music">Ndryshoni muzikë</string>
   <string name="change_image_filter">Ndryshimi i filtrit të figurës</string>
   <string name="change_video_effect">Ndryshoni efektin e videos</string>
   <string name="change_duration">Ndryshoni kohëzgjatjen</string>
-  <string name="can_t_connect_to_internet">Nuk mund të lidhet me internetin</string>
-  <string name="wide_screen">Ekran i gjerë (16: 9)</string>
+    <string name="wide_screen">Ekran i gjerë (16: 9)</string>
   <string name="vertical">Vertikale (9:16)</string>
   <string name="square">Sheshi (1: 1)</string>
   <string name="ratio">Raport</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Nëse nuk jepni leje, nuk mund ta përdorni këtë aplikacion.</string>
   <string name="goto_setting_and_grant_permission">Vendosja e Goto -&gt; Leja dhe dhënia e lejes lexoni lejen e jashtme të ruajtjes!</string>
   <string name="setting">mjedis</string>
-  <string name="you_can_use_this_feature">Nëse nuk jepni leje, nuk mund ta përdorni këtë funksion.</string>
-  <string name="goto_setting_and_grant_camera_permission">Vendosja e Goto -&gt; Leja dhe leja e aparatit fotografik!</string>
-  <string name="please_set_auto_update_time">Ju lutemi caktoni kohën e azhurnimit automatik në vendosje</string>
 </resources>

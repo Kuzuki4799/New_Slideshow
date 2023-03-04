@@ -46,8 +46,7 @@
   <string name="my_studio">ਮੇਰਾ ਸਟੂਡੀਓ</string>
   <string name="no_project">ਕੋਈ ਪ੍ਰੋਜੈਕਟ ਨਹੀਂ</string>
   <string name="more">ਹੋਰ</string>
-  <string name="new_theme">ਨਵੇਂ ਥੀਮ</string>
-  <string name="yes">ਹਾਂ</string>
+    <string name="yes">ਹਾਂ</string>
   <string name="do_you_want_delete_items">ਕੀ ਤੁਸੀਂ ਇਕਾਈਆਂ ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
   <string name="do_you_want_delete_item">ਕੀ ਤੁਸੀਂ ਵਸਤੂ ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
   <string name="nothing_item_selected">ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ ਗਈ.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">ਬਹੁਤ ਘੱਟ ਖਾਲੀ ਥਾਂ! ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਆਪਣੀ ਡਿਵਾਈਸ ਦੀ ਯਾਦ ਨੂੰ ਸਾਫ਼ ਕਰੋ</string>
   <string name="do_you_want_delete_all_sticker">ਕੀ ਤੁਸੀਂ ਸਾਰੇ ਸਟਿੱਕਰਾਂ ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
   <string name="do_you_want_delete_all_text">ਕੀ ਤੁਸੀਂ ਸਾਰਾ ਟੈਕਸਟ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
-  <string name="download_theme">ਥੀਮ ਡਾਉਨਲੋਡ ਕਰੋ</string>
-  <string name="watch_video_to_download_theme">ਥੀਮ ਨੂੰ ਡਾ downloadਨਲੋਡ ਕਰਨ ਲਈ ਵੀਡੀਓ ਵੇਖੋ</string>
-  <string name="done">ਹੋ ਗਿਆ</string>
-  <string name="downloading">ਡਾ .ਨਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ਕੋਈ ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਨਹੀਂ। ਕਿਰਪਾ ਕਰਕੇ ਇੰਟਰਨੈਟ ਨਾਲ ਜੁੜੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
     <string name="have_an_error_try_another_music_file">ਗਲਤੀ! ਕਿਸੇ ਹੋਰ ਸੰਗੀਤ ਫਾਈਲ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ.</string>
-    <string name="try_again">ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
-  <string name="change_theme">ਥੀਮ ਬਦਲੋ</string>
-  <string name="change_music">ਸੰਗੀਤ ਬਦਲੋ</string>
+    <string name="change_music">ਸੰਗੀਤ ਬਦਲੋ</string>
   <string name="change_image_filter">ਚਿੱਤਰ ਫਿਲਟਰ ਬਦਲੋ</string>
   <string name="change_video_effect">ਵੀਡੀਓ ਪ੍ਰਭਾਵ ਬਦਲੋ</string>
   <string name="change_duration">ਅਵਧੀ ਬਦਲੋ</string>
-  <string name="can_t_connect_to_internet">ਇੰਟਰਨੈਟ ਨਾਲ ਜੁੜ ਨਹੀਂ ਸਕਦਾ</string>
-  <string name="wide_screen">ਵਾਈਡ ਸਕ੍ਰੀਨ (16: 9)</string>
+    <string name="wide_screen">ਵਾਈਡ ਸਕ੍ਰੀਨ (16: 9)</string>
   <string name="vertical">ਲੰਬਕਾਰੀ (9: 16)</string>
   <string name="square">ਵਰਗ (1: 1)</string>
   <string name="ratio">ਅਨੁਪਾਤ</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ਜੇ ਤੁਸੀਂ ਆਗਿਆ ਨਹੀਂ ਦਿੰਦੇ ਤਾਂ ਤੁਸੀਂ ਇਸ ਐਪ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਸਕਦੇ.</string>
   <string name="goto_setting_and_grant_permission">ਗੋਤ ਸੈਟਿੰਗ -&gt; ਬਾਹਰੀ ਸਟੋਰੇਜ ਨੂੰ ਪੜ੍ਹਨ ਦੀ ਆਗਿਆ ਅਤੇ ਗ੍ਰਾਂਟ!</string>
   <string name="setting">ਸੈਟਿੰਗ</string>
-  <string name="you_can_use_this_feature">ਜੇ ਤੁਸੀਂ ਆਗਿਆ ਨਹੀਂ ਦਿੰਦੇ, ਤਾਂ ਤੁਸੀਂ ਇਸ ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਸਕਦੇ.</string>
-  <string name="goto_setting_and_grant_camera_permission">ਗੋਤ ਸੈਟਿੰਗ -&gt; ਇਜ਼ਾਜ਼ਤ ਅਤੇ ਕੈਮਰੇ ਦੀ ਇਜ਼ਾਜ਼ਤ!</string>
-  <string name="please_set_auto_update_time">ਕਿਰਪਾ ਕਰਕੇ ਸੈਟਿੰਗ ਵਿੱਚ ਆਟੋ ਅਪਡੇਟ ਸਮਾਂ ਸੈਟ ਕਰੋ</string>
 </resources>

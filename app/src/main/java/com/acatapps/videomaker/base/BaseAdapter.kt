@@ -4,11 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseAdapter <T> : RecyclerView.Adapter<BaseViewHolder>() {
+abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder>() {
+
     protected val mItemList = ArrayList<T>()
+
     val itemList get() = mItemList
 
-    protected var mCurrentItem:T? = null
+    protected var mCurrentItem: T? = null
+
     val currentItem get() = mCurrentItem
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -26,7 +29,7 @@ abstract class BaseAdapter <T> : RecyclerView.Adapter<BaseViewHolder>() {
         notifyDataSetChanged()
     }
 
-    fun addItem(item:T) {
+    fun addItem(item: T) {
         mItemList.add(item)
         notifyDataSetChanged()
     }
@@ -38,6 +41,6 @@ abstract class BaseAdapter <T> : RecyclerView.Adapter<BaseViewHolder>() {
 
     override fun getItemViewType(position: Int): Int = doGetViewType(position)
 
-    abstract fun doGetViewType(position:Int):Int
+    abstract fun doGetViewType(position: Int): Int
 
 }

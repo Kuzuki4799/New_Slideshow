@@ -46,8 +46,7 @@
   <string name="my_studio">Мој студио</string>
   <string name="no_project">Нема пројекта</string>
   <string name="more">Више</string>
-  <string name="new_theme">Нове теме</string>
-  <string name="yes">да</string>
+    <string name="yes">да</string>
   <string name="do_you_want_delete_items">Да ли желите да избришете предмете?</string>
   <string name="do_you_want_delete_item">Да ли желите да избришете предмет?</string>
   <string name="nothing_item_selected">Није одабран ниједан предмет.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Премало слободног простора! Очистите меморију свог уређаја да бисте користили ову функцију</string>
   <string name="do_you_want_delete_all_sticker">Да ли желите да избришете све налепнице?</string>
   <string name="do_you_want_delete_all_text">Да ли желите да избришете сав текст?</string>
-  <string name="download_theme">Преузмите тему</string>
-  <string name="watch_video_to_download_theme">Погледајте видео за преузимање теме</string>
-  <string name="done">Готово</string>
-  <string name="downloading">Преузимање</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Нема интернет конекције. Прикључите се на Интернет и покушајте поново</string>
     <string name="have_an_error_try_another_music_file">Грешка! Покушајте са другом музичком датотеком.</string>
-    <string name="try_again">Покушајте поново</string>
-  <string name="change_theme">Промена тема</string>
-  <string name="change_music">Промените музику</string>
+    <string name="change_music">Промените музику</string>
   <string name="change_image_filter">Промените филтер слике</string>
   <string name="change_video_effect">Промените видео ефекат</string>
   <string name="change_duration">Промените трајање</string>
-  <string name="can_t_connect_to_internet">Није могуће повезивање са Интернетом</string>
-  <string name="wide_screen">Широки екран (16: 9)</string>
+    <string name="wide_screen">Широки екран (16: 9)</string>
   <string name="vertical">Окомито (9:16)</string>
   <string name="square">Трг (1: 1)</string>
   <string name="ratio">Однос</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ако не дате дозволу, не можете да користите ову апликацију.</string>
   <string name="goto_setting_and_grant_permission">Идите на Подешавање -&gt; Дозволите и одобрите читање спољне дозволе за складиштење!</string>
   <string name="setting">Подешавање</string>
-  <string name="you_can_use_this_feature">Ако не дате дозволу, не можете да користите ову функцију.</string>
-  <string name="goto_setting_and_grant_camera_permission">Идите на Подешавање -&gt; Дозволите и одобрите дозволу за камеру!</string>
-  <string name="please_set_auto_update_time">Молимо вас да подесите време аутоматског ажурирања у подешавању</string>
 </resources>

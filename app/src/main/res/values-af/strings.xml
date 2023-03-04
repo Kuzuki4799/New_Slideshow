@@ -46,8 +46,7 @@
   <string name="my_studio">My ateljee</string>
   <string name="no_project">Geen projek nie</string>
   <string name="more">meer</string>
-  <string name="new_theme">Nuwe temas</string>
-  <string name="yes">Ja</string>
+    <string name="yes">Ja</string>
   <string name="do_you_want_delete_items">Wil u items uitvee?</string>
   <string name="do_you_want_delete_item">Wil u die item uitvee?</string>
   <string name="nothing_item_selected">Geen item gekies nie.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Te lae vrye ruimte! Maak u geheue van u toestel skoon om hierdie funksie te gebruik</string>
   <string name="do_you_want_delete_all_sticker">Wil u al die plakkers uitvee?</string>
   <string name="do_you_want_delete_all_text">Wil u al die teks uitvee?</string>
-  <string name="download_theme">Tema aflaai</string>
-  <string name="watch_video_to_download_theme">Kyk na die video om Tema af te laai</string>
-  <string name="done">gedoen</string>
-  <string name="downloading">aflaai</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Geen internetverbinding nie. Koppel asseblief aan die internet en probeer weer</string>
     <string name="have_an_error_try_another_music_file">Fout! Probeer \'n ander musieklêer.</string>
-    <string name="try_again">Probeer weer</string>
-  <string name="change_theme">Verander tema</string>
-  <string name="change_music">Verander musiek</string>
+    <string name="change_music">Verander musiek</string>
   <string name="change_image_filter">Verander prentfilter</string>
   <string name="change_video_effect">Verander video-effek</string>
   <string name="change_duration">Verander duur</string>
-  <string name="can_t_connect_to_internet">Kan nie aan die internet koppel nie</string>
-  <string name="wide_screen">Wye skerm (16: 9)</string>
+    <string name="wide_screen">Wye skerm (16: 9)</string>
   <string name="vertical">Vertikaal (9:16)</string>
   <string name="square">Vierkant (1: 1)</string>
   <string name="ratio">verhouding</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">As u nie toestemming verleen nie, kan u hierdie program nie gebruik nie.</string>
   <string name="goto_setting_and_grant_permission">Goto-instelling -&gt; Toestemming en toestemming vir die lees van eksterne opberging!</string>
   <string name="setting">omgewing</string>
-  <string name="you_can_use_this_feature">As u nie toestemming verleen nie, kan u hierdie funksie nie gebruik nie.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto instelling -&gt; Toestemming en toestemming vir kamera!</string>
-  <string name="please_set_auto_update_time">Stel outomatiese opdateringstyd in</string>
 </resources>

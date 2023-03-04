@@ -46,8 +46,7 @@
   <string name="my_studio">สตูดิโอของฉัน</string>
   <string name="no_project">ไม่มีโครงการ</string>
   <string name="more">มากกว่า</string>
-  <string name="new_theme">ธีมใหม่</string>
-  <string name="yes">ใช่</string>
+    <string name="yes">ใช่</string>
   <string name="do_you_want_delete_items">คุณต้องการลบรายการหรือไม่</string>
   <string name="do_you_want_delete_item">คุณต้องการลบรายการหรือไม่</string>
   <string name="nothing_item_selected">ไม่ได้เลือกรายการ</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">พื้นที่ว่างเหลือน้อยเกินไป! โปรดล้างหน่วยความจำของอุปกรณ์เพื่อใช้คุณสมบัตินี้</string>
   <string name="do_you_want_delete_all_sticker">คุณต้องการลบสติกเกอร์ทั้งหมดหรือไม่</string>
   <string name="do_you_want_delete_all_text">คุณต้องการลบข้อความทั้งหมดหรือไม่?</string>
-  <string name="download_theme">ดาวน์โหลดชุดรูปแบบ</string>
-  <string name="watch_video_to_download_theme">ดูวิดีโอเพื่อดาวน์โหลด Theme</string>
-  <string name="done">เสร็จสิ้น</string>
-  <string name="downloading">ดาวน์โหลด</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ไม่มีการเชื่อมต่ออินเทอร์เน็ต. โปรดเชื่อมต่ออินเทอร์เน็ตแล้วลองอีกครั้ง</string>
-  <string name="have_an_error_try_another_music_file">ข้อผิดพลาด! ลองไฟล์เพลงอื่น</string>
-  <string name="try_again">ลองอีกครั้ง</string>
-  <string name="change_theme">เปลี่ยนธีม</string>
-  <string name="change_music">เปลี่ยนเพลง</string>
+    <string name="have_an_error_try_another_music_file">ข้อผิดพลาด! ลองไฟล์เพลงอื่น</string>
+    <string name="change_music">เปลี่ยนเพลง</string>
   <string name="change_image_filter">เปลี่ยนฟิลเตอร์ภาพ</string>
   <string name="change_video_effect">เปลี่ยนเอฟเฟกต์วิดีโอ</string>
   <string name="change_duration">เปลี่ยนระยะเวลา</string>
-  <string name="can_t_connect_to_internet">ไม่สามารถเชื่อมต่ออินเทอร์เน็ต</string>
-  <string name="wide_screen">ไวด์สกรีน (16: 9)</string>
+    <string name="wide_screen">ไวด์สกรีน (16: 9)</string>
   <string name="vertical">แนวตั้ง (9:16)</string>
   <string name="square">สแควร์ (1: 1)</string>
   <string name="ratio">อัตราส่วน</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">หากคุณไม่อนุญาตคุณไม่สามารถใช้แอพนี้ได้</string>
   <string name="goto_setting_and_grant_permission">การตั้งค่าไปที่ -&gt; การอนุญาตและการอนุญาตให้อ่านที่เก็บข้อมูลภายนอก!</string>
   <string name="setting">การตั้งค่า</string>
-  <string name="you_can_use_this_feature">หากคุณไม่ให้สิทธิ์คุณจะไม่สามารถใช้คุณสมบัตินี้ได้</string>
-  <string name="goto_setting_and_grant_camera_permission">ไปที่การตั้งค่า -&gt; การอนุญาตและให้สิทธิ์กล้อง</string>
-  <string name="please_set_auto_update_time">โปรดตั้งเวลาอัปเดตอัตโนมัติในการตั้งค่า</string>
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">الاستوديو الخاص بي</string>
   <string name="no_project">لا يوجد مشروع</string>
   <string name="more">أكثر</string>
-  <string name="new_theme">مواضيع جديدة</string>
-  <string name="yes">نعم</string>
+    <string name="yes">نعم</string>
   <string name="do_you_want_delete_items">هل تريد حذف العناصر؟</string>
   <string name="do_you_want_delete_item">هل تريد حذف العنصر؟</string>
   <string name="nothing_item_selected">لم يتم تحديد عنصر.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">المساحة الخالية منخفضة جدًا! يرجى مسح ذاكرة جهازك لاستخدام هذه الميزة</string>
   <string name="do_you_want_delete_all_sticker">هل تريد حذف جميع الملصقات؟</string>
   <string name="do_you_want_delete_all_text">هل تريد حذف كل النص؟</string>
-  <string name="download_theme">تنزيل السمة</string>
-  <string name="watch_video_to_download_theme">شاهد الفيديو لتحميل السمة</string>
-  <string name="done">منجز</string>
-  <string name="downloading">جارى التحميل</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">لا يوجد اتصال بالإنترنت. يرجى الاتصال بالإنترنت وإعادة المحاولة</string>
-  <string name="have_an_error_try_another_music_file">خطأ! جرب ملف موسيقى آخر.</string>
-  <string name="try_again">حاول مرة أخري</string>
-  <string name="change_theme">غير الخلفية</string>
-  <string name="change_music">تغيير الموسيقى</string>
+    <string name="have_an_error_try_another_music_file">خطأ! جرب ملف موسيقى آخر.</string>
+    <string name="change_music">تغيير الموسيقى</string>
   <string name="change_image_filter">تغيير مرشح الصورة</string>
   <string name="change_video_effect">تغيير تأثير الفيديو</string>
   <string name="change_duration">تغيير المدة</string>
-  <string name="can_t_connect_to_internet">لا يمكن الاتصال بالإنترنت</string>
-  <string name="wide_screen">شاشة عريضة (16: 9)</string>
+    <string name="wide_screen">شاشة عريضة (16: 9)</string>
   <string name="vertical">عمودي (9:16)</string>
   <string name="square">مربع (1: 1)</string>
   <string name="ratio">نسبة</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">إذا لم تمنح الإذن ، فلا يمكنك استخدام هذا التطبيق.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; إذن ومنح قراءة إذن التخزين الخارجي!</string>
   <string name="setting">ضبط</string>
-  <string name="you_can_use_this_feature">إذا لم تمنح الإذن ، فلا يمكنك استخدام هذه الميزة.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; إذن ومنح إذن الكاميرا!</string>
-  <string name="please_set_auto_update_time">يرجى تحديد وقت التحديث التلقائي في الإعداد</string>
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">הסטודיו שלי</string>
   <string name="no_project">אין פרויקט</string>
   <string name="more">יותר</string>
-  <string name="new_theme">נושאים חדשים</string>
-  <string name="yes">כן</string>
+    <string name="yes">כן</string>
   <string name="do_you_want_delete_items">האם ברצונך למחוק פריטים?</string>
   <string name="do_you_want_delete_item">האם ברצונך למחוק את הפריט?</string>
   <string name="nothing_item_selected">לא נבחר פריט.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">שטח פנוי נמוך מדי! אנא נקה את הזיכרון של המכשיר שלך כדי להשתמש בתכונה זו</string>
   <string name="do_you_want_delete_all_sticker">האם ברצונך למחוק את כל המדבקות?</string>
   <string name="do_you_want_delete_all_text">האם ברצונך למחוק את כל הטקסט?</string>
-  <string name="download_theme">הורד נושא</string>
-  <string name="watch_video_to_download_theme">צפו בוידיאו להורדת נושא</string>
-  <string name="done">בוצע</string>
-  <string name="downloading">מוריד</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">אין חיבור אינטרנט. אנא התחבר לאינטרנט ונסה שוב</string>
     <string name="have_an_error_try_another_music_file">שגיאה! נסה קובץ מוסיקה אחר.</string>
-    <string name="try_again">נסה שוב</string>
-  <string name="change_theme">לשנות נושא</string>
-  <string name="change_music">שנה מוסיקה</string>
+    <string name="change_music">שנה מוסיקה</string>
   <string name="change_image_filter">שנה את מסנן התמונות</string>
   <string name="change_video_effect">שינוי אפקט הווידאו</string>
   <string name="change_duration">שנה משך זמן</string>
-  <string name="can_t_connect_to_internet">לא ניתן להתחבר לאינטרנט</string>
-  <string name="wide_screen">מסך רחב (16: 9)</string>
+    <string name="wide_screen">מסך רחב (16: 9)</string>
   <string name="vertical">אנכי (9:16)</string>
   <string name="square">ריבוע (1: 1)</string>
   <string name="ratio">יחס</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">אם אינך נותן הרשאה, אינך יכול להשתמש ביישום זה.</string>
   <string name="goto_setting_and_grant_permission">הגדרת Goto -&gt; הרשאה וקבלת הרשאה לאחסון חיצוני לקריאה!</string>
   <string name="setting">הגדרה</string>
-  <string name="you_can_use_this_feature">אם אינך נותן הרשאה, אינך יכול להשתמש בתכונה זו.</string>
-  <string name="goto_setting_and_grant_camera_permission">הגדרת Goto -&gt; הרשאה והענקת הרשאת מצלמה!</string>
-  <string name="please_set_auto_update_time">אנא קבע את הגדרת זמן העדכון האוטומטי</string>
 </resources>

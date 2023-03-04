@@ -15,24 +15,32 @@ import kotlinx.android.synthetic.main.item_video_in_joiner.view.*
 import kotlin.math.roundToInt
 
 class VideoInJoinerAdapter : BaseAdapter<VideoForJoinDataModel>() {
-    private val imageSize:Float = DimenUtils.density(VideoMakerApplication.getContext())*76
+
+    private val imageSize: Float = DimenUtils.density(VideoMakerApplication.getContext()) * 76
+
     override fun doGetViewType(position: Int): Int = R.layout.item_video_in_joiner
-    var itemClick:((VideoForJoinDataModel)->Unit)?=null
+
+    var itemClick: ((VideoForJoinDataModel) -> Unit)? = null
+
     private var mCurrentPosition = -1
+
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val item = mItemList[position]
         val view = holder.itemView
-        Glide.with(view.context).load(item.path).apply(RequestOptions().override(imageSize.toInt())).into(view.mediaThumb)
-        view.durationLabel.text = Utils.convertSecToTimeString((MediaUtils.getVideoDuration(item.path).toFloat()/1000).roundToInt())
+        Glide.with(view.context).load(item.path).apply(RequestOptions().override(imageSize.toInt()))
+            .into(view.mediaThumb)
+        view.durationLabel.text = Utils.convertSecToTimeString(
+            (MediaUtils.getVideoDuration(item.path).toFloat() / 1000).roundToInt()
+        )
 
-        if(item.select) {
+        if (item.select) {
             view.strokeBg.visibility = View.VISIBLE
         } else {
             view.strokeBg.visibility = View.GONE
         }
 
         view.setOnClickListener {
-            if(mCurrentPosition>=0)mItemList[mCurrentPosition].select = false
+            if (mCurrentPosition >= 0) mItemList[mCurrentPosition].select = false
             mCurrentPosition = position
             mItemList[mCurrentPosition].select = true
             notifyDataSetChanged()
@@ -41,8 +49,8 @@ class VideoInJoinerAdapter : BaseAdapter<VideoForJoinDataModel>() {
 
     }
 
-     fun highlightItem(id:Int) {
-        for(item in mItemList) {
+    fun highlightItem(id: Int) {
+        for (item in mItemList) {
             item.select = item.id == id
         }
         notifyDataSetChanged()

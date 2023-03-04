@@ -46,8 +46,7 @@
   <string name="my_studio">Мая студыя</string>
   <string name="no_project">Няма праекта</string>
   <string name="more">Больш</string>
-  <string name="new_theme">Новыя тэмы</string>
-  <string name="yes">Так</string>
+    <string name="yes">Так</string>
   <string name="do_you_want_delete_items">Вы хочаце выдаліць элементы?</string>
   <string name="do_you_want_delete_item">Вы хочаце выдаліць элемент?</string>
   <string name="nothing_item_selected">Не выбраны элемент.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Занадта мала вольнага месца! Ачысціце памяць вашага прылады, каб выкарыстоўваць гэтую функцыю</string>
   <string name="do_you_want_delete_all_sticker">Вы хочаце выдаліць усе налепкі?</string>
   <string name="do_you_want_delete_all_text">Вы хочаце выдаліць увесь тэкст?</string>
-  <string name="download_theme">Спампаваць тэму</string>
-  <string name="watch_video_to_download_theme">Паглядзіце відэа, каб загрузіць тэму</string>
-  <string name="done">Зроблена</string>
-  <string name="downloading">Загрузка</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Няма падлучэння да Інтэрнэту. Падключыцеся да Інтэрнэту і паспрабуйце зноў</string>
     <string name="have_an_error_try_another_music_file">Памылка! Паспрабуйце яшчэ адзін музычны файл.</string>
-    <string name="try_again">Паспрабуй яшчэ</string>
-  <string name="change_theme">Змена тэмы</string>
-  <string name="change_music">Змена музыкі</string>
+    <string name="change_music">Змена музыкі</string>
   <string name="change_image_filter">Змена фільтра малюнка</string>
   <string name="change_video_effect">Змена эфекту відэа</string>
   <string name="change_duration">Змяніць працягласць</string>
-  <string name="can_t_connect_to_internet">Немагчыма падключыцца да Інтэрнэту</string>
-  <string name="wide_screen">Шырокі экран (16: 9)</string>
+    <string name="wide_screen">Шырокі экран (16: 9)</string>
   <string name="vertical">Вертыкаль (09.16)</string>
   <string name="square">Плошча (1: 1)</string>
   <string name="ratio">Каэфіцыент</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Калі вы не дасце дазволу, вы не можаце выкарыстоўваць гэта дадатак.</string>
   <string name="goto_setting_and_grant_permission">Перайсці да налад -&gt; Дазвол і дазвол чытання дазволу на знешняе захоўванне!</string>
   <string name="setting">Заданне</string>
-  <string name="you_can_use_this_feature">Калі вы не дасце дазволу, вы не можаце выкарыстоўваць гэтую функцыю.</string>
-  <string name="goto_setting_and_grant_camera_permission">Перайсці - Настройка і дазвол камеры!</string>
-  <string name="please_set_auto_update_time">Калі ласка, усталюйце час аўтаматычнага абнаўлення ў наладзе</string>
 </resources>

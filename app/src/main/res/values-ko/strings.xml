@@ -46,8 +46,7 @@
   <string name="my_studio">내 스튜디오</string>
   <string name="no_project">프로젝트 없음</string>
   <string name="more">더</string>
-  <string name="new_theme">새로운 테마</string>
-  <string name="yes">예</string>
+    <string name="yes">예</string>
   <string name="do_you_want_delete_items">항목을 삭제 하시겠습니까?</string>
   <string name="do_you_want_delete_item">항목을 삭제 하시겠습니까?</string>
   <string name="nothing_item_selected">선택된 항목이 없습니다.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">여유 공간이 너무 적습니다! 이 기능을 사용하려면 장치의 메모리를 비우십시오</string>
   <string name="do_you_want_delete_all_sticker">모든 스티커를 삭제 하시겠습니까?</string>
   <string name="do_you_want_delete_all_text">모든 텍스트를 삭제 하시겠습니까?</string>
-  <string name="download_theme">테마 다운로드</string>
-  <string name="watch_video_to_download_theme">테마를 다운로드하려면 비디오 시청</string>
-  <string name="done">끝난</string>
-  <string name="downloading">다운로드 중</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">인터넷에 연결되지 않음. 인터넷에 연결하고 다시 시도하십시오</string>
     <string name="have_an_error_try_another_music_file">오류! 다른 음악 파일을 사용해보십시오.</string>
-    <string name="try_again">다시 시도하십시오</string>
-  <string name="change_theme">테마 변경</string>
-  <string name="change_music">음악 변경</string>
+    <string name="change_music">음악 변경</string>
   <string name="change_image_filter">이미지 필터 변경</string>
   <string name="change_video_effect">비디오 효과 변경</string>
   <string name="change_duration">기간 변경</string>
-  <string name="can_t_connect_to_internet">인터넷에 연결할 수 없습니다</string>
-  <string name="wide_screen">와이드 스크린 (16 : 9)</string>
+    <string name="wide_screen">와이드 스크린 (16 : 9)</string>
   <string name="vertical">세로 (9:16)</string>
   <string name="square">정사각형 (1 : 1)</string>
   <string name="ratio">비율</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">권한을 부여하지 않으면이 앱을 사용할 수 없습니다.</string>
   <string name="goto_setting_and_grant_permission">설정-&gt; 권한으로 이동하여 외부 저장소 읽기 권한을 부여하십시오!</string>
   <string name="setting">환경</string>
-  <string name="you_can_use_this_feature">권한을 부여하지 않으면이 기능을 사용할 수 없습니다.</string>
-  <string name="goto_setting_and_grant_camera_permission">설정-&gt; 권한으로 이동하여 카메라 권한을 부여하십시오!</string>
-  <string name="please_set_auto_update_time">설정에서 자동 업데이트 시간을 설정하십시오</string>
 </resources>

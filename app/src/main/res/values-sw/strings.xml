@@ -46,8 +46,7 @@
   <string name="my_studio">Studio yangu</string>
   <string name="no_project">Hakuna Mradi</string>
   <string name="more">Zaidi</string>
-  <string name="new_theme">Mada mpya</string>
-  <string name="yes">Ndio</string>
+    <string name="yes">Ndio</string>
   <string name="do_you_want_delete_items">Je! Unataka kufuta vitu?</string>
   <string name="do_you_want_delete_item">Je! Unataka kufuta kitu?</string>
   <string name="nothing_item_selected">Hakuna kitu kilichochaguliwa.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Nafasi ya bure mno! Tafadhali futa kumbukumbu ya kifaa chako kutumia huduma hii</string>
   <string name="do_you_want_delete_all_sticker">Je! Unataka kufuta stika zote?</string>
   <string name="do_you_want_delete_all_text">Je! Unataka kufuta maandishi yote?</string>
-  <string name="download_theme">Download mandhari</string>
-  <string name="watch_video_to_download_theme">Tazama video kupakua Mada</string>
-  <string name="done">Imemaliza</string>
-  <string name="downloading">Inapakua</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Hakuna muunganisho wa mtandao. Tafadhali unganisha kwenye wavuti na ujaribu tena</string>
     <string name="have_an_error_try_another_music_file">Kosa! Jaribu faili nyingine ya muziki.</string>
-    <string name="try_again">Jaribu tena</string>
-  <string name="change_theme">Badilisha mandhari</string>
-  <string name="change_music">Badilisha muziki</string>
+    <string name="change_music">Badilisha muziki</string>
   <string name="change_image_filter">Badilisha kichungi cha picha</string>
   <string name="change_video_effect">Badilisha athari ya video</string>
   <string name="change_duration">Badilisha muda</string>
-  <string name="can_t_connect_to_internet">Haiwezi kuunganisha kwenye mtandao</string>
-  <string name="wide_screen">Skrini pana (16: 9)</string>
+    <string name="wide_screen">Skrini pana (16: 9)</string>
   <string name="vertical">Wima (9:16)</string>
   <string name="square">Mraba (1: 1)</string>
   <string name="ratio">Viwango</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ukikosa ruhusa, huwezi kutumia programu hii.</string>
   <string name="goto_setting_and_grant_permission">Kuweka Goto -&gt; Ruhusa na ruhusa kusoma ruhusa ya uhifadhi wa nje!</string>
   <string name="setting">Kuweka</string>
-  <string name="you_can_use_this_feature">Ukikosa ruhusa, huwezi kutumia huduma hii.</string>
-  <string name="goto_setting_and_grant_camera_permission">Kuweka Goto -&gt; Ruhusa na ruhusa kamera!</string>
-  <string name="please_set_auto_update_time">Tafadhali weka wakati wa kusasisha otomatiki katika mpangilio</string>
 </resources>

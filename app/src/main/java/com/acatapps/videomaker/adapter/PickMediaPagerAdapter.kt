@@ -8,22 +8,24 @@ import com.acatapps.videomaker.R
 import com.acatapps.videomaker.ui.pick_media.MediaFolderFragment
 import com.acatapps.videomaker.ui.pick_media.MediaListFragment
 
-class PickMediaPagerAdapter(val context: Context, fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+class PickMediaPagerAdapter(val context: Context, fragmentManager: FragmentManager) :
+    FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+
     override fun getItem(position: Int): Fragment {
-        return when(position){
-            0->{
+        return when (position) {
+            0 -> {
                 MediaListFragment()
             }
-            else ->{
+            else -> {
                 MediaFolderFragment()
             }
 
         }
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        return when(position) {
-            0->{
+    override fun getPageTitle(position: Int): CharSequence {
+        return when (position) {
+            0 -> {
                 context.getString(R.string.gallery).toUpperCase()
             }
             else -> {
@@ -33,5 +35,4 @@ class PickMediaPagerAdapter(val context: Context, fragmentManager: FragmentManag
     }
 
     override fun getCount(): Int = 2
-
 }

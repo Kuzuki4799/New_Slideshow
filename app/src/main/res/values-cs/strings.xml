@@ -46,8 +46,7 @@
   <string name="my_studio">Moje studio</string>
   <string name="no_project">Žádný projekt</string>
   <string name="more">Více</string>
-  <string name="new_theme">Nová témata</string>
-  <string name="yes">Ano</string>
+    <string name="yes">Ano</string>
   <string name="do_you_want_delete_items">Chcete odstranit položky?</string>
   <string name="do_you_want_delete_item">Chcete položku smazat?</string>
   <string name="nothing_item_selected">Nebyla vybrána žádná položka.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Příliš málo volného místa! Chcete-li tuto funkci používat, vymažte paměť zařízení</string>
   <string name="do_you_want_delete_all_sticker">Chcete odstranit všechny nálepky?</string>
   <string name="do_you_want_delete_all_text">Chcete smazat veškerý text?</string>
-  <string name="download_theme">Stáhnout téma</string>
-  <string name="watch_video_to_download_theme">Podívejte se na video ke stažení Téma</string>
-  <string name="done">Hotovo</string>
-  <string name="downloading">Stahování</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Žádné internetové připojení. Připojte se k internetu a zkuste to znovu</string>
     <string name="have_an_error_try_another_music_file">Chyba! Vyzkoušejte jiný hudební soubor.</string>
-    <string name="try_again">Zkus to znovu</string>
-  <string name="change_theme">Změnit motiv</string>
-  <string name="change_music">Změna hudby</string>
+    <string name="change_music">Změna hudby</string>
   <string name="change_image_filter">Změnit filtr obrázků</string>
   <string name="change_video_effect">Změnit video efekt</string>
   <string name="change_duration">Změnit trvání</string>
-  <string name="can_t_connect_to_internet">Nelze se připojit k internetu</string>
-  <string name="wide_screen">Široká obrazovka (16: 9)</string>
+    <string name="wide_screen">Široká obrazovka (16: 9)</string>
   <string name="vertical">Vertikální (9:16)</string>
   <string name="square">Čtverec (1: 1)</string>
   <string name="ratio">Poměr</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Pokud povolení neudělíte, nemůžete tuto aplikaci použít.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Povolení a udělení oprávnění ke čtení externího úložiště!</string>
   <string name="setting">Nastavení</string>
-  <string name="you_can_use_this_feature">Pokud povolení neudělíte, nemůžete tuto funkci použít.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Povolení a udělení povolení kamery!</string>
-  <string name="please_set_auto_update_time">V nastavení prosím nastavte čas automatické aktualizace</string>
 </resources>

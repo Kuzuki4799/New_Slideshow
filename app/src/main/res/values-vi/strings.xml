@@ -46,8 +46,7 @@
   <string name="my_studio">Bộ sưu tập</string>
   <string name="no_project">Không có dự án</string>
   <string name="more">Hơn</string>
-  <string name="new_theme">Chủ đề mới</string>
-  <string name="yes">Đồng ý</string>
+    <string name="yes">Đồng ý</string>
   <string name="do_you_want_delete_items">Bạn có muốn xóa các mục?</string>
   <string name="do_you_want_delete_item">Bạn có muốn xóa mục?</string>
   <string name="nothing_item_selected">Không có mục nào được chọn.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Không gian trống quá thấp. Xóa bộ nhớ để sử dụng tính năng này</string>
   <string name="do_you_want_delete_all_sticker">Bạn có muốn xóa tất cả nhãn dán?</string>
   <string name="do_you_want_delete_all_text">Bạn có muốn xóa tất cả văn bản?</string>
-  <string name="download_theme">Tải về chủ đề</string>
-  <string name="watch_video_to_download_theme">Xem video để tải về Theme</string>
-  <string name="done">Hoàn thành</string>
-  <string name="downloading">Đang tải xuống</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Không có kết nối Internet. Vui lòng kết nối với internet và thử lại</string>
     <string name="have_an_error_try_another_music_file">Xảy ra lỗi. Hãy thử một tập tin âm nhạc khác.</string>
-    <string name="try_again">Thử lại</string>
-  <string name="change_theme">Thay đổi chủ đề</string>
-  <string name="change_music">Thay đổi nhạc</string>
+    <string name="change_music">Thay đổi nhạc</string>
   <string name="change_image_filter">Thay đổi bộ lọc hình ảnh</string>
   <string name="change_video_effect">Thay đổi hiệu ứng video</string>
   <string name="change_duration">Thay đổi thời lượng</string>
-  <string name="can_t_connect_to_internet">Không thể kết nối với internet</string>
-  <string name="wide_screen">Màn hình rộng (16: 9)</string>
+    <string name="wide_screen">Màn hình rộng (16: 9)</string>
   <string name="vertical">Dọc (9:16)</string>
   <string name="square">Hình vuông (1: 1)</string>
   <string name="ratio">Tỉ lệ</string>
@@ -86,9 +77,5 @@
   <string name="anser_grant_permission">Nếu bạn không cấp quyền thì không thể sử dụng được ứng dụng</string>
   <string name="goto_setting_and_grant_permission">Tới Cài đặt -> Quyền và cho cấp quyền đọc bộ nhớ !</string>
   <string name="setting">Cài đặt</string>
-
-  <string name="you_can_use_this_feature">Bạn không thể sử dụng chức năng này nếu không cấp quyền.</string>
-  <string name="goto_setting_and_grant_camera_permission">Cài đặt -> Quyền và cấp quyền sử dụng camera !</string>
-  <string name="please_set_auto_update_time">Vui lòng cài đặt tự động cập nhật thời gian.</string>
 
 </resources>

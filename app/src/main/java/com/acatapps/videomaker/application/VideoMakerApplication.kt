@@ -26,8 +26,8 @@ class VideoMakerApplication : BaseApplication(), KodeinAware {
         bind() from provider { PickMediaViewModelFactory(instance()) }
         bind() from provider { SelectMusicViewModelFactory(instance()) }
         bind() from provider { SlideShowViewModelFactory() }
-        bind<AudioManagerV3>() with  provider { AudioManagerV3Impl() }
-        bind<MusicPlayer>() with  provider { MusicPlayerImpl() }
+        bind<AudioManagerV3>() with provider { AudioManagerV3Impl() }
+        bind<MusicPlayer>() with provider { MusicPlayerImpl() }
     }
 
     companion object {

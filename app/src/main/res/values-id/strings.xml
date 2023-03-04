@@ -46,8 +46,7 @@
   <string name="my_studio">Studio saya</string>
   <string name="no_project">Tidak Ada Proyek</string>
   <string name="more">Lebih</string>
-  <string name="new_theme">Tema baru</string>
-  <string name="yes">Iya</string>
+    <string name="yes">Iya</string>
   <string name="do_you_want_delete_items">Apakah Anda ingin menghapus item?</string>
   <string name="do_you_want_delete_item">Apakah Anda ingin menghapus item?</string>
   <string name="nothing_item_selected">Tidak ada item yang dipilih.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Ruang kosong terlalu rendah! Hapus memori perangkat Anda untuk menggunakan fitur ini</string>
   <string name="do_you_want_delete_all_sticker">Apakah Anda ingin menghapus semua stiker?</string>
   <string name="do_you_want_delete_all_text">Apakah Anda ingin menghapus semua teks?</string>
-  <string name="download_theme">Unduh tema</string>
-  <string name="watch_video_to_download_theme">Tonton video untuk mengunduh Tema</string>
-  <string name="done">Selesai</string>
-  <string name="downloading">Mengunduh</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Tidak ada koneksi internet. Harap terhubung ke internet dan coba lagi</string>
     <string name="have_an_error_try_another_music_file">Kesalahan! Coba file musik lain.</string>
-    <string name="try_again">Coba lagi</string>
-  <string name="change_theme">Ubah tema</string>
-  <string name="change_music">Ubah musik</string>
+    <string name="change_music">Ubah musik</string>
   <string name="change_image_filter">Ubah filter gambar</string>
   <string name="change_video_effect">Ubah efek video</string>
   <string name="change_duration">Ubah durasi</string>
-  <string name="can_t_connect_to_internet">Tidak dapat terhubung ke internet</string>
-  <string name="wide_screen">Layar Lebar (16: 9)</string>
+    <string name="wide_screen">Layar Lebar (16: 9)</string>
   <string name="vertical">Vertikal (9:16)</string>
   <string name="square">Kotak (1: 1)</string>
   <string name="ratio">Perbandingan</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Jika Anda tidak memberikan izin, Anda tidak dapat menggunakan aplikasi ini.</string>
   <string name="goto_setting_and_grant_permission">Pengaturan Goto -&gt; Izin dan berikan izin baca penyimpanan eksternal!</string>
   <string name="setting">Pengaturan</string>
-  <string name="you_can_use_this_feature">Jika Anda tidak memberikan izin, Anda tidak dapat menggunakan fitur ini.</string>
-  <string name="goto_setting_and_grant_camera_permission">Pengaturan Goto -&gt; Izin dan berikan izin kamera!</string>
-  <string name="please_set_auto_update_time">Harap atur waktu pembaruan otomatis dalam pengaturan</string>
 </resources>

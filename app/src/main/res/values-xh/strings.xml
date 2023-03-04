@@ -46,8 +46,7 @@
   <string name="my_studio">Isitudiyo sam</string>
   <string name="no_project">Akukho projekthi</string>
   <string name="more">Kaninzi</string>
-  <string name="new_theme">Imixholo emitsha</string>
-  <string name="yes">Ewe</string>
+    <string name="yes">Ewe</string>
   <string name="do_you_want_delete_items">Ngaba uyafuna ukucima izinto?</string>
   <string name="do_you_want_delete_item">Ngaba uyafuna ukucima into?</string>
   <string name="nothing_item_selected">Akukho nto ikhethiweyo.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Indawo ephantsi kakhulu! Nceda ucime inkumbulo yesixhobo sakho ukuze usebenzise eli nqaku</string>
   <string name="do_you_want_delete_all_sticker">Ngaba ufuna ukucima zonke izitikha?</string>
   <string name="do_you_want_delete_all_text">Ngaba ufuna ukucima wonke umbhalo?</string>
-  <string name="download_theme">Khuphela umxholo</string>
-  <string name="watch_video_to_download_theme">Bukela ividiyo ukuze ukhuphele Umxholo</string>
-  <string name="done">Kwenziwe</string>
-  <string name="downloading">Ukukhuphela</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Akukho nxibelelwano lwe-intanethi. Nceda uqhagamshele kwi-intanethi kwaye uzame kwakhona</string>
     <string name="have_an_error_try_another_music_file">Impazamo! Zama enye ifayile yomculo.</string>
-    <string name="try_again">Zama kwakhona</string>
-  <string name="change_theme">Guqula umxholo</string>
-  <string name="change_music">Guqula umculo</string>
+    <string name="change_music">Guqula umculo</string>
   <string name="change_image_filter">Guqula isihluzo somfanekiso</string>
   <string name="change_video_effect">Guqula isiphumo sevidiyo</string>
   <string name="change_duration">Guqula ixesha</string>
-  <string name="can_t_connect_to_internet">Ayikwazi ukunxibelelana kwi-intanethi</string>
-  <string name="wide_screen">Isikrini Esibanzi (16: 9)</string>
+    <string name="wide_screen">Isikrini Esibanzi (16: 9)</string>
   <string name="vertical">Imbonakalo (9: 16)</string>
   <string name="square">Isikwere (1: 1)</string>
   <string name="ratio">Ulinganiso</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ukuba awuniki mvume, awunakusebenzisa le app.</string>
   <string name="goto_setting_and_grant_permission">Ukuseta i-Goto-&gt; Imvume kunye nokubonelelwa kwemvume yokufunda yangaphandle!</string>
   <string name="setting">Ukuseta</string>
-  <string name="you_can_use_this_feature">Ukuba awuniki mvume, awunakulisebenzisa eli nqaku.</string>
-  <string name="goto_setting_and_grant_camera_permission">Ukuseta i-Goto -&gt; Imvume kunye nokunika imvume yekhamera!</string>
-  <string name="please_set_auto_update_time">Nceda usete ixesha lokuhlaziya oluzenzekelayo kuseto</string>
 </resources>

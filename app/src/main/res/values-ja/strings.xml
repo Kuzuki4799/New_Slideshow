@@ -46,8 +46,7 @@
   <string name="my_studio">私のスタジオ</string>
   <string name="no_project">プロジェクトなし</string>
   <string name="more">もっと</string>
-  <string name="new_theme">新しいテーマ</string>
-  <string name="yes">はい</string>
+    <string name="yes">はい</string>
   <string name="do_you_want_delete_items">アイテムを削除しますか？</string>
   <string name="do_you_want_delete_item">アイテムを削除しますか？</string>
   <string name="nothing_item_selected">アイテムが選択されていません。</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">空き容量が少なすぎます！この機能を使用するには、デバイスのメモリをクリアしてください</string>
   <string name="do_you_want_delete_all_sticker">すべてのステッカーを削除しますか？</string>
   <string name="do_you_want_delete_all_text">すべてのテキストを削除しますか？</string>
-  <string name="download_theme">テーマをダウンロード</string>
-  <string name="watch_video_to_download_theme">ビデオを見てテーマをダウンロードする</string>
-  <string name="done">完了</string>
-  <string name="downloading">ダウンロード中</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">インターネットに接続されていません。インターネットに接続して、もう一度お試しください</string>
     <string name="have_an_error_try_another_music_file">エラー！別の音楽ファイルを試してください。</string>
-    <string name="try_again">再試行</string>
-  <string name="change_theme">テーマを変更</string>
-  <string name="change_music">音楽を変える</string>
+    <string name="change_music">音楽を変える</string>
   <string name="change_image_filter">画像フィルターを変更</string>
   <string name="change_video_effect">ビデオ効果を変更する</string>
   <string name="change_duration">期間を変更</string>
-  <string name="can_t_connect_to_internet">インターネットに接続できません</string>
-  <string name="wide_screen">ワイドスクリーン（16：9）</string>
+    <string name="wide_screen">ワイドスクリーン（16：9）</string>
   <string name="vertical">縦（9:16）</string>
   <string name="square">スクエア（1：1）</string>
   <string name="ratio">比</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">許可を与えない場合、このアプリは使用できません。</string>
   <string name="goto_setting_and_grant_permission">設定に移動-&gt;権限と外部ストレージの読み取り権限を付与します！</string>
   <string name="setting">設定</string>
-  <string name="you_can_use_this_feature">権限を付与しないと、この機能を使用できません。</string>
-  <string name="goto_setting_and_grant_camera_permission">設定に移動-&gt;許可とカメラの許可を付与！</string>
-  <string name="please_set_auto_update_time">設定で自動更新時間を設定してください</string>
 </resources>

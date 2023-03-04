@@ -46,8 +46,7 @@
   <string name="my_studio">Saját stúdióm</string>
   <string name="no_project">Nincs projekt</string>
   <string name="more">Több</string>
-  <string name="new_theme">Új témák</string>
-  <string name="yes">Igen</string>
+    <string name="yes">Igen</string>
   <string name="do_you_want_delete_items">Törli az elemeket?</string>
   <string name="do_you_want_delete_item">Törli az elemet?</string>
   <string name="nothing_item_selected">Nincs elem kiválasztva.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Túl alacsony a szabad hely! A szolgáltatás használatához törölje az eszköz memóriáját</string>
   <string name="do_you_want_delete_all_sticker">Törli az összes matricát?</string>
   <string name="do_you_want_delete_all_text">Törli az összes szöveget?</string>
-  <string name="download_theme">Töltse le a témát</string>
-  <string name="watch_video_to_download_theme">Nézze meg a videót a téma letöltéséhez</string>
-  <string name="done">Kész</string>
-  <string name="downloading">A letöltés</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Nincs internetkapcsolat. Kérjük, csatlakozzon az internethez, és próbálja újra</string>
     <string name="have_an_error_try_another_music_file">Hiba! Próbáljon ki egy másik zenei fájlt.</string>
-    <string name="try_again">Próbáld újra</string>
-  <string name="change_theme">Téma módosítása</string>
-  <string name="change_music">Zene megváltoztatása</string>
+    <string name="change_music">Zene megváltoztatása</string>
   <string name="change_image_filter">Cserélje ki a képszűrőt</string>
   <string name="change_video_effect">A videó effektus módosítása</string>
   <string name="change_duration">Időtartam megváltoztatása</string>
-  <string name="can_t_connect_to_internet">Nem lehet csatlakozni az internethez</string>
-  <string name="wide_screen">Széles képernyő (16: 9)</string>
+    <string name="wide_screen">Széles képernyő (16: 9)</string>
   <string name="vertical">Függőleges (9:16)</string>
   <string name="square">Négyzet (1: 1)</string>
   <string name="ratio">Hányados</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ha nem ad engedélyt, akkor nem használhatja ezt az alkalmazást.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Engedély és a külső tárolási engedély megadása!</string>
   <string name="setting">Beállítás</string>
-  <string name="you_can_use_this_feature">Ha nem ad engedélyt, akkor ezt a funkciót nem használhatja.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto beállítás -&gt; Engedély és kamera engedély!</string>
-  <string name="please_set_auto_update_time">Kérjük, állítsa be az automatikus frissítés idejét</string>
 </resources>

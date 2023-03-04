@@ -46,8 +46,7 @@
   <string name="my_studio">ငါ့စတူဒီယို</string>
   <string name="no_project">စီမံကိန်းမရှိပါ</string>
   <string name="more">နောက်ထပ်</string>
-  <string name="new_theme">အကြောင်းအရာအသစ်များ</string>
-  <string name="yes">ဟုတ်တယ်</string>
+    <string name="yes">ဟုတ်တယ်</string>
   <string name="do_you_want_delete_items">ပစ္စည်းများကိုသင်ဖျက်ချင်ပါသလား။</string>
   <string name="do_you_want_delete_item">ဒီပစ္စည်းကိုဖျက်ချင်ပါသလား။</string>
   <string name="nothing_item_selected">မရွေးရသေးပါ။</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">အလွန်နည်းသောနေရာလွတ်! ကျေးဇူးပြုပြီးဒီကိရိယာကိုသုံးရန်သင့်စက်၏မှတ်ဉာဏ်ကိုရှင်းပါ</string>
   <string name="do_you_want_delete_all_sticker">စတစ်ကာများအားလုံးကိုဖျက်ချင်ပါသလား။</string>
   <string name="do_you_want_delete_all_text">စာသားအားလုံးကိုဖျက်ချင်ပါသလား။</string>
-  <string name="download_theme">ခေါင်းစဉ်ကိုဒေါင်းလုပ်လုပ်ပါ</string>
-  <string name="watch_video_to_download_theme">Theme ကိုဒေါင်းလုပ်လုပ်ရန်ဗွီဒီယိုကြည့်ပါ</string>
-  <string name="done">ပြီးပြီ</string>
-  <string name="downloading">ဒေါင်းလုပ်ရယူပါ</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">အင်တာနက်ဆက်သွယ်မှုမရှိပါ ကျေးဇူးပြုပြီးအင်တာနက်ကိုဆက်သွယ်ပြီးထပ်ကြိုးစားပါ</string>
     <string name="have_an_error_try_another_music_file">အမှား! အခြားတေးဂီတဖိုင်တစ်ခုကြိုးစားကြည့်ပါ။</string>
-    <string name="try_again">ထပ်ကြိုးစားပါ</string>
-  <string name="change_theme">ဆောင်ပုဒ်ပြောင်းပါ</string>
-  <string name="change_music">ဂီတပြောင်းပါ</string>
+    <string name="change_music">ဂီတပြောင်းပါ</string>
   <string name="change_image_filter">ပုံ filter ကိုပြောင်းပါ</string>
   <string name="change_video_effect">ဗီဒီယိုအကျိုးသက်ရောက်မှုကိုပြောင်းပါ</string>
   <string name="change_duration">ကြာချိန်ကိုပြောင်းပါ</string>
-  <string name="can_t_connect_to_internet">အင်တာနက် ချိတ်ဆက်၍ မရပါ</string>
-  <string name="wide_screen">မျက်နှာပြင်ကျယ် (၁၆: ၉)</string>
+    <string name="wide_screen">မျက်နှာပြင်ကျယ် (၁၆: ၉)</string>
   <string name="vertical">ဒေါင်လိုက် (၉:၁၆)</string>
   <string name="square">ရင်ပြင် (၁: ၁)</string>
   <string name="ratio">အချိုး</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ခွင့်ပြုချက်မပေးပါကဤ app ကိုသင် သုံး၍ မရပါ။</string>
   <string name="goto_setting_and_grant_permission">Goto ချိန်ညှိခြင်း -&gt; ခွင့်ပြုခြင်းနှင့်ဖတ်ရန်ပြင်ပသိုလှောင်မှုခွင့်ပြုချက်ကိုဖတ်ပါ။</string>
   <string name="setting">ဆက်တင်</string>
-  <string name="you_can_use_this_feature">ခွင့်ပြုချက်မပေးပါကဤအင်္ဂါရပ်ကိုသင် သုံး၍ မရပါ။</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto ချိန်ညှိခြင်း -&gt; ကင်မရာခွင့်ပြုချက်ကိုခွင့်ပြုပြီးခွင့်ပြုပါ။</string>
-  <string name="please_set_auto_update_time">ကျေးဇူးပြု၍ ဆက်တင်ကိုအလိုအလျောက်မွမ်းမံချိန်ကိုသတ်မှတ်ပါ</string>
 </resources>

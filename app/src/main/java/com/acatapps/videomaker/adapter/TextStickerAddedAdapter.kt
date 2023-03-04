@@ -4,11 +4,12 @@ import android.view.View
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.base.BaseAdapter
 import com.acatapps.videomaker.base.BaseViewHolder
-import com.acatapps.videomaker.models.StickerAddedDataModel
 import com.acatapps.videomaker.models.TextStickerAddedDataModel
 import kotlinx.android.synthetic.main.item_text_sticker_added.view.*
 
-class TextStickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<TextStickerAddedDataModel>() {
+class TextStickerAddedAdapter(private val onChange: OnChange) :
+    BaseAdapter<TextStickerAddedDataModel>() {
+
     override fun doGetViewType(position: Int): Int = R.layout.item_text_sticker_added
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
@@ -24,7 +25,7 @@ class TextStickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<Text
             onChange.onClickTextSticker(item)
         }
 
-        if(item.inEdit) {
+        if (item.inEdit) {
             view.grayBg.visibility = View.VISIBLE
         } else {
             view.grayBg.visibility = View.GONE
@@ -33,7 +34,7 @@ class TextStickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<Text
     }
 
     fun setOffAll() {
-        for(item in mItemList) {
+        for (item in mItemList) {
             item.inEdit = false
         }
         mCurrentItem = null
@@ -57,9 +58,9 @@ class TextStickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<Text
         notifyDataSetChanged()
     }
 
-    fun getItemBytViewId(viewId:Int):TextStickerAddedDataModel? {
-        for(item in mItemList) {
-            if(item.viewId == viewId) {
+    fun getItemBytViewId(viewId: Int): TextStickerAddedDataModel? {
+        for (item in mItemList) {
+            if (item.viewId == viewId) {
                 return item
             }
         }
@@ -69,5 +70,4 @@ class TextStickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<Text
     interface OnChange {
         fun onClickTextSticker(textStickerAddedDataModel: TextStickerAddedDataModel)
     }
-
 }

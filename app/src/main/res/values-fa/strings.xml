@@ -46,8 +46,7 @@
   <string name="my_studio">استودیوی من</string>
   <string name="no_project">هیچ پروژه ای نیست</string>
   <string name="more">بیشتر</string>
-  <string name="new_theme">مضامین جدید</string>
-  <string name="yes">آره</string>
+    <string name="yes">آره</string>
   <string name="do_you_want_delete_items">آیا می خواهید موارد را حذف کنید؟</string>
   <string name="do_you_want_delete_item">آیا می خواهید مورد را حذف کنید؟</string>
   <string name="nothing_item_selected">هیچ موردی انتخاب نشده است</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">فضای بسیار کم! لطفاً برای استفاده از این ویژگی ، حافظه دستگاه خود را پاک کنید</string>
   <string name="do_you_want_delete_all_sticker">آیا می خواهید تمام برچسب ها را حذف کنید؟</string>
   <string name="do_you_want_delete_all_text">آیا می خواهید تمام متن را حذف کنید؟</string>
-  <string name="download_theme">قالب بارگیری</string>
-  <string name="watch_video_to_download_theme">برای بارگذاری موضوع ، فیلم را تماشا کنید</string>
-  <string name="done">انجام شده</string>
-  <string name="downloading">بارگیری</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">بدون اتصال به اینترنت لطفاً به اینترنت وصل شوید و دوباره امتحان کنید</string>
     <string name="have_an_error_try_another_music_file">خطا! پرونده موسیقی دیگری را امتحان کنید.</string>
-    <string name="try_again">دوباره امتحان کنید</string>
-  <string name="change_theme">تغییر زمینه</string>
-  <string name="change_music">موسیقی را تغییر دهید</string>
+    <string name="change_music">موسیقی را تغییر دهید</string>
   <string name="change_image_filter">فیلتر تصویر را تغییر دهید</string>
   <string name="change_video_effect">اثر ویدیو را تغییر دهید</string>
   <string name="change_duration">مدت زمان تغییر</string>
-  <string name="can_t_connect_to_internet">اتصال به اینترنت امکان پذیر نیست</string>
-  <string name="wide_screen">صفحه گسترده (16: 9)</string>
+    <string name="wide_screen">صفحه گسترده (16: 9)</string>
   <string name="vertical">عمودی (9:16)</string>
   <string name="square">مربع (1: 1)</string>
   <string name="ratio">نسبت</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">اگر مجوز اعطا نکنید ، نمی توانید از این برنامه استفاده کنید.</string>
   <string name="goto_setting_and_grant_permission">تنظیم بروید -&gt; مجوز و اعطای مجوز برای ذخیره سازی خارجی بخوانید!</string>
   <string name="setting">تنظیمات</string>
-  <string name="you_can_use_this_feature">اگر مجوز ندهید ، نمی توانید از این ویژگی استفاده کنید.</string>
-  <string name="goto_setting_and_grant_camera_permission">تنظیم بروید -&gt; مجوز و مجوز دوربین اجازه دهید!</string>
-  <string name="please_set_auto_update_time">لطفاً زمان تنظیم بروزرسانی خودکار را تنظیم کنید</string>
 </resources>

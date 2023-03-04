@@ -49,7 +49,6 @@
     <string name="my_studio">My studio</string>
     <string name="no_project">No Project</string>
     <string name="more">More</string>
-    <string name="new_theme">New themes</string>
     <string name="yes">Yes</string>
     <string name="do_you_want_delete_items">Do you want to delete items?</string>
     <string name="do_you_want_delete_item">Do you want to delete the item?</string>
@@ -66,19 +65,11 @@
     <string name="free_space_too_low">Too low free space! Please clear your device\'s memory to use this feature</string>
     <string name="do_you_want_delete_all_sticker">Do you want to delete all the stickers?</string>
     <string name="do_you_want_delete_all_text">Do you want to delete all the text?</string>
-    <string name="download_theme">Download theme</string>
-    <string name="watch_video_to_download_theme">Watch video to download Theme</string>
-    <string name="done">Done</string>
-    <string name="downloading">Downloading</string>
-    <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">No internet connection. Please connect to the internet and try again</string>
     <string name="have_an_error_try_another_music_file">Error! Try another music file.</string>
-    <string name="try_again">Try again</string>
-    <string name="change_theme">Change theme</string>
     <string name="change_music">Change music</string>
     <string name="change_image_filter">Change image filter</string>
     <string name="change_video_effect">Change video effect</string>
     <string name="change_duration">Change duration</string>
-    <string name="can_t_connect_to_internet">Can\'t connect to internet</string>
     <string name="wide_screen">Wide Screen (16:9)</string>
     <string name="vertical">Vertical (9:16)</string>
     <string name="square">Square (1:1)</string>
@@ -89,10 +80,5 @@
     <string name="anser_grant_permission">If you don\'t grant permission, you can\'t use this app.</string>
     <string name="goto_setting_and_grant_permission">Goto Setting -> Permission and grant read external storage permission !</string>
     <string name="setting">Setting</string>
-
-    <string name="you_can_use_this_feature">If you don\'t grant permission, you can\'t use this feature.</string>
-    <string name="goto_setting_and_grant_camera_permission">Goto Setting -> Permission and grant camera permission !</string>
-
-    <string name="please_set_auto_update_time">Please set auto update time in setting</string>
 
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">Moj studio</string>
   <string name="no_project">Nema projekta</string>
   <string name="more">Više</string>
-  <string name="new_theme">Nove teme</string>
-  <string name="yes">Da</string>
+    <string name="yes">Da</string>
   <string name="do_you_want_delete_items">Želite li izbrisati stavke?</string>
   <string name="do_you_want_delete_item">Želite li izbrisati stavku?</string>
   <string name="nothing_item_selected">Nije odabran nijedan predmet.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Premalo slobodnog prostora! Pročistite memoriju svog uređaja da biste koristili ovu značajku</string>
   <string name="do_you_want_delete_all_sticker">Želite li izbrisati sve naljepnice?</string>
   <string name="do_you_want_delete_all_text">Želite li izbrisati sav tekst?</string>
-  <string name="download_theme">Preuzmite temu</string>
-  <string name="watch_video_to_download_theme">Pogledajte video za preuzimanje Tema</string>
-  <string name="done">Sastavljeno</string>
-  <string name="downloading">preuzimanje</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Nema internetske veze. Priključite se na internet i pokušajte ponovo</string>
     <string name="have_an_error_try_another_music_file">Greška! Pokušajte s drugom glazbenom datotekom.</string>
-    <string name="try_again">Pokušajte ponovo</string>
-  <string name="change_theme">Promijenite temu</string>
-  <string name="change_music">Promjena glazbe</string>
+    <string name="change_music">Promjena glazbe</string>
   <string name="change_image_filter">Promijenite filtar slike</string>
   <string name="change_video_effect">Promjena video efekta</string>
   <string name="change_duration">Promijenite trajanje</string>
-  <string name="can_t_connect_to_internet">Nije moguće povezivanje s internetom</string>
-  <string name="wide_screen">Široki ekran (16: 9)</string>
+    <string name="wide_screen">Široki ekran (16: 9)</string>
   <string name="vertical">Okomito (9:16)</string>
   <string name="square">Kvadrat (1: 1)</string>
   <string name="ratio">Omjer</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ako ne date dozvolu, ne možete koristiti ovu aplikaciju.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Dozvola i dopuštenje čitanja vanjske dozvole pohrane!</string>
   <string name="setting">postavljanje</string>
-  <string name="you_can_use_this_feature">Ako ne date dozvolu, ne možete koristiti ovu značajku.</string>
-  <string name="goto_setting_and_grant_camera_permission">Idite Postavljanje -&gt; Dozvolite i odobrite dozvolu za fotoaparat!</string>
-  <string name="please_set_auto_update_time">Molimo postavite vrijeme automatskog ažuriranja u postavci</string>
 </resources>

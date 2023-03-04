@@ -46,8 +46,7 @@
   <string name="my_studio">Moj studio</string>
   <string name="no_project">Noben projekt</string>
   <string name="more">Več</string>
-  <string name="new_theme">Nove teme</string>
-  <string name="yes">Da</string>
+    <string name="yes">Da</string>
   <string name="do_you_want_delete_items">Ali želite izbrisati predmete?</string>
   <string name="do_you_want_delete_item">Ali želite izdelek izbrisati?</string>
   <string name="nothing_item_selected">Izbran ni noben element</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Premalo prostega prostora! Za uporabo te funkcije počistite pomnilnik naprave</string>
   <string name="do_you_want_delete_all_sticker">Ali želite izbrisati vse nalepke?</string>
   <string name="do_you_want_delete_all_text">Ali želite izbrisati vse besedilo?</string>
-  <string name="download_theme">Prenesi temo</string>
-  <string name="watch_video_to_download_theme">Oglejte si video za prenos teme</string>
-  <string name="done">Končano</string>
-  <string name="downloading">Prenašanje</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Brez internetne povezave. Povežite se z internetom in poskusite znova</string>
     <string name="have_an_error_try_another_music_file">Napaka! Poskusite drugo glasbeno datoteko.</string>
-    <string name="try_again">Poskusi ponovno</string>
-  <string name="change_theme">Spremeni temo</string>
-  <string name="change_music">Spremeni glasbo</string>
+    <string name="change_music">Spremeni glasbo</string>
   <string name="change_image_filter">Spremenite slikovni filter</string>
   <string name="change_video_effect">Spremeni video učinek</string>
   <string name="change_duration">Spremenite trajanje</string>
-  <string name="can_t_connect_to_internet">Ne morem se povezati z internetom</string>
-  <string name="wide_screen">Širok zaslon (16: 9)</string>
+    <string name="wide_screen">Širok zaslon (16: 9)</string>
   <string name="vertical">Navpično (9:16)</string>
   <string name="square">Kvadrat (1: 1)</string>
   <string name="ratio">Razmerje</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Če ne odobrite dovoljenja, te aplikacije ne morete uporabljati.</string>
   <string name="goto_setting_and_grant_permission">Pojdi na nastavitev -&gt; Dovoljenje in dovoljenje za branje zunanjega dovoljenja za shranjevanje!</string>
   <string name="setting">Nastavitev</string>
-  <string name="you_can_use_this_feature">Če ne odobrite dovoljenja, te funkcije ne morete uporabljati.</string>
-  <string name="goto_setting_and_grant_camera_permission">Pojdite na nastavitev -&gt; Dovoljenje in podelitev dovoljenja za kamero!</string>
-  <string name="please_set_auto_update_time">V nastavitvi nastavite čas samodejne posodobitve</string>
 </resources>

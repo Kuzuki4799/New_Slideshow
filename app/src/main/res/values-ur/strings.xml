@@ -46,8 +46,7 @@
   <string name="my_studio">میرا اسٹوڈیو</string>
   <string name="no_project">کوئی پروجیکٹ نہیں</string>
   <string name="more">مزید</string>
-  <string name="new_theme">نئے موضوعات</string>
-  <string name="yes">جی ہاں</string>
+    <string name="yes">جی ہاں</string>
   <string name="do_you_want_delete_items">کیا آپ اشیاء کو حذف کرنا چاہتے ہیں؟</string>
   <string name="do_you_want_delete_item">کیا آپ اس شے کو حذف کرنا چاہتے ہیں؟</string>
   <string name="nothing_item_selected">کوئی آئٹم منتخب نہیں ہوا ہے۔</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">بہت کم جگہ! براہ کرم اس خصوصیت کو استعمال کرنے کے ل your اپنے آلے کی میموری کو صاف کریں</string>
   <string name="do_you_want_delete_all_sticker">کیا آپ تمام اسٹیکرز کو حذف کرنا چاہتے ہیں؟</string>
   <string name="do_you_want_delete_all_text">کیا آپ تمام متن کو حذف کرنا چاہتے ہیں؟</string>
-  <string name="download_theme">تھیم ڈاؤن لوڈ کریں</string>
-  <string name="watch_video_to_download_theme">تھیم ڈاؤن لوڈ کرنے کے لئے ویڈیو دیکھیں</string>
-  <string name="done">ہو گیا</string>
-  <string name="downloading">ڈاؤن لوڈ ہو رہا ہے</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">انٹرنیٹ کنکشن نہیں ہے۔ براہ کرم انٹرنیٹ سے رابطہ کریں اور دوبارہ کوشش کریں</string>
     <string name="have_an_error_try_another_music_file">غلطی! ایک اور میوزک فائل آزمائیں۔</string>
-    <string name="try_again">دوبارہ کوشش کریں</string>
-  <string name="change_theme">تھیم کو تبدیل کریں</string>
-  <string name="change_music">موسیقی بدلیں</string>
+    <string name="change_music">موسیقی بدلیں</string>
   <string name="change_image_filter">تصویری فلٹر تبدیل کریں</string>
   <string name="change_video_effect">ویڈیو اثر کو تبدیل کریں</string>
   <string name="change_duration">مدت تبدیل کریں</string>
-  <string name="can_t_connect_to_internet">انٹرنیٹ سے رابطہ نہیں کرسکتا</string>
-  <string name="wide_screen">وائڈ سکرین (16: 9)</string>
+    <string name="wide_screen">وائڈ سکرین (16: 9)</string>
   <string name="vertical">عمودی (9: 16)</string>
   <string name="square">اسکوائر (1: 1)</string>
   <string name="ratio">تناسب</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">اگر آپ اجازت نہیں دیتے ہیں تو ، آپ اس ایپ کو استعمال نہیں کرسکتے ہیں۔</string>
   <string name="goto_setting_and_grant_permission">گوٹو سیٹنگ -&gt; بیرونی اسٹوریج کو پڑھنے کی اجازت اور اجازت دیں!</string>
   <string name="setting">سیٹنگ</string>
-  <string name="you_can_use_this_feature">اگر آپ اجازت نہیں دیتے ہیں تو ، آپ اس خصوصیت کو استعمال نہیں کرسکتے ہیں۔</string>
-  <string name="goto_setting_and_grant_camera_permission">گوٹو سیٹنگ -&gt; کیمرے کی اجازت اور گرانٹ!</string>
-  <string name="please_set_auto_update_time">براہ کرم ترتیب میں آٹو اپ ڈیٹ کا وقت مقرر کریں</string>
 </resources>

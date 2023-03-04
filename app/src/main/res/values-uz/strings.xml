@@ -46,8 +46,7 @@
   <string name="my_studio">Mening studiyam</string>
   <string name="no_project">Hech qanday loyiha yo\'q</string>
   <string name="more">Ko\'proq</string>
-  <string name="new_theme">Yangi mavzular</string>
-  <string name="yes">Ha</string>
+    <string name="yes">Ha</string>
   <string name="do_you_want_delete_items">Elementlarni yo\'q qilmoqchimisiz?</string>
   <string name="do_you_want_delete_item">Elementni yo\'q qilmoqchimisiz?</string>
   <string name="nothing_item_selected">Hech narsa tanlanmagan.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Bo\'sh joy juda kam! Ushbu funksiyadan foydalanish uchun qurilmangiz xotirasini tozalang</string>
   <string name="do_you_want_delete_all_sticker">Barcha stikerlarni yo\'q qilmoqchimisiz?</string>
   <string name="do_you_want_delete_all_text">Barcha matnni yo\'q qilmoqchimisiz?</string>
-  <string name="download_theme">Mavzuni yuklab olish</string>
-  <string name="watch_video_to_download_theme">Mavzuni yuklab olish uchun videoni tomosha qiling</string>
-  <string name="done">Bajarildi</string>
-  <string name="downloading">Yuklab olinmoqda</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Internetga ulanmagan. Internetga ulaning va qaytadan urining</string>
     <string name="have_an_error_try_another_music_file">Xato! Boshqa musiqa faylini sinab ko\'ring.</string>
-    <string name="try_again">Qayta urinib ko\'ring</string>
-  <string name="change_theme">Mavzuni o\'zgartirish</string>
-  <string name="change_music">Musiqani o\'zgartirish</string>
+    <string name="change_music">Musiqani o\'zgartirish</string>
   <string name="change_image_filter">Rasm filtrini o\'zgartiring</string>
   <string name="change_video_effect">Video effektini o\'zgartiring</string>
   <string name="change_duration">O\'zgartirish davomiyligi</string>
-  <string name="can_t_connect_to_internet">Internetga ulanib bo\'lmadi</string>
-  <string name="wide_screen">Keng ekran (16: 9)</string>
+    <string name="wide_screen">Keng ekran (16: 9)</string>
   <string name="vertical">Vertikal (9:16)</string>
   <string name="square">Maydon (1: 1)</string>
   <string name="ratio">Nisbati</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Agar ruxsat bermasangiz, siz ushbu ilovadan foydalana olmaysiz.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; O\'qishga tashqi xotira ruxsatini berish va berish!</string>
   <string name="setting">Sozlash</string>
-  <string name="you_can_use_this_feature">Agar sizga ruxsat berilmasa, ushbu xususiyatdan foydalana olmaysiz.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Kamera uchun ruxsat va ruxsat!</string>
-  <string name="please_set_auto_update_time">Iltimos, avtomatik yangilash vaqtini sozlang</string>
 </resources>

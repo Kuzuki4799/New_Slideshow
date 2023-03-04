@@ -12,7 +12,6 @@ import com.acatapps.videomaker.utils.DimenUtils
 import com.acatapps.videomaker.utils.Utils
 import kotlinx.android.synthetic.main.item_all_my_studio.view.*
 import kotlinx.android.synthetic.main.item_header_view_date.view.*
-import java.io.File
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
@@ -29,7 +28,7 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
     override fun doGetViewType(position: Int): Int {
         return if (mItemList[position].filePath.isEmpty()) {
             R.layout.item_header_view_date
-        }else {
+        } else {
             R.layout.item_all_my_studio
         }
     }
@@ -84,7 +83,6 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
             }
 
         } else if (getItemViewType(position) == R.layout.item_all_my_studio) {
-            // if(item.filePath.toLowerCase().contains(".mp4"))
             view.durationLabel.text =
                 Utils.convertSecToTimeString((item.duration.toFloat() / 1000).roundToInt())
             view.checkbox.isSelected = item.checked
@@ -100,8 +98,6 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
                 view.checkbox.isSelected = item.checked
                 onSelectChange?.invoke(item.checked)
             }
-
-
 
             view.icOpenMenu.setOnClickListener {
                 if (!selectMode) {
@@ -207,10 +203,9 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
         }
 
         deleteEmptyDay()
-
     }
 
-    fun deleteEmptyDay() {
+    private fun deleteEmptyDay() {
         for (index in 0 until mItemList.size) {
             val item = mItemList[index]
             if (item.filePath.isEmpty()) {
@@ -226,15 +221,6 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
                         return
                     }
                 }
-            }
-        }
-    }
-
-    fun checkDeleteItem() {
-        for (index in 0 until mItemList.size) {
-            val item = mItemList[index]
-            if (!File(item.filePath).exists()) {
-                mItemList.removeAt(index)
             }
         }
     }

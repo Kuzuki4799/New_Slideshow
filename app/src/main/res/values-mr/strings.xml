@@ -46,8 +46,7 @@
   <string name="my_studio">माझा स्टुडिओ</string>
   <string name="no_project">प्रकल्प नाही</string>
   <string name="more">अधिक</string>
-  <string name="new_theme">नवीन थीम</string>
-  <string name="yes">होय</string>
+    <string name="yes">होय</string>
   <string name="do_you_want_delete_items">आपण आयटम हटवू इच्छिता?</string>
   <string name="do_you_want_delete_item">आपण आयटम हटवू इच्छिता?</string>
   <string name="nothing_item_selected">कोणतीही आयटम निवडलेला नाही.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">खूप कमी मोकळी जागा! कृपया हे वैशिष्ट्य वापरण्यासाठी आपल्या डिव्हाइसची मेमरी साफ करा</string>
   <string name="do_you_want_delete_all_sticker">आपण सर्व स्टिकर्स हटवू इच्छिता?</string>
   <string name="do_you_want_delete_all_text">आपण सर्व मजकूर हटवू इच्छिता?</string>
-  <string name="download_theme">थीम डाउनलोड करा</string>
-  <string name="watch_video_to_download_theme">थीम डाउनलोड करण्यासाठी व्हिडिओ पहा</string>
-  <string name="done">पूर्ण झाले</string>
-  <string name="downloading">डाउनलोड करत आहे</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">इंटरनेट कनेक्शन नाही. कृपया इंटरनेटशी कनेक्ट व्हा आणि पुन्हा प्रयत्न करा</string>
     <string name="have_an_error_try_another_music_file">त्रुटी! आणखी एक संगीत फाईल वापरून पहा.</string>
-    <string name="try_again">पुन्हा प्रयत्न करा</string>
-  <string name="change_theme">थीम बदला</string>
-  <string name="change_music">संगीत बदला</string>
+    <string name="change_music">संगीत बदला</string>
   <string name="change_image_filter">प्रतिमा फिल्टर बदला</string>
   <string name="change_video_effect">व्हिडिओ प्रभाव बदला</string>
   <string name="change_duration">कालावधी बदला</string>
-  <string name="can_t_connect_to_internet">इंटरनेटशी कनेक्ट होऊ शकत नाही</string>
-  <string name="wide_screen">वाइड स्क्रीन (16: 9)</string>
+    <string name="wide_screen">वाइड स्क्रीन (16: 9)</string>
   <string name="vertical">अनुलंब (9: 16)</string>
   <string name="square">स्क्वेअर (1: 1)</string>
   <string name="ratio">प्रमाण</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">आपण परवानगी मंजूर न केल्यास आपण हा अ‍ॅप वापरू शकत नाही.</string>
   <string name="goto_setting_and_grant_permission">गोटो सेटिंग -&gt; बाह्य संचयनास वाचनाची परवानगी आणि अनुमती द्या!</string>
   <string name="setting">सेटिंग</string>
-  <string name="you_can_use_this_feature">आपण परवानगी मंजूर न केल्यास आपण हे वैशिष्ट्य वापरू शकत नाही.</string>
-  <string name="goto_setting_and_grant_camera_permission">जा सेटिंग -&gt; परवानगी आणि कॅमेरा परवानगी मंजूर!</string>
-  <string name="please_set_auto_update_time">कृपया सेटिंगमध्ये स्वयं अद्यतन वेळ सेट करा</string>
 </resources>

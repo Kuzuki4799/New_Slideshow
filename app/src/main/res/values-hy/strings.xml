@@ -46,8 +46,7 @@
   <string name="my_studio">Իմ ստուդիան</string>
   <string name="no_project">Ոչ մի նախագիծ</string>
   <string name="more">Ավելին</string>
-  <string name="new_theme">Նոր թեմաներ</string>
-  <string name="yes">Այո</string>
+    <string name="yes">Այո</string>
   <string name="do_you_want_delete_items">Doանկանո՞ւմ եք ջնջել իրերը:</string>
   <string name="do_you_want_delete_item">Doանկանո՞ւմ եք ջնջել ապրանքը:</string>
   <string name="nothing_item_selected">Ոչ մի տարր ընտրված չէ:</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Չափազանց ցածր տարածք: Խնդրում ենք մաքրել ձեր սարքի հիշողությունը `այս գործառույթն օգտագործելու համար</string>
   <string name="do_you_want_delete_all_sticker">Doանկանու՞մ եք ջնջել բոլոր պիտակները:</string>
   <string name="do_you_want_delete_all_text">Doանկանո՞ւմ եք ջնջել ամբողջ տեքստը:</string>
-  <string name="download_theme">Ներբեռնման թեման</string>
-  <string name="watch_video_to_download_theme">Դիտեք տեսանյութը ՝ թեմա ներբեռնելու համար</string>
-  <string name="done">Կատարած</string>
-  <string name="downloading">Ներբեռնում</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Ինտերնետ կապ չկա: Խնդրում ենք միանալ ինտերնետին և կրկին փորձեք</string>
     <string name="have_an_error_try_another_music_file">Սխալ: Փորձեք մեկ այլ երաժշտական ֆայլ:</string>
-    <string name="try_again">Կրկին փորձեք</string>
-  <string name="change_theme">Փոխել թեման</string>
-  <string name="change_music">Փոխեք երաժշտությունը</string>
+    <string name="change_music">Փոխեք երաժշտությունը</string>
   <string name="change_image_filter">Փոխեք պատկերի ֆիլտրը</string>
   <string name="change_video_effect">Փոխեք տեսանյութի էֆեկտը</string>
   <string name="change_duration">Փոխել տևողությունը</string>
-  <string name="can_t_connect_to_internet">Հնարավոր չէ միանալ ինտերնետին</string>
-  <string name="wide_screen">Լայն էկրան (16: 9)</string>
+    <string name="wide_screen">Լայն էկրան (16: 9)</string>
   <string name="vertical">Ուղղահայաց (9:16)</string>
   <string name="square">Հրապարակ (1: 1)</string>
   <string name="ratio">Համեմատություն</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Եթե թույլտվություն չեք տալիս, չեք կարող օգտագործել այս ծրագիրը:</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Թույլտվություն և դրամաշնորհ կարդացեք արտաքին պահպանման թույլտվություն:</string>
   <string name="setting">Կարգավորում</string>
-  <string name="you_can_use_this_feature">Եթե թույլտվություն չեք տալիս, չեք կարող օգտագործել այս հնարավորությունը:</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Թույլտվություն և դրամաշնորհային խցիկի թույլտվություն:</string>
-  <string name="please_set_auto_update_time">Խնդրում ենք սահմանել ավտոմատ թարմացման ժամանակը</string>
 </resources>

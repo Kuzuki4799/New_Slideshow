@@ -46,8 +46,7 @@
   <string name="my_studio">මගේ චිත්‍රාගාරය</string>
   <string name="no_project">ව්‍යාපෘතියක් නැත</string>
   <string name="more">තව</string>
-  <string name="new_theme">නව තේමාවන්</string>
-  <string name="yes">ඔව්</string>
+    <string name="yes">ඔව්</string>
   <string name="do_you_want_delete_items">ඔබට අයිතම මකා දැමීමට අවශ්‍යද?</string>
   <string name="do_you_want_delete_item">ඔබට අයිතමය මකා දැමීමට අවශ්‍යද?</string>
   <string name="nothing_item_selected">අයිතමයක් තෝරාගෙන නොමැත.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">ඉතා අඩු නිදහස් ඉඩක්! මෙම අංගය භාවිතා කිරීමට කරුණාකර ඔබගේ උපාංගයේ මතකය ඉවත් කරන්න</string>
   <string name="do_you_want_delete_all_sticker">සියලුම ස්ටිකර් මකා දැමීමට ඔබට අවශ්‍යද?</string>
   <string name="do_you_want_delete_all_text">සියලුම පෙළ මකා දැමීමට ඔබට අවශ්‍යද?</string>
-  <string name="download_theme">තේමාව බාගන්න</string>
-  <string name="watch_video_to_download_theme">තේමාව බාගත කිරීම සඳහා වීඩියෝව නරඹන්න</string>
-  <string name="done">සිදු විය</string>
-  <string name="downloading">බාගත කිරීම</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">අන්තර්ජාල සම්බන්ධතාවයක් නොමැත. කරුණාකර අන්තර්ජාලයට සම්බන්ධ වී නැවත උත්සාහ කරන්න</string>
     <string name="have_an_error_try_another_music_file">දෝෂයකි! වෙනත් සංගීත ගොනුවක් උත්සාහ කරන්න.</string>
-    <string name="try_again">නැවත උත්සහා කරන්න</string>
-  <string name="change_theme">තේමාව වෙනස් කරන්න</string>
-  <string name="change_music">සංගීතය වෙනස් කරන්න</string>
+    <string name="change_music">සංගීතය වෙනස් කරන්න</string>
   <string name="change_image_filter">රූප පෙරණය වෙනස් කරන්න</string>
   <string name="change_video_effect">වීඩියෝ ආචරණය වෙනස් කරන්න</string>
   <string name="change_duration">කාලය වෙනස් කරන්න</string>
-  <string name="can_t_connect_to_internet">අන්තර්ජාලයට සම්බන්ධ විය නොහැක</string>
-  <string name="wide_screen">පුළුල් තිරය (16: 9)</string>
+    <string name="wide_screen">පුළුල් තිරය (16: 9)</string>
   <string name="vertical">සිරස් (9:16)</string>
   <string name="square">චතුරස්රය (1: 1)</string>
   <string name="ratio">අනුපාතය</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ඔබ අවසර ලබා නොදෙන්නේ නම්, ඔබට මෙම යෙදුම භාවිතා කළ නොහැක.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; අවසර සහ කියවීමට බාහිර ගබඩා අවසරය ලබා දෙන්න!</string>
   <string name="setting">සැකසුම</string>
-  <string name="you_can_use_this_feature">ඔබ අවසර ලබා නොදෙන්නේ නම්, ඔබට මෙම අංගය භාවිතා කළ නොහැක.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; කැමරා අවසරය ලබා දෙන්න!</string>
-  <string name="please_set_auto_update_time">සැකසීමේදී කරුණාකර ස්වයංක්‍රීය යාවත්කාලීන කාලය සකසන්න</string>
 </resources>

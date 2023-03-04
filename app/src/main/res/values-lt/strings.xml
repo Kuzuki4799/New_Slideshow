@@ -46,8 +46,7 @@
   <string name="my_studio">Mano studija</string>
   <string name="no_project">Nėra projekto</string>
   <string name="more">Daugiau</string>
-  <string name="new_theme">Naujos temos</string>
-  <string name="yes">Taip</string>
+    <string name="yes">Taip</string>
   <string name="do_you_want_delete_items">Ar norite ištrinti elementus?</string>
   <string name="do_you_want_delete_item">Ar norite ištrinti elementą?</string>
   <string name="nothing_item_selected">Nepasirinktas joks elementas.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Per mažai laisvos vietos! Jei norite naudoti šią funkciją, išvalykite įrenginio atmintį</string>
   <string name="do_you_want_delete_all_sticker">Ar norite ištrinti visus lipdukus?</string>
   <string name="do_you_want_delete_all_text">Ar norite ištrinti visą tekstą?</string>
-  <string name="download_theme">Parsisiųsti temą</string>
-  <string name="watch_video_to_download_theme">Peržiūrėkite vaizdo įrašą, kad atsisiųstumėte temą</string>
-  <string name="done">padaryta</string>
-  <string name="downloading">Atsisiuntimas</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Nėra interneto ryšio. Prisijunkite prie interneto ir bandykite dar kartą</string>
     <string name="have_an_error_try_another_music_file">Klaida! Išbandykite kitą muzikos failą.</string>
-    <string name="try_again">Bandyk iš naujo</string>
-  <string name="change_theme">Pakeisti temą</string>
-  <string name="change_music">Keisti muziką</string>
+    <string name="change_music">Keisti muziką</string>
   <string name="change_image_filter">Pakeisti vaizdo filtrą</string>
   <string name="change_video_effect">Keisti vaizdo efektą</string>
   <string name="change_duration">Pakeisti trukmę</string>
-  <string name="can_t_connect_to_internet">Neįmanoma prisijungti prie interneto</string>
-  <string name="wide_screen">Plačiaekranis ekranas (16: 9)</string>
+    <string name="wide_screen">Plačiaekranis ekranas (16: 9)</string>
   <string name="vertical">Vertikalus (9:16)</string>
   <string name="square">Kvadratas (1: 1)</string>
   <string name="ratio">Santykis</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Jei nesuteiksite leidimo, negalėsite naudoti šios programos.</string>
   <string name="goto_setting_and_grant_permission">„Goto Setting“ -&gt; Leidimas ir suteikimas išorinio saugojimo leidimas!</string>
   <string name="setting">Nustatymas</string>
-  <string name="you_can_use_this_feature">Jei nesuteikiate leidimo, negalite naudoti šios funkcijos.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto nustatymas -&gt; leidimas ir suteikimas kameros leidimas!</string>
-  <string name="please_set_auto_update_time">Nustatydami nustatykite automatinio atnaujinimo laiką</string>
 </resources>

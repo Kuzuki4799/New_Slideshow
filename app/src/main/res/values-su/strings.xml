@@ -46,8 +46,7 @@
   <string name="my_studio">Kuring studio</string>
   <string name="no_project">Henteu Kéngingkeun Proyék</string>
   <string name="more">Tambih deui</string>
-  <string name="new_theme">Téma anyar</string>
-  <string name="yes">Leres</string>
+    <string name="yes">Leres</string>
   <string name="do_you_want_delete_items">Dupi anjeun hoyong mupus item?</string>
   <string name="do_you_want_delete_item">Dupi anjeun hoyong mupus itemna?</string>
   <string name="nothing_item_selected">Taya barang anu dipilih.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Rohangan bébas teuing! Punten parios memori alat anjeun pikeun ngagunakeun fitur ieu</string>
   <string name="do_you_want_delete_all_sticker">Naha anjeun badé ngahapus sadayana stiker?</string>
   <string name="do_you_want_delete_all_text">Naha anjeun badé ngahapus sadaya téks?</string>
-  <string name="download_theme">Download tema</string>
-  <string name="watch_video_to_download_theme">Nonton pidéo pikeun ngundeur Téma</string>
-  <string name="done">Rengse</string>
-  <string name="downloading">Ngundeur</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Henteu aya sambungan internét. Mangga nyambung ka internét sareng cobian deui</string>
     <string name="have_an_error_try_another_music_file">Kasalahan! Coba waé file musik anu sanés.</string>
-    <string name="try_again">Cobian deui</string>
-  <string name="change_theme">Ngarobih téma</string>
-  <string name="change_music">Ngarobih musik</string>
+    <string name="change_music">Ngarobih musik</string>
   <string name="change_image_filter">Ngarobih filter gambar</string>
   <string name="change_video_effect">Ngarobih pangaruh pidéo</string>
   <string name="change_duration">Ngarobih durasi</string>
-  <string name="can_t_connect_to_internet">Teu tiasa nyambung kana internét</string>
-  <string name="wide_screen">Layar lebar (16: 9)</string>
+    <string name="wide_screen">Layar lebar (16: 9)</string>
   <string name="vertical">Dpi (9:16)</string>
   <string name="square">Alun-alun (1: 1)</string>
   <string name="ratio">Rasio</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Upami anjeun henteu masihan idin, anjeun moal tiasa nganggo aplikasi ieu.</string>
   <string name="goto_setting_and_grant_permission">Setting Goto -&gt; Idin sareng masihan izin ijin panyimpen luar!</string>
   <string name="setting">Tatahar</string>
-  <string name="you_can_use_this_feature">Upami anjeun henteu masihan idin, anjeun moal tiasa nganggo fitur ieu.</string>
-  <string name="goto_setting_and_grant_camera_permission">Setting Goto -&gt; Idin sareng masihan izin kaméra!</string>
-  <string name="please_set_auto_update_time">Punten atur waktu pamutahiran otomatis dina setting</string>
 </resources>

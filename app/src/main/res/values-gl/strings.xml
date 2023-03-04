@@ -46,8 +46,7 @@
   <string name="my_studio">O meu estudio</string>
   <string name="no_project">Sen proxecto</string>
   <string name="more">Máis</string>
-  <string name="new_theme">Novos temas</string>
-  <string name="yes">Si</string>
+    <string name="yes">Si</string>
   <string name="do_you_want_delete_items">¿Queres eliminar elementos?</string>
   <string name="do_you_want_delete_item">Queres eliminar o elemento?</string>
   <string name="nothing_item_selected">Non se seleccionou ningún elemento.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Demasiado espazo libre! Limpe a memoria do dispositivo para usar esta función</string>
   <string name="do_you_want_delete_all_sticker">¿Quere eliminar todos os adhesivos?</string>
   <string name="do_you_want_delete_all_text">¿Quere eliminar todo o texto?</string>
-  <string name="download_theme">Descargar tema</string>
-  <string name="watch_video_to_download_theme">Mira o vídeo para descargar o tema</string>
-  <string name="done">Feito</string>
-  <string name="downloading">Descargando</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Non hai conexión a internet. Conéctate a internet e ténteo de novo</string>
     <string name="have_an_error_try_another_music_file">Erro! Proba con outro ficheiro de música.</string>
-    <string name="try_again">Inténtao de novo</string>
-  <string name="change_theme">Cambiar de tema</string>
-  <string name="change_music">Cambia música</string>
+    <string name="change_music">Cambia música</string>
   <string name="change_image_filter">Cambiar o filtro de imaxe</string>
   <string name="change_video_effect">Cambia o efecto de vídeo</string>
   <string name="change_duration">Cambiar a duración</string>
-  <string name="can_t_connect_to_internet">Non se pode conectar a internet</string>
-  <string name="wide_screen">Amplia pantalla (16: 9)</string>
+    <string name="wide_screen">Amplia pantalla (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">Praza (1: 1)</string>
   <string name="ratio">Relación</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Se non concedes permiso, non podes usar esta aplicación.</string>
   <string name="goto_setting_and_grant_permission">Configuración de Goto -&gt; Permiso e concesión de licenza de almacenamento externo.</string>
   <string name="setting">Ambiente</string>
-  <string name="you_can_use_this_feature">Se non concedes permiso, non podes usar esta función.</string>
-  <string name="goto_setting_and_grant_camera_permission">Configuración de Goto -&gt; Permiso e concesión de permiso para cámara!</string>
-  <string name="please_set_auto_update_time">Estableza a hora de actualización automática na configuración</string>
 </resources>

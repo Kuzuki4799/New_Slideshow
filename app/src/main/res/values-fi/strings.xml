@@ -46,8 +46,7 @@
   <string name="my_studio">Oma studio</string>
   <string name="no_project">Ei projektia</string>
   <string name="more">Lisää</string>
-  <string name="new_theme">Uusia teemoja</string>
-  <string name="yes">Joo</string>
+    <string name="yes">Joo</string>
   <string name="do_you_want_delete_items">Haluatko poistaa kohteita?</string>
   <string name="do_you_want_delete_item">Haluatko poistaa kohteen?</string>
   <string name="nothing_item_selected">Ei kohdetta valittu.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Liian vähän tilaa! Tyhjennä laitteen muisti käyttääksesi tätä ominaisuutta</string>
   <string name="do_you_want_delete_all_sticker">Haluatko poistaa kaikki tarrat?</string>
   <string name="do_you_want_delete_all_text">Haluatko poistaa kaiken tekstin?</string>
-  <string name="download_theme">Lataa teema</string>
-  <string name="watch_video_to_download_theme">Katso video ladataksesi teema</string>
-  <string name="done">Tehty</string>
-  <string name="downloading">lataaminen</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Ei Internet-yhteyttä. Muodosta yhteys Internetiin ja yritä uudelleen</string>
     <string name="have_an_error_try_another_music_file">Virhe! Kokeile toista musiikkitiedostoa.</string>
-    <string name="try_again">Yritä uudelleen</string>
-  <string name="change_theme">Vaihda teema</string>
-  <string name="change_music">Vaihda musiikkia</string>
+    <string name="change_music">Vaihda musiikkia</string>
   <string name="change_image_filter">Vaihda kuvansuodatin</string>
   <string name="change_video_effect">Vaihda videotehoste</string>
   <string name="change_duration">Muuta kestoa</string>
-  <string name="can_t_connect_to_internet">Internet-yhteys ei onnistu</string>
-  <string name="wide_screen">Laajakuva (16: 9)</string>
+    <string name="wide_screen">Laajakuva (16: 9)</string>
   <string name="vertical">Pysty (9:16)</string>
   <string name="square">Neliö (1: 1)</string>
   <string name="ratio">Suhde</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Jos et anna lupaa, et voi käyttää tätä sovellusta.</string>
   <string name="goto_setting_and_grant_permission">Siirry asetukseen -&gt; Lupa ja myöntä ulkoinen tallennusoikeus!</string>
   <string name="setting">asetus</string>
-  <string name="you_can_use_this_feature">Jos et anna lupaa, et voi käyttää tätä ominaisuutta.</string>
-  <string name="goto_setting_and_grant_camera_permission">Siirry asetukseen -&gt; Lupa ja anna kameran käyttöoikeus!</string>
-  <string name="please_set_auto_update_time">Aseta automaattisen päivityksen aika asetuksessa</string>
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">Mijn atelier</string>
   <string name="no_project">Geen project</string>
   <string name="more">Meer</string>
-  <string name="new_theme">Nieuwe thema\'s</string>
-  <string name="yes">Ja</string>
+    <string name="yes">Ja</string>
   <string name="do_you_want_delete_items">Wil je items verwijderen?</string>
   <string name="do_you_want_delete_item">Wil je het item verwijderen?</string>
   <string name="nothing_item_selected">Geen item geselecteerd.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Te weinig vrije ruimte! Wis het geheugen van uw apparaat om deze functie te gebruiken</string>
   <string name="do_you_want_delete_all_sticker">Wil je alle stickers verwijderen?</string>
   <string name="do_you_want_delete_all_text">Wil je alle tekst verwijderen?</string>
-  <string name="download_theme">Thema downloaden</string>
-  <string name="watch_video_to_download_theme">Bekijk video om Theme te downloaden</string>
-  <string name="done">Gedaan</string>
-  <string name="downloading">downloaden</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Geen internet verbinding. Maak verbinding met internet en probeer het opnieuw</string>
     <string name="have_an_error_try_another_music_file">Fout! Probeer een ander muziekbestand.</string>
-    <string name="try_again">Probeer het opnieuw</string>
-  <string name="change_theme">Thema veranderen</string>
-  <string name="change_music">Verander muziek</string>
+    <string name="change_music">Verander muziek</string>
   <string name="change_image_filter">Wijzig beeldfilter</string>
   <string name="change_video_effect">Wijzig video-effect</string>
   <string name="change_duration">Wijzig duur</string>
-  <string name="can_t_connect_to_internet">Kan geen verbinding maken met internet</string>
-  <string name="wide_screen">Breedbeeld (16: 9)</string>
+    <string name="wide_screen">Breedbeeld (16: 9)</string>
   <string name="vertical">Verticaal (9:16)</string>
   <string name="square">Vierkant (1: 1)</string>
   <string name="ratio">Verhouding</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Als je geen toestemming geeft, kun je deze app niet gebruiken.</string>
   <string name="goto_setting_and_grant_permission">Ga naar instelling -&gt; Toestemming en verleen lees externe opslag toestemming!</string>
   <string name="setting">omgeving</string>
-  <string name="you_can_use_this_feature">Als u geen toestemming geeft, kunt u deze functie niet gebruiken.</string>
-  <string name="goto_setting_and_grant_camera_permission">Ga naar instelling -&gt; Toestemming en geef camera toestemming!</string>
-  <string name="please_set_auto_update_time">Stel de automatische updatetijd in bij het instellen</string>
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">Stüdyom</string>
   <string name="no_project">Proje Yok</string>
   <string name="more">Daha</string>
-  <string name="new_theme">Yeni temalar</string>
-  <string name="yes">Evet</string>
+    <string name="yes">Evet</string>
   <string name="do_you_want_delete_items">Öğeleri silmek istiyor musunuz?</string>
   <string name="do_you_want_delete_item">Öğeyi silmek istiyor musunuz?</string>
   <string name="nothing_item_selected">Hiçbir öğe seçilmedi.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Çok düşük boş alan! Bu özelliği kullanmak için lütfen cihazınızın belleğini temizleyin</string>
   <string name="do_you_want_delete_all_sticker">Tüm çıkartmaları silmek istiyor musunuz?</string>
   <string name="do_you_want_delete_all_text">Tüm metni silmek istiyor musunuz?</string>
-  <string name="download_theme">Temayı indir</string>
-  <string name="watch_video_to_download_theme">Tema indirmek için video izleyin</string>
-  <string name="done">Bitti</string>
-  <string name="downloading">İndirilmesi</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">İnternet bağlantısı yok. Lütfen İnternet\'e bağlanın ve tekrar deneyin</string>
     <string name="have_an_error_try_another_music_file">Hata! Başka bir müzik dosyası deneyin.</string>
-    <string name="try_again">Tekrar deneyin</string>
-  <string name="change_theme">Temayı değiştir</string>
-  <string name="change_music">Müziği değiştir</string>
+    <string name="change_music">Müziği değiştir</string>
   <string name="change_image_filter">Görüntü filtresini değiştir</string>
   <string name="change_video_effect">Video efektini değiştirme</string>
   <string name="change_duration">Süreyi değiştir</string>
-  <string name="can_t_connect_to_internet">İnternete bağlanılamıyor</string>
-  <string name="wide_screen">Geniş Ekran (16: 9)</string>
+    <string name="wide_screen">Geniş Ekran (16: 9)</string>
   <string name="vertical">Dikey (9:16)</string>
   <string name="square">Kare (1: 1)</string>
   <string name="ratio">oran</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">İzin vermezseniz, bu uygulamayı kullanamazsınız.</string>
   <string name="goto_setting_and_grant_permission">Ayarlara Git -&gt; İzin ve harici depolama izni okuma izni verin!</string>
   <string name="setting">Ayar</string>
-  <string name="you_can_use_this_feature">İzin vermezseniz, bu özelliği kullanamazsınız.</string>
-  <string name="goto_setting_and_grant_camera_permission">Ayarlara Git -&gt; İzin ve kamera izni ver!</string>
-  <string name="please_set_auto_update_time">Lütfen ayarda otomatik güncelleme zamanını ayarlayın</string>
 </resources>

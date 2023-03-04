@@ -46,8 +46,7 @@
   <string name="my_studio">ស្ទូឌីយោរបស់ខ្ញុំ</string>
   <string name="no_project">គ្មានគម្រោង</string>
   <string name="more">ច្រើនទៀត</string>
-  <string name="new_theme">ស្បែកថ្មី</string>
-  <string name="yes">ត្រូវហើយ</string>
+    <string name="yes">ត្រូវហើយ</string>
   <string name="do_you_want_delete_items">តើអ្នកចង់លុបធាតុទេ?</string>
   <string name="do_you_want_delete_item">តើអ្នកចង់លុបធាតុទេ?</string>
   <string name="nothing_item_selected">គ្មានធាតុត្រូវបានជ្រើសរើសទេ។</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">ទំហំទំនេរទាបពេក! សូមសម្អាតអង្គចងចាំរបស់ឧបករណ៍អ្នកដើម្បីប្រើមុខងារនេះ</string>
   <string name="do_you_want_delete_all_sticker">តើអ្នកចង់លុបតែមទាំងអស់ទេ?</string>
   <string name="do_you_want_delete_all_text">តើអ្នកចង់លុបអត្ថបទទាំងអស់ទេ?</string>
-  <string name="download_theme">ទាញយកប្រធានបទ</string>
-  <string name="watch_video_to_download_theme">មើលវីដេអូដើម្បីទាញយកស្បែក</string>
-  <string name="done">ធ្វើរួច</string>
-  <string name="downloading">ទាញយក</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">គ្មានការភ្ជាប់អ៊ីនធឺណិត។ សូមភ្ជាប់អ៊ីនធឺណិតហើយព្យាយាមម្តងទៀត</string>
     <string name="have_an_error_try_another_music_file">កំហុស! សាកល្បងឯកសារតន្ត្រីផ្សេងទៀត។</string>
-    <string name="try_again">ព្យាយាម​ម្តង​ទៀត</string>
-  <string name="change_theme">ផ្លាស់ប្តូរប្រធានបទ</string>
-  <string name="change_music">ផ្លាស់ប្តូរតន្ត្រី</string>
+    <string name="change_music">ផ្លាស់ប្តូរតន្ត្រី</string>
   <string name="change_image_filter">ផ្លាស់ប្តូរតម្រងរូបភាព</string>
   <string name="change_video_effect">ផ្លាស់ប្តូរបែបផែនវីដេអូ</string>
   <string name="change_duration">ផ្លាស់ប្តូររយៈពេល</string>
-  <string name="can_t_connect_to_internet">មិនអាចភ្ជាប់ទៅអ៊ីនធឺណិតបានទេ</string>
-  <string name="wide_screen">អេក្រង់ធំទូលាយ (១៦: ៩)</string>
+    <string name="wide_screen">អេក្រង់ធំទូលាយ (១៦: ៩)</string>
   <string name="vertical">បញ្ឈរ (៩:១៦)</string>
   <string name="square">ការេ (១: ១)</string>
   <string name="ratio">សមាមាត្រ</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ប្រសិនបើអ្នកមិនផ្តល់សិទ្ធិអ្នកមិនអាចប្រើកម្មវិធីនេះបានទេ។</string>
   <string name="goto_setting_and_grant_permission">ការកំណត់ទៅ -&gt; ការអនុញ្ញាតនិងផ្តល់ការអនុញ្ញាតអានពីការផ្ទុកខាងក្រៅ!</string>
   <string name="setting">ការកំណត់</string>
-  <string name="you_can_use_this_feature">ប្រសិនបើអ្នកមិនផ្តល់ការអនុញ្ញាតអ្នកមិនអាចប្រើលក្ខណៈពិសេសនេះបានទេ។</string>
-  <string name="goto_setting_and_grant_camera_permission">ការកំណត់ទៅ -&gt; ការអនុញ្ញាតនិងផ្តល់ការអនុញ្ញាតកាមេរ៉ា!</string>
-  <string name="please_set_auto_update_time">សូមកំណត់ពេលវេលាធ្វើបច្ចុប្បន្នភាពស្វ័យប្រវត្តិនៅក្នុងការកំណត់</string>
 </resources>

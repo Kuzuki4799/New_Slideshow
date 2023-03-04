@@ -46,8 +46,7 @@
   <string name="my_studio">मेरो स्टूडियो</string>
   <string name="no_project">प्रोजेक्ट छैन</string>
   <string name="more">अधिक</string>
-  <string name="new_theme">नयाँ थिमहरू</string>
-  <string name="yes">हो</string>
+    <string name="yes">हो</string>
   <string name="do_you_want_delete_items">के तपाई आईटमहरू मेट्न चाहानुहुन्छ?</string>
   <string name="do_you_want_delete_item">के तपाई वस्तु हटाउन चाहानुहुन्छ?</string>
   <string name="nothing_item_selected">कुनै वस्तु चयन गरिएको छैन।</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">एकदम कम खाली ठाउँ! यो सुविधा प्रयोग गर्न कृपया तपाईंको उपकरणको मेमोरी खाली गर्नुहोस्</string>
   <string name="do_you_want_delete_all_sticker">के तपाइँ सबै स्टिकरहरू मेटाउन चाहानुहुन्छ?</string>
   <string name="do_you_want_delete_all_text">के तपाइँ सबै पाठ मेटाउन चाहानुहुन्छ?</string>
-  <string name="download_theme">विषयवस्तु डाउनलोड गर्नुहोस्</string>
-  <string name="watch_video_to_download_theme">विषयवस्तु डाउनलोड गर्न भिडियो हेर्नुहोस्</string>
-  <string name="done">भयो</string>
-  <string name="downloading">डाउनलोड गर्दै</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">कुनै इन्टरनेट जडान छैन। कृपया इन्टरनेटमा जडान गर्नुहोस् र फेरि प्रयास गर्नुहोस्</string>
     <string name="have_an_error_try_another_music_file">त्रुटि! अर्को संगीत फाईल प्रयास गर्नुहोस्।</string>
-    <string name="try_again">फेरि प्रयास गर्नुहोस्</string>
-  <string name="change_theme">विषयवस्तु परिवर्तन गर्नुहोस्</string>
-  <string name="change_music">संगीत परिवर्तन गर्नुहोस्</string>
+    <string name="change_music">संगीत परिवर्तन गर्नुहोस्</string>
   <string name="change_image_filter">छवि फिल्टर बदल्नुहोस्</string>
   <string name="change_video_effect">भिडियो प्रभाव परिवर्तन गर्नुहोस्</string>
   <string name="change_duration">अवधि परिवर्तन गर्नुहोस्</string>
-  <string name="can_t_connect_to_internet">इन्टरनेटमा जडान हुन सक्दैन</string>
-  <string name="wide_screen">वाइड स्क्रिन (१ 16:))</string>
+    <string name="wide_screen">वाइड स्क्रिन (१ 16:))</string>
   <string name="vertical">ठाडो (:16: १))</string>
   <string name="square">वर्ग (१: १)</string>
   <string name="ratio">अनुपात</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">यदि तपाईं अनुमति प्रदान गर्नुहुन्न, तपाईं यो अनुप्रयोग प्रयोग गर्न सक्नुहुन्न।</string>
   <string name="goto_setting_and_grant_permission">गोटो सेटिंग -&gt; अनुमति र बाह्य भण्डारण अनुमति पढ्ने अनुमति!</string>
   <string name="setting">सेटिंग</string>
-  <string name="you_can_use_this_feature">यदि तपाईं अनुमति प्रदान गर्नुहुन्न, तपाईं यो सुविधा प्रयोग गर्न सक्नुहुन्न।</string>
-  <string name="goto_setting_and_grant_camera_permission">गोटो सेटिंग -&gt; अनुमति र क्यामेरा अनुमति अनुमति!</string>
-  <string name="please_set_auto_update_time">कृपया सेटि updateमा स्वत: अपडेट समय सेट गर्नुहोस्</string>
 </resources>

@@ -7,7 +7,7 @@ import android.view.View
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.utils.DimenUtils
 
-class CornerView :View{
+class CornerView : View {
     private var mShadowRadius = 0f
     private var mShadowBottomOnly = false
     private var mCornerRadius = 0f
@@ -28,9 +28,9 @@ class CornerView :View{
     }
 
     private fun init() {
-        mShadowRadius = DimenUtils.density(context!!)*3
+        mShadowRadius = DimenUtils.density(context!!) * 3
         mBgPaint.apply {
-            setShadowLayer(mShadowRadius, 1f,1f, Color.parseColor("#e5e5e5"))
+            setShadowLayer(mShadowRadius, 1f, 1f, Color.parseColor("#e5e5e5"))
             isAntiAlias = true
             style = Paint.Style.FILL
             color = mBgColor
@@ -38,8 +38,8 @@ class CornerView :View{
 
     }
 
-    private fun initAttrs(attrs:AttributeSet?) {
-        if(attrs == null) return
+    private fun initAttrs(attrs: AttributeSet?) {
+        if (attrs == null) return
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CornerView)
         mCornerRadius = typedArray.getDimension(R.styleable.CornerView_cornerRadiusView, 0f)
         mBgColor = typedArray.getColor(R.styleable.CornerView_bgColor, Color.GRAY)
@@ -53,13 +53,25 @@ class CornerView :View{
     }
 
 
-    fun getClipPath(): Path {
+    private fun getClipPath(): Path {
         val path = Path()
         path.reset()
-        if(mShadowBottomOnly) {
-            path.addRoundRect(RectF(0f,0f,width.toFloat(), height.toFloat()-mShadowRadius), mCornerRadius, mCornerRadius, Path.Direction.CW)
+        if (mShadowBottomOnly) {
+            path.addRoundRect(
+                RectF(0f, 0f, width.toFloat(), height.toFloat() - mShadowRadius),
+                mCornerRadius,
+                mCornerRadius,
+                Path.Direction.CW
+            )
         } else {
-            path.addRoundRect(RectF(0f+mShadowRadius,0f+mShadowRadius,width.toFloat()-mShadowRadius, height.toFloat()-mShadowRadius), mCornerRadius, mCornerRadius, Path.Direction.CW)
+            path.addRoundRect(
+                RectF(
+                    0f + mShadowRadius,
+                    0f + mShadowRadius,
+                    width.toFloat() - mShadowRadius,
+                    height.toFloat() - mShadowRadius
+                ), mCornerRadius, mCornerRadius, Path.Direction.CW
+            )
         }
 
         path.close()

@@ -46,8 +46,7 @@
   <string name="my_studio">Менин студиясы</string>
   <string name="no_project">Долбоор жок</string>
   <string name="more">More</string>
-  <string name="new_theme">Жаңы темалар</string>
-  <string name="yes">Ооба</string>
+    <string name="yes">Ооба</string>
   <string name="do_you_want_delete_items">Нерселерди жок кылгыңыз келеби?</string>
   <string name="do_you_want_delete_item">Бул нерсени жок кылгыңыз келеби?</string>
   <string name="nothing_item_selected">Эч нерсе тандалган жок.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Бош орун өтө төмөн! Бул функцияны колдонуу үчүн түзмөгүңүздүн эс тутумун тазалаңыз</string>
   <string name="do_you_want_delete_all_sticker">Бардык чаптагычтарды жок кылгыңыз келеби?</string>
   <string name="do_you_want_delete_all_text">Бардык текстти жок кылгыңыз келеби?</string>
-  <string name="download_theme">Теманы жүктөө</string>
-  <string name="watch_video_to_download_theme">Теманы жүктөө үчүн видеону көрүңүз</string>
-  <string name="done">кереги жок</string>
-  <string name="downloading">жүктөлүүдө</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Интернет туташуусу жок. Сураныч интернетке туташып, дагы бир жолу аракет кылып көрүңүз</string>
     <string name="have_an_error_try_another_music_file">Error! Башка музыка файлын байкап көрүңүз.</string>
-    <string name="try_again">Кайра аракет кыл</string>
-  <string name="change_theme">Теманы өзгөртүү</string>
-  <string name="change_music">Музыканы өзгөртүү</string>
+    <string name="change_music">Музыканы өзгөртүү</string>
   <string name="change_image_filter">Сүрөт чыпкасын өзгөртүү</string>
   <string name="change_video_effect">Видео эффектин өзгөртүү</string>
   <string name="change_duration">Узактыгы өзгөртүү</string>
-  <string name="can_t_connect_to_internet">Интернетке туташа албай жатат</string>
-  <string name="wide_screen">Кең экран (16: 9)</string>
+    <string name="wide_screen">Кең экран (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">(1: 1)</string>
   <string name="ratio">катышы</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Эгер уруксат бербесеңиз, бул колдонмону колдоно албайсыз.</string>
   <string name="goto_setting_and_grant_permission">Goto орнотуусу -&gt; Тышкы сактагычка уруксатты окуп жана бериңиз!</string>
   <string name="setting">жөндөө</string>
-  <string name="you_can_use_this_feature">Эгер уруксат бербесеңиз, бул мүмкүнчүлүктү колдоно албайсыз.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto орнотуусу -&gt; Уруксат берүү жана камерага уруксат берүү!</string>
-  <string name="please_set_auto_update_time">Жөндөө учурунда авто жаңыртуу убакытын коюңуз</string>
 </resources>

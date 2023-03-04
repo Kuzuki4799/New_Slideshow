@@ -46,8 +46,7 @@
   <string name="my_studio">Студияи ман</string>
   <string name="no_project">Лоиҳа нест</string>
   <string name="more">Бештар</string>
-  <string name="new_theme">Мавзӯъҳои нав</string>
-  <string name="yes">Бале</string>
+    <string name="yes">Бале</string>
   <string name="do_you_want_delete_items">Шумо мехоҳед ягон чизро нест кунед?</string>
   <string name="do_you_want_delete_item">Шумо мехоҳед ин чизро нест кунед?</string>
   <string name="nothing_item_selected">Ягон ашё интихоб нашудааст.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Фазои хеле кам! Барои истифодаи ин хусус, лутфан хотираи дастгоҳи худро тоза кунед</string>
   <string name="do_you_want_delete_all_sticker">Шумо мехоҳед ҳамаи стикерҳоро нест кунед?</string>
   <string name="do_you_want_delete_all_text">Шумо мехоҳед, ки тамоми матнро нест кунед?</string>
-  <string name="download_theme">Мавзӯъро зеркашӣ кунед</string>
-  <string name="watch_video_to_download_theme">Барои зеркашии мавзӯъ видео тамошо кунед</string>
-  <string name="done">Иҷро шуд</string>
-  <string name="downloading">Зеркашӣ</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Пайвастшавӣ ба интернет Лутфан ба интернет пайваст шавед ва бори дигар кӯшиш кунед</string>
     <string name="have_an_error_try_another_music_file">Хатогӣ! Файли дигари мусиқиро санҷед.</string>
-    <string name="try_again">Дубора сайъ кунед</string>
-  <string name="change_theme">Тағир додани мавзӯъ</string>
-  <string name="change_music">Тағйир додани мусиқӣ</string>
+    <string name="change_music">Тағйир додани мусиқӣ</string>
   <string name="change_image_filter">Тағири филтри тасвир</string>
   <string name="change_video_effect">Таъсири видео тағир диҳед</string>
   <string name="change_duration">Давомнокии тағир</string>
-  <string name="can_t_connect_to_internet">Ба интернет пайваст нашуд</string>
-  <string name="wide_screen">Экрани васеъ (16: 9)</string>
+    <string name="wide_screen">Экрани васеъ (16: 9)</string>
   <string name="vertical">Амудӣ (9:16)</string>
   <string name="square">Майдон (1: 1)</string>
   <string name="ratio">Таносуби</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Агар шумо иҷозат надоред, шумо ин барномаро истифода бурда наметавонед.</string>
   <string name="goto_setting_and_grant_permission">Параметри Goto -&gt; Иҷозат ва додани иҷозат барои нигоҳдории беруна хонед!</string>
   <string name="setting">Замина</string>
-  <string name="you_can_use_this_feature">Агар шумо иҷозат надоред, шумо ин хусусиятро истифода бурда наметавонед.</string>
-  <string name="goto_setting_and_grant_camera_permission">Танзими Goto -&gt; Иҷозат ва додани камера додани иҷозат!</string>
-  <string name="please_set_auto_update_time">Лутфан вақти навсозиро худкор дар танзим танзим кунед</string>
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">Studio saya</string>
   <string name="no_project">Tiada Projek</string>
   <string name="more">Lebih banyak</string>
-  <string name="new_theme">Tema baru</string>
-  <string name="yes">Ya</string>
+    <string name="yes">Ya</string>
   <string name="do_you_want_delete_items">Adakah anda mahu memadamkan item?</string>
   <string name="do_you_want_delete_item">Adakah anda mahu memadamkan item tersebut?</string>
   <string name="nothing_item_selected">Tidak ada item yang dipilih.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Ruang kosong yang terlalu rendah! Kosongkan memori peranti anda untuk menggunakan ciri ini</string>
   <string name="do_you_want_delete_all_sticker">Adakah anda mahu memadamkan semua pelekat?</string>
   <string name="do_you_want_delete_all_text">Adakah anda mahu memadamkan semua teks?</string>
-  <string name="download_theme">Muat turun tema</string>
-  <string name="watch_video_to_download_theme">Tonton video untuk memuat turun Tema</string>
-  <string name="done">Selesai</string>
-  <string name="downloading">Memuat turun</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Tiada sambungan internet. Sila sambung ke internet dan cuba lagi</string>
     <string name="have_an_error_try_another_music_file">Ralat! Cuba fail muzik lain.</string>
-    <string name="try_again">Cuba lagi</string>
-  <string name="change_theme">Tukar tema</string>
-  <string name="change_music">Tukar muzik</string>
+    <string name="change_music">Tukar muzik</string>
   <string name="change_image_filter">Tukar penapis gambar</string>
   <string name="change_video_effect">Tukar kesan video</string>
   <string name="change_duration">Tukar tempoh</string>
-  <string name="can_t_connect_to_internet">Tidak dapat menyambung ke internet</string>
-  <string name="wide_screen">Skrin Lebar (16: 9)</string>
+    <string name="wide_screen">Skrin Lebar (16: 9)</string>
   <string name="vertical">Tegak (9:16)</string>
   <string name="square">Petak (1: 1)</string>
   <string name="ratio">Nisbah</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Sekiranya anda tidak memberikan kebenaran, anda tidak boleh menggunakan aplikasi ini.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Kebenaran dan berikan kebenaran penyimpanan luaran baca!</string>
   <string name="setting">Menetapkan</string>
-  <string name="you_can_use_this_feature">Sekiranya anda tidak memberikan kebenaran, anda tidak boleh menggunakan ciri ini.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Izin dan beri kebenaran kamera!</string>
-  <string name="please_set_auto_update_time">Sila tetapkan masa kemas kini automatik dalam tetapan</string>
 </resources>

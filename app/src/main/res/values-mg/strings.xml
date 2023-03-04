@@ -46,8 +46,7 @@
   <string name="my_studio">Ilay studio</string>
   <string name="no_project">Tsy misy tetikasa</string>
   <string name="more">Bebe kokoa</string>
-  <string name="new_theme">Lohahevitra vaovao</string>
-  <string name="yes">Eny</string>
+    <string name="yes">Eny</string>
   <string name="do_you_want_delete_items">Te-hanaisotra entana ve ianao?</string>
   <string name="do_you_want_delete_item">Te-hamafa io entana io ve ianao?</string>
   <string name="nothing_item_selected">Tsy misy zavatra nofidina.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Sehatra malalaka be! Mba avereno azafady ny fitadidiana ny fitaovanao hampiasa io endri-javatra io</string>
   <string name="do_you_want_delete_all_sticker">Te-hanaisotra ireo stickers ve ianao?</string>
   <string name="do_you_want_delete_all_text">Te-hamafa ny lahatsoratra rehetra ve ianao?</string>
-  <string name="download_theme">Download ny lohahevitra</string>
-  <string name="watch_video_to_download_theme">Watch horonantsary mba télécharger Tema</string>
-  <string name="done">hatao</string>
-  <string name="downloading">downloading</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Tsy misy fifandraisana Internet. Azafady mba mifandray amin\'ny Internet ianao ary andramo indray</string>
     <string name="have_an_error_try_another_music_file">Error! Manandrama rakitra mozika iray hafa.</string>
-    <string name="try_again">Andramo indray mandeha</string>
-  <string name="change_theme">Hanova lohahevitra</string>
-  <string name="change_music">Manova mozika</string>
+    <string name="change_music">Manova mozika</string>
   <string name="change_image_filter">Hanova sivana sary</string>
   <string name="change_video_effect">Ovay ny vokatry ny horonantsary</string>
   <string name="change_duration">Manova faharetana</string>
-  <string name="can_t_connect_to_internet">Tsy afaka mifandray amin\'ny Internet</string>
-  <string name="wide_screen">Sarotra malalaka (16: 9)</string>
+    <string name="wide_screen">Sarotra malalaka (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">Kianja (1: 1)</string>
   <string name="ratio">Taham</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Raha tsy manome alalana ianao dia tsy afaka mampiasa ity fampiharana ity.</string>
   <string name="goto_setting_and_grant_permission">Fananganana Goto -&gt; Fahazoan-dàlana sy manomeza fahazoan-dàlana fitahirizana ivelany!</string>
   <string name="setting">Setting</string>
-  <string name="you_can_use_this_feature">Raha tsy manome alalana ianao dia tsy afaka mampiasa ity endri-javatra ity.</string>
-  <string name="goto_setting_and_grant_camera_permission">Fananganana Goto -&gt; Fahazoan-dàlana sy manome alalana fakan-tsary!</string>
-  <string name="please_set_auto_update_time">Azafady apetraka amin\'ny fotoana misy ny fanavaozana ny fiara</string>
 </resources>

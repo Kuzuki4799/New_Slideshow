@@ -46,8 +46,7 @@
   <string name="my_studio">আমার স্টুডিও</string>
   <string name="no_project">কোন প্রকল্প নেই</string>
   <string name="more">অধিক</string>
-  <string name="new_theme">নতুন থিম</string>
-  <string name="yes">হ্যাঁ</string>
+    <string name="yes">হ্যাঁ</string>
   <string name="do_you_want_delete_items">আপনি কি আইটেম মুছতে চান?</string>
   <string name="do_you_want_delete_item">আপনি কি আইটেমটি মুছতে চান?</string>
   <string name="nothing_item_selected">কোনও আইটেম নির্বাচিত হয়নি।</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">খুব কম ফাঁকা জায়গা! এই বৈশিষ্ট্যটি ব্যবহার করতে দয়া করে আপনার ডিভাইসের স্মৃতি সাফ করুন</string>
   <string name="do_you_want_delete_all_sticker">আপনি কি সব স্টিকার মুছতে চান?</string>
   <string name="do_you_want_delete_all_text">আপনি কি সমস্ত লেখা মুছতে চান?</string>
-  <string name="download_theme">থিম ডাউনলোড করুন</string>
-  <string name="watch_video_to_download_theme">থিম ডাউনলোড করতে ভিডিও দেখুন</string>
-  <string name="done">সম্পন্ন</string>
-  <string name="downloading">ডাউনলোড হচ্ছে</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">কোনও ইন্টারনেট সংযোগ নেই। ইন্টারনেটের সাথে সংযুক্ত হন এবং আবার চেষ্টা করুন</string>
     <string name="have_an_error_try_another_music_file">ত্রুটি! অন্য একটি গানের ফাইল চেষ্টা করুন।</string>
-    <string name="try_again">আবার চেষ্টা করুন</string>
-  <string name="change_theme">থিম পরিবর্তন করো</string>
-  <string name="change_music">সংগীত পরিবর্তন করুন</string>
+    <string name="change_music">সংগীত পরিবর্তন করুন</string>
   <string name="change_image_filter">চিত্র ফিল্টার পরিবর্তন করুন</string>
   <string name="change_video_effect">ভিডিও প্রভাব পরিবর্তন করুন</string>
   <string name="change_duration">সময়কাল পরিবর্তন করুন</string>
-  <string name="can_t_connect_to_internet">ইন্টারনেটে সংযুক্ত হতে পারে না</string>
-  <string name="wide_screen">প্রশস্ত স্ক্রিন (16: 9)</string>
+    <string name="wide_screen">প্রশস্ত স্ক্রিন (16: 9)</string>
   <string name="vertical">উল্লম্ব (9:16)</string>
   <string name="square">স্কোয়ার (1: 1)</string>
   <string name="ratio">অনুপাত</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">আপনি যদি অনুমতি না দেন তবে আপনি এই অ্যাপটি ব্যবহার করতে পারবেন না।</string>
   <string name="goto_setting_and_grant_permission">গোটো সেটিং -&gt; বাহ্যিক স্টোরেজ পড়ার অনুমতি এবং মঞ্জুরি দিন!</string>
   <string name="setting">স্থাপন</string>
-  <string name="you_can_use_this_feature">আপনি যদি অনুমতি না দেন তবে আপনি এই বৈশিষ্ট্যটি ব্যবহার করতে পারবেন না।</string>
-  <string name="goto_setting_and_grant_camera_permission">গোটো সেটিং -&gt; অনুমতি এবং মঞ্জুর ক্যামেরার অনুমতি!</string>
-  <string name="please_set_auto_update_time">সেটিংয়ে অটো আপডেটের সময়টি সেট করুন</string>
 </resources>

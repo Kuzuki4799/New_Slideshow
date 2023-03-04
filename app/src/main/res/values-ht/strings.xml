@@ -46,8 +46,7 @@
   <string name="my_studio">Estidyo mwen an</string>
   <string name="no_project">Pa gen Pwojè</string>
   <string name="more">Plis</string>
-  <string name="new_theme">Tèm New</string>
-  <string name="yes">Wi</string>
+    <string name="yes">Wi</string>
   <string name="do_you_want_delete_items">Ou vle efase atik yo?</string>
   <string name="do_you_want_delete_item">Ou vle efase atik la?</string>
   <string name="nothing_item_selected">Pa gen okenn atik chwazi.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Too low free space! Please clear your device\'s memory to use this feature</string>
   <string name="do_you_want_delete_all_sticker">Do you want to delete all the stickers?</string>
   <string name="do_you_want_delete_all_text">Ou vle efase tout tèks la?</string>
-  <string name="download_theme">Download tèm</string>
-  <string name="watch_video_to_download_theme">Gade videyo pou telechaje Tèm</string>
-  <string name="done">Fè</string>
-  <string name="downloading">Telechaje</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Pa gen koneksyon entènèt. Tanpri konekte sou entènèt la epi eseye ankò</string>
     <string name="have_an_error_try_another_music_file">Error! Try another music file.</string>
-    <string name="try_again">Eseye anko</string>
-  <string name="change_theme">Chanje tèm</string>
-  <string name="change_music">Chanje mizik</string>
+    <string name="change_music">Chanje mizik</string>
   <string name="change_image_filter">Chanje imaj filtre</string>
   <string name="change_video_effect">Chanje efè videyo</string>
   <string name="change_duration">Chanje dire</string>
-  <string name="can_t_connect_to_internet">Pa ka konekte ak entènèt</string>
-  <string name="wide_screen">Wide ekran (16: 9)</string>
+    <string name="wide_screen">Wide ekran (16: 9)</string>
   <string name="vertical">Vètikal (9:16)</string>
   <string name="square">Kare (1: 1)</string>
   <string name="ratio">Pwopòsyon</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Si ou pa bay pèmisyon, ou pa ka itilize app sa a.</string>
   <string name="goto_setting_and_grant_permission">Goto Anviwònman -&gt; Pèmisyon ak sibvans li pèmisyon depo ekstèn!</string>
   <string name="setting">Anviwònman</string>
-  <string name="you_can_use_this_feature">Si ou pa bay pèmisyon, ou pa ka itilize karakteristik sa a.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Anviwònman -&gt; Pèmisyon ak sibvansyon pèmisyon kamera!</string>
-  <string name="please_set_auto_update_time">Tanpri mete tan aktyalizasyon oto nan anviwònman</string>
 </resources>

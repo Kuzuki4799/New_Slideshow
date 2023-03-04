@@ -9,7 +9,7 @@ import com.acatapps.videomaker.data.FontsData
 import com.acatapps.videomaker.models.FontModel
 import kotlinx.android.synthetic.main.item_fonts_list.view.*
 
-class FontListAdapter(val callback:(fontId:Int)->Unit) : BaseAdapter<FontModel>() {
+class FontListAdapter(val callback: (fontId: Int) -> Unit) : BaseAdapter<FontModel>() {
 
     init {
         mItemList.add(FontModel(FontsData(R.font.doubledecker_demo, "Double")))
@@ -19,7 +19,9 @@ class FontListAdapter(val callback:(fontId:Int)->Unit) : BaseAdapter<FontModel>(
         mItemList.add(FontModel(FontsData(R.font.fun_sized, "Fun sized")))
 
     }
+
     private var selectedFontId = -1
+
     override fun doGetViewType(position: Int): Int = R.layout.item_fonts_list
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
@@ -29,7 +31,7 @@ class FontListAdapter(val callback:(fontId:Int)->Unit) : BaseAdapter<FontModel>(
         view.fontPreview.typeface = ResourcesCompat.getFont(view.context, item.fontId)
         view.fontPreview.text = item.fontName
 
-        if(item.fontId == selectedFontId) {
+        if (item.fontId == selectedFontId) {
             view.setBackgroundColor(Color.parseColor("#33000000"))
         } else {
             view.setBackgroundColor(Color.TRANSPARENT)

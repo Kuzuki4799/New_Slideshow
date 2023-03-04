@@ -25,7 +25,6 @@ open class RippleView : View {
 
     private var onClick: (() -> Unit)? = null
 
-    private val mLamda = 30f
     private var mCurrentRadius = 0
 
     private var mMaxRadius = 0f
@@ -60,14 +59,12 @@ open class RippleView : View {
                 sqrt((width - mCurrentX) * (width - mCurrentX) + (height - mCurrentY) * (height - mCurrentY))
             ) + 100f
             drawRipple()
-
-
         }
 
         return true
     }
 
-    fun getClipPath(): Path {
+    private fun getClipPath(): Path {
         val path = Path()
         path.reset()
         path.addRoundRect(

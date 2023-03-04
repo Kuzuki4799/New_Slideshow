@@ -46,8 +46,7 @@
   <string name="my_studio">Mon studio</string>
   <string name="no_project">Pas de projet</string>
   <string name="more">Plus</string>
-  <string name="new_theme">De nouveaux thèmes</string>
-  <string name="yes">Oui</string>
+    <string name="yes">Oui</string>
   <string name="do_you_want_delete_items">Voulez-vous supprimer des éléments?</string>
   <string name="do_you_want_delete_item">Voulez-vous supprimer l\'élément?</string>
   <string name="nothing_item_selected">Aucun élément sélectionné.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Espace libre trop bas! Veuillez vider la mémoire de votre appareil pour utiliser cette fonction</string>
   <string name="do_you_want_delete_all_sticker">Voulez-vous supprimer tous les autocollants?</string>
   <string name="do_you_want_delete_all_text">Voulez-vous supprimer tout le texte?</string>
-  <string name="download_theme">Télécharger le thème</string>
-  <string name="watch_video_to_download_theme">Regardez la vidéo pour télécharger le thème</string>
-  <string name="done">Terminé</string>
-  <string name="downloading">Téléchargement</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Pas de connexion Internet. Veuillez vous connecter à Internet et réessayer</string>
     <string name="have_an_error_try_another_music_file">Erreur! Essayez un autre fichier musical.</string>
-    <string name="try_again">Réessayer</string>
-  <string name="change_theme">Change le thème</string>
-  <string name="change_music">Changer de musique</string>
+    <string name="change_music">Changer de musique</string>
   <string name="change_image_filter">Changer le filtre d\'image</string>
   <string name="change_video_effect">Changer l\'effet vidéo</string>
   <string name="change_duration">Changer la durée</string>
-  <string name="can_t_connect_to_internet">Impossible de se connecter à Internet</string>
-  <string name="wide_screen">Écran large (16: 9)</string>
+    <string name="wide_screen">Écran large (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">Carré (1: 1)</string>
   <string name="ratio">Rapport</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Si vous n\'accordez pas d\'autorisation, vous ne pouvez pas utiliser cette application.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Permission et accorder une autorisation de lecture sur le stockage externe!</string>
   <string name="setting">Réglage</string>
-  <string name="you_can_use_this_feature">Si vous n\'accordez pas d\'autorisation, vous ne pouvez pas utiliser cette fonctionnalité.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Permission and grant camera permission!</string>
-  <string name="please_set_auto_update_time">Veuillez définir l\'heure de mise à jour automatique dans le paramètre</string>
 </resources>

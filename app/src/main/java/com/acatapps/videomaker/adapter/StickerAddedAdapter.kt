@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.item_sticker_added.view.*
 class StickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<StickerAddedDataModel>() {
 
     override fun doGetViewType(position: Int): Int = R.layout.item_sticker_added
+
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val view = holder.itemView
         val item = mItemList[position]
@@ -23,7 +24,7 @@ class StickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<StickerA
             onChange.onClickSticker(item)
         }
         Logger.e("start end --> ${item.startTimeMilSec} ${item.endTimeMilSec}")
-        if(item.inEdit) {
+        if (item.inEdit) {
             view.grayBg.visibility = View.VISIBLE
         } else {
             view.grayBg.visibility = View.GONE
@@ -38,14 +39,6 @@ class StickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<StickerA
         notifyDataSetChanged()
     }
 
-    fun changeStartTime(startTimeMilSec:Int) {
-        mCurrentItem?.startTimeMilSec = startTimeMilSec
-    }
-
-    fun changeEndTime(endTimeMilSec:Int) {
-        mCurrentItem?.endTimeMilSec = endTimeMilSec
-    }
-
     fun deleteItem(stickerAddedDataModel: StickerAddedDataModel) {
         mItemList.remove(stickerAddedDataModel)
         notifyDataSetChanged()
@@ -57,7 +50,7 @@ class StickerAddedAdapter(private val onChange: OnChange) : BaseAdapter<StickerA
     }
 
     fun setOffAll() {
-        for(item in mItemList) {
+        for (item in mItemList) {
             item.inEdit = false
         }
         notifyDataSetChanged()

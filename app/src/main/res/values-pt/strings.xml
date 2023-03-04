@@ -46,8 +46,7 @@
   <string name="my_studio">Meu estúdio</string>
   <string name="no_project">Nenhum projeto</string>
   <string name="more">Mais</string>
-  <string name="new_theme">Novos temas</string>
-  <string name="yes">sim</string>
+    <string name="yes">sim</string>
   <string name="do_you_want_delete_items">Deseja excluir itens?</string>
   <string name="do_you_want_delete_item">Deseja excluir o item?</string>
   <string name="nothing_item_selected">Nenhum item selecionado.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Espaço livre muito baixo! Limpe a memória do seu dispositivo para usar este recurso</string>
   <string name="do_you_want_delete_all_sticker">Deseja excluir todos os adesivos?</string>
   <string name="do_you_want_delete_all_text">Deseja excluir todo o texto?</string>
-  <string name="download_theme">Download do tema</string>
-  <string name="watch_video_to_download_theme">Assista ao vídeo para baixar o Tema</string>
-  <string name="done">Feito</string>
-  <string name="downloading">Baixando</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Sem conexão à internet. Conecte-se à Internet e tente novamente</string>
     <string name="have_an_error_try_another_music_file">Erro! Tente outro arquivo de música.</string>
-    <string name="try_again">Tente novamente</string>
-  <string name="change_theme">Mudar tema</string>
-  <string name="change_music">Alterar música</string>
+    <string name="change_music">Alterar música</string>
   <string name="change_image_filter">Alterar filtro de imagem</string>
   <string name="change_video_effect">Alterar efeito de vídeo</string>
   <string name="change_duration">Alterar duração</string>
-  <string name="can_t_connect_to_internet">Não consigo conectar à internet</string>
-  <string name="wide_screen">Ecrã panorâmico (16: 9)</string>
+    <string name="wide_screen">Ecrã panorâmico (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">Quadrado (1: 1)</string>
   <string name="ratio">Razão</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Se você não conceder permissão, não poderá usar este aplicativo.</string>
   <string name="goto_setting_and_grant_permission">Vá para Configuração -&gt; Permissão e conceda permissão de armazenamento externo para leitura!</string>
   <string name="setting">Configuração</string>
-  <string name="you_can_use_this_feature">Se você não conceder permissão, não poderá usar esse recurso.</string>
-  <string name="goto_setting_and_grant_camera_permission">Vá para Configuração -&gt; Permissão e conceda permissão à câmera!</string>
-  <string name="please_set_auto_update_time">Defina o tempo de atualização automática na configuração</string>
 </resources>

@@ -12,15 +12,19 @@ import kotlinx.android.synthetic.main.item_image_picked.view.*
 import java.io.File
 import java.util.Collections.swap
 
-class MediaPickedAdapter(private val onClickDelete:(Int)->Unit) : BaseAdapter<MediaPickedDataModel>() {
+class MediaPickedAdapter(private val onClickDelete: (Int) -> Unit) :
+    BaseAdapter<MediaPickedDataModel>() {
+
     override fun doGetViewType(position: Int): Int = R.layout.item_image_picked
 
-    var itemTouchHelper:ItemTouchHelper? = null
+    private var itemTouchHelper: ItemTouchHelper? = null
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val view = holder.itemView
         val item = mItemList[position]
-        Glide.with(view.context).load(item.path).apply(RequestOptions().override(DimenUtils.screenWidth(view.context)/4)).into(view.mediaThumb)
+        Glide.with(view.context).load(item.path)
+            .apply(RequestOptions().override(DimenUtils.screenWidth(view.context) / 4))
+            .into(view.mediaThumb)
         view.iconDelete.setInstanceClick {
             onClickDelete.invoke(position)
         }
@@ -45,9 +49,9 @@ class MediaPickedAdapter(private val onClickDelete:(Int)->Unit) : BaseAdapter<Me
 
     fun checkFile() {
         val newList = ArrayList<MediaPickedDataModel>()
-        for(item in mItemList) {
-            if(File(item.path).exists()) {
-               newList.add(item)
+        for (item in mItemList) {
+            if (File(item.path).exists()) {
+                newList.add(item)
             }
 
         }

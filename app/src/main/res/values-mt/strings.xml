@@ -46,8 +46,7 @@
   <string name="my_studio">L-istudjo tiegħi</string>
   <string name="no_project">Proġett Nru</string>
   <string name="more">Aktar</string>
-  <string name="new_theme">Temi ġodda</string>
-  <string name="yes">Iva</string>
+    <string name="yes">Iva</string>
   <string name="do_you_want_delete_items">Trid tħassar oġġetti?</string>
   <string name="do_you_want_delete_item">Trid tħassar l-oġġett?</string>
   <string name="nothing_item_selected">L-ebda oġġett magħżul.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Spazju ħieles wisq! Jekk jogħġbok ħassar il-memorja tat-tagħmir tiegħek biex tuża din il-karatteristika</string>
   <string name="do_you_want_delete_all_sticker">Trid tħassar l-istikers kollha?</string>
   <string name="do_you_want_delete_all_text">Trid tħassar it-test kollu?</string>
-  <string name="download_theme">Tniżżel it-tema</string>
-  <string name="watch_video_to_download_theme">Ara filmat biex tniżżel Tema</string>
-  <string name="done">Fet</string>
-  <string name="downloading">Tniżżil</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">L-ebda konnessjoni tal-internet. Jekk jogħġbok qabbad ma \'l-internet u erġa\' erġa \'</string>
     <string name="have_an_error_try_another_music_file">Żball! Ipprova fajl tal-mużika ieħor.</string>
-    <string name="try_again">Erġa \'pprova</string>
-  <string name="change_theme">Ibdel it-tema</string>
-  <string name="change_music">Ibdel il-mużika</string>
+    <string name="change_music">Ibdel il-mużika</string>
   <string name="change_image_filter">Ibdel filtru tal-immaġini</string>
   <string name="change_video_effect">Ibdel l-effett tal-vidjo</string>
   <string name="change_duration">Iddum il-bidla</string>
-  <string name="can_t_connect_to_internet">Ma nistax nikkonnettja ma \'l-internet</string>
-  <string name="wide_screen">Skrin wiesa \'(16: 9)</string>
+    <string name="wide_screen">Skrin wiesa \'(16: 9)</string>
   <string name="vertical">Vertikali (9:16)</string>
   <string name="square">Pjazza (1: 1)</string>
   <string name="ratio">Proporzjon</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Jekk ma tagħtix permess, ma tistax tuża din l-app.</string>
   <string name="goto_setting_and_grant_permission">Twaqqif ta \'Goto -&gt; Permess u l-għotja aqra permess ta\' ħażna esterna!</string>
   <string name="setting">Twaqqif</string>
-  <string name="you_can_use_this_feature">Jekk ma tagħtix permess, ma tistax tuża din il-karatteristika.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Permess u permess tal-għotja tal-kamera!</string>
-  <string name="please_set_auto_update_time">Jekk jogħġbok issettja l-ħin tal-aġġornament awtomatiku fl-issettjar</string>
 </resources>

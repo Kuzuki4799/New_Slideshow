@@ -46,8 +46,7 @@
   <string name="my_studio">నా స్టూడియో</string>
   <string name="no_project">ప్రాజెక్ట్ లేదు</string>
   <string name="more">మరింత</string>
-  <string name="new_theme">క్రొత్త థీమ్స్</string>
-  <string name="yes">అవును</string>
+    <string name="yes">అవును</string>
   <string name="do_you_want_delete_items">మీరు అంశాలను తొలగించాలనుకుంటున్నారా?</string>
   <string name="do_you_want_delete_item">మీరు అంశాన్ని తొలగించాలనుకుంటున్నారా?</string>
   <string name="nothing_item_selected">అంశం ఏదీ ఎంచుకోబడలేదు.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">చాలా తక్కువ ఖాళీ స్థలం! ఈ లక్షణాన్ని ఉపయోగించడానికి దయచేసి మీ పరికర మెమరీని క్లియర్ చేయండి</string>
   <string name="do_you_want_delete_all_sticker">మీరు అన్ని స్టిక్కర్లను తొలగించాలనుకుంటున్నారా?</string>
   <string name="do_you_want_delete_all_text">మీరు అన్ని వచనాన్ని తొలగించాలనుకుంటున్నారా?</string>
-  <string name="download_theme">థీమ్‌ను డౌన్‌లోడ్ చేయండి</string>
-  <string name="watch_video_to_download_theme">థీమ్‌ను డౌన్‌లోడ్ చేయడానికి వీడియో చూడండి</string>
-  <string name="done">పూర్తి</string>
-  <string name="downloading">డౌన్లోడ్ చేస్తోంది</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ఇంటర్నెట్ కనెక్షన్ లేదు. దయచేసి ఇంటర్నెట్‌కు కనెక్ట్ చేసి, మళ్లీ ప్రయత్నించండి</string>
     <string name="have_an_error_try_another_music_file">లోపం! మరొక సంగీత ఫైల్‌ను ప్రయత్నించండి.</string>
-    <string name="try_again">మళ్ళీ ప్రయత్నించండి</string>
-  <string name="change_theme">థీమ్ మార్చండి</string>
-  <string name="change_music">సంగీతాన్ని మార్చండి</string>
+    <string name="change_music">సంగీతాన్ని మార్చండి</string>
   <string name="change_image_filter">చిత్ర వడపోతను మార్చండి</string>
   <string name="change_video_effect">వీడియో ప్రభావాన్ని మార్చండి</string>
   <string name="change_duration">వ్యవధిని మార్చండి</string>
-  <string name="can_t_connect_to_internet">ఇంటర్నెట్‌కు కనెక్ట్ చేయలేరు</string>
-  <string name="wide_screen">వైడ్ స్క్రీన్ (16: 9)</string>
+    <string name="wide_screen">వైడ్ స్క్రీన్ (16: 9)</string>
   <string name="vertical">లంబ (9:16)</string>
   <string name="square">స్క్వేర్ (1: 1)</string>
   <string name="ratio">నిష్పత్తి</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">మీరు అనుమతి ఇవ్వకపోతే, మీరు ఈ అనువర్తనాన్ని ఉపయోగించలేరు.</string>
   <string name="goto_setting_and_grant_permission">గోటో సెట్టింగ్ -&gt; అనుమతి మరియు చదవడానికి బాహ్య నిల్వ అనుమతి ఇవ్వండి!</string>
   <string name="setting">అమరిక</string>
-  <string name="you_can_use_this_feature">మీరు అనుమతి ఇవ్వకపోతే, మీరు ఈ లక్షణాన్ని ఉపయోగించలేరు.</string>
-  <string name="goto_setting_and_grant_camera_permission">గోటో సెట్టింగ్ -&gt; అనుమతి మరియు కెమెరా అనుమతి ఇవ్వండి!</string>
-  <string name="please_set_auto_update_time">సెట్టింగ్‌లో ఆటో అప్‌డేట్ సమయాన్ని సెట్ చేయండి</string>
 </resources>

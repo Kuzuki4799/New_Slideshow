@@ -2,14 +2,17 @@ package com.acatapps.videomaker.adapter
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.acatapps.videomaker.adapter.MediaPickedAdapter
 
-class ItemTouchHelperCallback(private var adapter: MediaPickedAdapter.ItemTouchListenner) : ItemTouchHelper.Callback() {
+class ItemTouchHelperCallback(private var adapter: MediaPickedAdapter.ItemTouchListenner) :
+    ItemTouchHelper.Callback() {
+
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
     }
 
-    override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {
+    override fun getMovementFlags(
+        recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
+    ): Int {
         return makeFlag(
             ItemTouchHelper.ACTION_STATE_DRAG,
             ItemTouchHelper.DOWN or ItemTouchHelper.UP or ItemTouchHelper.START or ItemTouchHelper.END
@@ -21,8 +24,7 @@ class ItemTouchHelperCallback(private var adapter: MediaPickedAdapter.ItemTouchL
     }
 
     override fun onMove(
-        recyclerView: RecyclerView,
-        viewHolder: RecyclerView.ViewHolder,
+        recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
         target: RecyclerView.ViewHolder
     ): Boolean {
         adapter.onItemMove(viewHolder.adapterPosition, target.adapterPosition)

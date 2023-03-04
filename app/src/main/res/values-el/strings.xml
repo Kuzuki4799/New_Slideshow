@@ -46,8 +46,7 @@
   <string name="my_studio">Το στούντιό μου</string>
   <string name="no_project">Χωρίς έργο</string>
   <string name="more">Περισσότερο</string>
-  <string name="new_theme">Νέα θέματα</string>
-  <string name="yes">Ναί</string>
+    <string name="yes">Ναί</string>
   <string name="do_you_want_delete_items">Θέλετε να διαγράψετε στοιχεία;</string>
   <string name="do_you_want_delete_item">Θέλετε να διαγράψετε το στοιχείο;</string>
   <string name="nothing_item_selected">Δεν έχει επιλεγεί αντικείμενο.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Πολύ χαμηλός ελεύθερος χώρος! Διαγράψτε τη μνήμη της συσκευής σας για να χρησιμοποιήσετε αυτήν τη λειτουργία</string>
   <string name="do_you_want_delete_all_sticker">Θέλετε να διαγράψετε όλα τα αυτοκόλλητα;</string>
   <string name="do_you_want_delete_all_text">Θέλετε να διαγράψετε όλο το κείμενο;</string>
-  <string name="download_theme">Λήψη θέματος</string>
-  <string name="watch_video_to_download_theme">Παρακολουθήστε βίντεο για λήψη Θέματος</string>
-  <string name="done">Ολοκληρώθηκε</string>
-  <string name="downloading">Λήψη</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Δεν υπάρχει σύνδεση στο διαδίκτυο. Συνδεθείτε στο Διαδίκτυο και δοκιμάστε ξανά</string>
     <string name="have_an_error_try_another_music_file">Λάθος! Δοκιμάστε ένα άλλο αρχείο μουσικής.</string>
-    <string name="try_again">Προσπάθησε ξανά</string>
-  <string name="change_theme">Αλλαξε θέμα</string>
-  <string name="change_music">Αλλαγή μουσικής</string>
+    <string name="change_music">Αλλαγή μουσικής</string>
   <string name="change_image_filter">Αλλαγή φίλτρου εικόνας</string>
   <string name="change_video_effect">Αλλαγή εφέ βίντεο</string>
   <string name="change_duration">Αλλαγή διάρκειας</string>
-  <string name="can_t_connect_to_internet">Δεν είναι δυνατή η σύνδεση στο Διαδίκτυο</string>
-  <string name="wide_screen">Ευρεία οθόνη (16: 9)</string>
+    <string name="wide_screen">Ευρεία οθόνη (16: 9)</string>
   <string name="vertical">Κάθετη (9:16)</string>
   <string name="square">Πλατεία (1: 1)</string>
   <string name="ratio">Αναλογία</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Εάν δεν παραχωρήσετε άδεια, δεν μπορείτε να χρησιμοποιήσετε αυτήν την εφαρμογή.</string>
   <string name="goto_setting_and_grant_permission">Μετάβαση -&gt; Άδεια και παραχώρηση άδειας εξωτερικής αποθήκευσης για ανάγνωση!</string>
   <string name="setting">Σύνθεση</string>
-  <string name="you_can_use_this_feature">Εάν δεν εκχωρήσετε άδεια, δεν μπορείτε να χρησιμοποιήσετε αυτήν τη δυνατότητα.</string>
-  <string name="goto_setting_and_grant_camera_permission">Μετάβαση -&gt; Άδεια και εκχώρηση άδειας κάμερας!</string>
-  <string name="please_set_auto_update_time">Ορίστε τον χρόνο αυτόματης ενημέρωσης στη ρύθμιση</string>
 </resources>

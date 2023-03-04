@@ -9,11 +9,14 @@ import com.acatapps.videomaker.utils.BitmapUtils
 import com.acatapps.videomaker.utils.LookupUtils
 import kotlinx.android.synthetic.main.item_lookup.view.*
 
-class LookupListAdapter(val onSelectLookup:(LookupUtils.LookupType)->Unit): BaseAdapter<LookupDataModel>() {
+class LookupListAdapter(val onSelectLookup: (LookupUtils.LookupType) -> Unit) :
+    BaseAdapter<LookupDataModel>() {
+
     private var mCurrentPosition = -1
+
     init {
         val lookupDataList = LookupUtils.getLookupDataList()
-        for(item in lookupDataList) {
+        for (item in lookupDataList) {
             mItemList.add(LookupDataModel(item))
         }
         notifyDataSetChanged()
@@ -29,7 +32,7 @@ class LookupListAdapter(val onSelectLookup:(LookupUtils.LookupType)->Unit): Base
             mCurrentPosition = position
             notifyDataSetChanged()
         }
-        if(mCurrentPosition == position) {
+        if (mCurrentPosition == position) {
             view.strokeBg.visibility = View.VISIBLE
         } else {
             view.strokeBg.visibility = View.GONE
@@ -39,9 +42,9 @@ class LookupListAdapter(val onSelectLookup:(LookupUtils.LookupType)->Unit): Base
     }
 
     fun highlightItem(lookupType: LookupUtils.LookupType) {
-        for(index in 0 until  mItemList.size) {
+        for (index in 0 until mItemList.size) {
             val item = mItemList[index]
-            if(lookupType == item.lookupType) {
+            if (lookupType == item.lookupType) {
                 mCurrentPosition = index
                 notifyDataSetChanged()
                 break

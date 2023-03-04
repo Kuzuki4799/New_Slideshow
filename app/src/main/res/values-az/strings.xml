@@ -46,8 +46,7 @@
   <string name="my_studio">Studiyam</string>
   <string name="no_project">Layihə yoxdur</string>
   <string name="more">Daha çox</string>
-  <string name="new_theme">Yeni mövzular</string>
-  <string name="yes">Bəli</string>
+    <string name="yes">Bəli</string>
   <string name="do_you_want_delete_items">Elementləri silmək istəyirsiniz?</string>
   <string name="do_you_want_delete_item">Elementi silmək istəyirsiniz?</string>
   <string name="nothing_item_selected">Element seçilməyib.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Boş yer çox azdır! Bu xüsusiyyətdən istifadə etmək üçün cihazınızın yaddaşını silin</string>
   <string name="do_you_want_delete_all_sticker">Bütün etiketləri silmək istəyirsiniz?</string>
   <string name="do_you_want_delete_all_text">Bütün mətni silmək istəyirsiniz?</string>
-  <string name="download_theme">Mövzunu yükləyin</string>
-  <string name="watch_video_to_download_theme">Tema yükləmək üçün videoya baxın</string>
-  <string name="done">Bitdi</string>
-  <string name="downloading">Yüklənir</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">İnternet bağlantısı yoxdur. Zəhmət olmasa internetə qoşulun və yenidən cəhd edin</string>
     <string name="have_an_error_try_another_music_file">Xəta! Başqa bir musiqi faylını sınayın.</string>
-    <string name="try_again">Yenidən cəhd elə</string>
-  <string name="change_theme">Mövzunu dəyişdirin</string>
-  <string name="change_music">Musiqi dəyişdirin</string>
+    <string name="change_music">Musiqi dəyişdirin</string>
   <string name="change_image_filter">Şəkil filtrini dəyişdirin</string>
   <string name="change_video_effect">Video effektini dəyişdirin</string>
   <string name="change_duration">Müddəti dəyişdirin</string>
-  <string name="can_t_connect_to_internet">İnternetə qoşula bilmir</string>
-  <string name="wide_screen">Geniş ekran (16: 9)</string>
+    <string name="wide_screen">Geniş ekran (16: 9)</string>
   <string name="vertical">Şaquli (9:16)</string>
   <string name="square">Meydan (1: 1)</string>
   <string name="ratio">Nisbət</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">İcazə vermirsinizsə, bu tətbiqdən istifadə edə bilməzsiniz.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; İcazə verin və xarici saxlama icazəsini oxuyun!</string>
   <string name="setting">Quraşdırma</string>
-  <string name="you_can_use_this_feature">İcazə vermirsinizsə, bu xüsusiyyəti istifadə edə bilməzsiniz.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; İcazə və kamera icazəsi verin!</string>
-  <string name="please_set_auto_update_time">Xahiş edirəm qəbulu zamanı avtomatik yeniləmə vaxtını təyin edin</string>
 </resources>

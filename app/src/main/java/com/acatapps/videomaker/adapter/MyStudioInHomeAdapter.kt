@@ -7,7 +7,6 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.acatapps.videomaker.R
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseAdapter
 import com.acatapps.videomaker.base.BaseViewHolder
 import com.acatapps.videomaker.models.MyStudioDataModel
@@ -19,6 +18,7 @@ import java.io.File
 
 
 class MyStudioInHomeAdapter : BaseAdapter<MyStudioDataModel>() {
+
     override fun doGetViewType(position: Int): Int = R.layout.item_my_studio_in_home
 
     var onClickItem: ((MyStudioDataModel) -> Unit)? = null
@@ -45,8 +45,6 @@ class MyStudioInHomeAdapter : BaseAdapter<MyStudioDataModel>() {
                     )
                 )
             }
-
-
         } else {
             view.grayBg.visibility = View.GONE
             view.durationLabel.visibility = View.GONE
@@ -54,7 +52,6 @@ class MyStudioInHomeAdapter : BaseAdapter<MyStudioDataModel>() {
         view.setOnClickListener {
             onClickItem?.invoke(item)
         }
-
     }
 
     override fun setItemList(arrayList: ArrayList<MyStudioDataModel>) {

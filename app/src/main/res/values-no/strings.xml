@@ -46,8 +46,7 @@
   <string name="my_studio">Studioet mitt</string>
   <string name="no_project">Ingen prosjekt</string>
   <string name="more">Mer</string>
-  <string name="new_theme">Nye temaer</string>
-  <string name="yes">Ja</string>
+    <string name="yes">Ja</string>
   <string name="do_you_want_delete_items">Vil du slette elementer?</string>
   <string name="do_you_want_delete_item">Vil du slette varen?</string>
   <string name="nothing_item_selected">Ingen elementer er valgt.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">For lav ledig plass! Tøm enhetens minne for å bruke denne funksjonen</string>
   <string name="do_you_want_delete_all_sticker">Vil du slette alle klistremerker?</string>
   <string name="do_you_want_delete_all_text">Vil du slette all teksten?</string>
-  <string name="download_theme">Last ned tema</string>
-  <string name="watch_video_to_download_theme">Se video for å laste ned Theme</string>
-  <string name="done">Ferdig</string>
-  <string name="downloading">nedlasting</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Ingen internettforbindelse. Koble til Internett og prøv igjen</string>
     <string name="have_an_error_try_another_music_file">Feil! Prøv en annen musikkfil.</string>
-    <string name="try_again">Prøv igjen</string>
-  <string name="change_theme">Endre tema</string>
-  <string name="change_music">Endre musikk</string>
+    <string name="change_music">Endre musikk</string>
   <string name="change_image_filter">Endre bildefilter</string>
   <string name="change_video_effect">Endre videoeffekt</string>
   <string name="change_duration">Endre varighet</string>
-  <string name="can_t_connect_to_internet">Kan ikke koble til internett</string>
-  <string name="wide_screen">Bred skjerm (16: 9)</string>
+    <string name="wide_screen">Bred skjerm (16: 9)</string>
   <string name="vertical">Vertikal (9:16)</string>
   <string name="square">Firkant (1: 1)</string>
   <string name="ratio">Forhold</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Hvis du ikke gir tillatelse, kan du ikke bruke denne appen.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Tillatelse og gi lese ekstern lagringstillatelse!</string>
   <string name="setting">Innstilling</string>
-  <string name="you_can_use_this_feature">Hvis du ikke gir tillatelse, kan du ikke bruke denne funksjonen.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Tillatelse og gi kameraet tillatelse!</string>
-  <string name="please_set_auto_update_time">Angi automatisk oppdateringstid i innstillingen</string>
 </resources>

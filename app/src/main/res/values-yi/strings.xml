@@ -46,8 +46,7 @@
   <string name="my_studio">מייַן סטודיע</string>
   <string name="no_project">קיין פּראָיעקט</string>
   <string name="more">מער</string>
-  <string name="new_theme">נייַ טימז</string>
-  <string name="yes">יאָ</string>
+    <string name="yes">יאָ</string>
   <string name="do_you_want_delete_items">צי איר ווילן צו ויסמעקן ייטאַמז?</string>
   <string name="do_you_want_delete_item">צי איר ווילן צו ויסמעקן די נומער?</string>
   <string name="nothing_item_selected">קיין נומער סעלעקטעד.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">צו נידעריק פריי פּלאַץ! ביטע ויסמעקן די זכּרון פון דיין מיטל צו נוצן דעם שטריך</string>
   <string name="do_you_want_delete_all_sticker">צי איר ווילן צו ויסמעקן אַלע די סטיקערז?</string>
   <string name="do_you_want_delete_all_text">צי איר ווילן צו ויסמעקן אַלע די טעקסט?</string>
-  <string name="download_theme">אראפקאפיע טעמע</string>
-  <string name="watch_video_to_download_theme">וואַך ווידעא צו אָפּלאָדירן טים</string>
-  <string name="done">געטאן</string>
-  <string name="downloading">דאַונלאָודינג</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">קיין אינטערנעט פֿאַרבינדונג. ביטע פאַרבינדן צו די אינטערנעט און פּרובירן ווידער</string>
     <string name="have_an_error_try_another_music_file">טעות! פרובירט אן אנדער מוזיק טעקע.</string>
-    <string name="try_again">פּרוּווט ווידער</string>
-  <string name="change_theme">טוישן טעמע</string>
-  <string name="change_music">טוישן מוזיק</string>
+    <string name="change_music">טוישן מוזיק</string>
   <string name="change_image_filter">טוישן בילד פילטער</string>
   <string name="change_video_effect">טוישן ווידעא ווירקונג</string>
   <string name="change_duration">טוישן געדויער</string>
-  <string name="can_t_connect_to_internet">קען נישט פאַרבינדן צו אינטערנעט</string>
-  <string name="wide_screen">ברייט סקרין (16: 9)</string>
+    <string name="wide_screen">ברייט סקרין (16: 9)</string>
   <string name="vertical">ווערטיקאַל (9:16)</string>
   <string name="square">קוואדראט (1: 1)</string>
   <string name="ratio">פאַרהעלטעניש</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">אויב איר טאָן ניט שענקען דערלויבעניש, איר קענט נישט נוצן דעם אַפּ.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; דערלויבעניש און דערלויבן לייענען דערלויבעניש פֿאַר פונדרויסנדיק סטאָרידזש!</string>
   <string name="setting">באַשטעטיקן</string>
-  <string name="you_can_use_this_feature">אויב איר טאָן ניט שענקען דערלויבעניש, איר קענט נישט נוצן דעם שטריך.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; דערלויבן און דערלויבן אַפּאַראַט דערלויבעניש!</string>
-  <string name="please_set_auto_update_time">ביטע באַשטעטיקן די אַוטאָ דערהייַנטיקן צייט אין באַשטעטיקן</string>
 </resources>

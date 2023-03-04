@@ -45,7 +45,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     override val kodein by closestKodein()
     override fun getLayoutId(): Int = R.layout.activity_base_tools_edit
     protected var onEditSticker = false
-    private val mAudioManager: AudioManagerV3 by instance<AudioManagerV3>()
+    private val mAudioManager: AudioManagerV3 by instance()
     private var mCurrentMusicData: MusicReturnData? = null
     protected var toolType = ToolType.NONE
     private var mCurrentVideoVolume = 1f
@@ -58,7 +58,8 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         }
     })
 
-    private val mTextStickerAddedAdapter = TextStickerAddedAdapter(object : TextStickerAddedAdapter.OnChange {
+    private val mTextStickerAddedAdapter =
+        TextStickerAddedAdapter(object : TextStickerAddedAdapter.OnChange {
             override fun onClickTextSticker(textStickerAddedDataModel: TextStickerAddedDataModel) {
                 updateChangeTextStickerLayout(textStickerAddedDataModel, true)
             }
@@ -67,26 +68,26 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
     private val mRecoredAdapter = RecordListAdapter()
     override fun initViews() {
-        if(!isImageSlideShow())
-        for(index in 0 until menuItemContainer.childCount) {
-            menuItemContainer[index].apply {
-                layoutParams.width = DimenUtils.screenWidth(this@BaseSlideShow)/4
-            }
+        if (!isImageSlideShow())
+            for (index in 0 until menuItemContainer.childCount) {
+                menuItemContainer[index].apply {
+                    layoutParams.width = DimenUtils.screenWidth(this@BaseSlideShow) / 4
+                }
 
-        }
+            }
         doInitViews()
         val screenW = DimenUtils.screenWidth(this)
         val videoPreviewScale = DimenUtils.videoPreviewScale()
         Logger.e("scale = $videoPreviewScale")
-        slideBgPreview.layoutParams.width = (screenW*videoPreviewScale).toInt()
-        slideBgPreview.layoutParams.height = (screenW*videoPreviewScale).toInt()
+        slideBgPreview.layoutParams.width = (screenW * videoPreviewScale).toInt()
+        slideBgPreview.layoutParams.height = (screenW * videoPreviewScale).toInt()
 
 
         baseRootView.viewTreeObserver.addOnGlobalLayoutListener {
             val rect = Rect()
             baseRootView.getWindowVisibleDisplayFrame(rect)
-            if(baseRootView.rootView.height - (rect.bottom-rect.top) > 500) {
-                addTextLayout?.translationY = -56*DimenUtils.density()
+            if (baseRootView.rootView.height - (rect.bottom - rect.top) > 500) {
+                addTextLayout?.translationY = -56 * DimenUtils.density()
             } else {
                 addTextLayout?.translationY = 0f
             }
@@ -174,7 +175,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         showToolsActionLayout(view)
 
         view.soundNameLabel.setClick {
-            if(clickSelectMusicAvailable) {
+            if (clickSelectMusicAvailable) {
                 clickSelectMusicAvailable = false
                 val intent = Intent(this, SelectMusicActivity::class.java)
                 mCurrentMusicData?.let {
@@ -184,11 +185,12 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
                     }
                 }
 
-                openNewActivityForResult(intent, SelectMusicActivity.SELECT_MUSIC_REQUEST_CODE,
+                openNewActivityForResult(
+                    intent, SelectMusicActivity.SELECT_MUSIC_REQUEST_CODE,
                     isShowAds = true, isFinish = false
                 )
 
-                object :CountDownTimer(1000, 1000) {
+                object : CountDownTimer(1000, 1000) {
                     override fun onFinish() {
                         clickSelectMusicAvailable = true
                     }
@@ -212,10 +214,10 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             mAudioManager.setVolume(it / 100f)
         }
         view.videoVolumeSeekBar.setProgressChangeListener {
-            performChangeVideoVolume(it/100f)
-            mCurrentVideoVolume = it/100f
+            performChangeVideoVolume(it / 100f)
+            mCurrentVideoVolume = it / 100f
         }
-        if(isImageSlideShow()) {
+        if (isImageSlideShow()) {
             view.videoVolumeSeekBar.visibility = View.GONE
             view.icVideoVolume.visibility = View.INVISIBLE
         }
@@ -232,12 +234,11 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         }
         view.musicVolumeSeekBar.setProgress(mAudioManager.getVolume() * 100)
-        view.videoVolumeSeekBar.setProgress(mCurrentVideoVolume*100)
+        view.videoVolumeSeekBar.setProgress(mCurrentVideoVolume * 100)
     }
 
     protected fun getMusicData(): String = mAudioManager.getOutMusicPath()
-    protected fun getMusicVolume():Float = mAudioManager.getVolume()
-
+    protected fun getMusicVolume(): Float = mAudioManager.getVolume()
 
 
     private fun showLayoutChangeSticker() {
@@ -258,7 +259,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             showVideoController()
         }
 
-        if(mStickerAddedAdapter.itemCount < 1) {
+        if (mStickerAddedAdapter.itemCount < 1) {
             view.cancelAddSticker.visibility = View.GONE
         }
 
@@ -312,12 +313,15 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
                                                 setOffAllSticker()
                                                 mStickerAddedAdapter.setOffAll()
 
-                                                getTopViewInToolAction().cropTimeView.visibility = View.INVISIBLE
-                                                getTopViewInToolAction().buttonPlayAndPause.visibility = View.INVISIBLE
+                                                getTopViewInToolAction().cropTimeView.visibility =
+                                                    View.INVISIBLE
+                                                getTopViewInToolAction().buttonPlayAndPause.visibility =
+                                                    View.INVISIBLE
                                                 Logger.e(" --> on delete sticker")
                                                 showVideoController()
-                                                if(mStickerAddedAdapter.itemCount< 1) {
-                                                    getTopViewInToolAction().cancelAddSticker.visibility = View.GONE
+                                                if (mStickerAddedAdapter.itemCount < 1) {
+                                                    getTopViewInToolAction().cancelAddSticker.visibility =
+                                                        View.GONE
                                                 }
                                             }
                                         })
@@ -335,9 +339,9 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
     private fun deleteAllSticker() {
         val listView = ArrayList<View>()
-        for(i in 0 until stickerContainer.childCount) {
+        for (i in 0 until stickerContainer.childCount) {
             val view = stickerContainer.getChildAt(i)
-            if(view is StickerView) {
+            if (view is StickerView) {
                 listView.add(view)
             }
         }
@@ -347,7 +351,8 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         mStickerAddedAdapter.deleteAllItem()
     }
 
-    protected fun getStickerAddedList():ArrayList<StickerAddedDataModel> = mStickerAddedAdapter.itemList
+    protected fun getStickerAddedList(): ArrayList<StickerAddedDataModel> =
+        mStickerAddedAdapter.itemList
 
     private fun updateChangeStickerLayout(
         stickerAddedDataModel: StickerAddedDataModel,
@@ -363,13 +368,16 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             visibility = View.VISIBLE
             setOnClickListener { changeVideoStateInAddSticker(view) }
         }
-        if(mStickerAddedAdapter.itemCount >0) {
+        if (mStickerAddedAdapter.itemCount > 0) {
             view.cancelAddSticker.visibility = View.VISIBLE
         }
         view.cropTimeView.apply {
-            if(!isImageSlideShow()){
-                loadVideoImagePreview(getSourcePathList(), DimenUtils.screenWidth(this@BaseSlideShow)-(76* DimenUtils.density(this@BaseSlideShow)).roundToInt())
-            }else {
+            if (!isImageSlideShow()) {
+                loadVideoImagePreview(
+                    getSourcePathList(),
+                    DimenUtils.screenWidth(this@BaseSlideShow) - (76 * DimenUtils.density(this@BaseSlideShow)).roundToInt()
+                )
+            } else {
                 loadImage(getSourcePathList())
             }
 
@@ -461,7 +469,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             setOffAllTextSticker()
             getTopViewInToolAction().cropTimeViewInText.visibility = View.INVISIBLE
             getTopViewInToolAction().buttonPlayAndPauseInText.visibility = View.INVISIBLE
-            showAddTextLayout(null,true)
+            showAddTextLayout(null, true)
         }
 
         view.confirmAddText.setOnClickListener {
@@ -471,7 +479,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             view.buttonPlayAndPauseInText.visibility = View.INVISIBLE
             showVideoController()
         }
-        if(mTextStickerAddedAdapter.itemCount < 1) {
+        if (mTextStickerAddedAdapter.itemCount < 1) {
             view.cancelAddTextSticker.visibility = View.GONE
         }
         view.cancelAddTextSticker.setOnClickListener {
@@ -498,9 +506,9 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
     private fun deleteAllTextSticker() {
         val listView = ArrayList<View>()
-        for(i in 0 until stickerContainer.childCount) {
+        for (i in 0 until stickerContainer.childCount) {
             val view = stickerContainer.getChildAt(i)
-            if(view is EditTextSticker) {
+            if (view is EditTextSticker) {
                 listView.add(view)
             }
         }
@@ -512,9 +520,13 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         mTextStickerAddedAdapter.setOffAll()
     }
 
-    protected fun getTextAddedList():ArrayList<TextStickerAddedDataModel> = mTextStickerAddedAdapter.itemList
+    protected fun getTextAddedList(): ArrayList<TextStickerAddedDataModel> =
+        mTextStickerAddedAdapter.itemList
 
-    private fun showAddTextLayout(editTextSticker: EditTextSticker? = null, isEdit:Boolean=false) {
+    private fun showAddTextLayout(
+        editTextSticker: EditTextSticker? = null,
+        isEdit: Boolean = false
+    ) {
         mTouchEnable = false
 
         setOffAllTextSticker()
@@ -545,26 +557,35 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         }
         setScreenTitle(getString(R.string.text_editor))
         onPauseVideo()
-        if(isEdit) addTextLayout?.showKeyboard()
+        if (isEdit) addTextLayout?.showKeyboard()
         activeTouch()
     }
+
     private fun activeTouch() {
-        Thread{
+        Thread {
             Thread.sleep(500)
             mTouchEnable = true
         }.start()
     }
+
     private fun performAddText(editTextSticker: EditTextSticker) {
 
         stickerContainer.addView(editTextSticker)
         editTextSticker.changeIsAdded(true)
         getTopViewInToolAction().cancelAddTextSticker.visibility = View.VISIBLE
-        val textStickerAddedDataModel:TextStickerAddedDataModel
-        if(mTextStickerAddedAdapter.getItemBytViewId(editTextSticker.id) == null) {
-            textStickerAddedDataModel = TextStickerAddedDataModel(editTextSticker.getMainText(), true, 0, getMaxDuration(), editTextSticker.id)
+        val textStickerAddedDataModel: TextStickerAddedDataModel
+        if (mTextStickerAddedAdapter.getItemBytViewId(editTextSticker.id) == null) {
+            textStickerAddedDataModel = TextStickerAddedDataModel(
+                editTextSticker.getMainText(),
+                true,
+                0,
+                getMaxDuration(),
+                editTextSticker.id
+            )
             mTextStickerAddedAdapter.addNewText(textStickerAddedDataModel)
         } else {
-            textStickerAddedDataModel = mTextStickerAddedAdapter.getItemBytViewId(editTextSticker.id)!!
+            textStickerAddedDataModel =
+                mTextStickerAddedAdapter.getItemBytViewId(editTextSticker.id)!!
             textStickerAddedDataModel.inEdit = true
             mTextStickerAddedAdapter.notifyDataSetChanged()
         }
@@ -582,7 +603,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             mTextStickerAddedAdapter.setOffAll()
             showVideoController()
             hideKeyboard()
-            if(mTextStickerAddedAdapter.itemCount < 1) {
+            if (mTextStickerAddedAdapter.itemCount < 1) {
                 getTopViewInToolAction().cancelAddTextSticker.visibility = View.GONE
             }
         }
@@ -610,9 +631,12 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         }
 
         view.cropTimeViewInText.apply {
-            if(!isImageSlideShow()){
-                loadVideoImagePreview(getSourcePathList(), DimenUtils.screenWidth(this@BaseSlideShow)-(76* DimenUtils.density(this@BaseSlideShow)).roundToInt())
-            }else {
+            if (!isImageSlideShow()) {
+                loadVideoImagePreview(
+                    getSourcePathList(),
+                    DimenUtils.screenWidth(this@BaseSlideShow) - (76 * DimenUtils.density(this@BaseSlideShow)).roundToInt()
+                )
+            } else {
                 loadImage(getSourcePathList())
             }
             setMax(getMaxDuration())
@@ -692,17 +716,19 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             }
         }
     }
+
     private var mRecorder: MediaRecorder? = null
     private var mRecordingFilePath = ""
-    private var mRecordingTimer:CountDownTimer? = null
-    private var mCurrentRecordObject:RecordedDataModel? = null
+    private var mRecordingTimer: CountDownTimer? = null
+    private var mCurrentRecordObject: RecordedDataModel? = null
     private fun showLayoutChangeRecord() {
         val view = View.inflate(this, R.layout.layout_change_record_tools, null)
         showToolsActionLayout(view)
         view.recordedListView.adapter = mRecoredAdapter
-        view.recordedListView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        view.recordedListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         view.videoTimelineView.setMaxValue(getMaxDuration())
-        if(isImageSlideShow()) {
+        if (isImageSlideShow()) {
             view.videoTimelineView.loadImage(getSourcePathList())
         } else {
             view.videoTimelineView.loadImageVideo(getSourcePathList())
@@ -710,7 +736,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         view.videoTimelineView.setDataList(mRecoredAdapter.itemList)
         view.videoTimelineView.onUpCallback = {
-            performSeekTo(it,false)
+            performSeekTo(it, false)
 
         }
 
@@ -730,7 +756,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             performSeekTo(it.startOffset)
             view.videoTimelineView.moveTo(it.startOffset)
         }
-        view.buttonRecord.setOnClickListener{
+        view.buttonRecord.setOnClickListener {
             startRecordAudio()
         }
     }
@@ -772,12 +798,14 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             )
         )
     }
+
     protected fun setExoPlayerView(playerView: GPUPlayerView) {
         videoGlViewContainer.removeAllViews()
         videoGlViewContainer.addView(
-            playerView,FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT
+            playerView, FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT
         )
     }
+
     protected fun releaseExoPlayerView() {
         slideGlViewContainer.removeAllViews()
 
@@ -887,12 +915,11 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-
         if (resultCode == Activity.RESULT_OK && requestCode == SelectMusicActivity.SELECT_MUSIC_REQUEST_CODE) {
             if (data != null) {
                 val bundle = data.getBundleExtra("bundle")
-                val musicReturnData = (bundle?.getSerializable(SelectMusicActivity.MUSIC_RETURN_DATA_KEY)) as MusicReturnData
+                val musicReturnData =
+                    (bundle?.getSerializable(SelectMusicActivity.MUSIC_RETURN_DATA_KEY)) as MusicReturnData
                 changeMusicData(musicReturnData)
             }
 
@@ -914,7 +941,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
     private fun getTopViewInToolAction(): View = toolsAction.getChildAt(toolsAction.childCount - 1)
 
-    abstract fun isImageSlideShow():Boolean
+    abstract fun isImageSlideShow(): Boolean
 
     abstract fun doInitViews()
     abstract fun doInitActions()
@@ -924,15 +951,16 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     abstract fun performPauseVideo()
     abstract fun getMaxDuration(): Int
     abstract fun performSeekTo(timeMs: Int)
-    abstract fun performSeekTo(timeMs: Int, showProgress:Boolean)
+    abstract fun performSeekTo(timeMs: Int, showProgress: Boolean)
     abstract fun isPlaying(): Boolean
     abstract fun getSourcePathList(): ArrayList<String>
-    abstract fun getScreenTitle():String
+    abstract fun getScreenTitle(): String
     abstract fun performExportVideo()
     enum class ToolType {
-        NONE,TRIM ,EFFECT,THEME, TRANSITION, DURATION, MUSIC, STICKER, TEXT, FILTER, RECORDER
+        NONE, TRIM, EFFECT, THEME, TRANSITION, DURATION, MUSIC, STICKER, TEXT, FILTER, RECORDER
     }
-    abstract fun performChangeVideoVolume(volume:Float)
+
+    abstract fun performChangeVideoVolume(volume: Float)
     private fun hideKeyboard() {
 
         addTextLayout?.hideKeyboard()
@@ -954,7 +982,8 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
                             performAddText(it)
                         }
                     }
-                },{ hideAllViewInFullScreenLayout()
+                }, {
+                    hideAllViewInFullScreenLayout()
                     if (toolType == ToolType.TEXT) {
                         addTextLayout?.onCancelEdit()?.let {
                             performAddText(it)
@@ -963,12 +992,13 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
                         }
 
                         addTextLayout = null
-                    }})
+                    }
+                })
 
                 return
             }
             else -> {
-                    super.onBackPressed()
+                super.onBackPressed()
             }
         }
     }
@@ -997,7 +1027,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         mTextStickerAddedAdapter.setOffAll()
 
     }
-
 
 
 }

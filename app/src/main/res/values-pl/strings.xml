@@ -46,8 +46,7 @@
   <string name="my_studio">Moje studio</string>
   <string name="no_project">Brak projektu</string>
   <string name="more">Więcej</string>
-  <string name="new_theme">Nowe tematy</string>
-  <string name="yes">tak</string>
+    <string name="yes">tak</string>
   <string name="do_you_want_delete_items">Chcesz usunąć pozycje?</string>
   <string name="do_you_want_delete_item">Czy chcesz usunąć element?</string>
   <string name="nothing_item_selected">Nie wybrano żadnego elementu.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Za mało wolnego miejsca! Wyczyść pamięć urządzenia, aby korzystać z tej funkcji</string>
   <string name="do_you_want_delete_all_sticker">Czy chcesz usunąć wszystkie naklejki?</string>
   <string name="do_you_want_delete_all_text">Czy chcesz usunąć cały tekst?</string>
-  <string name="download_theme">Pobierz motyw</string>
-  <string name="watch_video_to_download_theme">Obejrzyj wideo, aby pobrać motyw</string>
-  <string name="done">Gotowy</string>
-  <string name="downloading">Ściąganie</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Brak połączenia z internetem. Połącz się z Internetem i spróbuj ponownie</string>
     <string name="have_an_error_try_another_music_file">Błąd! Wypróbuj inny plik muzyczny.</string>
-    <string name="try_again">Spróbuj ponownie</string>
-  <string name="change_theme">Zmień motyw</string>
-  <string name="change_music">Zmień muzykę</string>
+    <string name="change_music">Zmień muzykę</string>
   <string name="change_image_filter">Zmień filtr obrazu</string>
   <string name="change_video_effect">Zmień efekt wideo</string>
   <string name="change_duration">Zmień czas trwania</string>
-  <string name="can_t_connect_to_internet">Nie można połączyć się z Internetem</string>
-  <string name="wide_screen">Szeroki ekran (16: 9)</string>
+    <string name="wide_screen">Szeroki ekran (16: 9)</string>
   <string name="vertical">Pionowa (9:16)</string>
   <string name="square">Kwadrat (1: 1)</string>
   <string name="ratio">Stosunek</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Jeśli nie udzielisz pozwolenia, nie będziesz mógł korzystać z tej aplikacji.</string>
   <string name="goto_setting_and_grant_permission">Idź do Ustawienia -&gt; Zezwól i przyznaj uprawnienia do odczytu pamięci zewnętrznej!</string>
   <string name="setting">Oprawa</string>
-  <string name="you_can_use_this_feature">Jeśli nie udzielisz pozwolenia, nie będziesz mógł użyć tej funkcji.</string>
-  <string name="goto_setting_and_grant_camera_permission">Idź do Ustawienia -&gt; Zezwól i udziel uprawnienia kamery!</string>
-  <string name="please_set_auto_update_time">Ustaw czas automatycznej aktualizacji w ustawieniach</string>
 </resources>

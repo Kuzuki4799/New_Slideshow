@@ -46,8 +46,7 @@
   <string name="my_studio">Mein Studio</string>
   <string name="no_project">Kein Projekt</string>
   <string name="more">Mehr</string>
-  <string name="new_theme">Neue Themen</string>
-  <string name="yes">Ja</string>
+    <string name="yes">Ja</string>
   <string name="do_you_want_delete_items">Möchten Sie Elemente löschen?</string>
   <string name="do_you_want_delete_item">Möchten Sie den Artikel löschen?</string>
   <string name="nothing_item_selected">Kein Element ausgewählt.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Zu wenig freier Speicherplatz! Bitte löschen Sie den Speicher Ihres Geräts, um diese Funktion nutzen zu können</string>
   <string name="do_you_want_delete_all_sticker">Möchten Sie alle Aufkleber löschen?</string>
   <string name="do_you_want_delete_all_text">Möchten Sie den gesamten Text löschen?</string>
-  <string name="download_theme">Thema herunterladen</string>
-  <string name="watch_video_to_download_theme">Video ansehen, um Theme herunterzuladen</string>
-  <string name="done">Erledigt</string>
-  <string name="downloading">wird heruntergeladen</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Keine Internetverbindung. Bitte stellen Sie eine Verbindung zum Internet her und versuchen Sie es erneut</string>
     <string name="have_an_error_try_another_music_file">Error! Versuchen Sie es mit einer anderen Musikdatei.</string>
-    <string name="try_again">Versuchen Sie es nochmal</string>
-  <string name="change_theme">Thema ändern</string>
-  <string name="change_music">Musik ändern</string>
+    <string name="change_music">Musik ändern</string>
   <string name="change_image_filter">Bildfilter ändern</string>
   <string name="change_video_effect">Videoeffekt ändern</string>
   <string name="change_duration">Dauer ändern</string>
-  <string name="can_t_connect_to_internet">Kann keine Verbindung zum Internet herstellen</string>
-  <string name="wide_screen">Breitbild (16: 9)</string>
+    <string name="wide_screen">Breitbild (16: 9)</string>
   <string name="vertical">Vertikal (9:16)</string>
   <string name="square">Quadrat (1: 1)</string>
   <string name="ratio">Verhältnis</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Wenn Sie keine Berechtigung erteilen, können Sie diese App nicht verwenden.</string>
   <string name="goto_setting_and_grant_permission">Gehen Sie zu Einstellung -&gt; Berechtigung und erteilen Sie die Berechtigung zum Lesen des externen Speichers!</string>
   <string name="setting">Rahmen</string>
-  <string name="you_can_use_this_feature">Wenn Sie keine Berechtigung erteilen, können Sie diese Funktion nicht verwenden.</string>
-  <string name="goto_setting_and_grant_camera_permission">Gehe zu Einstellung -&gt; Berechtigung und Kameraerlaubnis erteilen!</string>
-  <string name="please_set_auto_update_time">Bitte stellen Sie die Zeit für die automatische Aktualisierung in der Einstellung ein</string>
 </resources>

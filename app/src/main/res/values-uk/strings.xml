@@ -46,8 +46,7 @@
   <string name="my_studio">Моя студія</string>
   <string name="no_project">Жодного проекту</string>
   <string name="more">Більше</string>
-  <string name="new_theme">Нові теми</string>
-  <string name="yes">Так</string>
+    <string name="yes">Так</string>
   <string name="do_you_want_delete_items">Ви хочете видалити елементи?</string>
   <string name="do_you_want_delete_item">Ви хочете видалити елемент?</string>
   <string name="nothing_item_selected">Не вибрано жодного елемента</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Занадто мало вільного місця! Очистіть пам\'ять пристрою, щоб використовувати цю функцію</string>
   <string name="do_you_want_delete_all_sticker">Ви хочете видалити всі наклейки?</string>
   <string name="do_you_want_delete_all_text">Ви хочете видалити весь текст?</string>
-  <string name="download_theme">Завантажити тему</string>
-  <string name="watch_video_to_download_theme">Перегляньте відео для завантаження теми</string>
-  <string name="done">Зроблено</string>
-  <string name="downloading">Завантаження</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Немає підключення до Інтернету. Підключіться до Інтернету та повторіть спробу</string>
     <string name="have_an_error_try_another_music_file">Помилка! Спробуйте інший музичний файл.</string>
-    <string name="try_again">Спробуйте ще раз</string>
-  <string name="change_theme">Змінити тему</string>
-  <string name="change_music">Змінити музику</string>
+    <string name="change_music">Змінити музику</string>
   <string name="change_image_filter">Зміна фільтра зображення</string>
   <string name="change_video_effect">Зміна ефекту відео</string>
   <string name="change_duration">Змінити тривалість</string>
-  <string name="can_t_connect_to_internet">Не вдається підключитися до Інтернету</string>
-  <string name="wide_screen">Широкий екран (16: 9)</string>
+    <string name="wide_screen">Широкий екран (16: 9)</string>
   <string name="vertical">По вертикалі (9:16)</string>
   <string name="square">Площа (1: 1)</string>
   <string name="ratio">Коефіцієнт</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Якщо ви не надаєте дозвіл, ви не можете використовувати цю програму.</string>
   <string name="goto_setting_and_grant_permission">Перейдіть до налаштування -&gt; Дозвіл та надання дозволу на читання дозволу на зовнішнє зберігання!</string>
   <string name="setting">Налаштування</string>
-  <string name="you_can_use_this_feature">Якщо ви не надаєте дозвіл, ви не можете використовувати цю функцію.</string>
-  <string name="goto_setting_and_grant_camera_permission">Перейдіть до налаштування -&gt; Дозвіл та надання дозволу на камеру!</string>
-  <string name="please_set_auto_update_time">Встановіть час автоматичного оновлення в налаштуваннях</string>
 </resources>

@@ -11,8 +11,11 @@ import com.acatapps.videomaker.utils.DimenUtils
 import com.acatapps.videomaker.utils.LookupUtils
 import kotlinx.android.synthetic.main.item_image_list_in_slide_show.view.*
 
-class ImageWithLookupAdapter(private val onSelectImage:(Long)->Unit): BaseAdapter<ImageSlideData>() {
+class ImageWithLookupAdapter(private val onSelectImage: (Long) -> Unit) :
+    BaseAdapter<ImageSlideData>() {
+
     private var mCurrentPositon = -1
+
     override fun doGetViewType(position: Int): Int = R.layout.item_image_list_in_slide_show
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
@@ -24,26 +27,27 @@ class ImageWithLookupAdapter(private val onSelectImage:(Long)->Unit): BaseAdapte
             onSelectImage.invoke(item.slideId)
             notifyDataSetChanged()
         }
-        if(position == mCurrentPositon) {
+        if (position == mCurrentPositon) {
             view.strokeBg.visibility = View.VISIBLE
         } else {
             view.strokeBg.visibility = View.GONE
         }
-        Glide.with(view.context).load(item.fromImagePath).apply(RequestOptions().override((DimenUtils.density(view.context)*64).toInt())).into(view.imagePreview)
+        Glide.with(view.context).load(item.fromImagePath)
+            .apply(RequestOptions().override((DimenUtils.density(view.context) * 64).toInt()))
+            .into(view.imagePreview)
     }
 
     fun changeLookupOfCurretItem(lookupType: LookupUtils.LookupType) {
         mCurrentItem?.lookupType = lookupType
     }
-    fun changeHighlightItem(position:Int) :LookupUtils.LookupType{
-        if(position >= 0 && position < mItemList.size) {
+
+    fun changeHighlightItem(position: Int): LookupUtils.LookupType {
+        if (position >= 0 && position < mItemList.size) {
             mCurrentPositon = position
             mCurrentItem = mItemList[mCurrentPositon]
             notifyDataSetChanged()
             return mItemList[mCurrentPositon].lookupType
         }
         return LookupUtils.LookupType.NONE
-
     }
-
 }

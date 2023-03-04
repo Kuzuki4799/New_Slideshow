@@ -46,8 +46,7 @@
   <string name="my_studio">Минем студия</string>
   <string name="no_project">Проект юк</string>
   <string name="more">Күбрәк</string>
-  <string name="new_theme">Яңа темалар</string>
-  <string name="yes">Әйе</string>
+    <string name="yes">Әйе</string>
   <string name="do_you_want_delete_items">Сез әйберләрне бетерергә телисезме?</string>
   <string name="do_you_want_delete_item">Сез әйберне бетерергә телисезме?</string>
   <string name="nothing_item_selected">Беркем дә сайланмаган.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Бик аз буш урын! Зинһар, бу функцияне куллану өчен җайланма хәтерен чистартыгыз</string>
   <string name="do_you_want_delete_all_sticker">Барлык стикерларны бетерергә телисезме?</string>
   <string name="do_you_want_delete_all_text">Барлык текстны бетерергә телисезме?</string>
-  <string name="download_theme">Теманы йөкләү</string>
-  <string name="watch_video_to_download_theme">Теманы йөкләү өчен видео карагыз</string>
-  <string name="done">Булды</string>
-  <string name="downloading">Йөкләү</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Интернетка тоташу юк. Зинһар, интернетка тоташыгыз һәм кабатлап карагыз</string>
     <string name="have_an_error_try_another_music_file">Хата! Башка музыка файлын карагыз.</string>
-    <string name="try_again">Кабатларга</string>
-  <string name="change_theme">Теманы үзгәртү</string>
-  <string name="change_music">Музыканы үзгәртү</string>
+    <string name="change_music">Музыканы үзгәртү</string>
   <string name="change_image_filter">Рәсем фильтрын үзгәртү</string>
   <string name="change_video_effect">Видео эффектны үзгәртү</string>
   <string name="change_duration">Озынлыгын үзгәртү</string>
-  <string name="can_t_connect_to_internet">Интернетка тоташа алмыйм</string>
-  <string name="wide_screen">Киң экран (16: 9)</string>
+    <string name="wide_screen">Киң экран (16: 9)</string>
   <string name="vertical">Вертикаль (9:16)</string>
   <string name="square">Мәйдан (1: 1)</string>
   <string name="ratio">Катнашу</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Әгәр сез рөхсәт бирмәсәгез, бу кушымтаны куллана алмыйсыз.</string>
   <string name="goto_setting_and_grant_permission">Гото көйләү -&gt; Тышкы саклау рөхсәтен укырга рөхсәт һәм грант!</string>
   <string name="setting">Көйләү</string>
-  <string name="you_can_use_this_feature">Әгәр сез рөхсәт бирмәсәгез, бу функцияне куллана алмыйсыз.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Рөхсәт һәм камера рөхсәте!</string>
-  <string name="please_set_auto_update_time">Зинһар, көйләүдә автоматик яңарту вакытын куегыз</string>
 </resources>

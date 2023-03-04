@@ -46,8 +46,7 @@
   <string name="my_studio">Vinnustofan mín</string>
   <string name="no_project">Ekkert verkefni</string>
   <string name="more">Meira</string>
-  <string name="new_theme">Ný þemu</string>
-  <string name="yes">Já</string>
+    <string name="yes">Já</string>
   <string name="do_you_want_delete_items">Viltu eyða atriðum?</string>
   <string name="do_you_want_delete_item">Viltu eyða hlutnum?</string>
   <string name="nothing_item_selected">Enginn hlutur valinn.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Of lítið laust pláss! Vinsamlegast hreinsaðu minni tækisins til að nota þennan eiginleika</string>
   <string name="do_you_want_delete_all_sticker">Viltu eyða öllum límmiðunum?</string>
   <string name="do_you_want_delete_all_text">Viltu eyða öllum textanum?</string>
-  <string name="download_theme">Niðurhal þema</string>
-  <string name="watch_video_to_download_theme">Horfa á myndskeið til að hlaða niður Þema</string>
-  <string name="done">Lokið</string>
-  <string name="downloading">Sækir</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Engin internettenging. Vinsamlegast tengdu við internetið og reyndu aftur</string>
     <string name="have_an_error_try_another_music_file">Villa! Prófaðu aðra tónlistarskrá.</string>
-    <string name="try_again">Reyndu aftur</string>
-  <string name="change_theme">Breyta þema</string>
-  <string name="change_music">Skiptu um tónlist</string>
+    <string name="change_music">Skiptu um tónlist</string>
   <string name="change_image_filter">Skiptu um síu fyrir mynd</string>
   <string name="change_video_effect">Breyta vídeóáhrifum</string>
   <string name="change_duration">Breyta tímalengd</string>
-  <string name="can_t_connect_to_internet">Get ekki tengst internetinu</string>
-  <string name="wide_screen">Breiður skjár (16: 9)</string>
+    <string name="wide_screen">Breiður skjár (16: 9)</string>
   <string name="vertical">Lóðrétt (9:16)</string>
   <string name="square">Ferningur (1: 1)</string>
   <string name="ratio">Hlutfall</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ef þú veitir ekki leyfi geturðu ekki notað þetta forrit.</string>
   <string name="goto_setting_and_grant_permission">Fara í gang -&gt; Leyfa og veita leyfi fyrir utanaðkomandi geymsluplássi!</string>
   <string name="setting">Stilling</string>
-  <string name="you_can_use_this_feature">Ef þú veitir ekki leyfi geturðu ekki notað þennan eiginleika.</string>
-  <string name="goto_setting_and_grant_camera_permission">Fara í gang -&gt; Leyfi og leyfðu myndavélaleyfi!</string>
-  <string name="please_set_auto_update_time">Vinsamlegast stilltu tíma sjálfvirkra uppfærslu í stillingunni</string>
 </resources>

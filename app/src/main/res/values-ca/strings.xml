@@ -46,8 +46,7 @@
   <string name="my_studio">El meu estudi</string>
   <string name="no_project">Cap projecte</string>
   <string name="more">Més</string>
-  <string name="new_theme">Nous temes</string>
-  <string name="yes">Sí</string>
+    <string name="yes">Sí</string>
   <string name="do_you_want_delete_items">Voleu suprimir els elements?</string>
   <string name="do_you_want_delete_item">Voleu suprimir l\'element?</string>
   <string name="nothing_item_selected">No s’ha seleccionat cap element.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Massa espai lliure! Netegeu la memòria del dispositiu per utilitzar-la</string>
   <string name="do_you_want_delete_all_sticker">Voleu suprimir tots els adhesius?</string>
   <string name="do_you_want_delete_all_text">Voleu suprimir tot el text?</string>
-  <string name="download_theme">Descarregueu el tema</string>
-  <string name="watch_video_to_download_theme">Veure vídeo per descarregar el tema</string>
-  <string name="done">Fet</string>
-  <string name="downloading">Baixant</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">No hi ha connexió a Internet. Connecteu-vos a Internet i torneu-ho a provar de nou</string>
     <string name="have_an_error_try_another_music_file">Error! Proveu un altre fitxer de música.</string>
-    <string name="try_again">Torna-ho a provar</string>
-  <string name="change_theme">Canvia de tema</string>
-  <string name="change_music">Canviar música</string>
+    <string name="change_music">Canviar música</string>
   <string name="change_image_filter">Canvia el filtre d’imatges</string>
   <string name="change_video_effect">Canvia l\'efecte de vídeo</string>
   <string name="change_duration">Canviar la durada</string>
-  <string name="can_t_connect_to_internet">No es pot connectar a Internet</string>
-  <string name="wide_screen">Ampla pantalla (16: 9)</string>
+    <string name="wide_screen">Ampla pantalla (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">Plaça (1: 1)</string>
   <string name="ratio">Ràtio</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Si no concediu permís, no podeu utilitzar aquesta aplicació.</string>
   <string name="goto_setting_and_grant_permission">Configuració de Goto -&gt; Permís i concessió de permís de magatzem extern de lectura!</string>
   <string name="setting">Ambientació</string>
-  <string name="you_can_use_this_feature">Si no concediu permís, no podeu fer servir aquesta funció.</string>
-  <string name="goto_setting_and_grant_camera_permission">Configuració de Goto -&gt; Permís i concessió de permís de càmera!</string>
-  <string name="please_set_auto_update_time">Configureu l\'hora d\'actualització automàtica a la configuració</string>
 </resources>

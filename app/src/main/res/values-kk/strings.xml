@@ -46,8 +46,7 @@
   <string name="my_studio">Менің студиям</string>
   <string name="no_project">Жоба жоқ</string>
   <string name="more">Көбірек</string>
-  <string name="new_theme">Жаңа тақырыптар</string>
-  <string name="yes">Иә</string>
+    <string name="yes">Иә</string>
   <string name="do_you_want_delete_items">Элементтерді жойғыңыз келе ме?</string>
   <string name="do_you_want_delete_item">Элементті жою керек пе?</string>
   <string name="nothing_item_selected">Ешбір элемент таңдалмады.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Бос орын өте төмен! Бұл мүмкіндікті пайдалану үшін құрылғыңыздың жадын тазалаңыз</string>
   <string name="do_you_want_delete_all_sticker">Барлық жапсырмаларды жойғыңыз келе ме?</string>
   <string name="do_you_want_delete_all_text">Барлық мәтінді жойғыңыз келе ме?</string>
-  <string name="download_theme">Тақырыпты жүктеу</string>
-  <string name="watch_video_to_download_theme">Тақырыпты жүктеу үшін бейнені қараңыз</string>
-  <string name="done">Орындалды</string>
-  <string name="downloading">Жүктеу</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Интернет байланысы жоқ. Интернетке қосылып, әрекетті қайталаңыз</string>
     <string name="have_an_error_try_another_music_file">Қате! Басқа музыкалық файлды пайдаланып көріңіз.</string>
-    <string name="try_again">Қайтадан байқап көріңіз</string>
-  <string name="change_theme">Тақырыпты өзгерту</string>
-  <string name="change_music">Музыканы ауыстырыңыз</string>
+    <string name="change_music">Музыканы ауыстырыңыз</string>
   <string name="change_image_filter">Сурет сүзгісін өзгертіңіз</string>
   <string name="change_video_effect">Бейне эффектісін өзгертіңіз</string>
   <string name="change_duration">Ұзақтығын өзгерту</string>
-  <string name="can_t_connect_to_internet">Интернетке қосылу мүмкін емес</string>
-  <string name="wide_screen">Кең экран (16: 9)</string>
+    <string name="wide_screen">Кең экран (16: 9)</string>
   <string name="vertical">Тік (9:16)</string>
   <string name="square">Алаң (1: 1)</string>
   <string name="ratio">Арақатынас</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Егер рұқсат бермесеңіз, бұл қолданбаны қолдана алмайсыз.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Сыртқы оқуға рұқсат және рұқсат беру!</string>
   <string name="setting">Орнату</string>
-  <string name="you_can_use_this_feature">Егер сізге рұқсат болмаса, бұл мүмкіндікті қолдана алмайсыз.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Рұқсат және камераға рұқсат!</string>
-  <string name="please_set_auto_update_time">Параметрде автоматты жаңарту уақытын орнатыңыз</string>
 </resources>

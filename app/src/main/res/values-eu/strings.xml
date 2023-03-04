@@ -46,8 +46,7 @@
   <string name="my_studio">Nire estudioa</string>
   <string name="no_project">Proiektua ez</string>
   <string name="more">gehiago</string>
-  <string name="new_theme">Gai berriak</string>
-  <string name="yes">Bai</string>
+    <string name="yes">Bai</string>
   <string name="do_you_want_delete_items">Elementuak ezabatu nahi dituzu?</string>
   <string name="do_you_want_delete_item">Elementua ezabatu nahi duzu?</string>
   <string name="nothing_item_selected">Ez da elementua hautatu.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Toki libre baxua! Garbitu zure gailuaren memoria funtzio hau erabiltzeko</string>
   <string name="do_you_want_delete_all_sticker">Eranskailu guztiak ezabatu nahi dituzu?</string>
   <string name="do_you_want_delete_all_text">Testu guztia ezabatu nahi duzu?</string>
-  <string name="download_theme">Deskargatu gaia</string>
-  <string name="watch_video_to_download_theme">Ikusi bideoa Gaia deskargatzeko</string>
-  <string name="done">Done</string>
-  <string name="downloading">Deskargen</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Ez dago Interneteko konexiorik. Mesedez konektatu Internetera eta saiatu berriro</string>
-  <string name="have_an_error_try_another_music_file">Akatsa! Saiatu beste musika fitxategi bat.</string>
-  <string name="try_again">Saiatu berriro</string>
-  <string name="change_theme">Gaia aldatu</string>
-  <string name="change_music">Aldatu musika</string>
+    <string name="have_an_error_try_another_music_file">Akatsa! Saiatu beste musika fitxategi bat.</string>
+    <string name="change_music">Aldatu musika</string>
   <string name="change_image_filter">Aldatu irudi-iragazkia</string>
   <string name="change_video_effect">Bideoaren efektua aldatu</string>
   <string name="change_duration">Aldaketaren iraupena</string>
-  <string name="can_t_connect_to_internet">Ezin da internetera konektatu</string>
-  <string name="wide_screen">Pantaila zabala (16: 9)</string>
+    <string name="wide_screen">Pantaila zabala (16: 9)</string>
   <string name="vertical">Bertikala (9:16)</string>
   <string name="square">Plaza (1: 1)</string>
   <string name="ratio">Ratio</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Baimenik ematen ez baduzu, ezin duzu aplikazio hau erabili.</string>
   <string name="goto_setting_and_grant_permission">Goto ezarpena -&gt; Baimena eta diru-laguntza irakurtzeko kanpoko biltegiratzeko baimena!</string>
   <string name="setting">Entorno</string>
-  <string name="you_can_use_this_feature">Baimenik ematen ez baduzu, ezin duzu funtzio hau erabili.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto ezarpena -&gt; Kamera baimena eta baimena ematea!</string>
-  <string name="please_set_auto_update_time">Mesedez, ezarpen auto eguneratze ordua ezarri</string>
 </resources>

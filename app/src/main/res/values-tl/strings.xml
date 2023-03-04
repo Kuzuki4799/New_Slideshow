@@ -46,8 +46,7 @@
   <string name="my_studio">Ang studio ko</string>
   <string name="no_project">Walang Proyekto</string>
   <string name="more">Marami pa</string>
-  <string name="new_theme">Mga bagong tema</string>
-  <string name="yes">Oo</string>
+    <string name="yes">Oo</string>
   <string name="do_you_want_delete_items">Nais mo bang tanggalin ang mga item?</string>
   <string name="do_you_want_delete_item">Nais mo bang tanggalin ang item?</string>
   <string name="nothing_item_selected">Walang napiling item.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Masyadong mababa ang libreng espasyo! Mangyaring limasin ang memorya ng iyong aparato upang magamit ang tampok na ito</string>
   <string name="do_you_want_delete_all_sticker">Nais mo bang tanggalin ang lahat ng mga sticker?</string>
   <string name="do_you_want_delete_all_text">Nais mo bang tanggalin ang lahat ng teksto?</string>
-  <string name="download_theme">I-download ang tema</string>
-  <string name="watch_video_to_download_theme">Panoorin ang video upang i-download ang Tema</string>
-  <string name="done">Tapos na</string>
-  <string name="downloading">Pag-download</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Walang koneksyon sa internet. Mangyaring kumonekta sa internet at subukang muli</string>
     <string name="have_an_error_try_another_music_file">Error! Subukan ang isa pang file ng musika.</string>
-    <string name="try_again">Subukan muli</string>
-  <string name="change_theme">Baguhin ang tema</string>
-  <string name="change_music">Baguhin ang musika</string>
+    <string name="change_music">Baguhin ang musika</string>
   <string name="change_image_filter">Baguhin ang filter ng imahe</string>
   <string name="change_video_effect">Baguhin ang epekto ng video</string>
   <string name="change_duration">Palitan ang tagal</string>
-  <string name="can_t_connect_to_internet">Hindi makakonekta sa internet</string>
-  <string name="wide_screen">Malapad na Screen (16: 9)</string>
+    <string name="wide_screen">Malapad na Screen (16: 9)</string>
   <string name="vertical">Vertical (9:16)</string>
   <string name="square">Square (1: 1)</string>
   <string name="ratio">Ratio</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Kung hindi ka nagbibigay ng pahintulot, hindi mo maaaring gamitin ang app na ito.</string>
   <string name="goto_setting_and_grant_permission">Pagtatakda ng Goto -&gt; Pahintulot at bigyan basahin ang pahintulot ng panlabas na imbakan!</string>
   <string name="setting">Pagtatakda</string>
-  <string name="you_can_use_this_feature">Kung hindi ka nagbibigay ng pahintulot, hindi mo maaaring gamitin ang tampok na ito.</string>
-  <string name="goto_setting_and_grant_camera_permission">Pagtatakda ng Goto -&gt; Pahintulot at magbigay ng pahintulot sa camera!</string>
-  <string name="please_set_auto_update_time">Mangyaring itakda ang oras ng pag-update ng auto sa setting</string>
 </resources>

@@ -46,8 +46,7 @@
   <string name="my_studio">મારો સ્ટુડિયો</string>
   <string name="no_project">કોઈ પ્રોજેક્ટ નથી</string>
   <string name="more">વધુ</string>
-  <string name="new_theme">નવી થીમ્સ</string>
-  <string name="yes">હા</string>
+    <string name="yes">હા</string>
   <string name="do_you_want_delete_items">શું તમે આઇટમ્સ કા deleteી નાખવા માંગો છો?</string>
   <string name="do_you_want_delete_item">શું તમે વસ્તુ કા deleteી નાખવા માંગો છો?</string>
   <string name="nothing_item_selected">કોઈ આઇટમ પસંદ નથી.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">ખૂબ ઓછી જગ્યા છે! કૃપા કરીને આ સુવિધાનો ઉપયોગ કરવા માટે તમારા ઉપકરણની મેમરીને સાફ કરો</string>
   <string name="do_you_want_delete_all_sticker">શું તમે બધા સ્ટીકરોને કા deleteી નાખવા માંગો છો?</string>
   <string name="do_you_want_delete_all_text">શું તમે બધા ટેક્સ્ટને કા deleteી નાખવા માંગો છો?</string>
-  <string name="download_theme">થીમ ડાઉનલોડ કરો</string>
-  <string name="watch_video_to_download_theme">થીમ ડાઉનલોડ કરવા માટે વિડિઓ જુઓ</string>
-  <string name="done">થઈ ગયું</string>
-  <string name="downloading">ડાઉનલોડ કરી રહ્યું છે</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ઇન્ટરનેટ કનેક્શન નથી. કૃપા કરીને ઇન્ટરનેટથી કનેક્ટ કરો અને ફરીથી પ્રયાસ કરો</string>
     <string name="have_an_error_try_another_music_file">ભૂલ! બીજી સંગીત ફાઇલનો પ્રયાસ કરો.</string>
-    <string name="try_again">ફરીથી પ્રયત્ન કરો</string>
-  <string name="change_theme">થીમ બદલો</string>
-  <string name="change_music">સંગીત બદલો</string>
+    <string name="change_music">સંગીત બદલો</string>
   <string name="change_image_filter">છબી ફિલ્ટર બદલો</string>
   <string name="change_video_effect">વિડિઓ અસર બદલો</string>
   <string name="change_duration">સમયગાળો બદલો</string>
-  <string name="can_t_connect_to_internet">ઇન્ટરનેટથી કનેક્ટ થઈ શકતું નથી</string>
-  <string name="wide_screen">વાઇડ સ્ક્રીન (16: 9)</string>
+    <string name="wide_screen">વાઇડ સ્ક્રીન (16: 9)</string>
   <string name="vertical">Ticalભી (9: 16)</string>
   <string name="square">સ્ક્વેર (1: 1)</string>
   <string name="ratio">ગુણોત્તર</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">જો તમે પરવાનગી નહીં આપો, તો તમે આ એપ્લિકેશનનો ઉપયોગ કરી શકતા નથી.</string>
   <string name="goto_setting_and_grant_permission">ગોટો સેટિંગ -&gt; બાહ્ય સ્ટોરેજ પરવાનગી વાંચવાની મંજૂરી અને મંજૂરી આપો!</string>
   <string name="setting">સેટિંગ</string>
-  <string name="you_can_use_this_feature">જો તમે પરવાનગી આપશો નહીં, તો તમે આ સુવિધાનો ઉપયોગ કરી શકતા નથી.</string>
-  <string name="goto_setting_and_grant_camera_permission">ગોટો સેટિંગ -&gt; પરવાનગી અને કેમેરાની મંજૂરી આપો!</string>
-  <string name="please_set_auto_update_time">કૃપા કરીને સેટિંગમાં autoટો અપડેટ સમય સેટ કરો</string>
 </resources>

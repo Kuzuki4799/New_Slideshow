@@ -46,8 +46,7 @@
   <string name="my_studio">An stiùidio agam</string>
   <string name="no_project">Gun phròiseact</string>
   <string name="more">Barrachd</string>
-  <string name="new_theme">Cuspairean ùra</string>
-  <string name="yes">Tha</string>
+    <string name="yes">Tha</string>
   <string name="do_you_want_delete_items">A bheil thu airson rudan a dhubhadh às?</string>
   <string name="do_you_want_delete_item">A bheil thu airson an rud a dhubhadh às?</string>
   <string name="nothing_item_selected">Cha deach nì a thaghadh.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Ro ìosal àite an-asgaidh! Feuch an glan thu cuimhne an inneal agad gus am feart seo a chleachdadh</string>
   <string name="do_you_want_delete_all_sticker">A bheil thu airson na stiogairean gu lèir a dhubhadh às?</string>
   <string name="do_you_want_delete_all_text">A bheil thu airson an teacsa gu lèir a dhubhadh às?</string>
-  <string name="download_theme">Luchdaich sìos cuspair</string>
-  <string name="watch_video_to_download_theme">Coimhead air bhidio gus Cuspair a luchdachadh sìos</string>
-  <string name="done">Dèanta</string>
-  <string name="downloading">A ’luchdachadh sìos</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Gun cheangal eadar-lìn. Feuch an ceangal thu ris an eadar-lìn agus feuch ris a-rithist</string>
     <string name="have_an_error_try_another_music_file">Mearachd! Feuch faidhle ciùil eile.</string>
-    <string name="try_again">Feuch a-rithist</string>
-  <string name="change_theme">Atharraich cuspair</string>
-  <string name="change_music">Atharraich ceòl</string>
+    <string name="change_music">Atharraich ceòl</string>
   <string name="change_image_filter">Atharraich criathrag ìomhaigh</string>
   <string name="change_video_effect">Atharraich buaidh bhidio</string>
   <string name="change_duration">Atharraich fad</string>
-  <string name="can_t_connect_to_internet">Cha ghabh ceangal ris an eadar-lìn</string>
-  <string name="wide_screen">Sgrion farsaing (16: 9)</string>
+    <string name="wide_screen">Sgrion farsaing (16: 9)</string>
   <string name="vertical">Ingearach (9:16)</string>
   <string name="square">Ceàrnag (1: 1)</string>
   <string name="ratio">Co-mheas</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Mura toir thu cead dhut, chan urrainn dhut an aplacaid seo a chleachdadh.</string>
   <string name="goto_setting_and_grant_permission">Suidheachadh Goto -&gt; Ceadaich agus thoir seachad cead stòraidh a-muigh!</string>
   <string name="setting">Suidheachadh</string>
-  <string name="you_can_use_this_feature">Mura toir thu cead dhut, chan urrainn dhut am feart seo a chleachdadh.</string>
-  <string name="goto_setting_and_grant_camera_permission">Suidheachadh Goto -&gt; Cead agus thoir seachad cead camara!</string>
-  <string name="please_set_auto_update_time">Feuch an cuir thu ùine ùrachadh fèin-ghluasadach ann an suidheachadh</string>
 </resources>

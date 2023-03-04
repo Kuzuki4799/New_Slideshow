@@ -46,8 +46,7 @@
   <string name="my_studio">ສະຕູດິໂອຂອງຂ້ອຍ</string>
   <string name="no_project">ບໍ່ມີໂຄງການ</string>
   <string name="more">ຫຼາຍ</string>
-  <string name="new_theme">ຫົວຂໍ້ ໃໝ່</string>
-  <string name="yes">ແມ່ນແລ້ວ</string>
+    <string name="yes">ແມ່ນແລ້ວ</string>
   <string name="do_you_want_delete_items">ທ່ານຕ້ອງການລຶບລາຍການບໍ?</string>
   <string name="do_you_want_delete_item">ທ່ານຕ້ອງການລຶບລາຍການບໍ?</string>
   <string name="nothing_item_selected">ບໍ່ມີການເລືອກລາຍການ.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">ພື້ນທີ່ຫວ່າງບໍ່ເກີນໄປ! ກະລຸນາລຶບຄວາມຊົງ ຈຳ ຂອງອຸປະກອນຂອງທ່ານເພື່ອໃຊ້ຄຸນສົມບັດນີ້</string>
   <string name="do_you_want_delete_all_sticker">ທ່ານຕ້ອງການລຶບສະຕິກເກີທັງ ໝົດ ບໍ?</string>
   <string name="do_you_want_delete_all_text">ທ່ານຕ້ອງການລຶບຂໍ້ຄວາມທັງ ໝົດ ບໍ່?</string>
-  <string name="download_theme">ຫົວຂໍ້ການດາວໂຫລດ</string>
-  <string name="watch_video_to_download_theme">ເບິ່ງວີດີໂອເພື່ອດາວໂຫລດຫົວຂໍ້</string>
-  <string name="done">ເຮັດແລ້ວ</string>
-  <string name="downloading">ການດາວໂຫລດ</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">ບໍ່ມີການເຊື່ອມຕໍ່ອິນເຕີເນັດ. ກະລຸນາເຊື່ອມຕໍ່ອິນເຕີເນັດແລະລອງ ໃໝ່ ອີກຄັ້ງ</string>
     <string name="have_an_error_try_another_music_file">ຜິດພາດ! ລອງໃຊ້ແຟ້ມເອກະສານເພງອື່ນ.</string>
-    <string name="try_again">ລອງ​ອີກ​ຄັ້ງ</string>
-  <string name="change_theme">ປ່ຽນຫົວຂໍ້</string>
-  <string name="change_music">ປ່ຽນເພັງ</string>
+    <string name="change_music">ປ່ຽນເພັງ</string>
   <string name="change_image_filter">ປ່ຽນຕົວກອງຮູບພາບ</string>
   <string name="change_video_effect">ປ່ຽນຜົນກະທົບວິດີໂອ</string>
   <string name="change_duration">ປ່ຽນໄລຍະເວລາ</string>
-  <string name="can_t_connect_to_internet">ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບອິນເຕີເນັດ</string>
-  <string name="wide_screen">ຈໍກວ້າງ (16: 9)</string>
+    <string name="wide_screen">ຈໍກວ້າງ (16: 9)</string>
   <string name="vertical">ແນວຕັ້ງ (9:16)</string>
   <string name="square">ຮຽບຮ້ອຍ (1: 1)</string>
   <string name="ratio">ອັດຕາສ່ວນ</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">ຖ້າທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດ, ທ່ານບໍ່ສາມາດໃຊ້ແອັບ this ນີ້ໄດ້.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; ການອະນຸຍາດແລະອະນຸຍາດອ່ານການອະນຸຍາດເກັບຂໍ້ມູນພາຍນອກ!</string>
   <string name="setting">ການຕັ້ງຄ່າ</string>
-  <string name="you_can_use_this_feature">ຖ້າທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດ, ທ່ານບໍ່ສາມາດໃຊ້ຄຸນສົມບັດນີ້ໄດ້.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; ການອະນຸຍາດແລະການອະນຸຍາດກ້ອງຖ່າຍຮູບ!</string>
-  <string name="please_set_auto_update_time">ກະລຸນາ ກຳ ນົດເວລາການປັບປຸງໂດຍອັດຕະໂນມັດໃນການຕັ້ງຄ່າ</string>
 </resources>

@@ -34,13 +34,13 @@ import java.io.File
 abstract class BaseActivity : BaseActivity() {
 
     private var mProgressIsShowing = false
-    protected var mExportDialogShowing = false
+    private var mExportDialogShowing = false
     protected var mYesNoDialogShowing = false
-    protected var mRateDialogShowing = false
+    private var mRateDialogShowing = false
     var needShowDialog = false
-    var comebackStatus = ""
-    var mRateAvailable = true
+    private var comebackStatus = ""
     protected var isHome = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -110,7 +110,7 @@ abstract class BaseActivity : BaseActivity() {
                     )
                 }
             })
-        }else{
+        } else {
             hideAds()
         }
     }
@@ -374,7 +374,7 @@ abstract class BaseActivity : BaseActivity() {
 
     protected fun showYesNoDialogForOpenSetting(
         title: String,
-        onClickYes: () -> Unit, onClickNo: (() -> Unit)? = null, onClickBg: (() -> Unit)? = null
+        onClickYes: () -> Unit, onClickNo: (() -> Unit)? = null
     ) {
         if (mYesNoDialogShowing) return
 
@@ -488,7 +488,6 @@ abstract class BaseActivity : BaseActivity() {
             return
         }
 
-        if (!mRateAvailable) return
         if (mProgressIsShowing) return
 
         if (mExportDialogShowing) {
@@ -525,11 +524,7 @@ abstract class BaseActivity : BaseActivity() {
         return false
     }
 
-    protected enum class VideoQuality {
-        NORMAL, HD, FULL_HD, NONE
-    }
-
-    fun scaleAnimation(view: View) {
+    private fun scaleAnimation(view: View) {
         val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 0.5f, 1f)
         val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 0.5f, 1f)
         ObjectAnimator.ofPropertyValuesHolder(view, scaleX, scaleY).apply {
@@ -569,12 +564,7 @@ abstract class BaseActivity : BaseActivity() {
     }
 
     fun doSendBroadcast(filePath: String) {
-        sendBroadcast(
-            Intent(
-                Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                Uri.fromFile(File(filePath))
-            )
-        )
+        sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(File(filePath))))
     }
 
     override fun onPause() {
@@ -585,9 +575,7 @@ abstract class BaseActivity : BaseActivity() {
     private fun openKeyboard() {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         imm!!.toggleSoftInputFromWindow(
-            baseRootView.applicationWindowToken,
-            InputMethodManager.SHOW_FORCED,
-            1
+            baseRootView.applicationWindowToken, InputMethodManager.SHOW_FORCED, 1
         )
     }
 
@@ -597,7 +585,8 @@ abstract class BaseActivity : BaseActivity() {
     }
 
     private val downloadViewHashMap = HashMap<String, View?>()
-    var mDownloadDialogIsShow = false
+
+    private var mDownloadDialogIsShow = false
 
     fun dismissDownloadDialog() {
         if (mDownloadDialogIsShow) {

@@ -46,8 +46,7 @@
   <string name="my_studio">Mäi Studio</string>
   <string name="no_project">Kee Projet</string>
   <string name="more">Méi</string>
-  <string name="new_theme">Nei Themen</string>
-  <string name="yes">Jo</string>
+    <string name="yes">Jo</string>
   <string name="do_you_want_delete_items">Wëllt Dir Saache läschen?</string>
   <string name="do_you_want_delete_item">Wëllt Dir dat Element läschen?</string>
   <string name="nothing_item_selected">Keng Artikel gewielt.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Ze niddreg fräi Plaz! W.e.g. Erënnerung vun Ärem Apparat fir dës Feature ze benotzen</string>
   <string name="do_you_want_delete_all_sticker">Wëllt Dir all Pousteren läschen?</string>
   <string name="do_you_want_delete_all_text">Wëllt Dir all Text läschen?</string>
-  <string name="download_theme">Eroflueden Thema</string>
-  <string name="watch_video_to_download_theme">Kuckt de Video eroflueden Thema</string>
-  <string name="done">Fäerdeg</string>
-  <string name="downloading">Eroflueden</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Keng Internetverbindung. Connectéiert w.e.g. mam Internet a probéiert et nach eng Kéier</string>
     <string name="have_an_error_try_another_music_file">Feeler! Probéiert eng aner Museksdatei.</string>
-    <string name="try_again">Versich et nach eng Kéier</string>
-  <string name="change_theme">Thema änneren</string>
-  <string name="change_music">Musek änneren</string>
+    <string name="change_music">Musek änneren</string>
   <string name="change_image_filter">Änneren Bildfilter</string>
   <string name="change_video_effect">Ännerung Video Effekt</string>
   <string name="change_duration">Ännerung Dauer</string>
-  <string name="can_t_connect_to_internet">Kann net mam Internet konnektéieren</string>
-  <string name="wide_screen">Wide Screen (16: 9)</string>
+    <string name="wide_screen">Wide Screen (16: 9)</string>
   <string name="vertical">Vertikal (9:16)</string>
   <string name="square">Quadrat (1: 1)</string>
   <string name="ratio">Verhältnis</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Wann Dir net Erlaabnis kritt, da kënnt Dir dës App net benotzen.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Erlaabnis a gewannt gelies extern Späicher Permis!</string>
   <string name="setting">Astellung</string>
-  <string name="you_can_use_this_feature">Wann Dir net Erlaabnis kritt, kënnt Dir dës Feature net benotzen.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Erlaabnis a Gitt Kamera Permiséierung!</string>
-  <string name="please_set_auto_update_time">Gitt w.e.g. d\'Auto-Update-Zäit an der Astellung un</string>
 </resources>

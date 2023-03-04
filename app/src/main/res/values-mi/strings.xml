@@ -46,8 +46,7 @@
   <string name="my_studio">Taku studio</string>
   <string name="no_project">No Kaupapa</string>
   <string name="more">He maha atu</string>
-  <string name="new_theme">Kaupapa hou</string>
-  <string name="yes">Ae</string>
+    <string name="yes">Ae</string>
   <string name="do_you_want_delete_items">Kei te hiahia koe ki te muku i nga taonga?</string>
   <string name="do_you_want_delete_item">Kei te hiahia koe ki te muku i te taonga?</string>
   <string name="nothing_item_selected">Kaore he mea i tohua.</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">He iti rawa te waahi! Me whakamarama te mahara o to taputapu ki te whakamahi i tenei waahanga</string>
   <string name="do_you_want_delete_all_sticker">Kei te hiahia koe ki te muku i nga hononga katoa?</string>
   <string name="do_you_want_delete_all_text">Kei te hiahia koe ki te muku i nga tuhinga katoa?</string>
-  <string name="download_theme">Kaupapa Tango</string>
-  <string name="watch_video_to_download_theme">Kia mataara te ataata ki te tango Kaupapa</string>
-  <string name="done">Kua oti</string>
-  <string name="downloading">Na te Tikiake</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Kaore he hononga ipurangi. Tena hono ki te ipurangi me te ngana ano</string>
     <string name="have_an_error_try_another_music_file">He hapa! Whakamātauria tetahi atu puoro puoro.</string>
-    <string name="try_again">Ka ngana ano</string>
-  <string name="change_theme">Hurihia te kaupapa</string>
-  <string name="change_music">Hurihia waiata</string>
+    <string name="change_music">Hurihia waiata</string>
   <string name="change_image_filter">Hurihia te tātari ahua</string>
   <string name="change_video_effect">Hurihia te mahinga ataata</string>
   <string name="change_duration">Hurihia te roanga</string>
-  <string name="can_t_connect_to_internet">Kaore e taea te hono atu ki te ipurangi</string>
-  <string name="wide_screen">Matapihi Whanui (16: 9)</string>
+    <string name="wide_screen">Matapihi Whanui (16: 9)</string>
   <string name="vertical">Paati (9:16)</string>
   <string name="square">Tapawha (1: 1)</string>
   <string name="ratio">Tauwehenga</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Mena kaore koe e tuku whakaaetanga, kaore e taea e koe te whakamahi i tenei taupānga.</string>
   <string name="goto_setting_and_grant_permission">Tautuhi Goto -&gt; Whakaaetanga me tohaa te panui rokiroki o waho!</string>
   <string name="setting">Noho i</string>
-  <string name="you_can_use_this_feature">Mena kaore koe e tuku whakaaetanga, kaore e taea e koe te whakamahi i tenei waahanga.</string>
-  <string name="goto_setting_and_grant_camera_permission">Tautuhi Goto -&gt; Whakaaetanga me te whakaaetanga kāmera!</string>
-  <string name="please_set_auto_update_time">Tena koa tautuhia te wa whakahou aunoa</string>
 </resources>

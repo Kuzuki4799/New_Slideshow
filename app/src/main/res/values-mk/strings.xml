@@ -46,8 +46,7 @@
   <string name="my_studio">Моето студио</string>
   <string name="no_project">Нема проект</string>
   <string name="more">Повеќе</string>
-  <string name="new_theme">Нови теми</string>
-  <string name="yes">Да</string>
+    <string name="yes">Да</string>
   <string name="do_you_want_delete_items">Дали сакате да избришете предмети?</string>
   <string name="do_you_want_delete_item">Дали сакате да ја избришете предметот?</string>
   <string name="nothing_item_selected">Нема избрана ставка</string>
@@ -63,20 +62,12 @@
   <string name="free_space_too_low">Премногу низок слободен простор! Исчистете ја меморијата на уредот за да ја користите оваа одлика</string>
   <string name="do_you_want_delete_all_sticker">Дали сакате да ги избришете сите налепници?</string>
   <string name="do_you_want_delete_all_text">Дали сакате да го избришете целиот текст?</string>
-  <string name="download_theme">Тема за преземање</string>
-  <string name="watch_video_to_download_theme">Гледајте видео за да ја преземете Темата</string>
-  <string name="done">Направено</string>
-  <string name="downloading">Преземање</string>
-  <string name="no_internet_connection_please_connect_to_the_internet_and_try_again">Нема интернет-врска. Поврзете се на Интернет и обидете се повторно</string>
     <string name="have_an_error_try_another_music_file">Грешка! Обидете се со друга музичка датотека.</string>
-    <string name="try_again">Обиди се повторно</string>
-  <string name="change_theme">Промена на тема</string>
-  <string name="change_music">Променете ја музиката</string>
+    <string name="change_music">Променете ја музиката</string>
   <string name="change_image_filter">Променете го филтерот за слика</string>
   <string name="change_video_effect">Променете го ефектот на видеото</string>
   <string name="change_duration">Времетраење на промената</string>
-  <string name="can_t_connect_to_internet">Не можам да се поврзам на Интернет</string>
-  <string name="wide_screen">Широк екран (16: 9)</string>
+    <string name="wide_screen">Широк екран (16: 9)</string>
   <string name="vertical">Вертикална (9:16)</string>
   <string name="square">Плоштад (1: 1)</string>
   <string name="ratio">Сооднос</string>
@@ -85,7 +76,4 @@
   <string name="anser_grant_permission">Ако не дадете дозвола, не можете да ја користите оваа апликација.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Дозвола и грант прочитајте ја дозволата за надворешно складирање!</string>
   <string name="setting">Поставување</string>
-  <string name="you_can_use_this_feature">Ако не дадете дозвола, не можете да ја користите оваа одлика.</string>
-  <string name="goto_setting_and_grant_camera_permission">Goto Setting -&gt; Дозвола и дозвола за доделување на камера!</string>
-  <string name="please_set_auto_update_time">Поставете го времето за автоматско ажурирање во поставката</string>
 </resources>
