@@ -11,8 +11,7 @@
   <string name="albums">ఆల్బమ్లు</string>
   <string name="today">నేడు</string>
   <string name="yesterday">నిన్న</string>
-  <string name="press_hold_item_to_move">తరలించడానికి అంశాన్ని నొక్కి ఉంచండి</string>
-  <string name="start">ప్రారంభం</string>
+    <string name="start">ప్రారంభం</string>
   <string name="selected">ఎంచుకున్న</string>
   <string name="photos">ఫోటోలు</string>
   <string name="set_duration">వ్యవధిని సెట్ చేయండి</string>

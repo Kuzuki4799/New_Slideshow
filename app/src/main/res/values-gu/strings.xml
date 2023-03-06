@@ -11,8 +11,7 @@
   <string name="albums">આલ્બમ્સ</string>
   <string name="today">આજે</string>
   <string name="yesterday">ગઇકાલે</string>
-  <string name="press_hold_item_to_move">ખસેડવા માટે આઇટમ દબાવો અને હોલ્ડ કરો</string>
-  <string name="start">શરૂઆત</string>
+    <string name="start">શરૂઆત</string>
   <string name="selected">પસંદ કરેલ</string>
   <string name="photos">ફોટા</string>
   <string name="set_duration">સમયગાળો સેટ કરો</string>

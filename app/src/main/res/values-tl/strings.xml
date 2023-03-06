@@ -11,8 +11,7 @@
   <string name="albums">mga album</string>
   <string name="today">Ngayon</string>
   <string name="yesterday">Kahapon</string>
-  <string name="press_hold_item_to_move">Pindutin at hawakan ang item upang ilipat</string>
-  <string name="start">Magsimula</string>
+    <string name="start">Magsimula</string>
   <string name="selected">Napili</string>
   <string name="photos">mga larawan</string>
   <string name="set_duration">Itakda ang Tagal</string>

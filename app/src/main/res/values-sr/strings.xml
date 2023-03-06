@@ -11,8 +11,7 @@
   <string name="albums">албуми</string>
   <string name="today">Данас</string>
   <string name="yesterday">Јуче</string>
-  <string name="press_hold_item_to_move">Притисните и држите ставку за помицање</string>
-  <string name="start">Почетак</string>
+    <string name="start">Почетак</string>
   <string name="selected">Изабрано</string>
   <string name="photos">фотографије</string>
   <string name="set_duration">Подесите трајање</string>

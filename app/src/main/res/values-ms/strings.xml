@@ -11,8 +11,7 @@
   <string name="albums">album</string>
   <string name="today">Hari ini</string>
   <string name="yesterday">Semalam</string>
-  <string name="press_hold_item_to_move">Tekan &amp; tahan item untuk bergerak</string>
-  <string name="start">Mulakan</string>
+    <string name="start">Mulakan</string>
   <string name="selected">Dipilih</string>
   <string name="photos">gambar</string>
   <string name="set_duration">Tetapkan Tempoh</string>

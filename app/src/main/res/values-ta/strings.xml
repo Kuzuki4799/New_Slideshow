@@ -11,8 +11,7 @@
   <string name="albums">ஆல்பங்கள்</string>
   <string name="today">இன்று</string>
   <string name="yesterday">நேற்று</string>
-  <string name="press_hold_item_to_move">நகர்த்த உருப்படியை அழுத்திப் பிடிக்கவும்</string>
-  <string name="start">தொடக்கம்</string>
+    <string name="start">தொடக்கம்</string>
   <string name="selected">தேர்ந்தெடுக்கப்பட்ட</string>
   <string name="photos">புகைப்படங்கள்</string>
   <string name="set_duration">கால அளவை அமைக்கவும்</string>

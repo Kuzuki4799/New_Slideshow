@@ -11,8 +11,7 @@
   <string name="albums">alba</string>
   <string name="today">Dnes</string>
   <string name="yesterday">Včera</string>
-  <string name="press_hold_item_to_move">Stisknutím a přidržením položky se přesunete</string>
-  <string name="start">Start</string>
+    <string name="start">Start</string>
   <string name="selected">Vybraný</string>
   <string name="photos">fotky</string>
   <string name="set_duration">Nastavte Trvání</string>

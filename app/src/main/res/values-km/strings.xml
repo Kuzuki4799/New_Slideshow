@@ -11,8 +11,7 @@
   <string name="albums">អាល់ប៊ុម</string>
   <string name="today">ថ្ងៃនេះ</string>
   <string name="yesterday">ម្សិលមិញ</string>
-  <string name="press_hold_item_to_move">ចុចនិងសង្កត់ធាតុដើម្បីផ្លាស់ទី</string>
-  <string name="start">ចាប់ផ្តើម</string>
+    <string name="start">ចាប់ផ្តើម</string>
   <string name="selected">បានជ្រើសរើស</string>
   <string name="photos">រូបថត</string>
   <string name="set_duration">កំណត់រយៈពេល</string>

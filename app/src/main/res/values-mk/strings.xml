@@ -11,8 +11,7 @@
   <string name="albums">албуми</string>
   <string name="today">Денес</string>
   <string name="yesterday">Вчера</string>
-  <string name="press_hold_item_to_move">Притиснете и задржете ставка за да се преместите</string>
-  <string name="start">Започнете</string>
+    <string name="start">Започнете</string>
   <string name="selected">Избрани</string>
   <string name="photos">фотографии</string>
   <string name="set_duration">Поставете времетраење</string>

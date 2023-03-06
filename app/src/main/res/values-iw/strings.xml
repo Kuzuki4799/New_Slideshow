@@ -11,8 +11,7 @@
   <string name="albums">אלבומים</string>
   <string name="today">היום</string>
   <string name="yesterday">אתמול</string>
-  <string name="press_hold_item_to_move">לחץ והחזק את הפריט כדי להזיז</string>
-  <string name="start">התחל</string>
+    <string name="start">התחל</string>
   <string name="selected">נבחר</string>
   <string name="photos">תמונות</string>
   <string name="set_duration">הגדר משך זמן</string>

@@ -11,8 +11,7 @@
   <string name="albums">ඇල්බම</string>
   <string name="today">අද</string>
   <string name="yesterday">ඊයේ</string>
-  <string name="press_hold_item_to_move">ගෙනයාමට අයිතමය ඔබාගෙන සිටින්න</string>
-  <string name="start">ආරම්භ කරන්න</string>
+    <string name="start">ආරම්භ කරන්න</string>
   <string name="selected">තෝරා ඇත</string>
   <string name="photos">ඡායාරූප</string>
   <string name="set_duration">කාලය සකසන්න</string>

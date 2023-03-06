@@ -11,8 +11,7 @@
   <string name="albums">albumi</string>
   <string name="today">Danas</string>
   <string name="yesterday">Juče</string>
-  <string name="press_hold_item_to_move">Pritisnite i zadržite stavku za pomicanje</string>
-  <string name="start">Početak</string>
+    <string name="start">Početak</string>
   <string name="selected">Odabrano</string>
   <string name="photos">fotografije</string>
   <string name="set_duration">Podesite trajanje</string>

@@ -11,8 +11,7 @@
   <string name="albums">ആൽബങ്ങൾ</string>
   <string name="today">ഇന്ന്</string>
   <string name="yesterday">ഇന്നലെ</string>
-  <string name="press_hold_item_to_move">നീക്കാൻ ഇനം അമർത്തിപ്പിടിക്കുക</string>
-  <string name="start">ആരംഭിക്കുക</string>
+    <string name="start">ആരംഭിക്കുക</string>
   <string name="selected">തിരഞ്ഞെടുത്തു</string>
   <string name="photos">ഫോട്ടോകൾ</string>
   <string name="set_duration">ദൈർഘ്യം സജ്ജമാക്കുക</string>

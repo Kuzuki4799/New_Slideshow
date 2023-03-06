@@ -11,8 +11,7 @@
   <string name="albums">专辑</string>
   <string name="today">今天</string>
   <string name="yesterday">昨天</string>
-  <string name="press_hold_item_to_move">按住项目移动</string>
-  <string name="start">开始</string>
+    <string name="start">开始</string>
   <string name="selected">已选</string>
   <string name="photos">相片</string>
   <string name="set_duration">设定时间</string>

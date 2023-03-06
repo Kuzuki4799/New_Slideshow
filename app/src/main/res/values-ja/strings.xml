@@ -11,8 +11,7 @@
   <string name="albums">アルバム</string>
   <string name="today">今日</string>
   <string name="yesterday">昨日</string>
-  <string name="press_hold_item_to_move">移動するにはアイテムを押し続けます</string>
-  <string name="start">開始</string>
+    <string name="start">開始</string>
   <string name="selected">選択済み</string>
   <string name="photos">写真</string>
   <string name="set_duration">期間を設定</string>

@@ -11,8 +11,7 @@
   <string name="albums">albume</string>
   <string name="today">Astăzi</string>
   <string name="yesterday">Ieri</string>
-  <string name="press_hold_item_to_move">Apăsați și mențineți apăsat elementul pentru a vă deplasa</string>
-  <string name="start">start</string>
+    <string name="start">start</string>
   <string name="selected">Selectat</string>
   <string name="photos">fotografii</string>
   <string name="set_duration">Setați Durata</string>

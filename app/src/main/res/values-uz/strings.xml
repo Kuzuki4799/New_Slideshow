@@ -11,8 +11,7 @@
   <string name="albums">albomlar</string>
   <string name="today">Bugun</string>
   <string name="yesterday">Kecha</string>
-  <string name="press_hold_item_to_move">Ko\'chirish uchun elementni bosing va ushlab turing</string>
-  <string name="start">Boshlang</string>
+    <string name="start">Boshlang</string>
   <string name="selected">Tanlangan</string>
   <string name="photos">fotosuratlar</string>
   <string name="set_duration">Davomiylikni o\'rnating</string>

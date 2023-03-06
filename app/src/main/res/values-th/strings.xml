@@ -11,8 +11,7 @@
   <string name="albums">อัลบั้ม</string>
   <string name="today">ในวันนี้</string>
   <string name="yesterday">เมื่อวาน</string>
-  <string name="press_hold_item_to_move">กดรายการค้างไว้เพื่อย้าย</string>
-  <string name="start">เริ่มต้น</string>
+    <string name="start">เริ่มต้น</string>
   <string name="selected">เลือก</string>
   <string name="photos">ภาพถ่าย</string>
   <string name="set_duration">กำหนดระยะเวลา</string>

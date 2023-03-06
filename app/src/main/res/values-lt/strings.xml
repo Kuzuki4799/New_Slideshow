@@ -11,8 +11,7 @@
   <string name="albums">albumai</string>
   <string name="today">Šiandien</string>
   <string name="yesterday">Vakar</string>
-  <string name="press_hold_item_to_move">Norėdami judėti, palaikykite paspaudę elementą</string>
-  <string name="start">Pradėti</string>
+    <string name="start">Pradėti</string>
   <string name="selected">Pasirinkta</string>
   <string name="photos">nuotraukos</string>
   <string name="set_duration">Nustatykite trukmę</string>

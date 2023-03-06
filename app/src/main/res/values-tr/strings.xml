@@ -11,8 +11,7 @@
   <string name="albums">albüm</string>
   <string name="today">Bugün</string>
   <string name="yesterday">Dün</string>
-  <string name="press_hold_item_to_move">Taşımak için öğeyi basılı tutun</string>
-  <string name="start">Başlat</string>
+    <string name="start">Başlat</string>
   <string name="selected">seçilmiş</string>
   <string name="photos">fotoğraflar</string>
   <string name="set_duration">Süreyi Ayarla</string>

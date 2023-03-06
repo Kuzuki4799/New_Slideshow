@@ -11,8 +11,7 @@
   <string name="albums">एलबम</string>
   <string name="today">आज</string>
   <string name="yesterday">बिता कल</string>
-  <string name="press_hold_item_to_move">स्थानांतरित करने के लिए आइटम दबाए रखें</string>
-  <string name="start">शुरू</string>
+    <string name="start">शुरू</string>
   <string name="selected">चयनित</string>
   <string name="photos">तस्वीरें</string>
   <string name="set_duration">अवधि निर्धारित करें</string>

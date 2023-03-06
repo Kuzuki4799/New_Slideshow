@@ -11,8 +11,7 @@
   <string name="albums">البمز</string>
   <string name="today">آج</string>
   <string name="yesterday">کل</string>
-  <string name="press_hold_item_to_move">منتقل کرنے کے لئے آئٹم کو دبائیں اور تھامیں</string>
-  <string name="start">شروع کریں</string>
+    <string name="start">شروع کریں</string>
   <string name="selected">منتخب شدہ</string>
   <string name="photos">فوٹو</string>
   <string name="set_duration">دورانیہ طے کریں</string>

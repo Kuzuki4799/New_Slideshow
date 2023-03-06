@@ -11,8 +11,7 @@
   <string name="albums">ալբոմները</string>
   <string name="today">Այսօր</string>
   <string name="yesterday">Երեկ</string>
-  <string name="press_hold_item_to_move">Սեղմեք և պահեք տարրը տեղափոխելու համար</string>
-  <string name="start">Սկսել</string>
+    <string name="start">Սկսել</string>
   <string name="selected">Ընտրվեց</string>
   <string name="photos">նկարներ</string>
   <string name="set_duration">Սահմանել տևողությունը</string>

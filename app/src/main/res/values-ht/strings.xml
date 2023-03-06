@@ -11,8 +11,7 @@
   <string name="albums">albòm</string>
   <string name="today">Jodi a</string>
   <string name="yesterday">Yè</string>
-  <string name="press_hold_item_to_move">Press &amp; kenbe atik pou avanse pou pi</string>
-  <string name="start">Kòmanse</string>
+    <string name="start">Kòmanse</string>
   <string name="selected">Chwazi</string>
   <string name="photos">foto</string>
   <string name="set_duration">Mete Duration</string>

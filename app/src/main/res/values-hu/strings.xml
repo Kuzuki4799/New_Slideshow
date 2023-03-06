@@ -11,8 +11,7 @@
   <string name="albums">album</string>
   <string name="today">Ma</string>
   <string name="yesterday">Tegnap</string>
-  <string name="press_hold_item_to_move">Tartsa lenyomva az elemet a mozgatáshoz</string>
-  <string name="start">Rajt</string>
+    <string name="start">Rajt</string>
   <string name="selected">Kiválasztott</string>
   <string name="photos">fotók</string>
   <string name="set_duration">Állítsa be az időtartamot</string>

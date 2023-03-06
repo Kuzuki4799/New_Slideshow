@@ -11,8 +11,7 @@
   <string name="albums">Бишкек</string>
   <string name="today">бүгүн</string>
   <string name="yesterday">кечээ</string>
-  <string name="press_hold_item_to_move">Жылдыруу үчүн нерсени басып, кармап туруңуз</string>
-  <string name="start">баштоо</string>
+    <string name="start">баштоо</string>
   <string name="selected">Тандалган</string>
   <string name="photos">сүрөттөр</string>
   <string name="set_duration">Убакытты коюңуз</string>

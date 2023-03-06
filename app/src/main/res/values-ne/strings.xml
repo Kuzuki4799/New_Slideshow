@@ -11,8 +11,7 @@
   <string name="albums">एल्बमहरू</string>
   <string name="today">आज</string>
   <string name="yesterday">हिजो</string>
-  <string name="press_hold_item_to_move">सार्नको लागि थिच्नुहोस् र समाउनुहोस्</string>
-  <string name="start">सुरु गर्नुहोस्</string>
+    <string name="start">सुरु गर्नुहोस्</string>
   <string name="selected">चयन गरिएको</string>
   <string name="photos">फोटोहरु</string>
   <string name="set_duration">अवधि सेट गर्नुहोस्</string>

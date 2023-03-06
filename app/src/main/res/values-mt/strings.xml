@@ -11,8 +11,7 @@
   <string name="albums">albums</string>
   <string name="today">Illum</string>
   <string name="yesterday">Ilbieraħ</string>
-  <string name="press_hold_item_to_move">Agħfas u żomm oġġett biex tiċċaqlaq</string>
-  <string name="start">Ibda</string>
+    <string name="start">Ibda</string>
   <string name="selected">Magħżula</string>
   <string name="photos">ritratti</string>
   <string name="set_duration">Issettja t-Tul</string>

@@ -11,8 +11,7 @@
   <string name="albums">অ্যালবাম</string>
   <string name="today">আজ</string>
   <string name="yesterday">গতকাল</string>
-  <string name="press_hold_item_to_move">সরিয়ে রাখতে আইটেম টিপুন ও ধরে রাখুন</string>
-  <string name="start">শুরু</string>
+    <string name="start">শুরু</string>
   <string name="selected">নির্বাচিত</string>
   <string name="photos">ফটো</string>
   <string name="set_duration">সময়কাল সেট করুন</string>

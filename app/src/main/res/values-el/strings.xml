@@ -11,8 +11,7 @@
   <string name="albums">άλμπουμ</string>
   <string name="today">Σήμερα</string>
   <string name="yesterday">Εχθές</string>
-  <string name="press_hold_item_to_move">Πατήστε παρατεταμένα το στοιχείο για μετακίνηση</string>
-  <string name="start">Αρχή</string>
+    <string name="start">Αρχή</string>
   <string name="selected">Επιλεγμένο</string>
   <string name="photos">φωτογραφίες</string>
   <string name="set_duration">Ορισμός διάρκειας</string>

@@ -11,8 +11,7 @@
   <string name="albums">albume</string>
   <string name="today">sot</string>
   <string name="yesterday">Dje</string>
-  <string name="press_hold_item_to_move">Shtypni dhe mbajeni artikullin për të lëvizur</string>
-  <string name="start">fillim</string>
+    <string name="start">fillim</string>
   <string name="selected">i zgjedhur</string>
   <string name="photos">Fotografitë</string>
   <string name="set_duration">Vendosni kohëzgjatjen</string>

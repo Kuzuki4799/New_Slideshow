@@ -11,8 +11,7 @@
   <string name="albums">альбомдар</string>
   <string name="today">Бүгін</string>
   <string name="yesterday">Кеше</string>
-  <string name="press_hold_item_to_move">Жылжыту үшін элементті басып тұрыңыз</string>
-  <string name="start">Бастау</string>
+    <string name="start">Бастау</string>
   <string name="selected">Таңдалған</string>
   <string name="photos">фотолар</string>
   <string name="set_duration">Ұзақтықты орнатыңыз</string>

@@ -11,8 +11,7 @@
   <string name="albums">albumu</string>
   <string name="today">dnes</string>
   <string name="yesterday">včera</string>
-  <string name="press_hold_item_to_move">Stlačením a podržaním položky sa presuniete</string>
-  <string name="start">štart</string>
+    <string name="start">štart</string>
   <string name="selected">Vybraný</string>
   <string name="photos">fotografie</string>
   <string name="set_duration">Nastavte trvanie</string>

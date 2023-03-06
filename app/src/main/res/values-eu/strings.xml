@@ -11,8 +11,7 @@
   <string name="albums">albumak</string>
   <string name="today">gaur</string>
   <string name="yesterday">Atzo</string>
-  <string name="press_hold_item_to_move">Sakatu eta luze sakatu elementua mugitzeko</string>
-  <string name="start">start</string>
+    <string name="start">start</string>
   <string name="selected">Hautatuak</string>
   <string name="photos">argazki</string>
   <string name="set_duration">Ezarri iraupena</string>

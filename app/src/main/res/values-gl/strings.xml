@@ -11,8 +11,7 @@
   <string name="albums">álbums</string>
   <string name="today">Hoxe</string>
   <string name="yesterday">Onte</string>
-  <string name="press_hold_item_to_move">Manteña premido o elemento para moverse</string>
-  <string name="start">Comezar</string>
+    <string name="start">Comezar</string>
   <string name="selected">Seleccionado</string>
   <string name="photos">fotos</string>
   <string name="set_duration">Establecer a duración</string>

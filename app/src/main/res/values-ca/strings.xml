@@ -11,8 +11,7 @@
   <string name="albums">àlbums</string>
   <string name="today">Avui</string>
   <string name="yesterday">Ahir</string>
-  <string name="press_hold_item_to_move">Mantingueu premut l’element per moure’s</string>
-  <string name="start">Començar</string>
+    <string name="start">Començar</string>
   <string name="selected">Seleccionat</string>
   <string name="photos">fotografies</string>
   <string name="set_duration">Definiu la durada</string>

@@ -11,8 +11,7 @@
   <string name="albums">ألبومات</string>
   <string name="today">اليوم</string>
   <string name="yesterday">في الامس</string>
-  <string name="press_hold_item_to_move">اضغط مع الاستمرار على العنصر للتحرك</string>
-  <string name="start">بداية</string>
+    <string name="start">بداية</string>
   <string name="selected">المحدد</string>
   <string name="photos">الصور</string>
   <string name="set_duration">حدد المدة</string>

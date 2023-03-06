@@ -11,8 +11,7 @@
   <string name="albums">албомҳо</string>
   <string name="today">Имрӯз</string>
   <string name="yesterday">Дирӯз</string>
-  <string name="press_hold_item_to_move">Барои ҳаракат кардан ашёро пахш карда нигоҳ доред</string>
-  <string name="start">Оғоз</string>
+    <string name="start">Оғоз</string>
   <string name="selected">Интихобшуда</string>
   <string name="photos">хабарнигори</string>
   <string name="set_duration">Вақтро таъин кунед</string>

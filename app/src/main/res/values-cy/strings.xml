@@ -11,8 +11,7 @@
   <string name="albums">albymau</string>
   <string name="today">Heddiw</string>
   <string name="yesterday">Ddoe</string>
-  <string name="press_hold_item_to_move">Pwyswch a dal yr eitem i symud</string>
-  <string name="start">Dechrau</string>
+    <string name="start">Dechrau</string>
   <string name="selected">Wedi\'i ddewis</string>
   <string name="photos">lluniau</string>
   <string name="set_duration">Hyd y Set</string>

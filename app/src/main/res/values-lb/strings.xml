@@ -11,8 +11,7 @@
   <string name="albums">alben</string>
   <string name="today">Haut haut</string>
   <string name="yesterday">Gëschter</string>
-  <string name="press_hold_item_to_move">Press an halen Element fir ze plënneren</string>
-  <string name="start">Start</string>
+    <string name="start">Start</string>
   <string name="selected">Ausgewielt</string>
   <string name="photos">Fotoen</string>
   <string name="set_duration">Set Dauer</string>

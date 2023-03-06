@@ -11,8 +11,7 @@
   <string name="albums">albúm</string>
   <string name="today">Í dag</string>
   <string name="yesterday">Í gær</string>
-  <string name="press_hold_item_to_move">Haltu inni hlut til að færa</string>
-  <string name="start">Byrjaðu</string>
+    <string name="start">Byrjaðu</string>
   <string name="selected">Valinn</string>
   <string name="photos">myndir</string>
   <string name="set_duration">Stilla lengd</string>

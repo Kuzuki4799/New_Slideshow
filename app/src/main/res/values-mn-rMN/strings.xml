@@ -11,8 +11,7 @@
   <string name="albums">цомог</string>
   <string name="today">Өнөөдөр</string>
   <string name="yesterday">Өчигдөр</string>
-  <string name="press_hold_item_to_move">Зөөхийн тулд энэ хэсгийг дарна уу</string>
-  <string name="start">Эхлүүл</string>
+    <string name="start">Эхлүүл</string>
   <string name="selected">Сонгогдсон</string>
   <string name="photos">гэрэл зураг</string>
   <string name="set_duration">Үргэлжлэх хугацааг тохируулна уу</string>

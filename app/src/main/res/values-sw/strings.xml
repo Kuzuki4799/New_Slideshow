@@ -11,8 +11,7 @@
   <string name="albums">Albamu</string>
   <string name="today">Leo</string>
   <string name="yesterday">Jana</string>
-  <string name="press_hold_item_to_move">Bonyeza na shikilia kipengee kusonga</string>
-  <string name="start">Anza</string>
+    <string name="start">Anza</string>
   <string name="selected">Imechaguliwa</string>
   <string name="photos">picha</string>
   <string name="set_duration">Weka Muda</string>

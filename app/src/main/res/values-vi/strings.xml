@@ -11,8 +11,7 @@
   <string name="albums">Albums</string>
   <string name="today">Hôm nay</string>
   <string name="yesterday">Hôm qua</string>
-  <string name="press_hold_item_to_move">Nhấn và giữ mục để di chuyển</string>
-  <string name="start">Bắt đầu</string>
+    <string name="start">Bắt đầu</string>
   <string name="selected">Đã chọn</string>
   <string name="photos">Ảnh</string>
   <string name="set_duration">Đặt thời gian</string>

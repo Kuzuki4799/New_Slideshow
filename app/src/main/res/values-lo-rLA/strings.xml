@@ -11,8 +11,7 @@
   <string name="albums">ເວັບບອດ</string>
   <string name="today">ມື້​ນີ້</string>
   <string name="yesterday">ມື້ວານນີ້</string>
-  <string name="press_hold_item_to_move">ກົດແລະຖືລາຍການເພື່ອຍ້າຍ</string>
-  <string name="start">ເລີ່ມຕົ້ນ</string>
+    <string name="start">ເລີ່ມຕົ້ນ</string>
   <string name="selected">ເລືອກແລ້ວ</string>
   <string name="photos">ຮູບພາບ</string>
   <string name="set_duration">ກຳ ນົດໄລຍະເວລາ</string>

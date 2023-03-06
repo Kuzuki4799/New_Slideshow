@@ -11,8 +11,7 @@
   <string name="albums">album</string>
   <string name="today">I dag</string>
   <string name="yesterday">I går</string>
-  <string name="press_hold_item_to_move">Trykk og hold på elementet for å flytte</string>
-  <string name="start">Start</string>
+    <string name="start">Start</string>
   <string name="selected">valgt</string>
   <string name="photos">bilder</string>
   <string name="set_duration">Angi varighet</string>

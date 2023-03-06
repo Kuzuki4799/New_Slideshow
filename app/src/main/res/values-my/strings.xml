@@ -11,8 +11,7 @@
   <string name="albums">အယ်လ်ဘမ်များ</string>
   <string name="today">ဒီနေ့</string>
   <string name="yesterday">မနေ့က</string>
-  <string name="press_hold_item_to_move">ရွှေ့ရန်အရာများကို နှိပ်၍ ဖိထားပါ</string>
-  <string name="start">စတင်ပါ</string>
+    <string name="start">စတင်ပါ</string>
   <string name="selected">ရွေးချယ်ပြီး</string>
   <string name="photos">ဓာတ်ပုံများ</string>
   <string name="set_duration">ကြာချိန်သတ်မှတ်ပါ</string>

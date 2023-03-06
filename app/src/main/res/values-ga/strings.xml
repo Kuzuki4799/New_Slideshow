@@ -11,8 +11,7 @@
   <string name="albums">albam</string>
   <string name="today">Inniu</string>
   <string name="yesterday">Inné</string>
-  <string name="press_hold_item_to_move">Brúigh &amp; coinnigh mír chun bogadh</string>
-  <string name="start">Tosaigh</string>
+    <string name="start">Tosaigh</string>
   <string name="selected">Roghnaithe</string>
   <string name="photos">grianghraif</string>
   <string name="set_duration">Fad Socraithe</string>

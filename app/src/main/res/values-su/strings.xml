@@ -11,8 +11,7 @@
   <string name="albums">albeum</string>
   <string name="today">Dinten ayeuna</string>
   <string name="yesterday">Kamari</string>
-  <string name="press_hold_item_to_move">Pencét &amp; tahan item pikeun mindahkeun</string>
-  <string name="start">Mimitian</string>
+    <string name="start">Mimitian</string>
   <string name="selected">Dipilih</string>
   <string name="photos">poto</string>
   <string name="set_duration">Atur Duration</string>

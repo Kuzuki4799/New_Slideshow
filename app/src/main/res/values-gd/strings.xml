@@ -11,8 +11,7 @@
   <string name="albums">clàran</string>
   <string name="today">An-diugh</string>
   <string name="yesterday">An-dè</string>
-  <string name="press_hold_item_to_move">Brùth &amp; cùm rud airson gluasad</string>
-  <string name="start">Tòisich</string>
+    <string name="start">Tòisich</string>
   <string name="selected">Air an taghadh</string>
   <string name="photos">dealbhan</string>
   <string name="set_duration">Fad Suidhich</string>

@@ -11,8 +11,7 @@
   <string name="albums">अल्बम</string>
   <string name="today">आज</string>
   <string name="yesterday">काल</string>
-  <string name="press_hold_item_to_move">हलविण्यासाठी आयटम दाबा आणि धरून ठेवा</string>
-  <string name="start">प्रारंभ करा</string>
+    <string name="start">प्रारंभ करा</string>
   <string name="selected">निवडले</string>
   <string name="photos">फोटो</string>
   <string name="set_duration">कालावधी सेट करा</string>

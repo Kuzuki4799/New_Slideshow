@@ -11,8 +11,7 @@
   <string name="albums">albumid</string>
   <string name="today">Täna</string>
   <string name="yesterday">Eile</string>
-  <string name="press_hold_item_to_move">Liigutamiseks hoidke üksust all</string>
-  <string name="start">Alusta</string>
+    <string name="start">Alusta</string>
   <string name="selected">Valitud</string>
   <string name="photos">fotod</string>
   <string name="set_duration">Määra kestus</string>

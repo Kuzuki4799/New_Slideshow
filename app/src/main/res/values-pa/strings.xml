@@ -11,8 +11,7 @@
   <string name="albums">ਐਲਬਮ</string>
   <string name="today">ਅੱਜ</string>
   <string name="yesterday">ਕੱਲ</string>
-  <string name="press_hold_item_to_move">ਹਿਲਾਉਣ ਲਈ ਆਈਟਮ ਨੂੰ ਦਬਾਓ ਅਤੇ ਹੋਲਡ ਕਰੋ</string>
-  <string name="start">ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="start">ਸ਼ੁਰੂ ਕਰੋ</string>
   <string name="selected">ਚੁਣਿਆ ਹੋਇਆ</string>
   <string name="photos">ਫੋਟੋਆਂ</string>
   <string name="set_duration">ਅੰਤਰਾਲ ਨਿਰਧਾਰਤ ਕਰੋ</string>

@@ -11,8 +11,7 @@
   <string name="albums">albums</string>
   <string name="today">vandag</string>
   <string name="yesterday">gister</string>
-  <string name="press_hold_item_to_move">Druk en hou item om te skuif</string>
-  <string name="start">begin</string>
+    <string name="start">begin</string>
   <string name="selected">gekies</string>
   <string name="photos">foto\'s</string>
   <string name="set_duration">Stel tydsduur</string>

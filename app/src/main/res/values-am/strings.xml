@@ -11,8 +11,7 @@
   <string name="albums">አልበሞች</string>
   <string name="today">ዛሬ</string>
   <string name="yesterday">ትናንት</string>
-  <string name="press_hold_item_to_move">ለመንቀሳቀስ ንጥል ተጭነው ይያዙ</string>
-  <string name="start">ጀምር</string>
+    <string name="start">ጀምር</string>
   <string name="selected">ተመር .ል</string>
   <string name="photos">ፎቶዎች</string>
   <string name="set_duration">የጊዜ ቆይታ ያዘጋጁ</string>

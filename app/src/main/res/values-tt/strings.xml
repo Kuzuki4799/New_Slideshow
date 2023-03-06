@@ -11,8 +11,7 @@
   <string name="albums">альбомнар</string>
   <string name="today">Бүген</string>
   <string name="yesterday">Кичә</string>
-  <string name="press_hold_item_to_move">Күчерү өчен әйберне басыгыз һәм тотыгыз</string>
-  <string name="start">Башлау</string>
+    <string name="start">Башлау</string>
   <string name="selected">Сайланган</string>
   <string name="photos">фотолар</string>
   <string name="set_duration">Озынлыгын билгеләгез</string>

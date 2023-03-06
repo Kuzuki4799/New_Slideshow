@@ -11,8 +11,7 @@
   <string name="albums">albums</string>
   <string name="today">Vandaag</string>
   <string name="yesterday">Gisteren</string>
-  <string name="press_hold_item_to_move">Houd item ingedrukt om te verplaatsen</string>
-  <string name="start">Begin</string>
+    <string name="start">Begin</string>
   <string name="selected">Geselecteerd</string>
   <string name="photos">foto\'s</string>
   <string name="set_duration">Stel duur in</string>

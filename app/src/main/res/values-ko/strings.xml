@@ -11,8 +11,7 @@
   <string name="albums">앨범</string>
   <string name="today">오늘</string>
   <string name="yesterday">어제</string>
-  <string name="press_hold_item_to_move">항목을 길게 눌러 이동</string>
-  <string name="start">스타트</string>
+    <string name="start">스타트</string>
   <string name="selected">선택된</string>
   <string name="photos">사진</string>
   <string name="set_duration">기간 설정</string>

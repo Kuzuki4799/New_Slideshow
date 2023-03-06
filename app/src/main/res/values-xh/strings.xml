@@ -11,8 +11,7 @@
   <string name="albums">albhamu</string>
   <string name="today">Namhlanje</string>
   <string name="yesterday">Izolo</string>
-  <string name="press_hold_item_to_move">Cinezela kwaye ubambe into ukuze ishukume</string>
-  <string name="start">Qala</string>
+    <string name="start">Qala</string>
   <string name="selected">Ikhethiwe</string>
   <string name="photos">iifoto</string>
   <string name="set_duration">Beka ixesha</string>

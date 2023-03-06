@@ -11,8 +11,7 @@
   <string name="albums">albumus</string>
   <string name="today">Šodien</string>
   <string name="yesterday">Vakar</string>
-  <string name="press_hold_item_to_move">Nospiediet un turiet vienumu, lai pārvietotos</string>
-  <string name="start">Sākt</string>
+    <string name="start">Sākt</string>
   <string name="selected">Atlasīts</string>
   <string name="photos">fotogrāfijas</string>
   <string name="set_duration">Iestatīt ilgumu</string>

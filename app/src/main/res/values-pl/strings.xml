@@ -11,8 +11,7 @@
   <string name="albums">albumy</string>
   <string name="today">Dzisiaj</string>
   <string name="yesterday">Wczoraj</string>
-  <string name="press_hold_item_to_move">Naciśnij i przytrzymaj element, aby przejść</string>
-  <string name="start">Początek</string>
+    <string name="start">Początek</string>
   <string name="selected">Wybrany</string>
   <string name="photos">zdjęcia</string>
   <string name="set_duration">Ustaw czas trwania</string>

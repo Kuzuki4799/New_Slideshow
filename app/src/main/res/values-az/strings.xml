@@ -11,8 +11,7 @@
   <string name="albums">albomlar</string>
   <string name="today">Bu gün</string>
   <string name="yesterday">Dünən</string>
-  <string name="press_hold_item_to_move">Hərəkət etmək üçün elementə basıb saxlayın</string>
-  <string name="start">Başlamaq</string>
+    <string name="start">Başlamaq</string>
   <string name="selected">Seçilib</string>
   <string name="photos">fotolar</string>
   <string name="set_duration">Müddəti təyin edin</string>
