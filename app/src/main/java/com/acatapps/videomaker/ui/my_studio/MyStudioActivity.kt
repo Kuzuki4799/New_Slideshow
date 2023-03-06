@@ -1,14 +1,12 @@
 package com.acatapps.videomaker.ui.my_studio
 
 import android.content.Intent
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.AllMyStudioAdapter
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseActivity
 import com.acatapps.videomaker.models.MyStudioDataModel
 import com.acatapps.videomaker.ui.edit_video.VideoSlideActivity2
@@ -21,6 +19,7 @@ import kotlinx.android.synthetic.main.base_header_view.view.*
 import java.io.File
 
 class MyStudioActivity : BaseActivity() {
+
     override fun getLayoutId(): Int = R.layout.activity_my_studio
 
     private val mAllMyStudioAdapter = AllMyStudioAdapter()
@@ -93,7 +92,6 @@ class MyStudioActivity : BaseActivity() {
         }
         mAllMyStudioAdapter.onSelectChange = {
             Thread {
-
                 val number = mAllMyStudioAdapter.getNumberItemSelected()
                 val total = mAllMyStudioAdapter.getTotalItem()
 
@@ -117,41 +115,37 @@ class MyStudioActivity : BaseActivity() {
         mAllMyStudioAdapter.onClickOpenMenu = { view, myStudioDataModel ->
             val popupMenu = PopupMenu(this@MyStudioActivity, view)
             popupMenu.menuInflater.inflate(R.menu.item_my_studio_menu, popupMenu.menu)
-            popupMenu.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
-                override fun onMenuItemClick(item: MenuItem?): Boolean {
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item?.itemId) {
 
-                    when (item?.itemId) {
-
-                        R.id.delete -> {
-                            onDeleteItem(myStudioDataModel.filePath)
-                        }
-
-                        R.id.edit -> {
-                            val intent =
-                                Intent(this@MyStudioActivity, VideoSlideActivity2::class.java)
-                            intent.putStringArrayListExtra(
-                                "Video picked list",
-                                arrayListOf(myStudioDataModel.filePath)
-                            )
-                            openNewActivity(intent, true, isFinish = false)
-                        }
-
-                        R.id.trim -> {
-                            TrimVideoActivity.gotoActivity(
-                                this@MyStudioActivity,
-                                myStudioDataModel.filePath
-                            )
-                        }
-                        R.id.share -> {
-                            shareVideoFile(myStudioDataModel.filePath)
-
-                        }
+                    R.id.delete -> {
+                        onDeleteItem(myStudioDataModel.filePath)
                     }
-                    popupMenu.dismiss()
-                    return true
-                }
 
-            })
+                    R.id.edit -> {
+                        val intent =
+                            Intent(this@MyStudioActivity, VideoSlideActivity2::class.java)
+                        intent.putStringArrayListExtra(
+                            "Video picked list",
+                            arrayListOf(myStudioDataModel.filePath)
+                        )
+                        openNewActivity(intent, true, isFinish = false)
+                    }
+
+                    R.id.trim -> {
+                        TrimVideoActivity.gotoActivity(
+                            this@MyStudioActivity,
+                            myStudioDataModel.filePath
+                        )
+                    }
+                    R.id.share -> {
+                        shareVideoFile(myStudioDataModel.filePath)
+
+                    }
+                }
+                popupMenu.dismiss()
+                true
+            }
             popupMenu.show()
         }
     }
@@ -239,7 +233,7 @@ class MyStudioActivity : BaseActivity() {
         Thread {
             if (mAllMyStudioAdapter.itemCount > 0) {
                 val deletePathList = ArrayList<String>()
-                mAllMyStudioAdapter.itemList.forEachIndexed { index, myStudioDataModel ->
+                mAllMyStudioAdapter.itemList.forEachIndexed { _, myStudioDataModel ->
 
                     if (myStudioDataModel.filePath.length > 5 && !File(myStudioDataModel.filePath).exists()) {
                         deletePathList.add(myStudioDataModel.filePath)
@@ -260,7 +254,7 @@ class MyStudioActivity : BaseActivity() {
                 val folder = File(FileUtils.myStuioFolderPath)
                 val myStudioDataList = ArrayList<MyStudioDataModel>()
                 if (folder.exists() && folder.isDirectory) {
-                    for (item in folder.listFiles()) {
+                    for (item in folder.listFiles()!!) {
                         try {
                             val duration = MediaUtils.getVideoDuration(item.absolutePath)
                             if (item.exists())

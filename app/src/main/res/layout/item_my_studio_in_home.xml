@@ -1,43 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
-    android:paddingTop="12dp"
-    android:paddingBottom="12dp"
-    android:paddingStart="4dp"
-    android:paddingEnd="4dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/bg_corner"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageThumb"
-        android:layout_width="98dp"
-        android:layout_height="98dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_load_thumb"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <View
-        android:id="@+id/grayBg"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:background="@color/blackAlpha20"
-        app:layout_constraintBottom_toBottomOf="@id/imageThumb"
-        app:layout_constraintStart_toStartOf="@id/imageThumb"
-        app:layout_constraintEnd_toEndOf="@id/imageThumb"/>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/durationLabel"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/normalTextSize"
-        android:textColor="@color/white"
-        android:fontFamily="@font/roboto_regular"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintTop_toTopOf="@id/grayBg"
-        app:layout_constraintBottom_toBottomOf="@id/grayBg"
-        app:layout_constraintEnd_toEndOf="@id/grayBg"/>
+        android:background="@drawable/bg_corner">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageThumb"
+            android:layout_width="98dp"
+            android:layout_height="98dp"
+            android:background="@drawable/bg_corner"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_load_thumb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/grayBg"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_corner_txt"
+            app:layout_constraintBottom_toBottomOf="@id/imageThumb"
+            app:layout_constraintEnd_toEndOf="@id/imageThumb"
+            app:layout_constraintStart_toStartOf="@id/imageThumb" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/durationLabel"
+            style="@style/textNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normalTextSize"
+            app:layout_constraintBottom_toBottomOf="@id/grayBg"
+            app:layout_constraintEnd_toEndOf="@id/grayBg"
+            app:layout_constraintTop_toTopOf="@id/grayBg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/textNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/txtSize"
+            style="@style/textNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTitle"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            tools:text="12mb" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            style="@style/textNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtSize"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            tools:text="12/12/1222" />
+    </RelativeLayout>
+</LinearLayout>

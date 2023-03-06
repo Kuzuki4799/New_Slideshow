@@ -3,17 +3,94 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.22962962962962963" />
+        <entry key="app/src/main/res/drawable-nodpi/ic_cat1.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable-nodpi/ic_cat10.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_button_add_sticker.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_button_edit_video_in_home.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_button_rating_in_home.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_cancel_button.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_check_box.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_corner.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_corner_5dp.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_corner_6dp.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_corner_top.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_corner_txt.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_label_no_sound.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_ripple_circle_back_button.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_ripple_circle_white_button.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_splash_5.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_stroke.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_stroke_white.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_add_photo_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_btn_add_music.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_btn_duration.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_btn_effect.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_btn_sticker.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_btn_text.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_btn_transition.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_camera_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_check_all.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_keyboard_active.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_music_list_normal.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_music_selected.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_record_gradient_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_slide_show_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_trim_video_vector.xml" value="0.124" />
         <entry key="app/src/main/res/layout/activity_base_layout.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_base_tools_edit.xml" value="0.21979166666666666" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/layout/activity_join_video.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_my_studio.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_pick_media.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_process_video.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/activity_share_video.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_select_music.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_share_video.xml" value="0.19654541015625002" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_trim_video.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/base_header_view.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_media_folder.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_media_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_all_my_studio.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_color_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_fonts_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_gs_transition_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_header_view_date.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_image_list_in_slide_show.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_image_picked.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_image_with_text_count.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_lookup.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_media_album.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_media_with_text_count.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_music_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_my_studio_in_home.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/item_native_ads_in_my_studio.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/item_recorded.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_sticker_added.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_sticker_list.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_text_sticker_added.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/item_theme_in_home.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_video_in_joiner.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_add_text.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_change_duration_tools.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_change_effect_tools.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_change_filter_tools.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_change_music_tools.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/layout_change_record_tools.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/layout_change_sticker_tools.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_change_text_tools.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/layout_change_theme_tools.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/layout_change_transition_tools.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_choose_sticker.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/layout_download_theme_dialog.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/layout_edit_text_color.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_edit_text_fonts.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_edit_text_style.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_export_video_dialog.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/layout_progress_dialog.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/layout_yes_no_dialog.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/native_ad_big.xml" value="0.15520833333333334" />
       </map>

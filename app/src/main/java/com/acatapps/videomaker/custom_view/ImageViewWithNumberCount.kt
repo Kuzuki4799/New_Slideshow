@@ -14,7 +14,7 @@ import com.acatapps.videomaker.utils.DimenUtils
 class ImageViewWithNumberCount : AppCompatImageView {
 
     private var mCount = 0
-    private val mThemeColor = Color.parseColor("#73A6FF")
+    private val mThemeColor = Color.parseColor("#D81B60")
 
     private var mBorderWidth = 6f
     private val mBorderRect = Rect()
@@ -39,6 +39,7 @@ class ImageViewWithNumberCount : AppCompatImageView {
     }
 
     private fun init() {
+        clipToOutline = true
         mCountRectSize = (mCountRectSize * DimenUtils.density(context)).toInt()
         mBorderWidth *= DimenUtils.density(context)
         mBorderPaint.apply {

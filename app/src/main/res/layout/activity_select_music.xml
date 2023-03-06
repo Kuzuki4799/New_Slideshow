@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.select_music.SelectMusicActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".ui.select_music.SelectMusicActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/musicListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/item_music_list"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_music_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>

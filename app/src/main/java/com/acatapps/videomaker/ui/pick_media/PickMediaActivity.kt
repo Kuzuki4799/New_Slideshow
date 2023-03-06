@@ -10,7 +10,6 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -35,7 +34,9 @@ import org.kodein.di.generic.instance
 import kotlin.math.roundToInt
 
 open class PickMediaActivity : BaseActivity(), KodeinAware {
+
     override fun getLayoutId(): Int = R.layout.activity_pick_media
+
     private var mMediaKind = MediaKind.PHOTO
 
     private val mPickMediaViewModelFactory: PickMediaViewModelFactory by instance()
@@ -44,7 +45,6 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
     private var mVideoActionKind = VideoActionKind.SLIDE
 
     private val mMediaPickedAdapter = MediaPickedAdapter {
-
         performDeleteItemPicked(it)
         updateNumberImageSelected()
     }
@@ -99,6 +99,7 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
     private val mListPhotoPath = ArrayList<String>()
     private var startAvailable = true
     private var mThemeFileName = ""
+
     override fun initViews() {
 
         mPickMediaViewModel =
@@ -108,39 +109,43 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
         val action = intent.getIntExtra("action", -1)
         mActionCode = action
         Logger.e("action = $action")
-        if (action == ADD_MORE_PHOTO) {
-            setScreenTitle(getString(R.string.photo))
-            intent.getStringArrayListExtra("list-photo")?.let {
-                for (path in it) {
-                    mListPhotoPath.add(path)
-                }
-            }
-            mMediaKind = MediaKind.PHOTO
-        } else if (action == ADD_MORE_VIDEO) {
-            setScreenTitle(getString(R.string.video))
-            intent.getStringArrayListExtra("list-video")?.let {
-                mListPhotoPath.addAll(it)
-            }
-            mMediaKind = MediaKind.VIDEO
-        } else {
-            if (intent.getStringExtra("MediaKind") == MediaKind.VIDEO.toString())
-                mMediaKind = MediaKind.VIDEO
-            val actionKind = intent.getStringExtra("VideoActionKind")
-
-            when (mMediaKind) {
-                MediaKind.VIDEO -> {
-                    setScreenTitle(getString(R.string.video))
-                    actionKind?.let {
-                        mVideoActionKind = VideoActionKind.valueOf(it)
-                        if (mVideoActionKind == VideoActionKind.TRIM) {
-                            mPickMediaViewModel.disableCounter()
-                            imagePickedArea.visibility = View.GONE
-                        }
-
+        when (action) {
+            ADD_MORE_PHOTO -> {
+                setScreenTitle(getString(R.string.photo))
+                intent.getStringArrayListExtra("list-photo")?.let {
+                    for (path in it) {
+                        mListPhotoPath.add(path)
                     }
                 }
-                MediaKind.PHOTO -> {
-                    setScreenTitle(getString(R.string.photo))
+                mMediaKind = MediaKind.PHOTO
+            }
+            ADD_MORE_VIDEO -> {
+                setScreenTitle(getString(R.string.video))
+                intent.getStringArrayListExtra("list-video")?.let {
+                    mListPhotoPath.addAll(it)
+                }
+                mMediaKind = MediaKind.VIDEO
+            }
+            else -> {
+                if (intent.getStringExtra("MediaKind") == MediaKind.VIDEO.toString())
+                    mMediaKind = MediaKind.VIDEO
+                val actionKind = intent.getStringExtra("VideoActionKind")
+
+                when (mMediaKind) {
+                    MediaKind.VIDEO -> {
+                        setScreenTitle(getString(R.string.video))
+                        actionKind?.let {
+                            mVideoActionKind = VideoActionKind.valueOf(it)
+                            if (mVideoActionKind == VideoActionKind.TRIM) {
+                                mPickMediaViewModel.disableCounter()
+                                imagePickedArea.visibility = View.GONE
+                            }
+
+                        }
+                    }
+                    MediaKind.PHOTO -> {
+                        setScreenTitle(getString(R.string.photo))
+                    }
                 }
             }
         }
@@ -151,7 +156,7 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
 
         val col = (DimenUtils.screenWidth(this) / (96 * DimenUtils.density(this))).roundToInt()
         mediaPickedListView.adapter = mMediaPickedAdapter
-        mediaPickedListView.layoutManager = GridLayoutManager(this, col.toInt())
+        mediaPickedListView.layoutManager = GridLayoutManager(this, col)
         addItemTouchCallback(mediaPickedListView)
         imagePickedArea.visibility = View.GONE
         mPickMediaViewModel.localStorageData.getAllMedia(mMediaKind)
@@ -289,12 +294,12 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
     }
 
     private fun listen() {
-        mPickMediaViewModel.itemJustPicked.observe(this, Observer {
+        mPickMediaViewModel.itemJustPicked.observe(this) {
             mMediaPickedAdapter.addItem(MediaPickedDataModel(it.filePath))
             imagePickedArea.visibility = View.VISIBLE
             mediaPickedListView.scrollToPosition(mMediaPickedAdapter.itemCount - 1)
             updateNumberImageSelected()
-        })
+        }
     }
 
     @SuppressLint("SetTextI18n")

@@ -1,6 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/black</item>
@@ -9,7 +8,6 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowEnableSplitTouch">false</item>
         <item name="android:splitMotionEvents">false</item>
-
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -22,6 +20,7 @@
         <item name="android:windowEnableSplitTouch">false</item>
         <item name="android:splitMotionEvents">false</item>
     </style>
+
     <style name="PickPhotoScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/black</item>
@@ -33,7 +32,6 @@
         <item name="android:windowEnableSplitTouch">false</item>
         <item name="android:splitMotionEvents">false</item>
     </style>
-
 
     <style name="button_tools_in_slide_show_activity">
         <item name="android:layout_width">64dp</item>
@@ -55,13 +53,15 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">42dp</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:fontFamily">@font/roboto_bold</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:elevation">1dp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
     </style>
+
     <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">14dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 </resources>

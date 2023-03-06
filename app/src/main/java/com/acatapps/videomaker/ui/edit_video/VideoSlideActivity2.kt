@@ -57,9 +57,9 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
     private var mPlayer: SimpleExoPlayer? = null
     private lateinit var mGPUPlayerView: GPUPlayerView
+
     override fun doInitViews() {
         needShowDialog = true
-
 
         setScreenTitle(getString(R.string.edit_video))
         changeTransitionTools.visibility = View.GONE
@@ -156,7 +156,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
             mGSEffectListAdapter.selectEffect(mVideoSlideDataList[it].gsEffectType)
         }
 
-        mGSEffectListAdapter.onSelectEffectCallback = { position, gsEffectType ->
+        mGSEffectListAdapter.onSelectEffectCallback = { _, gsEffectType ->
             mVideoSlideDataList[mCurrentVideoIndex].gsEffectType = gsEffectType
             var timeMs = 0
             for (item in 0 until mCurrentVideoIndex) {
@@ -164,7 +164,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
             }
             doSeekTo(timeMs)
         }
-
     }
 
     override fun getCurrentVideoTimeMs(): Int = mCurrentTime.toInt()
@@ -233,7 +232,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
         Logger.e("current index = $mCurrentVideoIndex")
 
-
         if (mCurrentVideoIndex + 1 >= mVideoPathList.size) {
             doRestartVideo()
         } else {
@@ -297,7 +295,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
                     if (playbackState == Player.STATE_ENDED) {
                         //onEnd.invoke()
-                        Logger.e("on end video ----> Player.STATE_ENDED ${mCurrentVideoIndex}")
+                        Logger.e("on end video ----> Player.STATE_ENDED $mCurrentVideoIndex")
                         if (mCurrentVideoIndex == mVideoSlideDataList.size - 1) {
                             doRestartVideo()
                         } else {
@@ -421,6 +419,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
     }
 
     private var addMoreVideoAvailable = true
+
     private fun doAddMoreVideo() {
         if (addMoreVideoAvailable) {
             addMoreVideoAvailable = false
@@ -428,7 +427,8 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 putExtra("action", PickMediaActivity.ADD_MORE_VIDEO)
                 putStringArrayListExtra("list-video", mVideoPathList)
             }
-            openNewActivityForResult(intent, PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE, true,
+            openNewActivityForResult(
+                intent, PickMediaActivity.ADD_MORE_VIDEO_REQUEST_CODE, true,
                 isFinish = false
             )
             object : CountDownTimer(1000, 1000) {
@@ -453,7 +453,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 if (quality < 1) {
                     showToast(getString(R.string.please_choose_video_quality))
                 } else {
-                    // setOffAllStickerAndText()
                     mPlayer?.release()
                     mPlayer = null
                     mDoExport = true
@@ -486,7 +485,6 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
                 if (view is StickerView) view.getOutBitmap(Canvas(bitmap))
 
-
                 val outPath = if (isImageSlideShow()) {
                     FileUtils.saveStickerToTemp(bitmap)
                 } else {
@@ -495,11 +493,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 }
 
                 stickerAddedForRender.add(
-                    StickerForRenderData(
-                        outPath,
-                        item.startTimeMilSec,
-                        item.endTimeMilSec
-                    )
+                    StickerForRenderData(outPath, item.startTimeMilSec, item.endTimeMilSec)
                 )
             }
 
@@ -521,11 +515,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
                 }
 
                 stickerAddedForRender.add(
-                    StickerForRenderData(
-                        outPath,
-                        item.startTimeMilSec,
-                        item.endTimeMilSec
-                    )
+                    StickerForRenderData(outPath, item.startTimeMilSec, item.endTimeMilSec)
                 )
             }
 

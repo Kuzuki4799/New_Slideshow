@@ -10,7 +10,6 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.acatapps.videomaker.R
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.data.BitmapWithIndexData
 import com.acatapps.videomaker.data.RecordedData
 import com.acatapps.videomaker.models.RecordedDataModel
@@ -25,7 +24,6 @@ import kotlin.math.roundToInt
 
 class VideoTimelineView : View {
 
-    private val mImagePreviewPathList = ArrayList<String>()
     private var mBitmapList = ArrayList<BitmapWithIndexData>()
     private var mDx = 0f
 
@@ -173,7 +171,7 @@ class VideoTimelineView : View {
 
 
     fun loadImage(imagePathList: ArrayList<String>) {
-        Observable.fromCallable<String> {
+        Observable.fromCallable {
             if (imagePathList.size >= 10) {
                 val timePerImage = mMaxValueTimeMilSec / 10
                 for (index in 0 until 10) {
@@ -214,7 +212,7 @@ class VideoTimelineView : View {
     }
 
     fun loadImageVideo(videoPathList: ArrayList<String>) {
-        Observable.fromCallable<String> {
+        Observable.fromCallable {
 
             val timePerImage = mMaxValueTimeMilSec / 10
             for (index in 0 until 10) {
@@ -267,12 +265,16 @@ class VideoTimelineView : View {
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if (mIsRecording) return false
-        if (event?.action == MotionEvent.ACTION_DOWN) {
-            updateTouchPoint(event?.rawX)
-        } else if (event?.action == MotionEvent.ACTION_MOVE) {
-            onMoveView(event?.rawX)
-        } else if(event?.action == MotionEvent.ACTION_CANCEL || event?.action == MotionEvent.ACTION_UP) {
-            onUpCallback?.invoke(getCurrentTime().toInt())
+        when (event?.action) {
+            MotionEvent.ACTION_DOWN -> {
+                updateTouchPoint(event.rawX)
+            }
+            MotionEvent.ACTION_MOVE -> {
+                onMoveView(event.rawX)
+            }
+            MotionEvent.ACTION_CANCEL, MotionEvent.ACTION_UP -> {
+                onUpCallback?.invoke(getCurrentTime().toInt())
+            }
         }
 
         return true
@@ -361,78 +363,8 @@ class VideoTimelineView : View {
         mMaxValueTimeMilSec = maxValue
     }
 
-
     private var mStartRecordingOffset = 0f
     private var mEndRecordingOffset = 0f
-    private var mStartRecordingTime = 0L
-    fun startRecording() {
-        if (checkEnd(getCurrentTime().roundToInt())) {
-            onStartFail?.invoke()
-            return
-        }
-        mIsRecording = true
-        mStartRecordingOffset = getCurrentTime()
-        mStartRecordingTime = System.currentTimeMillis()
-    }
-
-    fun stopRecording(outPath: String) {
-        mIsRecording = false
-        mEndRecordingOffset = getCurrentTime()
-        val recordedData = RecordedData(
-            outPath,
-            mStartRecordingOffset.roundToInt(),
-            mEndRecordingOffset.roundToInt()
-        )
-        mRecordedDataList.add(recordedData)
-        mStartRecordingOffset = 0f
-        mEndRecordingOffset = 0f
-        onStropSuccess?.invoke(recordedData)
-        invalidate()
-    }
-
-    fun drawAndMove() {
-        if (!mIsRecording) return
-        val deltaTime = 40
-        mStartRecordingTime = System.currentTimeMillis()
-        val distance = (deltaTime.toFloat() * mTimelineSize / mMaxValueTimeMilSec)
-        mDx -= distance
-
-
-        mEndRecordingOffset = getCurrentTime()
-        if (checkEnd(mEndRecordingOffset.roundToInt())) {
-            onStopRecording?.invoke(getCurrentTime().roundToInt())
-        }
-        onMoveCallback?.invoke(getCurrentTime().roundToInt())
-        invalidate()
-    }
-
-
-    private fun checkEnd(endOffset: Int): Boolean {
-        if (getCurrentTime() >= mMaxValueTimeMilSec - 10) return true
-        for (item in mRecordedDataList) {
-            if (endOffset >= item.startMs - 10 && endOffset < item.endMs) return true
-        }
-        return false
-    }
-
-    private fun getBlackBitmap(): Bitmap {
-        val size = (DimenUtils.density(context) * 56).toInt()
-        val bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
-        for (i in 0 until bitmap.width)
-            for (j in 0 until bitmap.height)
-                bitmap.setPixel(i, j, Color.BLACK)
-        return bitmap
-    }
-
-    fun deleteRecord(path: String) {
-        for (item in mRecordedDataList) {
-            if (item.recordFilePath == path) {
-                mRecordedDataList.remove(item)
-                invalidate()
-                return
-            }
-        }
-    }
 
     private fun getCurrentTime(): Float =
         ((mCenterPoint - mDx) * mMaxValueTimeMilSec / mTimelineSize)
@@ -449,5 +381,4 @@ class VideoTimelineView : View {
         }
         invalidate()
     }
-
 }

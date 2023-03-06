@@ -10,24 +10,24 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/blueA01"
-        app:tabTextColor="@color/blackAlpha20"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="fill"
         app:tabIndicatorColor="@color/white"
         app:tabMaxWidth="0dp"
-        app:tabGravity="fill"
         app:tabMode="fixed"
-        app:tabTextAppearance="@style/MineCustomTabText"
-        app:tabSelectedTextColor="@color/white"
         app:tabRippleColor="@color/whiteAlpha70"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabTextColor="@color/blackAlpha20" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout"
-        app:layout_constraintBottom_toTopOf="@id/imagePickedArea" />
+        app:layout_constraintBottom_toTopOf="@id/imagePickedArea"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/imagePickedArea"
@@ -40,66 +40,54 @@
             android:id="@+id/bgWhiteView"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            app:cornerRadiusView="0dp"
             app:bgColor="@color/white"
-            app:shadowBottomOnly="true"
-            app:layout_constraintTop_toTopOf="parent"
+            app:cornerRadiusView="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadowBottomOnly="true" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/expandViewButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_swipe_up_vector"
-            android:padding="4dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/bg_ripple_circle_white_button"
+            android:padding="4dp"
+            android:src="@drawable/ic_swipe_up_vector"
             app:cornerRadiusImageView="12dp"
-            app:layout_constraintStart_toStartOf="@id/bgWhiteView"
             app:layout_constraintEnd_toEndOf="@id/bgWhiteView"
-            app:layout_constraintTop_toTopOf="@id/bgWhiteView"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:textColor="@color/black"
-            android:textSize="@dimen/smallTextSize"
-            android:layout_marginBottom="2dp"
-            android:text="@string/press_hold_item_to_move"
             app:layout_constraintStart_toStartOf="@id/bgWhiteView"
-            app:layout_constraintEnd_toEndOf="@id/bgWhiteView"
-            app:layout_constraintBottom_toBottomOf="@id/bgWhiteView"/>
+            app:layout_constraintTop_toTopOf="@id/bgWhiteView" />
 
         <com.acatapps.videomaker.custom_view.RippleTextView
             android:id="@+id/startButton"
+            style="@style/textNormalBold"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            app:cornerRadiusTextView="4dp"
-            android:text="@string/start"
-            android:textColor="@color/white"
-            android:textSize="@dimen/normalTextSize"
+            android:layout_marginEnd="16dp"
             android:gravity="center"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/roboto_medium"
-            app:bgColorTextView="@color/blueA01"
+            android:text="@string/start"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normalTextSize"
+            app:bgColorTextView="@color/colorPrimary"
+            app:cornerRadiusTextView="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/bgWhiteView"
             app:layout_constraintEnd_toEndOf="@id/bgWhiteView"
-            app:layout_constraintTop_toTopOf="@id/bgWhiteView"
-            app:layout_constraintBottom_toBottomOf="@id/bgWhiteView"/>
+            app:layout_constraintTop_toTopOf="@id/bgWhiteView" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/numberMediaPicked"
+            style="@style/textNormalBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="8dp"
             android:textColor="@color/black"
             android:textSize="@dimen/normalTextSize"
-            app:layout_constraintTop_toTopOf="@id/bgWhiteView"
             app:layout_constraintBottom_toBottomOf="@id/bgWhiteView"
             app:layout_constraintStart_toStartOf="@id/bgWhiteView"
-            android:layout_marginStart="8dp"/>
+            app:layout_constraintTop_toTopOf="@id/bgWhiteView" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mediaPickedListView"
@@ -107,10 +95,8 @@
             android:layout_height="0dp"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
-            app:layout_constraintTop_toBottomOf="@id/bgWhiteView"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:listitem="@layout/item_image_picked"/>
-
+            app:layout_constraintTop_toBottomOf="@id/bgWhiteView"
+            tools:listitem="@layout/item_image_picked" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

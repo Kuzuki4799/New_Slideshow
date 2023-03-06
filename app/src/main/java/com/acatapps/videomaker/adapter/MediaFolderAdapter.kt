@@ -22,6 +22,7 @@ class MediaFolderAdapter : BaseAdapter<MediaAlbumDataModel>() {
         val item = mItemList[position]
         view.albumDescription.text = "${item.albumName}(${item.mediaItemPaths.size})"
         if (item.mediaItemPaths.size > 0) {
+            view.albumCover.clipToOutline = true
             Glide.with(view.context).load(item.mediaItemPaths[0].filePath)
                 .apply(RequestOptions().override(200))
                 .into(view.albumCover)

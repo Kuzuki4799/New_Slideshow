@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Video_Maker_V4.iml" filepath="$PROJECT_DIR$/.idea/modules/Video_Maker_V4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker_V4.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.main.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker_V4.base_ads.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker_V4.gpuv2.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile-ffmpeg1125/Video_Maker_V4.mobile-ffmpeg1125.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile-ffmpeg1125/Video_Maker_V4.mobile-ffmpeg1125.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Video_Maker.iml" filepath="$PROJECT_DIR$/.idea/modules/Video_Maker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Video_Maker.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.main.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base_ads/Video_Maker.base_ads.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gpuv2/Video_Maker.gpuv2.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile-ffmpeg1125/Video_Maker.mobile-ffmpeg1125.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile-ffmpeg1125/Video_Maker.mobile-ffmpeg1125.iml" />
     </modules>
   </component>
 </project>

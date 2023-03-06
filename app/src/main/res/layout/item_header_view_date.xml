@@ -2,18 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="42dp"
-    android:orientation="vertical"
-    android:gravity="center|start">
+    android:gravity="center|start"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/dateAddedLabel"
+        style="@style/textNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:lines="1"
         android:text=""
-        android:textSize="@dimen/normalTextSize"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/black"/>
-
+        android:textColor="@color/black"
+        android:textSize="@dimen/normalTextSize" />
 </LinearLayout>

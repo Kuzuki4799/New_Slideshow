@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.join_video.JoinVideoActivity">
+    tools:context=".ui.join_video.JoinVideoActivity2">
 
     <View
         android:id="@+id/bgView"
@@ -12,67 +12,66 @@
         android:layout_height="0dp"
         android:background="@color/black"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/videoPlayerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/bgView"
         app:layout_constraintBottom_toBottomOf="@id/bgView"
+        app:layout_constraintEnd_toEndOf="@id/bgView"
         app:layout_constraintStart_toStartOf="@id/bgView"
-        app:layout_constraintEnd_toEndOf="@id/bgView"/>
+        app:layout_constraintTop_toTopOf="@id/bgView" />
 
     <com.acatapps.videomaker.custom_view.VideoControllerView
         android:id="@+id/videoControllerView"
         android:layout_width="0dp"
         android:layout_height="28dp"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@id/bgView"
-        app:layout_constraintStart_toStartOf="@id/bgView"
         app:layout_constraintEnd_toEndOf="@id/bgView"
-        android:focusable="true" />
+        app:layout_constraintStart_toStartOf="@id/bgView" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icPlay"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:visibility="gone"
         android:src="@drawable/ic_play_circle_outline_white_24dp"
-        app:layout_constraintTop_toTopOf="@id/bgView"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/bgView"
+        app:layout_constraintEnd_toEndOf="@id/bgView"
         app:layout_constraintStart_toStartOf="@id/bgView"
-        app:layout_constraintEnd_toEndOf="@id/bgView"/>
+        app:layout_constraintTop_toTopOf="@id/bgView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videoListView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@id/bgView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/item_video_in_joiner"
         app:layout_constraintBottom_toTopOf="@id/buttonJoinVideo"
-        tools:itemCount="2"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bgView"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_video_in_joiner" />
 
     <com.acatapps.videomaker.custom_view.RippleTextView
         android:id="@+id/buttonJoinVideo"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:text="@string/join_video"
-        android:gravity="center"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_button_rating_in_home"
         android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/join_video"
         android:textColor="@color/white"
-        android:textSize="@dimen/normalTextSize"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:background="@drawable/bg_button_add_sticker"
+        android:textSize="@dimen/largeTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/videoListView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@id/videoListView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

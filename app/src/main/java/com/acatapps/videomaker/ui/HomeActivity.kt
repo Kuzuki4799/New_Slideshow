@@ -58,7 +58,7 @@ open class HomeActivity : BaseMActivity() {
         myStudioListView.apply {
             adapter = mMyStudioAdapter
             layoutManager =
-                LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
+                LinearLayoutManager(this@HomeActivity, LinearLayoutManager.VERTICAL, false)
         }
         Logger.e("check storage permission in on create = ${checkStoragePermission()}")
         if (!checkStoragePermission()) {
@@ -119,7 +119,6 @@ open class HomeActivity : BaseMActivity() {
                 mShare.shareApp(this, BuildConfig.APPLICATION_ID)
                 countDownAvailable()
             }
-
         }
 
         buttonMore.setClick {
@@ -128,14 +127,11 @@ open class HomeActivity : BaseMActivity() {
                 openNewActivity(MyStudioActivity::class.java, isShowAds = true, isFinish = false)
                 countDownAvailable()
             }
-
         }
 
         mMyStudioAdapter.onClickItem = {
             ShareVideoActivity.gotoActivity(this, it.filePath)
         }
-
-
     }
 
     private fun countDownAvailable() {
@@ -147,7 +143,6 @@ open class HomeActivity : BaseMActivity() {
             override fun onTick(millisUntilFinished: Long) {
 
             }
-
         }.start()
     }
 
@@ -166,12 +161,11 @@ open class HomeActivity : BaseMActivity() {
             PickMediaActivity.gotoActivity(this, actionKind)
             countDownAvailable()
         }
-
     }
 
     private var pickMediaAvailable = true
-    private fun gotoPickMedia(mediaKind: MediaKind) {
 
+    private fun gotoPickMedia(mediaKind: MediaKind) {
         if (!checkStoragePermission()) {
             requestStoragePermission()
             return
@@ -184,26 +178,6 @@ open class HomeActivity : BaseMActivity() {
         if (pickMediaAvailable) {
             pickMediaAvailable = false
             PickMediaActivity.gotoActivity(this, mediaKind)
-            countDownAvailable()
-
-        }
-
-    }
-
-    private fun gotoPickMedia(mediaKind: MediaKind, themePath: String) {
-
-        if (!checkStoragePermission()) {
-            requestStoragePermission()
-            return
-        }
-
-        if (Utils.getAvailableSpaceInMB() < 200) {
-            showToast(getString(R.string.free_space_too_low))
-            return
-        }
-        if (pickMediaAvailable) {
-            pickMediaAvailable = false
-            PickMediaActivity.gotoActivity(this, mediaKind, themePath)
             countDownAvailable()
 
         }
@@ -315,12 +289,18 @@ open class HomeActivity : BaseMActivity() {
                         doSendBroadcast(item.absolutePath)
                         continue
                     }
-
                 }
             }
 
             runOnUiThread {
-                mMyStudioAdapter.setItemList(myStudioDataList)
+                if (myStudioDataList.size > 5) {
+                    mMyStudioAdapter.clear()
+                    for (i in 0 until 5) {
+                        mMyStudioAdapter.addItem(myStudioDataList[i])
+                    }
+                } else {
+                    mMyStudioAdapter.setItemList(myStudioDataList)
+                }
                 if (mMyStudioAdapter.itemCount < 1) {
                     icNoProject.visibility = View.VISIBLE
                     buttonMore.visibility = View.GONE
@@ -329,13 +309,11 @@ open class HomeActivity : BaseMActivity() {
                     buttonMore.visibility = View.VISIBLE
                 }
             }
-
         }.start()
-
-
     }
 
     private var mOnPause = false
+
     override fun onPause() {
         super.onPause()
         mOnPause = true
@@ -343,14 +321,6 @@ open class HomeActivity : BaseMActivity() {
 
     override fun onResume() {
         super.onResume()
-        Logger.e(
-            """shouldShowRequestPermissionRationale = ${
-                ActivityCompat.shouldShowRequestPermissionRationale(
-                    this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                )
-            }"""
-        )
         if (checkStoragePermission()) {
             getAllMyStudioItem()
             onInit()

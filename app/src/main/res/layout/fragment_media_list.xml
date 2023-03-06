@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.pick_photo.PhotoListFragment"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/allMediaListView"
@@ -13,6 +12,5 @@
         android:layout_height="match_parent"
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="3dp"
-        tools:listitem="@layout/item_image_with_text_count"/>
-
+        tools:listitem="@layout/item_image_with_text_count" />
 </LinearLayout>

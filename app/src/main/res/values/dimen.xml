@@ -2,8 +2,8 @@
 <resources>
 
 
-    <dimen name="normalTextSize">14dp</dimen>
-    <dimen name="smallTextSize">12dp</dimen>
-    <dimen name="largeTextSize">16dp</dimen>
+    <dimen name="normalTextSize">14sp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="largeTextSize">16sp</dimen>
 
 </resources>

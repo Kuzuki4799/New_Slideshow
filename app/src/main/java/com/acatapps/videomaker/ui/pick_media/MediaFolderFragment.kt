@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +17,6 @@ import com.acatapps.videomaker.models.MediaDataModel
 import com.acatapps.videomaker.ui.trim_video.TrimVideoActivity
 import com.acatapps.videomaker.utils.DimenUtils
 import com.acatapps.videomaker.utils.Logger
-import com.acatapps.videomaker.utils.MediaUtils
 import kotlinx.android.synthetic.main.fragment_media_folder.*
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -28,7 +26,7 @@ import java.io.File
 class MediaFolderFragment : Fragment(), KodeinAware {
     override lateinit var kodein: Kodein
 
-    private val mPickMediaViewModelFactory:PickMediaViewModelFactory by instance<PickMediaViewModelFactory>()
+    private val mPickMediaViewModelFactory: PickMediaViewModelFactory by instance()
     private lateinit var mPickMediaViewModel: PickMediaViewModel
 
     private val mMediaFolderAdapter = MediaFolderAdapter()
@@ -45,47 +43,55 @@ class MediaFolderFragment : Fragment(), KodeinAware {
 
         kodein = (context as KodeinAware).kodein
 
-        mPickMediaViewModel = ViewModelProvider(requireActivity(), mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
+        mPickMediaViewModel = ViewModelProvider(
+            requireActivity(),
+            mPickMediaViewModelFactory
+        ).get(PickMediaViewModel::class.java)
 
         initView()
         listen()
     }
-    private var mMediaListAdapter = MediaListAdapter{
 
+    private var mMediaListAdapter = MediaListAdapter {
     }
+
     private fun initView() {
-
         setFolderListView()
-
 
         mMediaFolderAdapter.onClickItem = {
             Logger.e("name = ${it.albumName}")
 
             mPickMediaViewModel.onShowFolder()
             val mediaItems = ArrayList<MediaDataModel>()
-            for(item in it.mediaItemPaths) {
+            for (item in it.mediaItemPaths) {
 
                 mediaItems.add(MediaDataModel(item))
             }
 
             mediaItems.sort()
-            mMediaListAdapter = MediaListAdapter{mediaDataModel->
-                if(mIsActionTrim) {
+            mMediaListAdapter = MediaListAdapter { mediaDataModel ->
+                if (mIsActionTrim) {
                     TrimVideoActivity.gotoActivity(requireActivity(), mediaDataModel.filePath)
                     return@MediaListAdapter
                 }
                 mPickMediaViewModel.onPickImage(mediaDataModel)
             }
-            val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE* DimenUtils.density(requireContext())
-            val numberCols = DimenUtils.screenWidth(requireContext())/colSize
+            val colSize =
+                PickMediaActivity.COLS_IMAGE_LIST_SIZE * DimenUtils.density(requireContext())
+            val numberCols = DimenUtils.screenWidth(requireContext()) / colSize
             mMediaListAdapter.setItemList(mediaItems)
-            if(mIsActionTrim) {
+            if (mIsActionTrim) {
                 mMediaListAdapter.activeCounter = false
                 mMediaListAdapter.notifyDataSetChanged()
             }
             mediaFolderListView.apply {
                 adapter = mMediaListAdapter
-                layoutManager = GridLayoutManager(context, numberCols.toInt(), LinearLayoutManager.VERTICAL, false).apply {
+                layoutManager = GridLayoutManager(
+                    context,
+                    numberCols.toInt(),
+                    LinearLayoutManager.VERTICAL,
+                    false
+                ).apply {
                     spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                         override fun getSpanSize(position: Int): Int {
                             return if (mMediaListAdapter.getItemViewType(position) == R.layout.item_header_view_date) {
@@ -106,7 +112,7 @@ class MediaFolderFragment : Fragment(), KodeinAware {
         super.onResume()
         val listItem = ArrayList<String>()
         mMediaListAdapter.itemList.forEach {
-            if(it.filePath.isNotEmpty() && !File(it.filePath).exists()) {
+            if (it.filePath.isNotEmpty() && !File(it.filePath).exists()) {
                 listItem.add(it.filePath)
             }
         }
@@ -116,59 +122,59 @@ class MediaFolderFragment : Fragment(), KodeinAware {
         }
 
         mMediaListAdapter.notifyDataSetChanged()
-        if(mMediaFolderAdapter.itemCount <= 0 ) {
-            if(mPickMediaViewModel.folderIsShowing) {
+        if (mMediaFolderAdapter.itemCount <= 0) {
+            if (mPickMediaViewModel.folderIsShowing) {
                 mPickMediaViewModel.hideFolder()
             }
         }
 
-        Thread{
-            if(mMediaListAdapter.itemCount > 0) {
+        Thread {
+            if (mMediaListAdapter.itemCount > 0) {
                 mMediaListAdapter.deleteEmptyDay()
                 activity?.runOnUiThread {
                     mMediaListAdapter.notifyDataSetChanged()
                 }
             }
         }.start()
-
     }
-
 
     private fun setFolderListView() {
-        val colSize = PickMediaActivity.COLS_ALBUM_LIST_SIZE* DimenUtils.density(requireContext())
-        val numberCols = DimenUtils.screenWidth(requireContext())/colSize
+        val colSize = PickMediaActivity.COLS_ALBUM_LIST_SIZE * DimenUtils.density(requireContext())
+        val numberCols = DimenUtils.screenWidth(requireContext()) / colSize
 
         mediaFolderListView.adapter = mMediaFolderAdapter
-        mediaFolderListView.layoutManager = GridLayoutManager(context, numberCols.toInt(), LinearLayoutManager.VERTICAL, false)
+        mediaFolderListView.layoutManager =
+            GridLayoutManager(context, numberCols.toInt(), LinearLayoutManager.VERTICAL, false)
     }
+
     private var mIsActionTrim = false
     private fun listen() {
-        mPickMediaViewModel.localStorageData.mediaDataResponse.observe(viewLifecycleOwner, Observer {
+        mPickMediaViewModel.localStorageData.mediaDataResponse.observe(viewLifecycleOwner) {
             mMediaFolderAdapter.setItemListFromData(it)
-        })
+        }
 
-        mPickMediaViewModel.folderIsShowingLiveData.observe(viewLifecycleOwner, Observer {
-            if(mediaFolderListView.adapter is MediaListAdapter) setFolderListView()
-        })
+        mPickMediaViewModel.folderIsShowingLiveData.observe(viewLifecycleOwner) {
+            if (mediaFolderListView.adapter is MediaListAdapter) setFolderListView()
+        }
 
-        mPickMediaViewModel.itemJustPicked.observe(viewLifecycleOwner, Observer {
+        mPickMediaViewModel.itemJustPicked.observe(viewLifecycleOwner) {
             mMediaListAdapter.updateCount(mPickMediaViewModel.mediaPickedCount)
-        })
+        }
 
-        mPickMediaViewModel.itemJustDeleted.observe(viewLifecycleOwner, Observer {
+        mPickMediaViewModel.itemJustDeleted.observe(viewLifecycleOwner) {
             mMediaListAdapter.updateCount(mPickMediaViewModel.mediaPickedCount)
-        })
+        }
 
-        mPickMediaViewModel.acctiveCounter.observe(viewLifecycleOwner, Observer {
-            if(it == false) {
+        mPickMediaViewModel.acctiveCounter.observe(viewLifecycleOwner) {
+            if (it == false) {
                 mIsActionTrim = true
 
             }
-        })
+        }
 
-        mPickMediaViewModel.newMediaItem.observe(viewLifecycleOwner, Observer {
+        mPickMediaViewModel.newMediaItem.observe(viewLifecycleOwner) {
             mMediaFolderAdapter.addItemToAlbum(it)
-        })
+        }
     }
 
 }

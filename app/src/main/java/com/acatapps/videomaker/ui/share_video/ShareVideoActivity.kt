@@ -23,8 +23,11 @@ import kotlinx.android.synthetic.main.activity_share_video.*
 import java.io.File
 
 class ShareVideoActivity : BaseActivity() {
+
     private var mVideoPath = ""
+
     private var mTimer: CountDownTimer? = null
+
     var mTotalDuration = 0
 
     companion object {
@@ -45,7 +48,6 @@ class ShareVideoActivity : BaseActivity() {
     }
 
     override fun getLayoutId(): Int = R.layout.activity_share_video
-
 
     private fun showNativeAds() {
         llNative.viewTreeObserver.addOnGlobalLayoutListener(object :
@@ -110,7 +112,8 @@ class ShareVideoActivity : BaseActivity() {
         }
     }
 
-    val mShare = Share()
+    private val mShare = Share()
+
     override fun initActions() {
         setRightButton(R.drawable.ic_home_white) {
             val intent = Intent(this, HomeActivity::class.java).apply {
@@ -145,10 +148,6 @@ class ShareVideoActivity : BaseActivity() {
         mTimer?.cancel()
         mPlayer?.release()
         mPlayer = null
-    }
-
-    override fun onStop() {
-        super.onStop()
     }
 
     override fun onPause() {

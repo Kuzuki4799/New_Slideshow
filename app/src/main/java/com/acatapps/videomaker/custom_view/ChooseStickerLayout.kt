@@ -1,35 +1,21 @@
 package com.acatapps.videomaker.custom_view
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.StickerListAdapter
-import com.acatapps.videomaker.utils.DimenUtils
 import kotlinx.android.synthetic.main.layout_choose_sticker.view.*
-import kotlin.math.roundToInt
 
-class ChooseStickerLayout:LinearLayout {
+class ChooseStickerLayout : LinearLayout {
 
-    private val mStickerListAdapter = StickerListAdapter{
+    private val mStickerListAdapter = StickerListAdapter {
         callback?.onSelectSticker(it)
     }
 
-    private val mBaseStickerPath = "file:///android_asset/"
-    private val collection1 = "sticker/collection1"
-    private val collection2 = "sticker/collection2"
-    private val collection3 = "sticker/collection3"
-    private val collection4 = "sticker/collection4"
-    private val collection5 = "sticker/collection5"
-    private val collection6 = "sticker/collection6"
-    private val collection7 = "sticker/collection7"
-    private val collection8 = "sticker/collection8"
-    private val collection9 = "sticker/collection9"
-
-    var callback:StickerCallback? = null
+    var callback: StickerCallback? = null
 
     constructor(context: Context?) : super(context) {
         initAttrs(null)
@@ -40,10 +26,10 @@ class ChooseStickerLayout:LinearLayout {
     }
 
     private fun initAttrs(attrs: AttributeSet?) {
-        layoutParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-       inflate(context, R.layout.layout_choose_sticker, this)
+        layoutParams =
+            LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        inflate(context, R.layout.layout_choose_sticker, this)
 
-        val col = DimenUtils.screenWidth(context)/(DimenUtils.density(context)*56)
         stickerListView.adapter = mStickerListAdapter
         stickerListView.layoutManager = GridLayoutManager(context, 5)
         mStickerListAdapter.setItemList(getStickerCollection1())
@@ -90,7 +76,7 @@ class ChooseStickerLayout:LinearLayout {
         }
     }
 
-    private fun getStickerCollection1():ArrayList<String> {
+    private fun getStickerCollection1(): ArrayList<String> {
 
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_catus_1.toString())
@@ -106,7 +92,7 @@ class ChooseStickerLayout:LinearLayout {
         return outList
     }
 
-    private fun getStickerCollection2():ArrayList<String> {
+    private fun getStickerCollection2(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_cat1.toString())
         outList.add(R.drawable.ic_cat2.toString())
@@ -132,7 +118,7 @@ class ChooseStickerLayout:LinearLayout {
         return outList
     }
 
-    private fun getStickerCollection3():ArrayList<String> {
+    private fun getStickerCollection3(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_eyes1.toString())
         outList.add(R.drawable.ic_eyes2.toString())
@@ -158,7 +144,7 @@ class ChooseStickerLayout:LinearLayout {
         return outList
     }
 
-    private fun getStickerCollection4():ArrayList<String> {
+    private fun getStickerCollection4(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_fruit1.toString())
         outList.add(R.drawable.ic_fruit2.toString())
@@ -173,7 +159,7 @@ class ChooseStickerLayout:LinearLayout {
         return outList
     }
 
-    private fun getStickerCollection5():ArrayList<String> {
+    private fun getStickerCollection5(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_common1.toString())
         outList.add(R.drawable.ic_common2.toString())
@@ -202,7 +188,7 @@ class ChooseStickerLayout:LinearLayout {
         return outList
     }
 
-    private fun getStickerCollection6():ArrayList<String> {
+    private fun getStickerCollection6(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_heart1.toString())
         outList.add(R.drawable.ic_heart2.toString())
@@ -232,7 +218,8 @@ class ChooseStickerLayout:LinearLayout {
 
         return outList
     }
-    private fun getStickerCollection7():ArrayList<String> {
+
+    private fun getStickerCollection7(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_ice1.toString())
         outList.add(R.drawable.ic_ice2.toString())
@@ -258,7 +245,8 @@ class ChooseStickerLayout:LinearLayout {
 
         return outList
     }
-    private fun getStickerCollection8():ArrayList<String> {
+
+    private fun getStickerCollection8(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_music1.toString())
         outList.add(R.drawable.ic_music2.toString())
@@ -276,7 +264,8 @@ class ChooseStickerLayout:LinearLayout {
         outList.add(R.drawable.ic_music14.toString())
         return outList
     }
-    private fun getStickerCollection9():ArrayList<String> {
+
+    private fun getStickerCollection9(): ArrayList<String> {
         val outList = ArrayList<String>()
         outList.add(R.drawable.ic_restaurent1.toString())
         outList.add(R.drawable.ic_restaurent2.toString())
@@ -296,17 +285,9 @@ class ChooseStickerLayout:LinearLayout {
         outList.add(R.drawable.ic_restaurent16.toString())
         return outList
     }
-    private fun getAllFilePathInAsset(folderName:String):ArrayList<String> {
-        val pathList = ArrayList<String>()
-        val imageNames = context.resources.assets.list(folderName) ?: arrayOf()
-        for (image in imageNames) {
-            pathList.add("$mBaseStickerPath$folderName/$image")
-        }
-        return pathList
-    }
 
     interface StickerCallback {
-        fun onSelectSticker(stickerPath:String)
+        fun onSelectSticker(stickerPath: String)
     }
 
 }

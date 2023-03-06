@@ -1,76 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/textContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:clickable="true"
         android:background="@color/blackAlpha45"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:focusable="true" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:background="@color/grayA01"
         android:orientation="horizontal"
         android:weightSum="4"
-        app:layout_constraintTop_toBottomOf="@id/textContainer"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/grayA01">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textContainer">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icKeyboard"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_keyboard_default"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:src="@drawable/ic_keyboard_default" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icFonts"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_font_default"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:src="@drawable/ic_font_default" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icColor"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_color_default"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:src="@drawable/ic_color_default" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_font_style_default"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:src="@drawable/ic_font_style_default" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/toolsDetails"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:clickable="true"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white"
-        android:focusable="true">
-    </LinearLayout>
-
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

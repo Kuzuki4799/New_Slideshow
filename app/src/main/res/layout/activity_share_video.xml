@@ -54,6 +54,7 @@
             app:layout_constraintTop_toBottomOf="@id/bgViewInShare" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -113,8 +114,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/facebookLabel"
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:text="@string/facebook"
             android:textColor="@color/black"
             android:textSize="@dimen/normalTextSize"
@@ -123,8 +126,10 @@
             app:layout_constraintTop_toBottomOf="@id/logoFacebook" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:text="@string/instagram"
             android:textColor="@color/black"
             android:textSize="@dimen/normalTextSize"
@@ -133,8 +138,10 @@
             app:layout_constraintTop_toBottomOf="@id/logoInstagram" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:text="@string/youtube"
             android:textColor="@color/black"
             android:textSize="@dimen/normalTextSize"
@@ -143,6 +150,7 @@
             app:layout_constraintTop_toBottomOf="@id/logoYouTube" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/more"
@@ -156,8 +164,8 @@
             android:id="@+id/icPlay"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/ic_play_circle_outline_white_24dp"
-
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/bgViewInShare"
             app:layout_constraintEnd_toEndOf="@id/bgViewInShare"
@@ -168,9 +176,9 @@
             android:id="@+id/llNative"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginStart="12dp"
             android:layout_marginBottom="12dp"
             android:gravity="center"
             android:orientation="vertical"

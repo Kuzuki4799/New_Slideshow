@@ -7,11 +7,9 @@
     android:background="@color/black"
     tools:context=".ui.splash.SplashActivity">
 
-
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bg_splash_image"
-        android:scaleType="centerCrop"/>
-
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_splash_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

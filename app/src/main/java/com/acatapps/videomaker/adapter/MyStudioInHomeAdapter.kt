@@ -4,18 +4,18 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.view.View
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.base.BaseAdapter
 import com.acatapps.videomaker.base.BaseViewHolder
 import com.acatapps.videomaker.models.MyStudioDataModel
 import com.acatapps.videomaker.utils.DimenUtils
+import com.acatapps.videomaker.utils.FileUtils
 import com.acatapps.videomaker.utils.MediaUtils
 import com.acatapps.videomaker.utils.Utils
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.item_my_studio_in_home.view.*
 import java.io.File
-
 
 class MyStudioInHomeAdapter : BaseAdapter<MyStudioDataModel>() {
 
@@ -28,6 +28,13 @@ class MyStudioInHomeAdapter : BaseAdapter<MyStudioDataModel>() {
         val view = holder.itemView
         val item = mItemList[position]
         val size = DimenUtils.density(view.context) * 98
+        view.imageThumb.clipToOutline = true
+
+        view.txtTitle.text = File(item.filePath).name
+
+        view.txtSize.text = FileUtils.formatFileSize(File(item.filePath).length())
+        view.txtDate.text = FileUtils.convertToVideoDate(item.dateAdded)
+
         Glide.with(view.context).load(item.filePath).placeholder(R.drawable.ic_load_thumb).apply(
             RequestOptions().override(size.toInt())
         ).into(view.imageThumb)

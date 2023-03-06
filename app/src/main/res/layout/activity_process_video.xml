@@ -35,11 +35,10 @@
         android:fontFamily="@font/roboto_bold"
         android:text="@string/exporting_video"
         android:textColor="@color/blackA01"
-        android:textSize="21dp"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/art" />
-
 
     <com.acatapps.videomaker.custom_view.RenderingProgressBar
         android:id="@+id/progressBar"

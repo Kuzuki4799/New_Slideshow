@@ -22,6 +22,7 @@ class MediaPickedAdapter(private val onClickDelete: (Int) -> Unit) :
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val view = holder.itemView
         val item = mItemList[position]
+        view.mediaThumb.clipToOutline = true
         Glide.with(view.context).load(item.path)
             .apply(RequestOptions().override(DimenUtils.screenWidth(view.context) / 4))
             .into(view.mediaThumb)

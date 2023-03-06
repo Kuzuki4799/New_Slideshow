@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acatapps.videomaker.R
@@ -25,7 +24,7 @@ import org.kodein.di.generic.instance
 
 class SelectMusicActivity : BaseActivity(), KodeinAware {
 
-    companion object{
+    companion object {
         const val SELECT_MUSIC_REQUEST_CODE = 1001
         const val MUSIC_RETURN_DATA_KEY = "SelectMusicActivity.MUSIC_RETURN_DATA_KEY"
     }
@@ -34,30 +33,33 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
 
     override val kodein by closestKodein()
 
-    private val mSelectMusicViewModelFactory:SelectMusicViewModelFactory by instance()
-    private val mMusicPlayer:MusicPlayer by instance()
+    private val mSelectMusicViewModelFactory: SelectMusicViewModelFactory by instance()
+    private val mMusicPlayer: MusicPlayer by instance()
 
     private lateinit var mSelectMusicViewModel: SelectMusicViewModel
     private var useAvailable = true
-    private val mMusicListAdapter = MusicListAdapter(object :MusicListAdapter.MusicCallback{
+    private val mMusicListAdapter = MusicListAdapter(object : MusicListAdapter.MusicCallback {
         override fun onClickItem(audioDataModel: AudioDataModel) {
             mMusicPlayer.changeMusic(audioDataModel.audioFilePath)
         }
 
         override fun onClickUse(audioDataModel: AudioDataModel) {
             val out = mMusicPlayer.getOutMusic()
-            if(out.length < 10000) {
+            if (out.length < 10000) {
                 showToast(getString(R.string.minimum_time_is_10_s))
             } else {
-                if(!useAvailable) {
+                if (!useAvailable) {
                     return
                 }
                 useAvailable = false
-                performUseMusic(out.audioFilePath, out.startOffset.toLong(), out.startOffset+out.length.toLong(), audioDataModel.fileType)
+                performUseMusic(
+                    out.audioFilePath, out.startOffset.toLong(),
+                    out.startOffset + out.length.toLong()
+                )
             }
         }
 
-        override fun onClickPlay(isPlaying:Boolean) {
+        override fun onClickPlay(isPlay: Boolean) {
             mMusicPlayer.changeState()
         }
 
@@ -75,7 +77,7 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
 
     })
 
-    private var mCurrentMusic:MusicReturnData? = null
+    private var mCurrentMusic: MusicReturnData? = null
 
     override fun initViews() {
         intent.getBundleExtra("bundle")?.let {
@@ -87,7 +89,10 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
         musicListView.adapter = mMusicListAdapter
         musicListView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        mSelectMusicViewModel = ViewModelProvider(this, mSelectMusicViewModelFactory).get(SelectMusicViewModel::class.java)
+        mSelectMusicViewModel = ViewModelProvider(
+            this,
+            mSelectMusicViewModelFactory
+        ).get(SelectMusicViewModel::class.java)
 
         listen()
 
@@ -98,17 +103,17 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
         }
 
         setSearchInputListener {
-           onSearch(it)
+            onSearch(it)
         }
     }
 
-    private fun onSearch(query:String) {
+    private fun onSearch(query: String) {
         onPauseMusic()
         mMusicListAdapter.setOffAll()
         val result = ArrayList<AudioData>()
-        for(item in mAllMusicList) {
+        for (item in mAllMusicList) {
             Logger.e("music name = ${item.musicName}")
-            if(item.musicName.toLowerCase().contains(query.toLowerCase())) {
+            if (item.musicName.toLowerCase().contains(query.toLowerCase())) {
                 result.add(item)
             }
         }
@@ -118,40 +123,47 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
     private val mAllMusicList = ArrayList<AudioData>()
 
     private fun listen() {
-        mSelectMusicViewModel.localStorageData.audioDataResponse.observe(this, Observer {
+        mSelectMusicViewModel.localStorageData.audioDataResponse.observe(this) {
             mMusicListAdapter.setAudioDataList(it)
             mAllMusicList.addAll(it)
-            mCurrentMusic?.let {musicReturnData ->
+            mCurrentMusic?.let { musicReturnData ->
                 val index = mMusicListAdapter.restoreBeforeMusic(musicReturnData)
-                if(index >= 0) {
+                if (index >= 0) {
                     musicListView.scrollToPosition(index)
-                    mMusicPlayer.changeMusic(musicReturnData.audioFilePath, musicReturnData.startOffset, musicReturnData.length)
+                    mMusicPlayer.changeMusic(
+                        musicReturnData.audioFilePath,
+                        musicReturnData.startOffset,
+                        musicReturnData.length
+                    )
                 }
 
             }
 
-        })
+        }
     }
 
     override fun initActions() {
-
     }
 
-    private fun performUseMusic(inputAudioPath:String, startOffset:Long, endOffset:Long, fileType:String) {
-            mMusicPlayer.pause()
+    private fun performUseMusic(
+        inputAudioPath: String, startOffset: Long, endOffset: Long
+    ) {
+        mMusicPlayer.pause()
         showProgressDialog()
-            Thread{
-            val outMusicPath:String
-                val ex  = inputAudioPath.substring(inputAudioPath.lastIndexOf(".")+1, inputAudioPath.length)
-                Logger.e("ex = $ex")
-            if(ex != "m4a") {
-                outMusicPath = FileUtils.getTempAudioOutPutFile(ex)
+        Thread {
+            val outMusicPath: String
+            val ex =
+                inputAudioPath.substring(inputAudioPath.lastIndexOf(".") + 1, inputAudioPath.length)
+            Logger.e("ex = $ex")
+            outMusicPath = if (ex != "m4a") {
+                FileUtils.getTempAudioOutPutFile(ex)
             } else {
-                outMusicPath = FileUtils.getTempAudioOutPutFile("mp4")
+                FileUtils.getTempAudioOutPutFile("mp4")
             }
 
             Logger.e("out mp3 = $outMusicPath")
-            val ffmpeg = FFmpeg(FFmpegCmd.trimAudio(inputAudioPath, startOffset, endOffset, outMusicPath))
+            val ffmpeg =
+                FFmpeg(FFmpegCmd.trimAudio(inputAudioPath, startOffset, endOffset, outMusicPath))
             ffmpeg.runCmd {
                 try {
 
@@ -163,7 +175,12 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
                         }
                     }
 
-                    val musicReturnData = MusicReturnData(inputAudioPath, outMusicPath, startOffset.toInt(), endOffset.toInt()-startOffset.toInt())
+                    val musicReturnData = MusicReturnData(
+                        inputAudioPath,
+                        outMusicPath,
+                        startOffset.toInt(),
+                        endOffset.toInt() - startOffset.toInt()
+                    )
                     runOnUiThread {
                         val returnIntent = Intent()
                         Bundle().apply {
@@ -174,7 +191,7 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
                         dismissProgressDialog()
                         finishAds()
                     }
-                } catch (e :Exception) {
+                } catch (e: Exception) {
                     runOnUiThread {
                         dismissProgressDialog()
                         useAvailable = true
@@ -190,7 +207,7 @@ class SelectMusicActivity : BaseActivity(), KodeinAware {
     }
 
     override fun onBackPressed() {
-        if(searchMode) {
+        if (searchMode) {
             hideSearchInput()
         } else {
             super.onBackPressed()

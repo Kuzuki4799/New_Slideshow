@@ -9,7 +9,7 @@ import com.acatapps.videomaker.utils.BitmapUtils
 import com.acatapps.videomaker.utils.LookupUtils
 import kotlinx.android.synthetic.main.item_lookup.view.*
 
-class LookupListAdapter(val onSelectLookup: (LookupUtils.LookupType) -> Unit) :
+class LookupListAdapter(private val onSelectLookup: (LookupUtils.LookupType) -> Unit) :
     BaseAdapter<LookupDataModel>() {
 
     private var mCurrentPosition = -1

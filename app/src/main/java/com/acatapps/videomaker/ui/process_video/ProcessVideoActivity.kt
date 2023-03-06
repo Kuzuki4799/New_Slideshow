@@ -79,176 +79,199 @@ class ProcessVideoActivity : BaseActivity() {
 
         showNativeAds()
 
-
-        if (action == renderSlideAction) {
-            bundle?.let { it ->
-                val imageSlideDataList =
-                    it.getSerializable("imageDataList") as ArrayList<ImageSlideData>
-                val stickerAddedList =
-                    it.getSerializable("stickerDataList") as ArrayList<StickerForRenderData>
-                val themeData = it.getSerializable("themeData") as ThemeData
-                val delayTime = it.getInt("delayTime")
-                val musicPath = it.getString("musicPath") ?: ""
-                val musicVolume = it.getFloat("musicVolume")
-                val videoQuality = it.getInt("videoQuality")
-                val gsTransition = it.getSerializable("gsTransition") as GSTransition
-                Observable.fromCallable<String> {
-                    val imageSlideEncode = ImageSlideEncode(
-                        imageSlideDataList,
-                        stickerAddedList,
-                        themeData,
-                        delayTime,
-                        musicPath,
-                        musicVolume,
-                        videoQuality,
-                        gsTransition
-                    )
-                    imageSlideEncode.performEncodeVideo({
-                        runOnUiThread {
-                            progressBar.setProgress(it * 100)
-                        }
-                    }, {outPath ->
-                        runOnUiThread {
-                            onComplete(outPath)
-                        }
-
-
-                    })
-
-                    return@fromCallable ""
-                }.subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(object : Observer<String> {
-                        override fun onNext(outPath: String) {
-
-                        }
-                        override fun onComplete() {
-
-                        }
-
-                        override fun onSubscribe(d: Disposable) {
-                            Logger.e("renderSlideAction $d")
-                            mComPoDisposable.add(d)
-                        }
-
-                        override fun onError(e: Throwable) {}
-                    })
-
-
-            }
-        } else if (action == joinVideoActon) {
-            val videoList = intent.getStringArrayListExtra("joinVideoList") as ArrayList<String>
-
-            mVideoPathForJoinList.addAll(videoList)
-
-            for(path in mVideoPathForJoinList) {
-                mJoinVideoHashMap[path] = ""
-            }
-           mJoinVideoHashMap.forEach {
-                mUnDuplicateFilePathList.add(it.key)
-            }
-            mUnDuplicateFilePathList.forEach {
-                mTotalReSizeVideoTime += MediaUtils.getAudioDuration(it).toInt()
-            }
-            mJoinVideoSize = selectTargetSize(mVideoPathForJoinList)
-            mMaxJoinBitRate = selectMaxBitRate(mVideoPathForJoinList)
-            if(mMaxJoinBitRate > 10000000) mMaxJoinBitRate = 10000000
-            Logger.e("join video size = ${mJoinVideoSize.width} - ${mJoinVideoSize.height}")
-            doReSizeForJoinVideo()
-
-        } else if(action == renderVideoSlideAction) {
-            bundle?.let { it ->
-                val stickerAddedList = it.getSerializable("stickerDataList") as ArrayList<StickerForRenderData>
-                val videoSlideDataList = it.getSerializable("VideoInSlideData") as ArrayList<VideoInSlideData>
-                val musicPath = it.getString("musicPath") ?: ""
-                val musicVolume = it.getFloat("musicVolume")
-                val videoVolume = it.getFloat("videoVolume")
-                val videoQuality = it.getInt("videoQuality")
-                val ratio = it.getInt("videoSlideOutRatio")
-                mVideoOutRatio = ratio
-                Logger.e("ratio ---> $ratio")
-                val stickerHashMap = HashMap<String, Bitmap>()
-                for(video in videoSlideDataList) {
-                    mTotalVideoTime += MediaUtils.getVideoDuration(video.path)
-                }
-                var count = 0
-                var videoInSlideData = videoSlideDataList[count]
-                val videoDuration = MediaUtils.getVideoDuration(videoInSlideData.path)
-                mVideoQuality = videoQuality
-                mVideoDataSlideList.addAll(videoSlideDataList)
-                Logger.e("mVideoQuality = $mVideoQuality")
-                mAudioPath = musicPath
-                mSlideMusicVolume = musicVolume
-                mSlideVideoVolume = videoVolume
-                mStickerListAdded.addAll(stickerAddedList)
-                processSlideVideo()
-
-            }
-        } else if(action == trimVideoActon) {
-            val path = intent.getStringExtra("path") ?: ""
-            val startTime = intent.getIntExtra("startTime", -1)
-            val endTime = intent.getIntExtra("endTime", -1)
-
-            Logger.e("""trim $path - $startTime -- $endTime""")
-            Thread{
-
-                val outVideoPath = FileUtils.getOutputVideoPath()
-                val total = endTime-startTime
-                val startTimeString = Utils.convertSecondsToTime((startTime.toFloat()/1000).roundToInt())
-                val duration = Utils.convertSecondsToTime((total.toFloat()/1000).roundToInt())
-                Logger.e("start = $startTimeString -- duration = $duration")
-                Logger.e("start time = $startTime --- end time = $endTime")
-                val ffmpeg =
-
-                    FFmpeg(FFmpegCmd.cutVideo(path, startTime.toDouble() , endTime.toDouble(), outVideoPath))
-                mFFM = ffmpeg
-                ffmpeg.runCmd({
-                    runOnUiThread {
-                        progressBar.setProgress(it*100f/total)
-                    }
-                },{ runOnUiThread {
-                    doSendBroadcast(outVideoPath)
-                    if(!mIsCancel) {
-                        Thread{
-                            Thread.sleep(500)
+        when (action) {
+            renderSlideAction -> {
+                bundle?.let { it ->
+                    val imageSlideDataList =
+                        it.getSerializable("imageDataList") as ArrayList<ImageSlideData>
+                    val stickerAddedList =
+                        it.getSerializable("stickerDataList") as ArrayList<StickerForRenderData>
+                    val themeData = it.getSerializable("themeData") as ThemeData
+                    val delayTime = it.getInt("delayTime")
+                    val musicPath = it.getString("musicPath") ?: ""
+                    val musicVolume = it.getFloat("musicVolume")
+                    val videoQuality = it.getInt("videoQuality")
+                    val gsTransition = it.getSerializable("gsTransition") as GSTransition
+                    Observable.fromCallable<String> {
+                        val imageSlideEncode = ImageSlideEncode(
+                            imageSlideDataList,
+                            stickerAddedList,
+                            themeData,
+                            delayTime,
+                            musicPath,
+                            musicVolume,
+                            videoQuality,
+                            gsTransition
+                        )
+                        imageSlideEncode.performEncodeVideo({
                             runOnUiThread {
-                                ShareVideoActivity.gotoActivity(this, outVideoPath, true, false)
-                                finish()
+                                progressBar.setProgress(it * 100)
                             }
-                        }.start()
-                    }
+                        }, { outPath ->
+                            runOnUiThread {
+                                onComplete(outPath)
+                            }
 
-                }})
-            }.start()
+
+                        })
+
+                        return@fromCallable ""
+                    }.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(object : Observer<String> {
+                            override fun onNext(outPath: String) {
+
+                            }
+
+                            override fun onComplete() {
+
+                            }
+
+                            override fun onSubscribe(d: Disposable) {
+                                Logger.e("renderSlideAction $d")
+                                mComPoDisposable.add(d)
+                            }
+
+                            override fun onError(e: Throwable) {}
+                        })
+
+
+                }
+            }
+            joinVideoActon -> {
+                val videoList = intent.getStringArrayListExtra("joinVideoList") as ArrayList<String>
+
+                mVideoPathForJoinList.addAll(videoList)
+
+                for (path in mVideoPathForJoinList) {
+                    mJoinVideoHashMap[path] = ""
+                }
+                mJoinVideoHashMap.forEach {
+                    mUnDuplicateFilePathList.add(it.key)
+                }
+                mUnDuplicateFilePathList.forEach {
+                    mTotalReSizeVideoTime += MediaUtils.getAudioDuration(it).toInt()
+                }
+                mJoinVideoSize = selectTargetSize(mVideoPathForJoinList)
+                mMaxJoinBitRate = selectMaxBitRate(mVideoPathForJoinList)
+                if (mMaxJoinBitRate > 10000000) mMaxJoinBitRate = 10000000
+                Logger.e("join video size = ${mJoinVideoSize.width} - ${mJoinVideoSize.height}")
+                doReSizeForJoinVideo()
+
+            }
+            renderVideoSlideAction -> {
+                bundle?.let { it ->
+                    val stickerAddedList =
+                        it.getSerializable("stickerDataList") as ArrayList<StickerForRenderData>
+                    val videoSlideDataList =
+                        it.getSerializable("VideoInSlideData") as ArrayList<VideoInSlideData>
+                    val musicPath = it.getString("musicPath") ?: ""
+                    val musicVolume = it.getFloat("musicVolume")
+                    val videoVolume = it.getFloat("videoVolume")
+                    val videoQuality = it.getInt("videoQuality")
+                    val ratio = it.getInt("videoSlideOutRatio")
+                    mVideoOutRatio = ratio
+                    Logger.e("ratio ---> $ratio")
+                    val stickerHashMap = HashMap<String, Bitmap>()
+                    for (video in videoSlideDataList) {
+                        mTotalVideoTime += MediaUtils.getVideoDuration(video.path)
+                    }
+                    var count = 0
+                    var videoInSlideData = videoSlideDataList[count]
+                    val videoDuration = MediaUtils.getVideoDuration(videoInSlideData.path)
+                    mVideoQuality = videoQuality
+                    mVideoDataSlideList.addAll(videoSlideDataList)
+                    Logger.e("mVideoQuality = $mVideoQuality")
+                    mAudioPath = musicPath
+                    mSlideMusicVolume = musicVolume
+                    mSlideVideoVolume = videoVolume
+                    mStickerListAdded.addAll(stickerAddedList)
+                    processSlideVideo()
+
+                }
+            }
+            trimVideoActon -> {
+                val path = intent.getStringExtra("path") ?: ""
+                val startTime = intent.getIntExtra("startTime", -1)
+                val endTime = intent.getIntExtra("endTime", -1)
+
+                Logger.e("""trim $path - $startTime -- $endTime""")
+                Thread {
+
+                    val outVideoPath = FileUtils.getOutputVideoPath()
+                    val total = endTime - startTime
+                    val startTimeString =
+                        Utils.convertSecondsToTime((startTime.toFloat() / 1000).roundToInt())
+                    val duration = Utils.convertSecondsToTime((total.toFloat() / 1000).roundToInt())
+                    Logger.e("start = $startTimeString -- duration = $duration")
+                    Logger.e("start time = $startTime --- end time = $endTime")
+                    val ffmpeg =
+
+                        FFmpeg(
+                            FFmpegCmd.cutVideo(
+                                path,
+                                startTime.toDouble(),
+                                endTime.toDouble(),
+                                outVideoPath
+                            )
+                        )
+                    mFFM = ffmpeg
+                    ffmpeg.runCmd({
+                        runOnUiThread {
+                            progressBar.setProgress(it * 100f / total)
+                        }
+                    }, {
+                        runOnUiThread {
+                            doSendBroadcast(outVideoPath)
+                            if (!mIsCancel) {
+                                Thread {
+                                    Thread.sleep(500)
+                                    runOnUiThread {
+                                        ShareVideoActivity.gotoActivity(
+                                            this,
+                                            outVideoPath,
+                                            true,
+                                            false
+                                        )
+                                        finish()
+                                    }
+                                }.start()
+                            }
+
+                        }
+                    })
+                }.start()
+            }
         }
 
         hideHeader()
     }
 
-    private var mFFM:FFmpeg?=null
+    private var mFFM: FFmpeg? = null
 
     private val mVideoPathForJoinList = ArrayList<String>()
-    private var mJoinVideoSize = Size(0,0)
-    private val mJoinVideoHashMap = HashMap<String,String>()
+    private var mJoinVideoSize = Size(0, 0)
+    private val mJoinVideoHashMap = HashMap<String, String>()
     private val mUnDuplicateFilePathList = ArrayList<String>()
     private var mJoinProcessCount = 0
     private var mMaxJoinBitRate = 0
     private var mTotalReSizeVideoTime = 0
     private var mCurrentReSizeVideoTime = 0
     private var mReSizedVideoTime = 0
-    private val onReSizeDoJoinProgress = {progress:Double ->
-        val progress = 0.9f*(progress*mCurrentReSizeVideoTime+mReSizedVideoTime)*100f/mTotalReSizeVideoTime
+    private val onReSizeDoJoinProgress = { progress: Double ->
+        val progress =
+            0.9f * (progress * mCurrentReSizeVideoTime + mReSizedVideoTime) * 100f / mTotalReSizeVideoTime
         runOnUiThread {
             progressBar.setProgress(progress.toFloat())
         }
     }
 
-    private val onReSizeDoJoinComplete = { inPath:String, outPath:String ->
+    private val onReSizeDoJoinComplete = { inPath: String, outPath: String ->
         mJoinVideoHashMap[inPath] = outPath
         Logger.e("inPath = $inPath -- outPath = $outPath")
         mReSizedVideoTime += MediaUtils.getAudioDuration(inPath).toInt()
         ++mJoinProcessCount
-        if(mJoinProcessCount == mUnDuplicateFilePathList.size) {
+        if (mJoinProcessCount == mUnDuplicateFilePathList.size) {
             Logger.e("doneee!!")
             runOnUiThread {
                 progressBar.setProgress(90f)
@@ -262,7 +285,7 @@ class ProcessVideoActivity : BaseActivity() {
     private fun joinReSizeVideo() {
         val finalPathList = ArrayList<String>()
         mVideoPathForJoinList.forEach {
-            mJoinVideoHashMap[it]?.let {path ->
+            mJoinVideoHashMap[it]?.let { path ->
                 finalPathList.add(path)
             }
         }
@@ -281,40 +304,35 @@ class ProcessVideoActivity : BaseActivity() {
         val outPath = FileUtils.getTempVideoPath()
         val path = mUnDuplicateFilePathList[mJoinProcessCount]
         mCurrentReSizeVideoTime = MediaUtils.getAudioDuration(path).toInt()
-        val inVideoSize = MediaUtils.getVideoSize(path)
 
         Logger.e("path = $path")
         Logger.e("outPath = $outPath")
         Logger.e("max bit rate = $mMaxJoinBitRate")
         val filter = GlFilter()
-            mGPUMp4Composer = GPUMp4Composer(path, outPath)
-                .size(mJoinVideoSize.width, mJoinVideoSize.height)
-                .fillMode(FillMode.PRESERVE_ASPECT_FIT)
-                .filter(filter)
-                .videoBitrate(mMaxJoinBitRate)
-                .listener(object : GPUMp4Composer.Listener {
-                    override fun onFailed(exception: Exception?) {
+        mGPUMp4Composer = GPUMp4Composer(path, outPath)
+            .size(mJoinVideoSize.width, mJoinVideoSize.height)
+            .fillMode(FillMode.PRESERVE_ASPECT_FIT)
+            .filter(filter)
+            .videoBitrate(mMaxJoinBitRate)
+            .listener(object : GPUMp4Composer.Listener {
+                override fun onFailed(exception: Exception?) {
 
-                    }
+                }
 
-                    override fun onProgress(progress: Double) {
-                        Logger.e("$mJoinProcessCount -- progress = $progress")
-                        onReSizeDoJoinProgress.invoke(progress)
-                    }
+                override fun onProgress(progress: Double) {
+                    Logger.e("$mJoinProcessCount -- progress = $progress")
+                    onReSizeDoJoinProgress.invoke(progress)
+                }
 
-                    override fun onCanceled() {
+                override fun onCanceled() {
 
-                    }
+                }
 
-                    override fun onCompleted() {
-                        onReSizeDoJoinComplete.invoke(path, outPath)
-                    }
+                override fun onCompleted() {
+                    onReSizeDoJoinComplete.invoke(path, outPath)
+                }
 
-                }).start()
-
-
-
-
+            }).start()
     }
 
     override fun initActions() {
@@ -331,27 +349,28 @@ class ProcessVideoActivity : BaseActivity() {
         }
     }
 
-    fun selectTargetSize(videoPathList: ArrayList<String>):Size {
+    private fun selectTargetSize(videoPathList: ArrayList<String>): Size {
 
-        var targetSize = Size(0,0)
-        for(path in videoPathList) {
+        var targetSize = Size(0, 0)
+        for (path in videoPathList) {
             val size = MediaUtils.getVideoSize(path)
-            if(size.width > targetSize.width) {
+            if (size.width > targetSize.width) {
                 targetSize = size
             }
         }
-        val finalW = if(targetSize.width %2 == 1) {
-            targetSize.width+1
+        val finalW = if (targetSize.width % 2 == 1) {
+            targetSize.width + 1
         } else {
             targetSize.width
         }
-        val finalH = if(targetSize.height%2==1) {
-            targetSize.height+1
+        val finalH = if (targetSize.height % 2 == 1) {
+            targetSize.height + 1
         } else {
             targetSize.height
         }
-        return Size(finalW,finalH)
+        return Size(finalW, finalH)
     }
+
     private var exportComplete = false
     private var onPause = false
     private var mFinalPath = ""
@@ -364,9 +383,10 @@ class ProcessVideoActivity : BaseActivity() {
         } else {
             exportComplete = true
             mFinalPath = filePath
-            if(!onPause) {
+            if (!onPause) {
 
-                ShareVideoActivity.gotoActivity(this, filePath,
+                ShareVideoActivity.gotoActivity(
+                    this, filePath,
                     showRating = true, fromProcess = true
                 )
                 showToast(filePath)
@@ -382,17 +402,18 @@ class ProcessVideoActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        if(onPause) {
+        if (onPause) {
             onPause = false
-            if(exportComplete) {
-                if(mFinalPath.isNotEmpty()) {
+            if (exportComplete) {
+                if (mFinalPath.isNotEmpty()) {
                     onComplete(mFinalPath)
                 }
             }
         }
 
     }
-    private var mGPUMp4Composer:GPUMp4Composer?=null
+
+    private var mGPUMp4Composer: GPUMp4Composer? = null
     private var mCount = 0
     private var mVideoDataSlideList = ArrayList<VideoInSlideData>()
     private var mVideoQuality = 0
@@ -406,20 +427,20 @@ class ProcessVideoActivity : BaseActivity() {
     private var mSlideVideoVolume = 0f
     private var mAudioPath = ""
     private var mStickerListAdded = ArrayList<StickerForRenderData>()
-    private var updateProgress = {progress: Double ->
+    private var updateProgress = { progress: Double ->
         Logger.e("$mCount -- $progress")
         runOnUiThread {
-         progressBar.setProgress((progress.toFloat()*mCurrentVideoDuration+mTimeOffset)*100*0.8f/mTotalVideoTime)
+            progressBar.setProgress((progress.toFloat() * mCurrentVideoDuration + mTimeOffset) * 100 * 0.8f / mTotalVideoTime)
         }
     }
-    private var onComplete = {outPath:String->
+    private var onComplete = { outPath: String ->
         mTempVideoSlidePathList.add(outPath)
-        mTimeOffset+=mCurrentVideoDuration
+        mTimeOffset += mCurrentVideoDuration
         ++mCount
-        if(mCount < mVideoDataSlideList.size) processSlideVideo()
+        if (mCount < mVideoDataSlideList.size) processSlideVideo()
         else {
             Logger.e("doneee !")
-            Thread{
+            Thread {
                 joinVideoSlide()
             }.start()
         }
@@ -429,24 +450,34 @@ class ProcessVideoActivity : BaseActivity() {
 
         val outJoinVideoPath = joiVideoSameType(mTempVideoSlidePathList) {
             runOnUiThread {
-                progressBar.setProgress(80f+0.1f*it)
+                progressBar.setProgress(80f + 0.1f * it)
             }
         }
-        val finalMusicPath= FileUtils.getTempMp3OutPutFile()
+        val finalMusicPath = FileUtils.getTempMp3OutPutFile()
 
         val outVideo = FileUtils.getTempVideoPath()
-        val finalPath =FileUtils.outputFolderPath+"/video-maker-${mVideoOutRatio}-${System.currentTimeMillis()}-${mVideoSlideOutW}x$mVideoSlideOutH.mp4"
-        if(mAudioPath.length < 5) {
+        val finalPath =
+            FileUtils.outputFolderPath + "/video-maker-${mVideoOutRatio}-${System.currentTimeMillis()}-${mVideoSlideOutW}x$mVideoSlideOutH.mp4"
+        if (mAudioPath.length < 5) {
             File(outJoinVideoPath).renameTo(File(finalPath))
             onComplete(finalPath)
             return
         }
 
 
-        if(mSlideMusicVolume < 1f) {
-            val adjustAudioVolumeCmd = arrayOf("-y", "-i", mAudioPath, "-vcodec","copy","-filter_complex", "[0:a]volume=${mSlideMusicVolume}", finalMusicPath)
+        if (mSlideMusicVolume < 1f) {
+            val adjustAudioVolumeCmd = arrayOf(
+                "-y",
+                "-i",
+                mAudioPath,
+                "-vcodec",
+                "copy",
+                "-filter_complex",
+                "[0:a]volume=${mSlideMusicVolume}",
+                finalMusicPath
+            )
             FFmpeg(adjustAudioVolumeCmd).runCmd {
-                val cmd = getVideoSlideAddMusicCmd(outJoinVideoPath, finalMusicPath,outVideo)
+                val cmd = getVideoSlideAddMusicCmd(outJoinVideoPath, finalMusicPath, outVideo)
                 FFmpeg(cmd).runCmd {
                     File(outVideo).apply {
                         renameTo(File(finalPath))
@@ -458,7 +489,7 @@ class ProcessVideoActivity : BaseActivity() {
             }
 
         } else {
-           val cmd = getVideoSlideAddMusicCmd(outJoinVideoPath, mAudioPath,outVideo)
+            val cmd = getVideoSlideAddMusicCmd(outJoinVideoPath, mAudioPath, outVideo)
             FFmpeg(cmd).runCmd {
                 File(outVideo).apply {
                     renameTo(File(finalPath))
@@ -470,7 +501,10 @@ class ProcessVideoActivity : BaseActivity() {
         }
     }
 
-    private fun joiVideoSameType(pathList:ArrayList<String>, onProgress:((Float)->Unit)?=null):String {
+    private fun joiVideoSameType(
+        pathList: ArrayList<String>,
+        onProgress: ((Float) -> Unit)? = null
+    ): String {
         var totalVideoTime = 0
         pathList.forEach {
             totalVideoTime += MediaUtils.getAudioDuration(it).toInt()
@@ -479,12 +513,12 @@ class ProcessVideoActivity : BaseActivity() {
         val muxer = MediaMuxer(outJoinVideoPath, MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4)
         var audioIndex = -1
         var videoIndex = -1
-        for(path in pathList) {
-            if(MediaUtils.videoHasAudio(path)) {
-                var videoExtractor = MediaExtractor()
+        for (path in pathList) {
+            if (MediaUtils.videoHasAudio(path)) {
+                val videoExtractor = MediaExtractor()
                 videoExtractor.setDataSource(path)
 
-                var audioExtractor = MediaExtractor()
+                val audioExtractor = MediaExtractor()
                 audioExtractor.setDataSource(path)
 
                 val audioFormat = MediaUtils.selectAudioTrack(audioExtractor)
@@ -497,8 +531,8 @@ class ProcessVideoActivity : BaseActivity() {
             }
         }
 
-        if(audioIndex == -1) {
-            var videoExtractor = MediaExtractor()
+        if (audioIndex == -1) {
+            val videoExtractor = MediaExtractor()
             videoExtractor.setDataSource(pathList[0])
             val videoFormat = MediaUtils.selectVideoTrack(videoExtractor)
             videoIndex = muxer.addTrack(videoFormat)
@@ -506,23 +540,22 @@ class ProcessVideoActivity : BaseActivity() {
 
         muxer.start()
 
-        val buffer = ByteBuffer.allocate(1024*1024)
+        val buffer = ByteBuffer.allocate(1024 * 1024)
         val bufferInfo = MediaCodec.BufferInfo()
         var videoTimeOffset = 0L
         var audioTimeOffset = 0L
 
-        for(path in pathList) {
+        for (path in pathList) {
             val hasAudio = MediaUtils.videoHasAudio(path)
-            var duration = MediaUtils.getAudioDuration(path)
             val videoExtractor = MediaExtractor()
             videoExtractor.setDataSource(path)
             MediaUtils.selectVideoTrack(videoExtractor)
             Logger.e("$path has audio = $hasAudio")
             while (true) {
                 val chunkSize = videoExtractor.readSampleData(buffer, 0)
-                if(chunkSize >= 0) {
+                if (chunkSize >= 0) {
 
-                    bufferInfo.presentationTimeUs = videoExtractor.sampleTime+videoTimeOffset
+                    bufferInfo.presentationTimeUs = videoExtractor.sampleTime + videoTimeOffset
                     bufferInfo.flags = videoExtractor.sampleFlags
                     bufferInfo.size = chunkSize
 
@@ -530,7 +563,7 @@ class ProcessVideoActivity : BaseActivity() {
 
                     Logger.e("video time = ${bufferInfo.presentationTimeUs}")
 
-                    val progress = (bufferInfo.presentationTimeUs.toFloat()/10/totalVideoTime)
+                    val progress = (bufferInfo.presentationTimeUs.toFloat() / 10 / totalVideoTime)
                     onProgress?.invoke(progress)
                     videoExtractor.advance()
 
@@ -541,36 +574,31 @@ class ProcessVideoActivity : BaseActivity() {
 
             }
             videoExtractor.release()
-            if(hasAudio) {
+            if (hasAudio) {
                 val audioExtractor = MediaExtractor()
                 audioExtractor.setDataSource(path)
                 MediaUtils.selectAudioTrack(audioExtractor)
                 while (true) {
                     val chunkSize = audioExtractor.readSampleData(buffer, 0)
-                    if(chunkSize >= 0) {
+                    if (chunkSize >= 0) {
 
-                        bufferInfo.presentationTimeUs = audioExtractor.sampleTime+audioTimeOffset
+                        bufferInfo.presentationTimeUs = audioExtractor.sampleTime + audioTimeOffset
                         bufferInfo.flags = audioExtractor.sampleFlags
                         bufferInfo.size = chunkSize
 
                         muxer.writeSampleData(audioIndex, buffer, bufferInfo)
 
                         audioExtractor.advance()
-
                     } else {
-
                         break
                     }
                 }
                 audioExtractor.release()
-            } else {
-
             }
 
-
-            val time = MediaUtils.getVideoDuration(path)*1000
-            videoTimeOffset+=time
-            audioTimeOffset+=time
+            val time = MediaUtils.getVideoDuration(path) * 1000
+            videoTimeOffset += time
+            audioTimeOffset += time
         }
 
         muxer.stop()
@@ -578,40 +606,120 @@ class ProcessVideoActivity : BaseActivity() {
         return outJoinVideoPath
     }
 
-    private fun getVideoSlideAddMusicCmd(videoPath:String, audioPath:String, outPath:String) :Array<String>{
+    private fun getVideoSlideAddMusicCmd(
+        videoPath: String,
+        audioPath: String,
+        outPath: String
+    ): Array<String> {
         val videoDuration = MediaUtils.getAudioDuration(videoPath)
         val audioDuration = MediaUtils.getAudioDuration(audioPath)
-        val cmd:Array<String>
-        if(MediaUtils.videoHasAudio(videoPath)) {
+        val cmd: Array<String>
+        if (MediaUtils.videoHasAudio(videoPath)) {
             if (audioDuration <= videoDuration) {
-                cmd = arrayOf("-y", "-i", videoPath, "-stream_loop", "-1", "-i", audioPath, "-filter_complex", "[0:a]volume=${mSlideVideoVolume},amix=inputs=2:duration=first:dropout_transition=0", "-c:a", "aac", "-vsync", "2", "-q:a", "5", "-c:v", "copy", "-shortest", outPath)
+                cmd = arrayOf(
+                    "-y",
+                    "-i",
+                    videoPath,
+                    "-stream_loop",
+                    "-1",
+                    "-i",
+                    audioPath,
+                    "-filter_complex",
+                    "[0:a]volume=${mSlideVideoVolume},amix=inputs=2:duration=first:dropout_transition=0",
+                    "-c:a",
+                    "aac",
+                    "-vsync",
+                    "2",
+                    "-q:a",
+                    "5",
+                    "-c:v",
+                    "copy",
+                    "-shortest",
+                    outPath
+                )
             } else {
-                cmd = arrayOf("-y", "-i", videoPath, "-i", audioPath, "-filter_complex", "[0:a]volume=${mSlideVideoVolume},amix=inputs=2:duration=first:dropout_transition=0", "-c:a", "aac", "-vsync", "2", "-q:a", "5", "-c:v", "copy", "-shortest", outPath)
+                cmd = arrayOf(
+                    "-y",
+                    "-i",
+                    videoPath,
+                    "-i",
+                    audioPath,
+                    "-filter_complex",
+                    "[0:a]volume=${mSlideVideoVolume},amix=inputs=2:duration=first:dropout_transition=0",
+                    "-c:a",
+                    "aac",
+                    "-vsync",
+                    "2",
+                    "-q:a",
+                    "5",
+                    "-c:v",
+                    "copy",
+                    "-shortest",
+                    outPath
+                )
             }
         } else {
             if (audioDuration <= videoDuration) {
-                cmd = arrayOf("-y", "-i", videoPath, "-stream_loop", "-1", "-i", audioPath, "-filter_complex", "amix=inputs=2:duration=first:dropout_transition=0", "-c:a", "aac", "-vsync", "2", "-q:a", "5", "-c:v", "copy", "-shortest", outPath)
+                cmd = arrayOf(
+                    "-y",
+                    "-i",
+                    videoPath,
+                    "-stream_loop",
+                    "-1",
+                    "-i",
+                    audioPath,
+                    "-filter_complex",
+                    "amix=inputs=2:duration=first:dropout_transition=0",
+                    "-c:a",
+                    "aac",
+                    "-vsync",
+                    "2",
+                    "-q:a",
+                    "5",
+                    "-c:v",
+                    "copy",
+                    "-shortest",
+                    outPath
+                )
             } else {
-                cmd = arrayOf("-y", "-i", videoPath, "-i", audioPath, "-filter_complex", "amix=inputs=2:duration=first:dropout_transition=0", "-c:a", "aac", "-vsync", "2", "-q:a", "5", "-c:v", "copy", "-shortest", outPath)
+                cmd = arrayOf(
+                    "-y",
+                    "-i",
+                    videoPath,
+                    "-i",
+                    audioPath,
+                    "-filter_complex",
+                    "amix=inputs=2:duration=first:dropout_transition=0",
+                    "-c:a",
+                    "aac",
+                    "-vsync",
+                    "2",
+                    "-q:a",
+                    "5",
+                    "-c:v",
+                    "copy",
+                    "-shortest",
+                    outPath
+                )
             }
         }
         return cmd
     }
 
-    private fun calBitRate(videoQuality:Int):Int {
-        if(videoQuality <= 480) return 2000000
-        if(videoQuality <= 720) return 5000000
-        if(videoQuality <= 1080 ) return 10000000
+    private fun calBitRate(videoQuality: Int): Int {
+        if (videoQuality <= 480) return 2000000
+        if (videoQuality <= 720) return 5000000
+        if (videoQuality <= 1080) return 10000000
         else return 10000000
     }
 
-    private fun selectMaxBitRate(videoList:ArrayList<String>):Int {
+    private fun selectMaxBitRate(videoList: ArrayList<String>): Int {
         var max = 0
         videoList.forEach {
             val bit = MediaUtils.getVideoBitRare(it)
-            if(bit > max) max = bit
+            if (bit > max) max = bit
         }
-        if(max > 10000000) max = 10000000
+        if (max > 10000000) max = 10000000
         return max
     }
 
@@ -624,16 +732,16 @@ class ProcessVideoActivity : BaseActivity() {
         mCurrentVideoDuration = MediaUtils.getVideoDuration(path)
         var outW = mVideoQuality
         var outH = mVideoQuality
-        when(mVideoOutRatio) {
+        when (mVideoOutRatio) {
 
             3 -> {
 
             }
 
             1 -> {
-                when(mVideoQuality) {
+                when (mVideoQuality) {
                     480 -> {
-                       outW = 858
+                        outW = 858
                     }
                     720 -> {
                         outW = 1080
@@ -645,7 +753,7 @@ class ProcessVideoActivity : BaseActivity() {
             }
 
             2 -> {
-                when(mVideoQuality) {
+                when (mVideoQuality) {
                     480 -> {
                         outH = 858
                     }
@@ -665,21 +773,26 @@ class ProcessVideoActivity : BaseActivity() {
         val filter = getFilterFromType(filterType)
         val listSticker = ArrayList<StickerInfo>()
         mStickerListAdded.forEach {
-            val endTime = it.endOffset-mVideoProcessedTime
-            val startTime = it.startOffset-mVideoProcessedTime
+            val endTime = it.endOffset - mVideoProcessedTime
+            val startTime = it.startOffset - mVideoProcessedTime
 
-            if(endTime > 0) {
-                val startOffset = if(startTime <= 0) {
+            if (endTime > 0) {
+                val startOffset = if (startTime <= 0) {
                     0
                 } else {
                     startTime
                 }
-                val endOffset = if(endTime >= mCurrentVideoDuration) {
+                val endOffset = if (endTime >= mCurrentVideoDuration) {
                     mCurrentVideoDuration
                 } else {
                     endTime
                 }
-                val stickerInfo = StickerInfo(View.generateViewId(),it.stickerPath,startOffset.toLong(),endOffset.toLong())
+                val stickerInfo = StickerInfo(
+                    View.generateViewId(),
+                    it.stickerPath,
+                    startOffset.toLong(),
+                    endOffset.toLong()
+                )
                 Logger.e("sticker path = ${it.stickerPath}")
                 listSticker.add(stickerInfo)
             }
@@ -712,8 +825,8 @@ class ProcessVideoActivity : BaseActivity() {
             }).start()
     }
 
-    private fun getFilterFromType(type:GSEffectUtils.EffectType) :GlFilter{
-       return when(type) {
+    private fun getFilterFromType(type: GSEffectUtils.EffectType): GlFilter {
+        return when (type) {
             GSEffectUtils.EffectType.NONE -> GlFilter()
             GSEffectUtils.EffectType.SNOW -> GlSnowFilter()
             GSEffectUtils.EffectType.RAIN -> GlRainFilter()
@@ -746,7 +859,7 @@ class ProcessVideoActivity : BaseActivity() {
         try {
             mGPUMp4Composer?.cancel()
             mFFM?.cancel()
-        } catch (e:Exception) {
+        } catch (e: Exception) {
 
         }
     }

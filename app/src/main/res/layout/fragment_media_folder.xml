@@ -5,13 +5,11 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mediaFolderListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginEnd="6dp"
         android:layout_marginTop="5dp"
-        tools:listitem="@layout/item_media_album"/>
-
+        android:layout_marginEnd="6dp"
+        tools:listitem="@layout/item_media_album" />
 </androidx.constraintlayout.widget.ConstraintLayout>
