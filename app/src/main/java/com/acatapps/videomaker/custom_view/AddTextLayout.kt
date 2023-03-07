@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.layout_edit_text_fonts.view.*
 import kotlinx.android.synthetic.main.layout_edit_text_style.view.*
 
 @SuppressLint("ViewConstructor")
-class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null) :
+class AddTextLayout(context: Context?, editTextSticker: EditTextSticker? = null) :
     LinearLayout(context) {
     private var mEditState = false
     private var mMainTextSticker: EditTextSticker? = null
@@ -39,7 +39,7 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
     }
     private var mEditMode = EditMode.TEXT
 
-    private var mTextAttrData:TextStickerAttrData?=null
+    private var mTextAttrData: TextStickerAttrData? = null
 
     init {
         editTextSticker?.let {
@@ -53,7 +53,8 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
     }
 
     private fun initAttrs() {
-        layoutParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        layoutParams =
+            LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         inflate(context, R.layout.layout_add_text, this)
         mColorListAdapter.setItemList(RawResourceReader.readTextColorFile())
         initAction()
@@ -110,19 +111,20 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
         val screenW = DimenUtils.screenWidth(context)
         val videoPreviewScale = DimenUtils.videoPreviewScale()
 
-        textContainer.layoutParams.width = (screenW*videoPreviewScale).toInt()
-        textContainer.layoutParams.height = (screenW*videoPreviewScale).toInt()
+        textContainer.layoutParams.width = (screenW * videoPreviewScale).toInt()
+        textContainer.layoutParams.height = (screenW * videoPreviewScale).toInt()
         textContainer.addView(mMainTextSticker)
 
 
     }
+
     private var autoShowKeyboard = false
     fun onResume() {
         Logger.e("add text layout on resume")
-        object :CountDownTimer(500,500){
+        object : CountDownTimer(500, 500) {
             override fun onFinish() {
-                if(autoShowKeyboard)
-                openKeyboard()
+                if (autoShowKeyboard)
+                    openKeyboard()
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -190,21 +192,19 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
 
 
     private fun openKeyboard() {
-     autoShowKeyboard = true
+        autoShowKeyboard = true
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, InputMethodManager.HIDE_IMPLICIT_ONLY)
 
     }
 
-     fun hideKeyboard() {
+    fun hideKeyboard() {
 
-         autoShowKeyboard = false
+        autoShowKeyboard = false
         val imm: InputMethodManager =
             (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
         imm.hideSoftInputFromWindow(windowToken, 0)
     }
-
-
 
 
     private fun playTranslationYAnimation(view: View) {
@@ -219,13 +219,13 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
     }
 
     fun getEditTextView(): EditTextSticker? {
-        if (mMainTextSticker?.getMainText()!!.isNotEmpty()) {
+        return if (mMainTextSticker?.getMainText()!!.isNotEmpty()) {
             textContainer.removeView(mMainTextSticker)
-            return mMainTextSticker
+            mMainTextSticker
         } else {
             Toast.makeText(context, context.getString(R.string.type_your_text), Toast.LENGTH_LONG)
                 .show()
-            return null
+            null
         }
     }
 
@@ -237,21 +237,10 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
         NONE, TEXT, FONTS, COLOR, STYLE
     }
 
-
-
-    fun onBackPress(): EditTextSticker? {
-        return if (mEditState) {
-            textContainer.removeView(mMainTextSticker)
-            mMainTextSticker
-        } else {
-            null
-        }
-    }
-
-    fun onCancelEdit():EditTextSticker? {
+    fun onCancelEdit(): EditTextSticker? {
         hideKeyboard()
-        return if(mEditState) {
-            if(mTextAttrData == null) return null
+        return if (mEditState) {
+            if (mTextAttrData == null) return null
             mTextAttrData?.let {
                 mMainTextSticker?.setAttr(it)
             }
@@ -264,15 +253,12 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
         }
     }
 
-    fun editState():Boolean=mEditState
-
     private fun updateIcon() {
-
         icKeyboard.setImageResource(R.drawable.ic_keyboard_default)
         icFonts.setImageResource(R.drawable.ic_font_default)
         icColor.setImageResource(R.drawable.ic_color_default)
         icStyle.setImageResource(R.drawable.ic_font_style_default)
-        when(mEditMode) {
+        when (mEditMode) {
             EditMode.TEXT -> {
                 icKeyboard.setImageResource(R.drawable.ic_keyboard_active)
             }
@@ -287,5 +273,4 @@ class AddTextLayout(context: Context?,  editTextSticker: EditTextSticker? = null
             }
         }
     }
-
 }

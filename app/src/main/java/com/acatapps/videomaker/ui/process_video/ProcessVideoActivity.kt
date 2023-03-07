@@ -13,7 +13,6 @@ import com.daasuu.gpuv.egl.filter.*
 import com.daasuu.gpuv.egl.more_filter.filters.*
 import com.daasuu.gpuv.player.StickerInfo
 import com.acatapps.videomaker.R
-import com.acatapps.videomaker.application.VideoMakerApplication
 import com.acatapps.videomaker.base.BaseActivity
 import com.acatapps.videomaker.data.StickerForRenderData
 import com.acatapps.videomaker.data.VideoInSlideData
@@ -230,8 +229,8 @@ class ProcessVideoActivity : BaseActivity() {
                                         ShareVideoActivity.gotoActivity(
                                             this,
                                             outVideoPath,
-                                            true,
-                                            false
+                                            showRating = true,
+                                            fromProcess = false
                                         )
                                         finish()
                                     }
@@ -316,6 +315,7 @@ class ProcessVideoActivity : BaseActivity() {
             .videoBitrate(mMaxJoinBitRate)
             .listener(object : GPUMp4Composer.Listener {
                 override fun onFailed(exception: Exception?) {
+                    Logger.e("onFailed: ${exception?.printStackTrace()}")
 
                 }
 
@@ -325,7 +325,7 @@ class ProcessVideoActivity : BaseActivity() {
                 }
 
                 override fun onCanceled() {
-
+                    Logger.e("onCanceled")
                 }
 
                 override fun onCompleted() {

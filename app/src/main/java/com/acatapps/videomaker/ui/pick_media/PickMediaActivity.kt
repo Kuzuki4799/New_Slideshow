@@ -11,8 +11,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.acatapps.videomaker.R
 import com.acatapps.videomaker.adapter.ItemTouchHelperCallback
@@ -25,13 +25,11 @@ import com.acatapps.videomaker.models.MediaPickedDataModel
 import com.acatapps.videomaker.ui.edit_video.VideoSlideActivity2
 import com.acatapps.videomaker.ui.join_video.JoinVideoActivity2
 import com.acatapps.videomaker.ui.slide_show_v2.ImageSlideShowActivity
-import com.acatapps.videomaker.utils.DimenUtils
 import com.acatapps.videomaker.utils.Logger
 import kotlinx.android.synthetic.main.activity_pick_media.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.closestKodein
 import org.kodein.di.generic.instance
-import kotlin.math.roundToInt
 
 open class PickMediaActivity : BaseActivity(), KodeinAware {
 
@@ -62,16 +60,6 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
         fun gotoActivity(activity: Activity, mediaKind: MediaKind) {
             val intent = Intent(activity, PickMediaActivity::class.java).apply {
                 putExtra("MediaKind", mediaKind.toString())
-            }
-            (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
-                intent, isShowAds = true, isFinish = false
-            )
-        }
-
-        fun gotoActivity(activity: Activity, mediaKind: MediaKind, themePath: String) {
-            val intent = Intent(activity, PickMediaActivity::class.java).apply {
-                putExtra("MediaKind", mediaKind.toString())
-                putExtra("themePath", themePath)
             }
             (activity as com.hope_studio.base_ads.base.BaseActivity).openNewActivity(
                 intent, isShowAds = true, isFinish = false
@@ -153,10 +141,10 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
         tabLayout.setupWithViewPager(viewPager)
         viewPager.offscreenPageLimit = 2
         viewPager.adapter = PickMediaPagerAdapter(this, supportFragmentManager)
-
-        val col = (DimenUtils.screenWidth(this) / (96 * DimenUtils.density(this))).roundToInt()
         mediaPickedListView.adapter = mMediaPickedAdapter
-        mediaPickedListView.layoutManager = GridLayoutManager(this, col)
+        mediaPickedListView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
         addItemTouchCallback(mediaPickedListView)
         imagePickedArea.visibility = View.GONE
         mPickMediaViewModel.localStorageData.getAllMedia(mMediaKind)
@@ -182,11 +170,6 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
     }
 
     override fun initActions() {
-        expandViewButton.setOnClickListener {
-            if (isExpanded) collapseView()
-            else expandView()
-        }
-
         startButton.setClick {
             if (startAvailable) {
                 startAvailable = false
@@ -329,8 +312,6 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
         }
     }
 
-    private var isExpanded = false
-
     override fun onResume() {
         super.onResume()
         mPickMediaViewModel.localStorageData.getAllMedia(mMediaKind)
@@ -340,24 +321,6 @@ open class PickMediaActivity : BaseActivity(), KodeinAware {
         } else {
             updateNumberImageSelected()
         }
-    }
-
-    private fun expandView() {
-        if (isExpanded) return
-        expandViewButton.rotation = 180f
-        val target = DimenUtils.screenHeight(this) * 2 / 3 - 220 * DimenUtils.density(this)
-        imagePickedArea.layoutParams.height += target.toInt()
-        imagePickedArea.requestLayout()
-        isExpanded = true
-    }
-
-    private fun collapseView() {
-        if (!isExpanded) return
-        expandViewButton.rotation = 0f
-        val target = DimenUtils.screenHeight(this) * 2 / 3 - 220 * DimenUtils.density(this)
-        imagePickedArea.layoutParams.height -= target.toInt()
-        imagePickedArea.requestLayout()
-        isExpanded = false
     }
 
     override fun onBackPressed() {

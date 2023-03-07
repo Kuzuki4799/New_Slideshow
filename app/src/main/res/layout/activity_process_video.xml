@@ -15,24 +15,26 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="260dp" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/art"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
         android:layout_margin="32dp"
-        android:src="@drawable/ic_artwork_rendering"
         app:layout_constraintBottom_toTopOf="@id/guideLine50"
-        app:layout_constraintDimensionRatio="454:423"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/iv_render"
+        app:lottie_repeatMode="restart" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/exportingText"
+        style="@style/textNormalBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/roboto_bold"
         android:text="@string/exporting_video"
         android:textColor="@color/blackA01"
         android:textSize="21sp"
@@ -45,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="32dp"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="42dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +55,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/noticeLabel"
+        style="@style/textNormal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -69,18 +72,20 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/cancelButton"
+        style="@style/textNormalBold"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_margin="24dp"
-        android:fontFamily="@font/roboto_regular"
         android:gravity="center"
+        android:background="@drawable/bg_cancel_button"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:text="@string/cancel"
-        android:textColor="@color/blackA01"
+        android:textColor="@color/white"
         android:textSize="@dimen/largeTextSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticeLabel" />
 
     <LinearLayout
         android:id="@+id/llNative"
@@ -89,10 +94,10 @@
         android:layout_margin="12dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/cancelButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/noticeLabel">
+        app:layout_constraintTop_toBottomOf="@id/cancelButton">
 
         <com.hope_studio.base_ads.ads.widget.NativeAds
             android:id="@+id/nativeAdViewInProcess"

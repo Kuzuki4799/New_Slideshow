@@ -22,6 +22,4 @@ class SplashActivity : BaseSActivity() {
     override fun getLayoutId(): Int {
         return R.layout.activity_splash
     }
-
-
 }

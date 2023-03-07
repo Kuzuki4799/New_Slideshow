@@ -162,8 +162,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icPlay"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginTop="2dp"
             android:src="@drawable/ic_play_circle_outline_white_24dp"
             android:visibility="gone"

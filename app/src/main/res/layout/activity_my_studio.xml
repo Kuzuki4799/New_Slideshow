@@ -24,6 +24,7 @@
             android:src="@drawable/ic_no_project" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_project"

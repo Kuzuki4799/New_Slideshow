@@ -10,7 +10,7 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/bg_gradient"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabGravity="fill"
@@ -32,7 +32,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/imagePickedArea"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="140dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -47,17 +47,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:shadowBottomOnly="true" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/expandViewButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/bg_ripple_circle_white_button"
-            android:padding="4dp"
-            android:src="@drawable/ic_swipe_up_vector"
-            app:cornerRadiusImageView="12dp"
-            app:layout_constraintEnd_toEndOf="@id/bgWhiteView"
-            app:layout_constraintStart_toStartOf="@id/bgWhiteView"
-            app:layout_constraintTop_toTopOf="@id/bgWhiteView" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.acatapps.videomaker.custom_view.RippleTextView
             android:id="@+id/startButton"

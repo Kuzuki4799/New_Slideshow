@@ -26,6 +26,7 @@ abstract class BaseSActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(getLayoutId())
         fullScreencall()
         BLog.d("activity: " + this.javaClass.simpleName)
 

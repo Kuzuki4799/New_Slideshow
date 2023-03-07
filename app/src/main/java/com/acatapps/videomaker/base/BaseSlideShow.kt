@@ -2,7 +2,9 @@ package com.acatapps.videomaker.base
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.Rect
+import android.graphics.drawable.Drawable
 import android.media.MediaRecorder
 import android.opengl.GLSurfaceView
 import android.os.Bundle
@@ -10,12 +12,10 @@ import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.daasuu.gpuv.player.GPUPlayerView
 import com.acatapps.videomaker.R
-import com.acatapps.videomaker.adapter.RecordListAdapter
 import com.acatapps.videomaker.adapter.StickerAddedAdapter
 import com.acatapps.videomaker.adapter.TextStickerAddedAdapter
 import com.acatapps.videomaker.custom_view.*
@@ -27,18 +27,18 @@ import com.acatapps.videomaker.modules.audio_manager_v3.AudioManagerV3
 import com.acatapps.videomaker.ui.select_music.SelectMusicActivity
 import com.acatapps.videomaker.utils.BitmapUtils
 import com.acatapps.videomaker.utils.DimenUtils
-import com.acatapps.videomaker.utils.FileUtils
 import com.acatapps.videomaker.utils.Logger
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import kotlinx.android.synthetic.main.activity_base_layout.*
 import kotlinx.android.synthetic.main.activity_base_tools_edit.*
 import kotlinx.android.synthetic.main.layout_change_music_tools.view.*
-import kotlinx.android.synthetic.main.layout_change_record_tools.view.*
 import kotlinx.android.synthetic.main.layout_change_sticker_tools.view.*
 import kotlinx.android.synthetic.main.layout_change_text_tools.view.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.closestKodein
 import org.kodein.di.generic.instance
-import java.io.IOException
 import kotlin.math.roundToInt
 
 abstract class BaseSlideShow : BaseActivity(), KodeinAware {
@@ -66,7 +66,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         })
 
-    private val mRecoredAdapter = RecordListAdapter()
     override fun initViews() {
         if (!isImageSlideShow())
             for (index in 0 until menuItemContainer.childCount) {
@@ -152,12 +151,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         }
 
-        changeRecordTools.setOnClickListener {
-            if (toolType == ToolType.RECORDER) return@setOnClickListener
-            toolType = ToolType.RECORDER
-            showLayoutChangeRecord()
-
-        }
         setRightButton(R.drawable.ic_save_vector) {
             performExportVideo()
             hideKeyboard()
@@ -282,53 +275,109 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             chooseStickerLayout.callback = object : ChooseStickerLayout.StickerCallback {
                 override fun onSelectSticker(stickerPath: String) {
                     setOffAllSticker()
-                    Thread {
-                        BitmapUtils.loadBitmapFromXML(stickerPath) {
-                            runOnUiThread {
-                                it?.let { bitmap ->
-                                    val viewId = View.generateViewId()
-                                    val stickerAddedDataModel = StickerAddedDataModel(
-                                        bitmap,
-                                        true,
-                                        0,
-                                        getMaxDuration(),
-                                        viewId
-                                    )
-                                    mStickerAddedAdapter.setOffAll()
-                                    mStickerAddedAdapter.addNewSticker(stickerAddedDataModel)
-                                    stickerContainer.addView(
-                                        StickerView(this@BaseSlideShow, null).apply {
-                                            setBitmap(
-                                                bitmap,
-                                                true,
-                                                stickerContainer.width,
-                                                stickerContainer.height
-                                            )
-                                            id = viewId
-                                            deleteCallback = {
-                                                stickerContainer.removeView(this)
-                                                mStickerAddedAdapter.deleteItem(
-                                                    stickerAddedDataModel
-                                                )
-                                                setOffAllSticker()
-                                                mStickerAddedAdapter.setOffAll()
 
-                                                getTopViewInToolAction().cropTimeView.visibility =
-                                                    View.INVISIBLE
-                                                getTopViewInToolAction().buttonPlayAndPause.visibility =
-                                                    View.INVISIBLE
-                                                Logger.e(" --> on delete sticker")
-                                                showVideoController()
-                                                if (mStickerAddedAdapter.itemCount < 1) {
-                                                    getTopViewInToolAction().cancelAddSticker.visibility =
-                                                        View.GONE
-                                                }
+                    Glide.with(this@BaseSlideShow).asBitmap()
+                        .load(stickerPath)
+                        .into(object : CustomTarget<Bitmap>() {
+                            override fun onResourceReady(
+                                resource: Bitmap,
+                                transition: Transition<in Bitmap>?
+                            ) {
+                                val viewId = View.generateViewId()
+                                val stickerAddedDataModel = StickerAddedDataModel(
+                                    resource,
+                                    true,
+                                    0,
+                                    getMaxDuration(),
+                                    viewId
+                                )
+                                mStickerAddedAdapter.setOffAll()
+                                mStickerAddedAdapter.addNewSticker(stickerAddedDataModel)
+                                stickerContainer.addView(
+                                    StickerView(this@BaseSlideShow, null).apply {
+                                        setBitmap(
+                                            resource,
+                                            true,
+                                            stickerContainer.width,
+                                            stickerContainer.height
+                                        )
+                                        id = viewId
+                                        deleteCallback = {
+                                            stickerContainer.removeView(this)
+                                            mStickerAddedAdapter.deleteItem(
+                                                stickerAddedDataModel
+                                            )
+                                            setOffAllSticker()
+                                            mStickerAddedAdapter.setOffAll()
+
+                                            getTopViewInToolAction().cropTimeView.visibility =
+                                                View.INVISIBLE
+                                            getTopViewInToolAction().buttonPlayAndPause.visibility =
+                                                View.INVISIBLE
+                                            Logger.e(" --> on delete sticker")
+                                            showVideoController()
+                                            if (mStickerAddedAdapter.itemCount < 1) {
+                                                getTopViewInToolAction().cancelAddSticker.visibility =
+                                                    View.GONE
                                             }
-                                        })
-                                    updateChangeStickerLayout(stickerAddedDataModel, false)
-                                }
+                                        }
+                                    })
+                                updateChangeStickerLayout(stickerAddedDataModel, false)
                             }
-                        }
+
+                            override fun onLoadCleared(placeholder: Drawable?) {
+                            }
+                        })
+
+                    Thread {
+
+
+//                        BitmapUtils.loadBitmapFromXML(stickerPath) {
+//                            runOnUiThread {
+//                                it?.let { bitmap ->
+//                                    val viewId = View.generateViewId()
+//                                    val stickerAddedDataModel = StickerAddedDataModel(
+//                                        bitmap,
+//                                        true,
+//                                        0,
+//                                        getMaxDuration(),
+//                                        viewId
+//                                    )
+//                                    mStickerAddedAdapter.setOffAll()
+//                                    mStickerAddedAdapter.addNewSticker(stickerAddedDataModel)
+//                                    stickerContainer.addView(
+//                                        StickerView(this@BaseSlideShow, null).apply {
+//                                            setBitmap(
+//                                                bitmap,
+//                                                true,
+//                                                stickerContainer.width,
+//                                                stickerContainer.height
+//                                            )
+//                                            id = viewId
+//                                            deleteCallback = {
+//                                                stickerContainer.removeView(this)
+//                                                mStickerAddedAdapter.deleteItem(
+//                                                    stickerAddedDataModel
+//                                                )
+//                                                setOffAllSticker()
+//                                                mStickerAddedAdapter.setOffAll()
+//
+//                                                getTopViewInToolAction().cropTimeView.visibility =
+//                                                    View.INVISIBLE
+//                                                getTopViewInToolAction().buttonPlayAndPause.visibility =
+//                                                    View.INVISIBLE
+//                                                Logger.e(" --> on delete sticker")
+//                                                showVideoController()
+//                                                if (mStickerAddedAdapter.itemCount < 1) {
+//                                                    getTopViewInToolAction().cancelAddSticker.visibility =
+//                                                        View.GONE
+//                                                }
+//                                            }
+//                                        })
+//                                    updateChangeStickerLayout(stickerAddedDataModel, false)
+//                                }
+//                            }
+//                        }
                     }.start()
                     onBackPressed()
                 }
@@ -524,8 +573,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         mTextStickerAddedAdapter.itemList
 
     private fun showAddTextLayout(
-        editTextSticker: EditTextSticker? = null,
-        isEdit: Boolean = false
+        editTextSticker: EditTextSticker? = null, isEdit: Boolean = false
     ) {
         mTouchEnable = false
 
@@ -569,7 +617,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     }
 
     private fun performAddText(editTextSticker: EditTextSticker) {
-
         stickerContainer.addView(editTextSticker)
         editTextSticker.changeIsAdded(true)
         getTopViewInToolAction().cancelAddTextSticker.visibility = View.VISIBLE
@@ -577,10 +624,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         if (mTextStickerAddedAdapter.getItemBytViewId(editTextSticker.id) == null) {
             textStickerAddedDataModel = TextStickerAddedDataModel(
                 editTextSticker.getMainText(),
-                true,
-                0,
-                getMaxDuration(),
-                editTextSticker.id
+                true, 0, getMaxDuration(), editTextSticker.id
             )
             mTextStickerAddedAdapter.addNewText(textStickerAddedDataModel)
         } else {
@@ -721,80 +765,17 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
     private var mRecordingFilePath = ""
     private var mRecordingTimer: CountDownTimer? = null
     private var mCurrentRecordObject: RecordedDataModel? = null
-    private fun showLayoutChangeRecord() {
-        val view = View.inflate(this, R.layout.layout_change_record_tools, null)
-        showToolsActionLayout(view)
-        view.recordedListView.adapter = mRecoredAdapter
-        view.recordedListView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        view.videoTimelineView.setMaxValue(getMaxDuration())
-        if (isImageSlideShow()) {
-            view.videoTimelineView.loadImage(getSourcePathList())
-        } else {
-            view.videoTimelineView.loadImageVideo(getSourcePathList())
-        }
-
-        view.videoTimelineView.setDataList(mRecoredAdapter.itemList)
-        view.videoTimelineView.onUpCallback = {
-            performSeekTo(it, false)
-
-        }
-
-        view.videoTimelineView.onStartFail = {
-            Toast.makeText(this, "StartRe", Toast.LENGTH_LONG).show()
-        }
-        view.videoTimelineView.onStropSuccess = {
-            mRecoredAdapter.addItem(RecordedDataModel(it))
-        }
-        view.videoTimelineView.onStopRecording = {
-
-
-        }
-        mRecoredAdapter.onSelect = {
-            mCurrentRecordObject = it
-            view.buttonRecord.setImageResource(R.drawable.ic_delete_white)
-            performSeekTo(it.startOffset)
-            view.videoTimelineView.moveTo(it.startOffset)
-        }
-        view.buttonRecord.setOnClickListener {
-            startRecordAudio()
-        }
-    }
 
     override fun onResume() {
         super.onResume()
         addTextLayout?.onResume()
     }
 
-    private fun startRecordAudio() {
-        performPauseVideo()
-        hideVideoController()
-        mRecordingFilePath = FileUtils.getAudioRecordTempFilePath()
-        mRecorder = MediaRecorder().apply {
-            setAudioSource(MediaRecorder.AudioSource.MIC)
-            setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
-            setOutputFile(mRecordingFilePath)
-            setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
-
-            try {
-                prepare()
-            } catch (e: IOException) {
-
-            }
-
-            start()
-            mRecordingTimer?.start()
-        }
-    }
-
-
     protected fun setGLView(glSurfaceView: GLSurfaceView) {
-
         slideGlViewContainer.addView(
             glSurfaceView,
             FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT
             )
         )
     }
@@ -808,7 +789,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
     protected fun releaseExoPlayerView() {
         slideGlViewContainer.removeAllViews()
-
     }
 
     fun updateTimeline() {
@@ -832,7 +812,6 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             }
         }
     }
-
 
     private fun checkTextInTime(timeMilSec: Int) {
         for (item in getTextAddedList()) {
@@ -922,15 +901,11 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
                     (bundle?.getSerializable(SelectMusicActivity.MUSIC_RETURN_DATA_KEY)) as MusicReturnData
                 changeMusicData(musicReturnData)
             }
-
         }
-
-
         super.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun changeMusicData(musicReturnData: MusicReturnData) {
-
         if (mCurrentMusicData == null || mCurrentMusicData?.audioFilePath != musicReturnData.audioFilePath || mCurrentMusicData?.startOffset != musicReturnData.startOffset || mCurrentMusicData?.length != musicReturnData.length) {
             mCurrentMusicData = musicReturnData
             mAudioManager.changeAudio(musicReturnData, getCurrentVideoTimeMs())
@@ -1012,21 +987,10 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             hideKeyboard()
         }
         setScreenTitle(getScreenTitle())
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
         hideKeyboard()
     }
-
-    protected fun setOffAllStickerAndText() {
-        setOffAllSticker()
-        setOffAllTextSticker()
-        mStickerAddedAdapter.setOffAll()
-        mTextStickerAddedAdapter.setOffAll()
-
-    }
-
-
 }

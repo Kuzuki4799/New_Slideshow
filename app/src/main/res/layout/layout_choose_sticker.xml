@@ -25,55 +25,91 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView1"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_1"
+                android:src="@drawable/bubble"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView2"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_2"
+                android:src="@drawable/rainbow"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView3"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_3"
+                android:src="@drawable/cartoon"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView4"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_4"
+                android:src="@drawable/child"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView5"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_5"
+                android:src="@drawable/flower"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView6"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_6"
+                android:src="@drawable/amoji"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView7"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_7"
+                android:src="@drawable/delicious"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView8"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/sticker_collection_8"
+                android:src="@drawable/hand"
                 app:rippleColor="@color/blackAlpha20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collectionView9"
                 style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
-                android:src="@drawable/restaurent_01"
+                android:src="@drawable/popular"
+                app:rippleColor="@color/blackAlpha20" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collectionView10"
+                style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
+                android:src="@drawable/valentine"
+                app:rippleColor="@color/blackAlpha20" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collectionView11"
+                style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
+                android:src="@drawable/emoj"
+                app:rippleColor="@color/blackAlpha20" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collectionView12"
+                style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
+                android:src="@drawable/rage"
+                app:rippleColor="@color/blackAlpha20" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collectionView13"
+                style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
+                android:src="@drawable/christmas"
+                app:rippleColor="@color/blackAlpha20" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collectionView14"
+                style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
+                android:src="@drawable/unicorn"
+                app:rippleColor="@color/blackAlpha20" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collectionView15"
+                style="@style/ChooseStickerLayout_TopBar_CollectionIcon"
+                android:src="@drawable/sticker"
                 app:rippleColor="@color/blackAlpha20" />
         </LinearLayout>
     </HorizontalScrollView>

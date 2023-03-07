@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.CountDownTimer
+import android.os.Handler
 import android.view.View
 import android.view.ViewTreeObserver
+import com.acatapps.videomaker.BuildConfig
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
@@ -19,6 +21,7 @@ import com.acatapps.videomaker.modules.share.Share
 import com.acatapps.videomaker.ui.HomeActivity
 import com.acatapps.videomaker.utils.MediaUtils
 import com.hope_studio.base_ads.ads.BaseAds
+import com.hope_studio.base_ads.utils.ShareUtils
 import kotlinx.android.synthetic.main.activity_share_video.*
 import java.io.File
 
@@ -66,6 +69,17 @@ class ShareVideoActivity : BaseActivity() {
         showNativeAds()
 
         val videoPath = intent.getStringExtra("VideoPath")
+        val showRating = intent.getBooleanExtra("fromProcess", false)
+
+        Handler().postDelayed({
+            if (showRating) {
+                if (!ShareUtils.getBoolean(this, "rate", false)) {
+                    setUpDialogRatting(BuildConfig.EMAIL)
+                    dialogRating?.show()
+                }
+            }
+        }, 200)
+
         setScreenTitle(getString(R.string.share))
 
         videoPath?.let {

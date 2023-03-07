@@ -5,14 +5,16 @@ import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import com.acatapps.videomaker.BuildConfig
 import com.acatapps.videomaker.R
+import com.acatapps.videomaker.StickerFileAsset
 import com.acatapps.videomaker.adapter.StickerListAdapter
 import kotlinx.android.synthetic.main.layout_choose_sticker.view.*
 
 class ChooseStickerLayout : LinearLayout {
 
     private val mStickerListAdapter = StickerListAdapter {
-        callback?.onSelectSticker(it)
+        callback?.onSelectSticker(BuildConfig.API_URL + it)
     }
 
     var callback: StickerCallback? = null
@@ -32,262 +34,74 @@ class ChooseStickerLayout : LinearLayout {
 
         stickerListView.adapter = mStickerListAdapter
         stickerListView.layoutManager = GridLayoutManager(context, 5)
-        mStickerListAdapter.setItemList(getStickerCollection1())
+        mStickerListAdapter.setItemList(StickerFileAsset.bubbleList())
 
         initActions()
     }
 
     private fun initActions() {
         collectionView1.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection1())
+            mStickerListAdapter.setItemList(StickerFileAsset.bubbleList())
         }
 
         collectionView2.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection2())
+            mStickerListAdapter.setItemList(StickerFileAsset.rainbowList())
         }
 
         collectionView3.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection3())
+            mStickerListAdapter.setItemList(StickerFileAsset.cartoonList())
         }
 
         collectionView4.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection4())
+            mStickerListAdapter.setItemList(StickerFileAsset.childList())
         }
 
         collectionView5.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection5())
+            mStickerListAdapter.setItemList(StickerFileAsset.flowerList())
         }
 
         collectionView6.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection6())
+            mStickerListAdapter.setItemList(StickerFileAsset.amojiList())
         }
 
         collectionView7.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection7())
+            mStickerListAdapter.setItemList(StickerFileAsset.deliciousList())
         }
 
-
         collectionView8.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection8())
+            mStickerListAdapter.setItemList(StickerFileAsset.handList())
         }
 
         collectionView9.setOnClickListener {
-            mStickerListAdapter.setItemList(getStickerCollection9())
+            mStickerListAdapter.setItemList(StickerFileAsset.popularList())
         }
-    }
 
-    private fun getStickerCollection1(): ArrayList<String> {
+        collectionView10.setOnClickListener {
+            mStickerListAdapter.setItemList(StickerFileAsset.valentineList())
+        }
 
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_catus_1.toString())
-        outList.add(R.drawable.ic_catus_2.toString())
-        outList.add(R.drawable.ic_catus_3.toString())
-        outList.add(R.drawable.ic_catus_4.toString())
-        outList.add(R.drawable.ic_catus_5.toString())
-        outList.add(R.drawable.ic_catus_6.toString())
-        outList.add(R.drawable.ic_catus_7.toString())
-        outList.add(R.drawable.ic_catus_8.toString())
-        outList.add(R.drawable.ic_catus_9.toString())
+        collectionView11.setOnClickListener {
+            mStickerListAdapter.setItemList(StickerFileAsset.emojList())
+        }
 
-        return outList
-    }
+        collectionView12.setOnClickListener {
+            mStickerListAdapter.setItemList(StickerFileAsset.rageList())
+        }
 
-    private fun getStickerCollection2(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_cat1.toString())
-        outList.add(R.drawable.ic_cat2.toString())
-        outList.add(R.drawable.ic_cat3.toString())
-        outList.add(R.drawable.ic_cat4.toString())
-        outList.add(R.drawable.ic_cat5.toString())
-        outList.add(R.drawable.ic_cat6.toString())
-        outList.add(R.drawable.ic_cat7.toString())
-        outList.add(R.drawable.ic_cat8.toString())
-        outList.add(R.drawable.ic_cat9.toString())
-        outList.add(R.drawable.ic_cat10.toString())
-        outList.add(R.drawable.ic_cat11.toString())
-        outList.add(R.drawable.ic_cat12.toString())
-        outList.add(R.drawable.ic_cat13.toString())
-        outList.add(R.drawable.ic_cat14.toString())
-        outList.add(R.drawable.ic_cat15.toString())
-        outList.add(R.drawable.ic_cat16.toString())
-        outList.add(R.drawable.ic_cat17.toString())
-        outList.add(R.drawable.ic_cat18.toString())
-        outList.add(R.drawable.ic_cat19.toString())
-        outList.add(R.drawable.ic_cat20.toString())
-        outList.add(R.drawable.ic_cat21.toString())
-        return outList
-    }
+        collectionView13.setOnClickListener {
+            mStickerListAdapter.setItemList(StickerFileAsset.christmasList())
+        }
 
-    private fun getStickerCollection3(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_eyes1.toString())
-        outList.add(R.drawable.ic_eyes2.toString())
-        outList.add(R.drawable.ic_eyes3.toString())
-        outList.add(R.drawable.ic_eyes4.toString())
-        outList.add(R.drawable.ic_eyes5.toString())
-        outList.add(R.drawable.ic_eyes6.toString())
-        outList.add(R.drawable.ic_eyes7.toString())
-        outList.add(R.drawable.ic_eyes8.toString())
-        outList.add(R.drawable.ic_eyes9.toString())
-        outList.add(R.drawable.ic_eyes10.toString())
-        outList.add(R.drawable.ic_eyes11.toString())
-        outList.add(R.drawable.ic_eyes12.toString())
-        outList.add(R.drawable.ic_eyes13.toString())
-        outList.add(R.drawable.ic_eyes14.toString())
-        outList.add(R.drawable.ic_eyes15.toString())
-        outList.add(R.drawable.ic_eyes16.toString())
-        outList.add(R.drawable.ic_eyes17.toString())
-        outList.add(R.drawable.ic_eyes18.toString())
-        outList.add(R.drawable.ic_eyes19.toString())
-        outList.add(R.drawable.ic_eyes20.toString())
+        collectionView14.setOnClickListener {
+            mStickerListAdapter.setItemList(StickerFileAsset.unicornList())
+        }
 
-        return outList
-    }
-
-    private fun getStickerCollection4(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_fruit1.toString())
-        outList.add(R.drawable.ic_fruit2.toString())
-        outList.add(R.drawable.ic_fruit3.toString())
-        outList.add(R.drawable.ic_fruit4.toString())
-        outList.add(R.drawable.ic_fruit5.toString())
-        outList.add(R.drawable.ic_fruit6.toString())
-        outList.add(R.drawable.ic_fruit7.toString())
-        outList.add(R.drawable.ic_fruit8.toString())
-        outList.add(R.drawable.ic_fruit9.toString())
-
-        return outList
-    }
-
-    private fun getStickerCollection5(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_common1.toString())
-        outList.add(R.drawable.ic_common2.toString())
-        outList.add(R.drawable.ic_common3.toString())
-        outList.add(R.drawable.ic_common4.toString())
-        outList.add(R.drawable.ic_common5.toString())
-        outList.add(R.drawable.ic_common6.toString())
-        outList.add(R.drawable.ic_common7.toString())
-        outList.add(R.drawable.ic_common8.toString())
-        outList.add(R.drawable.ic_common9.toString())
-        outList.add(R.drawable.ic_common10.toString())
-        outList.add(R.drawable.ic_common11.toString())
-        outList.add(R.drawable.ic_common12.toString())
-        outList.add(R.drawable.ic_common13.toString())
-        outList.add(R.drawable.ic_common14.toString())
-        outList.add(R.drawable.ic_common15.toString())
-        outList.add(R.drawable.ic_common16.toString())
-        outList.add(R.drawable.ic_common17.toString())
-        outList.add(R.drawable.ic_common18.toString())
-        outList.add(R.drawable.ic_common19.toString())
-        outList.add(R.drawable.ic_common20.toString())
-        outList.add(R.drawable.ic_common21.toString())
-        outList.add(R.drawable.ic_common22.toString())
-        outList.add(R.drawable.ic_common23.toString())
-        outList.add(R.drawable.ic_common24.toString())
-        return outList
-    }
-
-    private fun getStickerCollection6(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_heart1.toString())
-        outList.add(R.drawable.ic_heart2.toString())
-        outList.add(R.drawable.ic_heart3.toString())
-        outList.add(R.drawable.ic_heart4.toString())
-        outList.add(R.drawable.ic_heart5.toString())
-        outList.add(R.drawable.ic_heart6.toString())
-        outList.add(R.drawable.ic_heart7.toString())
-        outList.add(R.drawable.ic_heart8.toString())
-        outList.add(R.drawable.ic_heart9.toString())
-        outList.add(R.drawable.ic_heart10.toString())
-        outList.add(R.drawable.ic_heart11.toString())
-        outList.add(R.drawable.ic_heart12.toString())
-        outList.add(R.drawable.ic_heart13.toString())
-        outList.add(R.drawable.ic_heart14.toString())
-        outList.add(R.drawable.ic_heart15.toString())
-        outList.add(R.drawable.ic_heart16.toString())
-        outList.add(R.drawable.ic_heart17.toString())
-        outList.add(R.drawable.ic_heart18.toString())
-        outList.add(R.drawable.ic_heart19.toString())
-        outList.add(R.drawable.ic_heart20.toString())
-        outList.add(R.drawable.ic_heart21.toString())
-        outList.add(R.drawable.ic_heart22.toString())
-        outList.add(R.drawable.ic_heart23.toString())
-        outList.add(R.drawable.ic_heart24.toString())
-        outList.add(R.drawable.ic_heart25.toString())
-
-        return outList
-    }
-
-    private fun getStickerCollection7(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_ice1.toString())
-        outList.add(R.drawable.ic_ice2.toString())
-        outList.add(R.drawable.ic_ice3.toString())
-        outList.add(R.drawable.ic_ice4.toString())
-        outList.add(R.drawable.ic_ice5.toString())
-        outList.add(R.drawable.ic_ice6.toString())
-        outList.add(R.drawable.ic_ice7.toString())
-        outList.add(R.drawable.ic_ice8.toString())
-        outList.add(R.drawable.ic_ice9.toString())
-        outList.add(R.drawable.ic_ice10.toString())
-        outList.add(R.drawable.ic_ice11.toString())
-        outList.add(R.drawable.ic_ice12.toString())
-        outList.add(R.drawable.ic_ice13.toString())
-        outList.add(R.drawable.ic_ice14.toString())
-        outList.add(R.drawable.ic_ice15.toString())
-        outList.add(R.drawable.ic_ice16.toString())
-        outList.add(R.drawable.ic_ice17.toString())
-        outList.add(R.drawable.ic_ice18.toString())
-        outList.add(R.drawable.ic_ice19.toString())
-        outList.add(R.drawable.ic_ice20.toString())
-        outList.add(R.drawable.ic_ice21.toString())
-
-        return outList
-    }
-
-    private fun getStickerCollection8(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_music1.toString())
-        outList.add(R.drawable.ic_music2.toString())
-        outList.add(R.drawable.ic_music3.toString())
-        outList.add(R.drawable.ic_music4.toString())
-        outList.add(R.drawable.ic_music5.toString())
-        outList.add(R.drawable.ic_music6.toString())
-        outList.add(R.drawable.ic_music7.toString())
-        outList.add(R.drawable.ic_music8.toString())
-        outList.add(R.drawable.ic_music9.toString())
-        outList.add(R.drawable.ic_music10.toString())
-        outList.add(R.drawable.ic_music11.toString())
-        outList.add(R.drawable.ic_music12.toString())
-        outList.add(R.drawable.ic_music13.toString())
-        outList.add(R.drawable.ic_music14.toString())
-        return outList
-    }
-
-    private fun getStickerCollection9(): ArrayList<String> {
-        val outList = ArrayList<String>()
-        outList.add(R.drawable.ic_restaurent1.toString())
-        outList.add(R.drawable.ic_restaurent2.toString())
-        outList.add(R.drawable.ic_restaurent3.toString())
-        outList.add(R.drawable.ic_restaurent4.toString())
-        outList.add(R.drawable.ic_restaurent5.toString())
-        outList.add(R.drawable.ic_restaurent6.toString())
-        outList.add(R.drawable.ic_restaurent7.toString())
-        outList.add(R.drawable.ic_restaurent8.toString())
-        outList.add(R.drawable.ic_restaurent9.toString())
-        outList.add(R.drawable.ic_restaurent10.toString())
-        outList.add(R.drawable.ic_restaurent11.toString())
-        outList.add(R.drawable.ic_restaurent12.toString())
-        outList.add(R.drawable.ic_restaurent13.toString())
-        outList.add(R.drawable.ic_restaurent14.toString())
-        outList.add(R.drawable.ic_restaurent15.toString())
-        outList.add(R.drawable.ic_restaurent16.toString())
-        return outList
+        collectionView15.setOnClickListener {
+            mStickerListAdapter.setItemList(StickerFileAsset.stickerList())
+        }
     }
 
     interface StickerCallback {
         fun onSelectSticker(stickerPath: String)
     }
-
 }

@@ -22,8 +22,8 @@
                 android:id="@+id/bannerInHomeScreen"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/home_banner_bg_vector"
-                app:layout_constraintDimensionRatio="720:312"
+                android:src="@drawable/banner_home"
+                app:layout_constraintDimensionRatio="1024:900"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -312,6 +312,7 @@
                         android:src="@drawable/ic_no_project" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textNormal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/no_project" />

@@ -16,16 +16,14 @@
     <application
         android:name=".application.VideoMakerApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity"
         tools:replace="android:allowBackup">
-
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
@@ -91,4 +89,5 @@
                 android:resource="@xml/provider_paths" />
         </provider>
     </application>
+
 </manifest>

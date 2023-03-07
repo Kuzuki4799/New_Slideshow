@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.activity_join_video.*
 import java.io.File
 
 class JoinVideoActivity2 : BaseActivity() {
+
     override fun getLayoutId(): Int = R.layout.activity_join_video
 
     private var mCurrentVideoIndex = 0
