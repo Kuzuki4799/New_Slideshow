@@ -19,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.acatapps.videomaker.custom_view.RippleImageView
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleImageView
         android:id="@+id/iconDelete"
         android:layout_width="22dp"
         android:layout_height="22dp"

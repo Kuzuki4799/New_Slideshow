@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/art" />
 
-    <com.acatapps.videomaker.custom_view.RenderingProgressBar
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.RenderingProgressBar
         android:id="@+id/progressBar"
         android:layout_width="0dp"
         android:layout_height="32dp"

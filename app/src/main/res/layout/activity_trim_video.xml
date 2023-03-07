@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="@id/bgView"
         app:layout_constraintTop_toTopOf="@id/bgView" />
 
-    <com.acatapps.videomaker.custom_view.VideoControllerView
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
         android:id="@+id/videoControllerView"
         android:layout_width="0dp"
         android:layout_height="28dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="@id/cropTimeView"
         app:rippleColor="@color/whiteAlpha70" />
 
-    <com.acatapps.videomaker.custom_view.CropVideoTimeView
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.CropVideoTimeView
         android:id="@+id/cropTimeView"
         android:layout_width="0dp"
         android:layout_height="80dp"
@@ -62,12 +62,12 @@
         app:layout_constraintStart_toEndOf="@id/buttonPlayAndPause"
         app:layout_constraintTop_toBottomOf="@id/bgView" />
 
-    <com.acatapps.videomaker.custom_view.RippleTextView
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
         android:id="@+id/buttonTrimVideo"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@drawable/bg_button_rating_in_home"
-        android:fontFamily="@font/roboto_medium"
+        style="@style/textNormalBold"
         android:gravity="center"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"

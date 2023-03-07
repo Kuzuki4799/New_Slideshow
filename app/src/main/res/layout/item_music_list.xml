@@ -30,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.acatapps.videomaker.custom_view.ControlSliderStartEnd
+        <com.hope_studio.video_maker_slideshow_maker.custom_view.ControlSliderStartEnd
             android:id="@+id/audioControllerEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -94,13 +94,13 @@
             app:layout_constraintEnd_toEndOf="@id/musicNameLabel"
             app:layout_constraintStart_toStartOf="@id/musicNameLabel" />
 
-        <com.acatapps.videomaker.custom_view.RippleTextView
+        <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
             android:id="@+id/buttonUseMusic"
+            style="@style/textNormal"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/bg_button_use_music"
-            android:fontFamily="@font/roboto_regular"
             android:gravity="center"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"

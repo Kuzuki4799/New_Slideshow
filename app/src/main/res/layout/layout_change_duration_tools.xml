@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/setDurationTitleLabel" />
 
-    <com.acatapps.videomaker.custom_view.SetDurationSeekBar
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.SetDurationSeekBar
         android:id="@+id/changeDurationSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorGrayBg"
-            tools:context=".ui.HomeActivity">
+            tools:context="com.studio.maker.HomeActivity">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/bannerInHomeScreen"
@@ -118,7 +118,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bgButtonEditVideo" />
 
-            <com.acatapps.videomaker.base.RippleView
+            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
                 android:id="@+id/bgTrimVideo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -158,7 +158,7 @@
                 app:layout_constraintStart_toStartOf="@id/bgTrimVideo"
                 app:layout_constraintTop_toBottomOf="@id/bgTrimVideo" />
 
-            <com.acatapps.videomaker.base.RippleView
+            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
                 android:id="@+id/bgJoinVideo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -197,7 +197,7 @@
                 app:layout_constraintStart_toStartOf="@id/bgJoinVideo"
                 app:layout_constraintTop_toBottomOf="@id/bgJoinVideo" />
 
-            <com.acatapps.videomaker.base.RippleView
+            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
                 android:id="@+id/bgRating"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -235,7 +235,7 @@
                 app:layout_constraintStart_toStartOf="@id/bgRating"
                 app:layout_constraintTop_toBottomOf="@id/bgRating" />
 
-            <com.acatapps.videomaker.base.RippleView
+            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
                 android:id="@+id/bgShare"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -326,7 +326,7 @@
                     tools:listitem="@layout/item_my_studio_in_home" />
             </FrameLayout>
 
-            <com.acatapps.videomaker.custom_view.RippleTextView
+            <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
                 android:id="@+id/buttonMore"
                 style="@style/textNormalBold"
                 android:layout_width="wrap_content"

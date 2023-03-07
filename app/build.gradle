@@ -58,10 +58,10 @@ android {
         photo_slideshow_release {
             versionCode 10
             versionName "1.0"
-            applicationId "com.shockwave.mobius_wallpapers_4k_hd"
-            buildConfigField "int", "CODE_APP", "11"
-            buildConfigField "String", "API_URL", "\"https://kzkbusi.xyz/\""
-            buildConfigField "String", "EMAIL", "\"a@gmail.com\""
+            applicationId "com.hope_studio.video_maker_slideshow_maker"
+            buildConfigField "int", "CODE_APP", "28"
+            buildConfigField "String", "API_URL", "\"https://brokenangel.site/\""
+            buildConfigField "String", "EMAIL", "\"shockwavefeedback@gmail.com\""
         }
     }
 }
@@ -99,4 +99,7 @@ dependencies {
     implementation project(':base_ads')
 
     implementation 'com.mindorks.android:prdownloader:0.6.0'
+
+
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
 }

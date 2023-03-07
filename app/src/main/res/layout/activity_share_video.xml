@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="@id/bgViewInShare"
             app:layout_constraintTop_toTopOf="@id/bgViewInShare" />
 
-        <com.acatapps.videomaker.custom_view.VideoControllerView
+        <com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
             android:id="@+id/videoControllerView"
             android:layout_width="0dp"
             android:layout_height="28dp"
@@ -101,7 +101,7 @@
             app:layout_constraintTop_toBottomOf="@id/line"
             app:layout_constraintTop_toTopOf="@id/logoFacebook" />
 
-        <com.acatapps.videomaker.custom_view.CornerImageView
+        <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerImageView
             android:id="@+id/logoMore"
             android:layout_width="42dp"
             android:layout_height="42dp"

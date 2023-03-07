@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="@id/bgView"
         app:layout_constraintTop_toTopOf="@id/bgView" />
 
-    <com.acatapps.videomaker.custom_view.VideoControllerView
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
         android:id="@+id/videoControllerView"
         android:layout_width="0dp"
         android:layout_height="28dp"
@@ -58,7 +58,7 @@
         tools:itemCount="2"
         tools:listitem="@layout/item_video_in_joiner" />
 
-    <com.acatapps.videomaker.custom_view.RippleTextView
+    <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
         android:id="@+id/buttonJoinVideo"
         android:layout_width="wrap_content"
         android:layout_height="40dp"

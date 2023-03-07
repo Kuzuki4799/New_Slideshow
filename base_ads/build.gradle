@@ -25,9 +25,9 @@ android {
         }
 
         release {
-            resValue "string", "applovin_Id", "\"a8fJ54qWKxd2oONxd69bHA9TIbp0I7mWMFhG0o9X2bh3Khi6zJhhkzvGXTGZwqSkeyk_XbGPI84bsK5hBJgDuB\""
+            resValue "string", "applovin_Id", "\"Omt-lFA7LAkcdXMiqL-1UaHiTPbBrfd6Hnn9D7sxFCcD8RE-psCE2GNPO4wrSBw6hlflV-qPmFo1OIslTHeAxS\""
 
-            resValue "string", "app_Id", "\"ca-app-pub-3940256099942544~3347511713\""
+            resValue "string", "app_Id", "\"ca-app-pub-6754901213485057~9392706450\""
 
             useProguard true
             minifyEnabled true
@@ -66,6 +66,10 @@ dependencies {
     api 'com.orhanobut:dialogplus:1.11@aar'
     api 'com.blankj:utilcode:1.28.4'
     api 'com.airbnb.android:lottie:3.0.7'
+
+    api 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+    api 'com.appsflyer:af-android-sdk:5.0.0@aar'
+    api 'com.android.installreferrer:installreferrer:2.2'
 
     //Bidding
     api 'com.applovin:applovin-sdk:11.5.2'
