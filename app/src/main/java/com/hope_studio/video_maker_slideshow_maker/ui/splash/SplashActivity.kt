@@ -1,9 +1,9 @@
 package com.hope_studio.video_maker_slideshow_maker.ui.splash
 
-import com.photo.slideshow.BaseSActivity
+import com.base.activity.BaseSActivity
 import com.hope_studio.video_maker_slideshow_maker.BuildConfig
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.studio.maker.HomeActivity
+import com.base.activity.HomeActivity
 
 class SplashActivity : BaseSActivity() {
 

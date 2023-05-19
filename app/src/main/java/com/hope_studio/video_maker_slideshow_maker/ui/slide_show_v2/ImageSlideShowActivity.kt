@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -15,12 +16,12 @@ import com.hope_studio.video_maker_slideshow_maker.custom_view.EditTextSticker
 import com.hope_studio.video_maker_slideshow_maker.custom_view.StickerView
 import com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
 import com.hope_studio.video_maker_slideshow_maker.data.StickerForRenderData
-import com.hope_studio.video_maker_slideshow_maker.image_slide_show.ImageSlideGLView
-import com.hope_studio.video_maker_slideshow_maker.image_slide_show.ImageSlideRenderer
-import com.hope_studio.video_maker_slideshow_maker.image_slide_show.drawer.ImageSlideDataContainer
-import com.hope_studio.video_maker_slideshow_maker.slide_show_theme.data.ThemeData
-import com.hope_studio.video_maker_slideshow_maker.slide_show_transition.GSTransitionUtils
-import com.hope_studio.video_maker_slideshow_maker.slide_show_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_drawer.ImageSlideGLView
+import com.hope_studio.video_maker_slideshow_maker.ho_drawer.ImageSlideRenderer
+import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideDataContainer
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.GSTransitionUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
 import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.PickMediaActivity
 import com.hope_studio.video_maker_slideshow_maker.ui.process_video.ProcessVideoActivity
 import com.hope_studio.video_maker_slideshow_maker.utils.*
@@ -91,8 +92,6 @@ class ImageSlideShowActivity : BaseSlideShow() {
         setGLView(mImageGLView)
         showProgressDialog()
         val imageList = intent.getStringArrayListExtra(imagePickedListKey)
-
-
 
         if (imageList == null || imageList.size < 1) {
             finishAfterTransition()
@@ -165,7 +164,7 @@ class ImageSlideShowActivity : BaseSlideShow() {
     override fun doInitActions() {
 
 
-        setRightButton(R.drawable.ic_save_vector) {
+        setRightButton(R.drawable.ic_save) {
             doExportVideo()
         }
 
@@ -197,22 +196,134 @@ class ImageSlideShowActivity : BaseSlideShow() {
             if (toolType == ToolType.TRANSITION || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.TRANSITION
             showLayoutChangeTransition()
+            handlerSetMenu(Menu.TRANSFER)
         }
 
         changeDurationTools.setOnClickListener {
             if (toolType == ToolType.DURATION || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.DURATION
             showLayoutChangeDuration()
+            handlerSetMenu(Menu.TIME)
         }
 
         changeFilterTools.setOnClickListener {
             if (toolType == ToolType.FILTER || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.FILTER
             showLayoutChangeFilter()
+            handlerSetMenu(Menu.FILTER)
         }
 
         mSlideSourceAdapter.onClickItem = {
             doSeekTo(it * (mImageSlideDataContainer.delayTimeMs + mImageSlideDataContainer.transitionTimeMs))
+        }
+    }
+
+    enum class Menu {
+        TRANSFER, TIME, MUSIC, STICKER, TEXT, FILTER
+    }
+
+    private fun handlerSetMenu(currentMenu: Menu) {
+        when (currentMenu) {
+            Menu.TRANSFER -> {
+                changeTransitionTools.setColorFilter(Color.BLACK)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.BLACK)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.TIME -> {
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.BLACK)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.BLACK)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+
+            }
+
+            Menu.MUSIC -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.BLACK)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.BLACK)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.STICKER -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.BLACK)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.BLACK)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.TEXT -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.BLACK)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.BLACK)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.FILTER -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.BLACK)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.BLACK)
+            }
         }
     }
 

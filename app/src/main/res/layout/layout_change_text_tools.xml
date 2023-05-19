@@ -28,8 +28,10 @@
         android:id="@+id/cancelAddTextSticker"
         android:layout_width="42dp"
         android:layout_height="42dp"
+        android:background="@color/colorPrimaryDark"
         android:padding="12dp"
         android:src="@drawable/ic_cancel_added_sticker"
+        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -37,7 +39,7 @@
         android:id="@+id/confirmAddText"
         android:layout_width="42dp"
         android:layout_height="42dp"
-        android:background="@color/orangeA01"
+        android:background="@color/colorPrimaryDark"
         android:padding="12dp"
         android:src="@drawable/ic_confirm_added_sticker"
         app:layout_constraintEnd_toEndOf="parent"

@@ -71,8 +71,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logoFacebook"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_facebook"
             app:layout_constraintEnd_toStartOf="@id/logoInstagram"
@@ -81,8 +81,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logoInstagram"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_instagram"
             app:layout_constraintBottom_toBottomOf="@id/logoFacebook"
             app:layout_constraintEnd_toStartOf="@id/logoYouTube"
@@ -92,9 +92,9 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logoYouTube"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:src="@drawable/ic_you_tube"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_youtube"
             app:layout_constraintBottom_toBottomOf="@id/logoFacebook"
             app:layout_constraintEnd_toStartOf="@id/logoMore"
             app:layout_constraintStart_toEndOf="@id/logoInstagram"
@@ -103,8 +103,8 @@
 
         <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerImageView
             android:id="@+id/logoMore"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_share_png"
             app:layout_constraintBottom_toBottomOf="@id/logoFacebook"
             app:layout_constraintEnd_toEndOf="parent"

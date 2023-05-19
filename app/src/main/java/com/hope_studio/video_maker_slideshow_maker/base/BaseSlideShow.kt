@@ -3,6 +3,7 @@ package com.hope_studio.video_maker_slideshow_maker.base
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.media.MediaRecorder
@@ -91,17 +92,20 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             }
         }
 
+        handlerSetMenu(Menu.TRANSFER)
     }
 
 
     override fun initActions() {
         changeTransitionTools.setOnLongClickListener {
             showToast("Change transition effect")
+            handlerSetMenu(Menu.TRANSFER)
             return@setOnLongClickListener true
         }
 
         changeDurationTools.setOnLongClickListener {
             showToast(getString(R.string.change_duration))
+            handlerSetMenu(Menu.TIME)
             return@setOnLongClickListener true
         }
 
@@ -112,21 +116,25 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         changeMusicTools.setOnLongClickListener {
             showToast(getString(R.string.change_music))
+            handlerSetMenu(Menu.MUSIC)
             return@setOnLongClickListener true
         }
 
         changeStickerTools.setOnLongClickListener {
             showToast(getString(R.string.add_sticker))
+            handlerSetMenu(Menu.STICKER)
             return@setOnLongClickListener true
         }
 
         changeTextTools.setOnLongClickListener {
             showToast(getString(R.string.add_text))
+            handlerSetMenu(Menu.TEXT)
             return@setOnLongClickListener true
         }
 
         changeFilterTools.setOnLongClickListener {
             showToast(getString(R.string.change_image_filter))
+            handlerSetMenu(Menu.FILTER)
             return@setOnLongClickListener true
         }
 
@@ -134,6 +142,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             if (toolType == ToolType.MUSIC || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.MUSIC
             showLayoutChangeMusic()
+            handlerSetMenu(Menu.MUSIC)
 
         }
 
@@ -141,16 +150,17 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
             if (toolType == ToolType.STICKER || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.STICKER
             showLayoutChangeSticker()
+            handlerSetMenu(Menu.STICKER)
         }
 
         changeTextTools.setOnClickListener {
             if (toolType == ToolType.TEXT || !mTouchEnable) return@setOnClickListener
             toolType = ToolType.TEXT
             showLayoutChangeText()
-
+            handlerSetMenu(Menu.TEXT)
         }
 
-        setRightButton(R.drawable.ic_save_vector) {
+        setRightButton(R.drawable.ic_save) {
             performExportVideo()
             hideKeyboard()
         }
@@ -594,10 +604,9 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         }
 
-        setRightButton(R.drawable.ic_check) {
+        setRightButton(R.drawable.ic_done) {
             addTextLayout?.hideKeyboard()
             addTextLayout?.getEditTextView()?.let {
-
                 performAddText(it)
             }
 
@@ -845,6 +854,115 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
         playTranslationYAnimation(view)
     }
 
+    enum class Menu {
+        TRANSFER, TIME, MUSIC, STICKER, TEXT, FILTER
+    }
+
+    private fun handlerSetMenu(currentMenu: Menu) {
+        when (currentMenu) {
+            Menu.TRANSFER -> {
+                changeTransitionTools.setColorFilter(Color.BLACK)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.BLACK)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.TIME -> {
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.BLACK)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.BLACK)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+
+            }
+
+            Menu.MUSIC -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.BLACK)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.BLACK)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.STICKER -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.BLACK)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.BLACK)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.TEXT -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.BLACK)
+                changeFilterTools.setColorFilter(Color.GRAY)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.BLACK)
+                txtFilter.setTextColor(Color.GRAY)
+            }
+
+            Menu.FILTER -> {
+
+                changeTransitionTools.setColorFilter(Color.GRAY)
+                changeDurationTools.setColorFilter(Color.GRAY)
+                changeMusicTools.setColorFilter(Color.GRAY)
+                changeStickerTools.setColorFilter(Color.GRAY)
+                changeTextTools.setColorFilter(Color.GRAY)
+                changeFilterTools.setColorFilter(Color.BLACK)
+
+                txtTransfer.setTextColor(Color.GRAY)
+                txtTime.setTextColor(Color.GRAY)
+                txtMusic.setTextColor(Color.GRAY)
+                txtSticker.setTextColor(Color.GRAY)
+                txtText.setTextColor(Color.GRAY)
+                txtFilter.setTextColor(Color.BLACK)
+            }
+        }
+    }
+
     protected fun onPauseVideo() {
         if (toolType == ToolType.STICKER) {
             val view = getTopViewInToolAction()
@@ -981,7 +1099,7 @@ abstract class BaseSlideShow : BaseActivity(), KodeinAware {
 
         fullScreenOtherLayoutContainer.removeAllViews()
         setScreenTitle(screenTitle())
-        setRightButton(R.drawable.ic_save_vector) {
+        setRightButton(R.drawable.ic_save) {
             performExportVideo()
             hideKeyboard()
         }

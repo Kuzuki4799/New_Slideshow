@@ -27,4 +27,5 @@
     <string name="accept">स्वीकार करना</string>
     <string name="not_have_permission">आपके पास अनुमति नहीं है, एप्लिकेशन को अनुमति दें ताकि आप एप्लिकेशन का अनुभव कर सकें</string>
     <string name="warning">चेतावनी</string>
+    <string name="feedback_app">इस एप्लिकेशन के बारे में अपनी राय लिखें</string>
 </resources>

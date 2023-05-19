@@ -61,7 +61,7 @@ class DialogRating(val activity: BaseActivity, private val emailStr: String) :
                         ).show()
                     }
                     4 -> {
-                        if (!BuildConfig.DEBUG) {
+                        if (!com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             AnalyticsUtils.pushEventAnalytic("rate_app", null)
                             ShareUtils.putBoolean(activity, "rate", true)
                         }
@@ -69,7 +69,7 @@ class DialogRating(val activity: BaseActivity, private val emailStr: String) :
                         dismiss()
                     }
                     5 -> {
-                        if (!BuildConfig.DEBUG) {
+                        if (!com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             AnalyticsUtils.pushEventAnalytic("rate_app", null)
                             ShareUtils.putBoolean(activity, "rate", true)
                         }

@@ -18,7 +18,7 @@ import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplica
 import com.hope_studio.video_maker_slideshow_maker.base.BaseActivity
 import com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
 import com.hope_studio.video_maker_slideshow_maker.modules.share.Share
-import com.studio.maker.HomeActivity
+import com.base.activity.HomeActivity
 import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
 import com.hope_studio.base_ads.ads.BaseAds
 import com.hope_studio.base_ads.utils.ShareUtils
@@ -129,7 +129,7 @@ class ShareVideoActivity : BaseActivity() {
     private val mShare = Share()
 
     override fun initActions() {
-        setRightButton(R.drawable.ic_home_white) {
+        setRightButton(R.drawable.ic_home) {
             val intent = Intent(this, HomeActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 putExtra("play-splash", false)

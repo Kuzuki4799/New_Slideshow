@@ -11,6 +11,7 @@
           <option name="classpath" value="$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d3b967e7412f595c44d303581c3072e4/jetified-kotlin-stdlib-jdk8-1.6.21.jar:/Users/nguyentrithe/.gradle/caches/transforms-2/files-2.1/515636dd42af98c8c810b1abb8de3552/jetified-kotlin-android-extensions-runtime-1.6.21.jar:/Users/nguyentrithe/.gradle/caches/transforms-2/files-2.1/0fe14277422ce789e5876f37312a508f/jetified-kotlin-stdlib-jdk7-1.6.21.jar:/Users/nguyentrithe/.gradle/caches/transforms-2/files-2.1/6c99f6ee7d81e256a5f480bbc9f20d4d/jetified-kotlin-stdlib-1.6.21.jar:/Users/nguyentrithe/.gradle/caches/transforms-2/files-2.1/93077e4b91f8c833c1c17a9b71a10c01/jetified-kotlin-stdlib-common-1.6.21.jar:/Users/nguyentrithe/.gradle/caches/transforms-2/files-2.1/403b370977a7d12f426b15d6fb665d44/jetified-annotations-13.0.jar:/Users/nguyentrithe/.gradle/caches/transforms-2/files-2.1/757c0ce70ec7a4be3d71813427d04fc2/jetified-gpuimage-2.0.4-api.jar:/Users/nguyentrithe/Desktop/android/mind/New_Slideshow/gpuv2/build/intermediates/compile_library_classes_jar/debug/classes.jar:/Users/nguyentrithe/Library/Android/sdk/platforms/android-31/android.jar" />
           <option name="noStdlib" value="true" />
           <option name="moduleName" value="gpuv2_debug" />
+          <option name="jvmTarget" value="1.8" />
           <option name="friendPaths">
             <array>
               <option value="$MODULE_DIR$/../../../gpuv2/build/tmp/kotlin-classes/debug" />

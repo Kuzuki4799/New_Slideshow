@@ -10,8 +10,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/demoImageFilter"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/titleFilterLabel"
-        android:layout_width="65dp"
+        android:layout_width="55dp"
         android:layout_height="wrap_content"
         android:background="@color/black_alpha_55"
         android:ellipsize="end"
@@ -27,7 +27,7 @@
         android:lines="1"
         android:text="BRIGHT"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:background="@color/black_alpha_55"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

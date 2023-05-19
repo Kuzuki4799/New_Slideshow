@@ -27,13 +27,13 @@ import java.io.File
 class MediaListFragment : Fragment(), KodeinAware {
     override lateinit var kodein: Kodein
 
-    private val mPickMediaViewModelFactory:PickMediaViewModelFactory by instance()
+    private val mPickMediaViewModelFactory: PickMediaViewModelFactory by instance()
     private lateinit var mPickMediaViewModel: PickMediaViewModel
 
     private var mIsActionTrim = false
 
-    private val mMediaListAdapter = MediaListAdapter{
-        if(mIsActionTrim) {
+    private val mMediaListAdapter = MediaListAdapter {
+        if (mIsActionTrim) {
             TrimVideoActivity.gotoActivity(requireActivity(), it.filePath)
             return@MediaListAdapter
         }
@@ -41,33 +41,33 @@ class MediaListFragment : Fragment(), KodeinAware {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_media_list, container, false)
     }
 
-    val extraPathList = ArrayList<String>()
+    private val extraPathList = ArrayList<String>()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         kodein = (context as KodeinAware).kodein
 
-        mPickMediaViewModel = ViewModelProvider(requireActivity(), mPickMediaViewModelFactory).get(PickMediaViewModel::class.java)
+        mPickMediaViewModel = ViewModelProvider(
+            requireActivity(), mPickMediaViewModelFactory
+        ).get(PickMediaViewModel::class.java)
         listen()
         initView()
 
         requireActivity().intent.getStringArrayListExtra("list-photo")?.let {
-            for(path in it) {
-              extraPathList.add(path)
+            for (path in it) {
+                extraPathList.add(path)
             }
             Logger.e("add more count fragment = ${it.size}")
         }
 
         requireActivity().intent.getStringArrayListExtra("list-video")?.let {
-            for(path in it) {
+            for (path in it) {
                 extraPathList.add(path)
             }
             Logger.e("add more count fragment = ${it.size}")
@@ -76,52 +76,56 @@ class MediaListFragment : Fragment(), KodeinAware {
 
 
     private fun initView() {
-        val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE* DimenUtils.density(requireContext())
-        val numberCols = DimenUtils.screenWidth(requireContext())/colSize
+        val colSize = PickMediaActivity.COLS_IMAGE_LIST_SIZE * DimenUtils.density(requireContext())
+        val numberCols = DimenUtils.screenWidth(requireContext()) / colSize
 
         allMediaListView.apply {
             adapter = mMediaListAdapter
-            layoutManager = GridLayoutManager(context, numberCols.toInt(), LinearLayoutManager.VERTICAL, false).apply {
+            layoutManager = GridLayoutManager(
+                context, 3, LinearLayoutManager.VERTICAL,
+                false
+            ).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
                         return if (mMediaListAdapter.getItemViewType(position) == R.layout.item_header_view_date) {
-                            numberCols.toInt()
+                            3
                         } else {
                             1
                         }
                     }
-
                 }
             }
         }
 
     }
+
     private val mMediaList = ArrayList<MediaDataModel>()
+
     private fun listen() {
-        mPickMediaViewModel.localStorageData.mediaDataResponse.observe(viewLifecycleOwner, Observer {
-            Logger.e("media size = ${it.size}")
-            if(it.size ==0 ) {
-                mMediaList.clear()
-                mMediaListAdapter.clear()
-                return@Observer
-            }
-            val mediaList = ArrayList<MediaDataModel>()
-            for(item in it) {
-                if(File(item.filePath).exists()) {
-                    val mediaDataModel = MediaDataModel(item)
-                    mediaList.add(mediaDataModel)
+        mPickMediaViewModel.localStorageData.mediaDataResponse.observe(
+            viewLifecycleOwner, Observer {
+                Logger.e("media size = ${it.size}")
+                if (it.size == 0) {
+                    mMediaList.clear()
+                    mMediaListAdapter.clear()
+                    return@Observer
+                }
+                val mediaList = ArrayList<MediaDataModel>()
+                for (item in it) {
+                    if (File(item.filePath).exists()) {
+                        val mediaDataModel = MediaDataModel(item)
+                        mediaList.add(mediaDataModel)
+                    }
                 }
 
-            }
-
-            mMediaList.clear()
-            mMediaList.addAll(mediaList)
-            mMediaList.sort()
-            mMediaListAdapter.setItemList(mMediaList)
-            mMediaListAdapter.updateCount(extraPathList)
-            mPickMediaViewModel.updateCount(extraPathList)
-            extraPathList.clear()
-        })
+                mMediaList.clear()
+                mMediaList.addAll(mediaList)
+                mMediaList.sort()
+                mMediaListAdapter.setItemList(mMediaList)
+                mMediaListAdapter.updateCount(extraPathList)
+                mPickMediaViewModel.updateCount(extraPathList)
+                extraPathList.clear()
+            })
 
         mPickMediaViewModel.itemJustDeleted.observe(viewLifecycleOwner, Observer {
 
@@ -131,7 +135,7 @@ class MediaListFragment : Fragment(), KodeinAware {
             mMediaListAdapter.updateCount(mPickMediaViewModel.mediaPickedCount)
         })
         mPickMediaViewModel.acctiveCounter.observe(viewLifecycleOwner, Observer {
-            if(it == false) {
+            if (it == false) {
                 mIsActionTrim = true
                 mMediaListAdapter.activeCounter = false
                 mMediaListAdapter.notifyDataSetChanged()
@@ -143,9 +147,9 @@ class MediaListFragment : Fragment(), KodeinAware {
         })
     }
 
-    private fun updateCount(filePath:String) {
-        for(item in mMediaListAdapter.itemList) {
-            if(item.filePath == filePath) {
+    private fun updateCount(filePath: String) {
+        for (item in mMediaListAdapter.itemList) {
+            if (item.filePath == filePath) {
                 item.count++
                 break
             }
@@ -154,8 +158,8 @@ class MediaListFragment : Fragment(), KodeinAware {
     }
 
     private fun onDeleteItem(mediaPickedDataModel: MediaPickedDataModel) {
-        for(item in mMediaListAdapter.itemList) {
-            if(item.filePath == mediaPickedDataModel.path) {
+        for (item in mMediaListAdapter.itemList) {
+            if (item.filePath == mediaPickedDataModel.path) {
                 item.count--
                 break
             }

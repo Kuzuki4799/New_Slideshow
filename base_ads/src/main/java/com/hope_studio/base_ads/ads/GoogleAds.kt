@@ -102,7 +102,7 @@ object GoogleAds {
                     view.addView(FrameAdsView(context))
                 }
                 view.addView(mAdView)
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Banner Google Load")
                 }
                 onBannerAdsCallback.onBannerLoadSuccess()
@@ -110,7 +110,7 @@ object GoogleAds {
 
             override fun onAdFailedToLoad(p0: LoadAdError) {
                 super.onAdFailedToLoad(p0)
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     val errMessage = "Banner Google Error: ${p0.message} - code + ${p0.code}"
                     Log.d("base_main_ads", errMessage)
                 }
@@ -120,7 +120,7 @@ object GoogleAds {
             override fun onAdClicked() {
                 super.onAdClicked()
                 val bundle = Bundle()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     val errMessage = "Banner Google Click: ${context::class.java.simpleName}"
                     Log.d("base_main_ads", errMessage)
                 }
@@ -136,14 +136,14 @@ object GoogleAds {
             .withAdListener(object : AdListener() {
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Native Banner Google Load")
                     }
                 }
 
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         val errMessage =
                             "Native Banner Google Error: ${p0.message} - code + ${p0.code}"
                         Log.d("base_main_ads", errMessage)
@@ -161,7 +161,7 @@ object GoogleAds {
             .withAdListener(object : AdListener() {
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Native Banner Google Load")
                     }
                 }
@@ -169,7 +169,7 @@ object GoogleAds {
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
                     onNativeAdCallback.onNativeLoadFail()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         val errMessage =
                             "Native Banner Google Error: ${p0.message} - code + ${p0.code}"
                         Log.d("base_main_ads", errMessage)
@@ -185,7 +185,7 @@ object GoogleAds {
         } else {
             currentNative += 1
         }
-        if (BuildConfig.DEBUG) {
+        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
             Log.d("base_main_ads", "Native Next $currentNative")
         }
         return listNative[currentNative]
@@ -199,7 +199,7 @@ object GoogleAds {
                 nativeLoadSize += 1
                 if (nativeAdLoader?.isLoading == true) {
                     listNative.add(nativeAd)
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Native Google Load ${listNative.size}")
                     }
                 }
@@ -215,7 +215,7 @@ object GoogleAds {
                         onNativeAdCallback.onNativeSuccess()
                     } else {
                         onNativeAdCallback.onNativeFail()
-                        if (BuildConfig.DEBUG) {
+                        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             val errMessage =
                                 "Native Google Error: ${p0.message} - code + ${p0.code}"
                             Log.d("base_main_ads", errMessage)
@@ -235,7 +235,7 @@ object GoogleAds {
             .withAdListener(object : AdListener() {
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Native Google Load")
                     }
                 }
@@ -243,7 +243,7 @@ object GoogleAds {
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
                     onNativeAdCallback.onNativeLoadFail()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         val errMessage =
                             "Native Google Error: ${p0.message} - code + ${p0.code}"
                         Log.d("base_main_ads", errMessage)
@@ -268,7 +268,7 @@ object GoogleAds {
                         override fun onAdFailedToLoad(adError: LoadAdError) {
                             this@GoogleAds.interstitialAd = null
                             onInterstitialAdCallback.onInterstitialLoadFail()
-                            if (BuildConfig.DEBUG) {
+                            if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                 val errMessage =
                                     "Interstitial Google Error: ${adError.message} - code + ${adError.code}"
                                 Log.d("base_main_ads", errMessage)
@@ -277,7 +277,7 @@ object GoogleAds {
 
                         override fun onAdLoaded(interstitialAd: InterstitialAd) {
                             this@GoogleAds.interstitialAd = interstitialAd
-                            if (BuildConfig.DEBUG) {
+                            if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                 Log.d("base_main_ads", "Interstitial Google Load")
                             }
                             setInterstitialAdFullScreen(onInterstitialAdCallback)
@@ -299,7 +299,7 @@ object GoogleAds {
             }
 
             override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Interstitial Google Show Fail")
                 }
                 interstitialAd = null
@@ -308,7 +308,7 @@ object GoogleAds {
 
             override fun onAdShowedFullScreenContent() {
                 BaseAds.isShowAds = true
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Interstitial Google Show")
                 }
             }
@@ -317,7 +317,7 @@ object GoogleAds {
 
     fun showRewardGoogleAds(activity: Activity) {
         rewardedAd?.show(activity) { p0 ->
-            if (BuildConfig.DEBUG) {
+            if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                 Log.d("base_main_ads", "Amount: ${p0.amount} - type: ${p0.type}")
             }
         }
@@ -335,7 +335,7 @@ object GoogleAds {
                             super.onAdFailedToLoad(p0)
                             rewardedAd = null
                             onRewardAdCallback.onRewardLoadFail()
-                            if (BuildConfig.DEBUG) {
+                            if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                 val errMessage =
                                     "Reward Google Error: ${p0.message} - code + ${p0.code}"
                                 Log.d("base_main_ads", errMessage)
@@ -346,7 +346,7 @@ object GoogleAds {
                             super.onAdLoaded(p0)
                             rewardedAd = p0
                             setRewardedAdFullScreen(onRewardAdCallback)
-                            if (BuildConfig.DEBUG) {
+                            if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                 Log.d("base_main_ads", "Reward Google Load")
                             }
                             onRewardAdCallback.onRewardLoadSuccess()
@@ -372,7 +372,7 @@ object GoogleAds {
 
             override fun onAdShowedFullScreenContent() {
                 BaseAds.isShowAds = true
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Reward Google Show")
                 }
             }

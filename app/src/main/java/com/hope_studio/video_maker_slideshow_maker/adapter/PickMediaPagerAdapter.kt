@@ -14,25 +14,24 @@ class PickMediaPagerAdapter(val context: Context, fragmentManager: FragmentManag
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                MediaListFragment()
-            }
-            else -> {
                 MediaFolderFragment()
             }
-
+            else -> {
+                MediaListFragment()
+            }
         }
     }
 
     override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
             0 -> {
-                context.getString(R.string.gallery).toUpperCase()
+                context.getString(R.string.albums).toUpperCase()
             }
             else -> {
-                context.getString(R.string.albums).toUpperCase()
+                context.getString(R.string.gallery).toUpperCase()
             }
         }
     }
 
-    override fun getCount(): Int = 2
+    override fun getCount(): Int = 1
 }

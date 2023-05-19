@@ -75,4 +75,11 @@
   <string name="anser_grant_permission">Si no otorga permiso, no puede usar esta aplicación.</string>
   <string name="goto_setting_and_grant_permission">Ir a Configuración -&gt; Permiso y otorgar permiso de lectura de almacenamiento externo.</string>
   <string name="setting">Ajuste</string>
+
+  <string name="transferir">Transición</string>
+  <string name="tiempo">Tiempo</string>
+  <string name="music">Música</string>
+  <string name="pegatina">Pegatina</string>
+  <string name="texto">Texto</string>
+  <string name="filtro">Filtro</string>
 </resources>

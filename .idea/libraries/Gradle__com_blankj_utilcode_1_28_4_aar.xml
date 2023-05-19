@@ -2,11 +2,15 @@
   <library name="Gradle: com.blankj:utilcode:1.28.4@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b97556e894e6168d23605df1616b4e37/jetified-utilcode-1.28.4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb151b84deb6acb89938444f0f88d76b/jetified-utilcode-1.28.4/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b97556e894e6168d23605df1616b4e37/jetified-utilcode-1.28.4/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b97556e894e6168d23605df1616b4e37/jetified-utilcode-1.28.4/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b97556e894e6168d23605df1616b4e37/jetified-utilcode-1.28.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb151b84deb6acb89938444f0f88d76b/jetified-utilcode-1.28.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb151b84deb6acb89938444f0f88d76b/jetified-utilcode-1.28.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb151b84deb6acb89938444f0f88d76b/jetified-utilcode-1.28.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.blankj/utilcode/1.28.4/b300ded5b04337d349855b554275304c603c8710/utilcode-1.28.4-javadoc.jar!/" />

@@ -8,10 +8,10 @@ import android.opengl.GLES20
 import android.view.Surface
 import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.data.RenderImageSlideData
-import com.hope_studio.video_maker_slideshow_maker.slide_show_package_2.SlideShowDrawer
-import com.hope_studio.video_maker_slideshow_maker.slide_show_package_2.SlideShowForRender
-import com.hope_studio.video_maker_slideshow_maker.slide_show_package_2.slide_show_gl_view_2.GLTexture
-import com.hope_studio.video_maker_slideshow_maker.slide_show_theme.SlideThemeDrawer
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowDrawer
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowForRender
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.slide_show_gl_view_2.GLTexture
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.SlideThemeDrawer
 import com.hope_studio.video_maker_slideshow_maker.utils.Logger
 import java.io.File
 import java.nio.ByteBuffer

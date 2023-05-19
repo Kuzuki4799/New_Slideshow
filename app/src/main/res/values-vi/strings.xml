@@ -76,5 +76,10 @@
   <string name="anser_grant_permission">Nếu bạn không cấp quyền thì không thể sử dụng được ứng dụng</string>
   <string name="goto_setting_and_grant_permission">Tới Cài đặt -> Quyền và cho cấp quyền đọc bộ nhớ !</string>
   <string name="setting">Cài đặt</string>
-
+  <string name="transfer">Chuyển tiếp</string>
+  <string name="time">Thời lượng</string>
+  <string name="music">Âm nhạc</string>
+  <string name="sticker">Nhãn dán</string>
+  <string name="text">Văn bản</string>
+  <string name="filter">Bộ lọc</string>
 </resources>

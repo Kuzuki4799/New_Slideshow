@@ -88,14 +88,14 @@ class MediaFolderFragment : Fragment(), KodeinAware {
                 adapter = mMediaListAdapter
                 layoutManager = GridLayoutManager(
                     context,
-                    numberCols.toInt(),
+                    3,
                     LinearLayoutManager.VERTICAL,
                     false
                 ).apply {
                     spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                         override fun getSpanSize(position: Int): Int {
                             return if (mMediaListAdapter.getItemViewType(position) == R.layout.item_header_view_date) {
-                                numberCols.toInt()
+                                3
                             } else {
                                 1
                             }

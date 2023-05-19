@@ -92,7 +92,7 @@ object ApplovinAd {
                     frameLayout.addView(FrameAdsView(activity))
                 }
                 frameLayout.addView(adView)
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d(
                         "base_main_ads",
                         "Banner Applovin Load ${(activity as Activity).localClassName}"
@@ -110,14 +110,14 @@ object ApplovinAd {
             }
 
             override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Banner Applovin Error: ${error?.message}")
                 }
                 onBannerAdsCallback.onBannerLoadFail()
             }
 
             override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Banner Applovin Error: ${error?.message}")
                 }
                 onBannerAdsCallback.onBannerLoadFail()
@@ -143,7 +143,7 @@ object ApplovinAd {
         adView.setListener(object : MaxAdViewAdListener {
             override fun onAdLoaded(ad: MaxAd?) {
                 onNativeAdCallback.onNativeLoadSuccess(adView)
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Native Banner Applovin Load")
                 }
             }
@@ -159,7 +159,7 @@ object ApplovinAd {
 
             override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
                 onNativeAdCallback.onNativeLoadFail()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d(
                         "base_main_ads",
                         "Native Banner Applovin Error: ${error!!.code} - ${error.message}"
@@ -169,7 +169,7 @@ object ApplovinAd {
 
             override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
                 onNativeAdCallback.onNativeLoadFail()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d(
                         "base_main_ads",
                         "Native Banner Applovin Error: ${error!!.code} - ${error.message}"
@@ -198,7 +198,7 @@ object ApplovinAd {
             adView.setListener(object : MaxAdViewAdListener {
                 override fun onAdLoaded(ad: MaxAd?) {
                     onNativeAdCallback.onNativeLoadSuccess(adView, null)
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Native  Applovin Load")
                     }
                 }
@@ -214,7 +214,7 @@ object ApplovinAd {
 
                 override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
                     onNativeAdCallback.onNativeLoadFail()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d(
                             "base_main_ads",
                             "Native  Applovin Error: ${error!!.code} - ${error.message}"
@@ -224,7 +224,7 @@ object ApplovinAd {
 
                 override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
                     onNativeAdCallback.onNativeLoadFail()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d(
                             "base_main_ads",
                             "Native Banner Applovin Error: ${error!!.code} - ${error.message}"
@@ -244,14 +244,14 @@ object ApplovinAd {
             nativeAdLoader.setNativeAdListener(object : MaxNativeAdListener() {
                 override fun onNativeAdLoaded(nativeAdView: MaxNativeAdView?, ad: MaxAd?) {
                     nativeAdView?.let { onNativeAdCallback.onNativeLoadSuccess(null, it) }
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Native Applovin Load")
                     }
                 }
 
                 override fun onNativeAdLoadFailed(adUnitId: String, error: MaxError) {
                     onNativeAdCallback.onNativeLoadFail()
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d(
                             "base_main_ads",
                             "Native Applovin Error: ${error.code} - ${error.message}"
@@ -273,7 +273,7 @@ object ApplovinAd {
         interstitialAd?.setListener(object : MaxAdListener {
             override fun onAdLoaded(ad: MaxAd?) {
                 onInterstitialAdCallback.onInterstitialLoadSuccess()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Interstitial Applovin Load")
                 }
             }
@@ -284,7 +284,7 @@ object ApplovinAd {
 
             override fun onAdHidden(ad: MaxAd?) {
                 onInterstitialAdCallback.onInterstitialClose()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Interstitial Applovin Hidden")
                 }
             }
@@ -294,14 +294,14 @@ object ApplovinAd {
 
             override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
                 onInterstitialAdCallback.onInterstitialLoadFail()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Interstitial Applovin Error: ${error?.message}")
                 }
             }
 
             override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
                 onInterstitialAdCallback.onInterstitialShowFail()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Interstitial Applovin Error: ${error?.message}")
                 }
             }
@@ -316,7 +316,7 @@ object ApplovinAd {
         rewardAd?.setListener(object : MaxRewardedAdListener {
             override fun onAdLoaded(ad: MaxAd?) {
                 onRewardAdCallback.onRewardLoadSuccess()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Reward Applovin Load")
                 }
             }
@@ -332,7 +332,7 @@ object ApplovinAd {
 
             override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
                 onRewardAdCallback.onRewardLoadFail()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d(
                         "base_main_ads",
                         "Reward Applovin Error: ${error?.code} - ${error?.message}"
@@ -342,7 +342,7 @@ object ApplovinAd {
 
             override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
                 onRewardAdCallback.onRewardShowFail()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d(
                         "base_main_ads",
                         "Reward Applovin Error: ${error?.code} - ${error?.message}"
@@ -355,7 +355,7 @@ object ApplovinAd {
 
             override fun onRewardedVideoCompleted(ad: MaxAd?) {
                 onRewardAdCallback.onRewardClose()
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Reward Applovin Hidden")
                 }
             }

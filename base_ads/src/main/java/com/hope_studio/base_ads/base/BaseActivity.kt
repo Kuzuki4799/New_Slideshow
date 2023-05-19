@@ -45,7 +45,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         try {
-            val dialogLoad = LoadingDialog(this)
+            val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
             BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                 super.onBackPressed()
             }
@@ -55,7 +55,7 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun finishAds() {
-        val dialogLoad = LoadingDialog(this)
+        val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
         BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
             finish()
         }
@@ -72,7 +72,7 @@ abstract class BaseActivity : AppCompatActivity() {
     fun openNewActivity(c: Class<*>, isShowAds: Boolean, isFinish: Boolean) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     val intent = Intent(this, c)
                     startActivity(intent)
@@ -102,7 +102,7 @@ abstract class BaseActivity : AppCompatActivity() {
     fun openNewActivityAndClearStack(c: Class<*>, isShowAds: Boolean) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     val intent = Intent(this, c)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -121,7 +121,7 @@ abstract class BaseActivity : AppCompatActivity() {
     fun openNewActivityAndClearStack(c: Class<*>, bundle: Bundle, isShowAds: Boolean) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     val intent = Intent(this, c)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -142,7 +142,7 @@ abstract class BaseActivity : AppCompatActivity() {
     fun openNewActivity(c: Class<*>?, bundle: Bundle, isShowAds: Boolean, isFinish: Boolean) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     val intent = Intent(this, c)
                     intent.putExtra(BUNDLE_KEY, bundle)
@@ -163,7 +163,7 @@ abstract class BaseActivity : AppCompatActivity() {
     fun openNewActivity(intent: Intent, isShowAds: Boolean, isFinish: Boolean) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     startActivity(intent)
                     if (isFinish) finish()
@@ -180,7 +180,7 @@ abstract class BaseActivity : AppCompatActivity() {
     fun openNewActivity(intent: Intent, bundle: Bundle, isShowAds: Boolean, isFinish: Boolean) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     intent.putExtra(BUNDLE_KEY, bundle)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -203,7 +203,7 @@ abstract class BaseActivity : AppCompatActivity() {
     ) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     val intent = Intent(this, c)
                     startActivityForResult(intent, request_code)
@@ -224,7 +224,7 @@ abstract class BaseActivity : AppCompatActivity() {
     ) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     val intent = Intent(this, c)
                     intent.putExtra(BUNDLE_KEY, bundle)
@@ -247,7 +247,7 @@ abstract class BaseActivity : AppCompatActivity() {
     ) {
         try {
             if (isShowAds) {
-                val dialogLoad = LoadingDialog(this)
+                val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(this)
                 BaseAds.loadAndShowInterstitialAd(this, dialogLoad, 0) {
                     startActivityForResult(intent, request_code)
                     if (isFinish) finish()

@@ -10,7 +10,8 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@drawable/bg_gradient"
+        android:background="@color/main_black_2"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabGravity="fill"
@@ -20,7 +21,7 @@
         app:tabRippleColor="@color/whiteAlpha70"
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/MineCustomTabText"
-        app:tabTextColor="@color/blackAlpha20" />
+        app:tabTextColor="@color/gnt_gray" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -36,7 +37,7 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.hope_studio.video_maker_slideshow_maker.base.CornerView
+        <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerView
             android:id="@+id/bgWhiteView"
             android:layout_width="0dp"
             android:layout_height="48dp"

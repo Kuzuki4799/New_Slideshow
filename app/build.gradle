@@ -16,6 +16,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 31
+        multiDexEnabled true
         renderscriptSupportModeEnabled true
         flavorDimensions "versionCode"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -81,6 +82,8 @@ dependencies {
 
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
 
+    implementation 'androidx.multidex:multidex:2.0.1'
+
     // ViewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
@@ -99,7 +102,6 @@ dependencies {
     implementation project(':base_ads')
 
     implementation 'com.mindorks.android:prdownloader:0.6.0'
-
 
     implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
 }

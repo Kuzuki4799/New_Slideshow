@@ -50,7 +50,7 @@ class NativeBannerAds : FrameLayout {
     private fun initView(context: Context, attrs: AttributeSet?) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         inflater.inflate(R.layout.layout_native_banner_ads, this)
-        findViewById<ShimmerLayout>(R.id.shimmerLayout).startShimmerAnimation()
+        findViewById<com.hope_studio.base_ads.widget.ShimmerLayout>(R.id.shimmerLayout).startShimmerAnimation()
 
         val param = context.theme.obtainStyledAttributes(
             attrs, R.styleable.NativeBannerAds, 0, 0
@@ -158,7 +158,7 @@ class NativeBannerAds : FrameLayout {
         secondaryView.setBackgroundColor(context.resources.getColor(android.R.color.transparent))
         nativeAdView.setNativeAd(nativeAd)
         Handler().postDelayed(
-            { findViewById<ShimmerLayout>(R.id.shimmerLayout).stopShimmerAnimation() },
+            { findViewById<com.hope_studio.base_ads.widget.ShimmerLayout>(R.id.shimmerLayout).stopShimmerAnimation() },
             500
         )
     }
@@ -258,7 +258,7 @@ class NativeBannerAds : FrameLayout {
             nativeAdCallToAction, NativeAdBase.NativeComponentTag.AD_CALL_TO_ACTION
         )
         Handler().postDelayed(
-            { findViewById<ShimmerLayout>(R.id.shimmerLayout).stopShimmerAnimation() },
+            { findViewById<com.hope_studio.base_ads.widget.ShimmerLayout>(R.id.shimmerLayout).stopShimmerAnimation() },
             500
         )
     }

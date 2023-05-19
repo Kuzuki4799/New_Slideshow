@@ -5,339 +5,223 @@
     android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/main_black_2"
+    android:orientation="vertical">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTitle"
+        style="@style/textNormalBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorGrayBg">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle"
+        tools:context="com.base.activity.HomeActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:id="@+id/linearLayoutOption"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorGrayBg"
-            tools:context="com.studio.maker.HomeActivity">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/bannerInHomeScreen"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:src="@drawable/banner_home"
-                app:layout_constraintDimensionRatio="1024:900"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/bgButtonSlideShow"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="5dp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_weight="3"
                 android:background="@drawable/bg_button_slide_show_in_home"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@id/bannerInHomeScreen"
-                app:layout_constraintDimensionRatio="33:23"
-                app:layout_constraintEnd_toStartOf="@id/centerVerticalGuideline"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bannerInHomeScreen">
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/_10sdp">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/iconSlideShow"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_slide_show_vector" />
+                    android:id="@+id/btnCreate"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:src="@drawable/ic_create_video" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     style="@style/textNormalBold"
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_2sdp"
                     android:ellipsize="end"
-                    android:gravity="center"
                     android:lines="1"
                     android:text="@string/slide_show"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/normalTextSize" />
-            </LinearLayout>
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/centerVerticalGuideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/bgButtonEditVideo"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_weight="2"
                 android:background="@drawable/bg_button_edit_video_in_home"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintDimensionRatio="330:230"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/centerVerticalGuideline"
-                app:layout_constraintTop_toTopOf="@id/bgButtonSlideShow">
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/_10sdp">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/iconEditVideo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_edit_video_vector" />
+                    android:id="@+id/btnGallery"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/ic_my_video" />
+
+                <TextView
+                    style="@style/textNormalBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@string/my_studio"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutOption">
+
+            <LinearLayout
+                android:id="@+id/bgJoinVideo"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@drawable/bg_join_spilit"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/ic_join"
+                    android:tint="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/textNormalBold"
-                    android:layout_width="150dp"
+                    style="@style/textNormal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:ellipsize="end"
-                    android:gravity="center"
                     android:lines="1"
-                    android:text="@string/edit_video"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/normalTextSize" />
+                    android:text="@string/join"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/bgWhite"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/bg_corner"
-                app:layout_constraintBottom_toBottomOf="@id/trimVideoLabel"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bgButtonEditVideo" />
-
-            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
+            <LinearLayout
                 android:id="@+id/bgTrimVideo"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/bg_button_trim_video_in_home"
-                app:cornerRadius="4dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/bgJoinVideo"
-                app:layout_constraintStart_toStartOf="@id/bgWhite"
-                app:layout_constraintTop_toTopOf="@id/bgWhite" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_trim_video_vector"
-                app:layout_constraintBottom_toBottomOf="@id/bgTrimVideo"
-                app:layout_constraintEnd_toEndOf="@id/bgTrimVideo"
-                app:layout_constraintStart_toStartOf="@id/bgTrimVideo"
-                app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/trimVideoLabel"
-                style="@style/textNormalBold"
-                android:layout_width="80dp"
+                android:layout_width="@dimen/_80sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:ellipsize="end"
-                android:gravity="center|top"
-                android:lines="1"
-                android:paddingBottom="10dp"
-                android:text="@string/trim_video"
-                android:textSize="@dimen/smallTextSize"
-                app:layout_constraintEnd_toEndOf="@id/bgTrimVideo"
-                app:layout_constraintStart_toStartOf="@id/bgTrimVideo"
-                app:layout_constraintTop_toBottomOf="@id/bgTrimVideo" />
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toStartOf="@+id/bgRating"
+                android:layout_toEndOf="@+id/bgJoinVideo"
+                android:background="@drawable/bg_join_spilit"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
 
-            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
-                android:id="@+id/bgJoinVideo"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/bg_button_join_video_in_home"
-                app:cornerRadius="4dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/bgRating"
-                app:layout_constraintStart_toEndOf="@id/bgTrimVideo"
-                app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_split"
+                    android:tint="@color/white" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_join_video_vector"
-                app:layout_constraintBottom_toBottomOf="@id/bgJoinVideo"
-                app:layout_constraintEnd_toEndOf="@id/bgJoinVideo"
-                app:layout_constraintStart_toStartOf="@id/bgJoinVideo"
-                app:layout_constraintTop_toTopOf="@id/bgJoinVideo" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@string/trim_video"
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/joinVideoLabel"
-                style="@style/textNormalBold"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:ellipsize="end"
-                android:gravity="center|top"
-                android:lines="1"
-                android:paddingBottom="10dp"
-                android:text="@string/join_video"
-                android:textSize="@dimen/smallTextSize"
-                app:layout_constraintEnd_toEndOf="@id/bgJoinVideo"
-                app:layout_constraintStart_toStartOf="@id/bgJoinVideo"
-                app:layout_constraintTop_toBottomOf="@id/bgJoinVideo" />
-
-            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
+            <LinearLayout
                 android:id="@+id/bgRating"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/bg_button_rating_in_home"
-                app:cornerRadius="4dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/bgShare"
-                app:layout_constraintStart_toEndOf="@id/bgJoinVideo"
-                app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_rating_vecotr"
-                app:layout_constraintBottom_toBottomOf="@id/bgRating"
-                app:layout_constraintEnd_toEndOf="@id/bgRating"
-                app:layout_constraintStart_toStartOf="@id/bgRating"
-                app:layout_constraintTop_toTopOf="@id/bgRating" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/textNormalBold"
-                android:layout_width="80dp"
+                android:layout_width="@dimen/_80sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:ellipsize="end"
-                android:gravity="center|top"
-                android:lines="1"
-                android:paddingBottom="10dp"
-                android:text="@string/rate_5"
-                android:textSize="@dimen/smallTextSize"
-                app:layout_constraintEnd_toEndOf="@id/bgRating"
-                app:layout_constraintStart_toStartOf="@id/bgRating"
-                app:layout_constraintTop_toBottomOf="@id/bgRating" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/bg_join_spilit"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
 
-            <com.hope_studio.video_maker_slideshow_maker.base.RippleView
-                android:id="@+id/bgShare"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/bg_button_share_in_home"
-                app:cornerRadius="4dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="@id/bgWhite"
-                app:layout_constraintStart_toEndOf="@id/bgRating"
-                app:layout_constraintTop_toTopOf="@id/bgTrimVideo" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_rate"
+                    android:tint="@color/white" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/shareIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_share_vector"
-                app:layout_constraintBottom_toBottomOf="@id/bgShare"
-                app:layout_constraintEnd_toEndOf="@id/bgShare"
-                app:layout_constraintStart_toStartOf="@id/bgShare"
-                app:layout_constraintTop_toTopOf="@id/bgShare" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/textNormalBold"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:ellipsize="end"
-                android:gravity="center|top"
-                android:lines="1"
-                android:paddingBottom="10dp"
-                android:text="@string/share"
-                android:textSize="@dimen/smallTextSize"
-                app:layout_constraintEnd_toEndOf="@id/bgShare"
-                app:layout_constraintStart_toStartOf="@id/bgShare"
-                app:layout_constraintTop_toBottomOf="@id/bgShare" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/myStudioLabel"
-                style="@style/textNormalBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="42dp"
-                android:text="@string/my_studio"
-                android:textColor="@color/black"
-                android:textSize="21sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bgWhite" />
-
-            <FrameLayout
-                android:id="@+id/myStudioContainer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/myStudioLabel">
-
-                <LinearLayout
-                    android:id="@+id/icNoProject"
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="12dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@string/rate_5"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="98dp"
-                        android:layout_height="98dp"
-                        android:src="@drawable/ic_no_project" />
+    <LinearLayout
+        android:id="@+id/llNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/textNormal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/no_project" />
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/myStudioListView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:itemCount="2"
-                    tools:listitem="@layout/item_my_studio_in_home" />
-            </FrameLayout>
-
-            <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
-                android:id="@+id/buttonMore"
-                style="@style/textNormalBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
-                android:text="@string/more"
-                android:textColor="@color/pinkA01"
-                android:textSize="@dimen/largeTextSize"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/myStudioLabel" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+        <com.hope_studio.base_ads.ads.widget.NativeAds
+            android:id="@+id/nativeAdViewInProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dark_mode="light" />
+    </LinearLayout>
 </RelativeLayout>

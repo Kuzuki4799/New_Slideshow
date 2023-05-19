@@ -17,6 +17,7 @@
     <color name="main_black_blur">#1A000000</color>
     <color name="main_white_blur">#33FFFFFF</color>
     <color name="main_black">#B3000000</color>
+    <color name="main_black_2">#D9000000</color>
     <color name="main_white">#B3FFFFFF</color>
 
     <color name="bg_main_blur">#0D000000</color>

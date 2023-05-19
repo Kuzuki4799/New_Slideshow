@@ -37,11 +37,12 @@ class MediaListAdapter(val callback: (MediaDataModel) -> Unit) : BaseAdapter<Med
     }
 
     override fun doGetViewType(position: Int): Int {
-        return if (mItemList[position].filePath.isEmpty()) {
-            R.layout.item_header_view_date
-        } else {
-            R.layout.item_media_with_text_count
-        }
+//        return if (mItemList[position].filePath.isEmpty()) {
+//            R.layout.item_header_view_date
+//        } else {
+//            R.layout.item_media_with_text_count
+//        }
+        return R.layout.item_media_with_text_count
     }
 
     @SuppressLint("SetTextI18n")
@@ -114,26 +115,26 @@ class MediaListAdapter(val callback: (MediaDataModel) -> Unit) : BaseAdapter<Med
                 callback.invoke(item)
             }
         }
-
     }
 
     private val originMediaList = ArrayList<MediaDataModel>()
+
     override fun setItemList(arrayList: ArrayList<MediaDataModel>) {
         originMediaList.clear()
         originMediaList.addAll(arrayList)
         if (arrayList.size < 1) return
         val finalItems = getFinalItem(arrayList)
         mItemList.clear()
-        mItemList.addAll(finalItems)
+        mItemList.addAll(arrayList)
         notifyDataSetChanged()
     }
 
     fun addNewItem(mediaData: MediaData) {
         originMediaList.add(MediaDataModel(mediaData))
         originMediaList.sort()
-        val finalItems = getFinalItem(originMediaList)
-        mItemList.clear()
-        mItemList.addAll(finalItems)
+//        val finalItems = getFinalItem(originMediaList)
+//        mItemList.clear()
+        mItemList.add(MediaDataModel(mediaData))
         notifyDataSetChanged()
     }
 
@@ -197,7 +198,6 @@ class MediaListAdapter(val callback: (MediaDataModel) -> Unit) : BaseAdapter<Med
             for (item in mItemList) {
                 if (path == item.filePath) {
                     item.count++
-
                     break
                 }
             }

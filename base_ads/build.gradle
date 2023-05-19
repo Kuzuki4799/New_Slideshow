@@ -27,7 +27,7 @@ android {
         release {
             resValue "string", "applovin_Id", "\"Omt-lFA7LAkcdXMiqL-1UaHiTPbBrfd6Hnn9D7sxFCcD8RE-psCE2GNPO4wrSBw6hlflV-qPmFo1OIslTHeAxS\""
 
-            resValue "string", "app_Id", "\"ca-app-pub-6754901213485057~9392706450\""
+            resValue "string", "app_Id", "\"ca-app-pub-3631369079279629~2955667917\""
 
             useProguard true
             minifyEnabled true
@@ -58,23 +58,19 @@ dependencies {
     api 'com.squareup.okhttp3:okhttp:4.9.1'
     api 'com.squareup.okhttp3:logging-interceptor:4.9.1'
 
-    api 'io.reactivex.rxjava2:rxjava:2.2.20'
+    api 'io.reactivex.rxjava2:rxjava:2.2.21'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
-    api 'org.greenrobot:eventbus:3.1.1'
+    api 'org.greenrobot:eventbus:3.2.0'
 
     api 'com.orhanobut:dialogplus:1.11@aar'
     api 'com.blankj:utilcode:1.28.4'
-    api 'com.airbnb.android:lottie:3.0.7'
-
-    api 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
-    api 'com.appsflyer:af-android-sdk:5.0.0@aar'
-    api 'com.android.installreferrer:installreferrer:2.2'
+    api 'com.airbnb.android:lottie:5.2.0'
 
     //Bidding
-    api 'com.applovin:applovin-sdk:11.5.2'
+    api 'com.applovin:applovin-sdk:11.9.0'
     api 'com.applovin.mediation:google-adapter:20.6.0.0'
-    api 'com.applovin.mediation:facebook-adapter:6.12.0.0'
+    api 'com.applovin.mediation:facebook-adapter:6.14.0.0'
 
     api platform('com.google.firebase:firebase-bom:28.1.0')
     api 'com.google.firebase:firebase-analytics-ktx'
@@ -84,12 +80,14 @@ dependencies {
     api 'com.google.android.play:core:1.10.2'
     api 'com.android.billingclient:billing-ktx:4.0.0'
 
+    api 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
     api 'com.wang.avi:library:2.1.3'
     api 'com.intuit.sdp:sdp-android:1.0.6'
     api 'com.amitshekhar.android:android-networking:1.0.2'
 
     api 'com.makeramen:roundedimageview:2.3.0'
-    api 'com.github.bumptech.glide:glide:4.12.0'
+    api 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     api('com.github.bumptech.glide:okhttp3-integration:4.12.0') {
         exclude group: 'glide-parent'

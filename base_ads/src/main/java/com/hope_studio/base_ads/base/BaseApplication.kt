@@ -48,7 +48,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
 
         AndroidNetworking.initialize(applicationContext)
 
-        AdSettings.setTestMode(BuildConfig.DEBUG)
+        AdSettings.setTestMode(com.hope_studio.base_ads.BuildConfig.DEBUG)
 
         AppLovinSdk.getInstance(this).mediationProvider = AppLovinMediationProvider.MAX
         AppLovinSdk.getInstance(this).initializeSdk {
@@ -67,7 +67,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun onAppBackgrounded() {
-        if (BuildConfig.DEBUG) {
+        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
             Log.d("base_main_ads", "onAppBackgrounded")
         }
 
@@ -214,7 +214,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                         appOpenAd = ad
                         isLoadingAd = false
                         loadTime = Date().time
-                        if (BuildConfig.DEBUG) {
+                        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             Log.d("base_main_ads", "OpenApp Loaded")
                         }
                     }
@@ -226,7 +226,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                      */
                     override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                         isLoadingAd = false
-                        if (BuildConfig.DEBUG) {
+                        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             val errMessage =
                                 "OpenApp Error: ${loadAdError.message} - code + ${loadAdError.code}"
                             Log.d("base_main_ads", errMessage)
@@ -238,13 +238,13 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                             override fun onAdLoaded(ad: MaxAd?) {
                                 isLoadingAd = false
                                 loadTime = Date().time
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     Log.d("base_main_ads", "OpenApp Applovin Loaded")
                                 }
                             }
 
                             override fun onAdDisplayed(ad: MaxAd?) {
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     Log.d("base_main_ads", "OpenApp Applovin Showed")
                                 }
                                 onShowAdCompleteListener.onShowAdComplete()
@@ -253,7 +253,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                             override fun onAdHidden(ad: MaxAd?) {
                                 applovinOpenAd = null
                                 isShowingAd = false
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     Log.d("base_main_ads", "OpenApp Applovin Dismiss")
                                 }
                                 onShowAdCompleteListener.onShowAdDismiss()
@@ -266,7 +266,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                                 applovinOpenAd = null
                                 isLoadingAd = false
                                 isShowingAd = false
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     val errMessage =
                                         "OpenApp Applovin Error: ${error?.message} - code + ${error?.code}"
                                     Log.d("base_main_ads", errMessage)
@@ -278,7 +278,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                                 applovinOpenAd = null
                                 isShowingAd = false
 
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     val errMessage =
                                         "Open Applovin Show Error: ${error?.message} - code + ${error?.code}"
                                     Log.d("base_main_ads", errMessage)
@@ -332,7 +332,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                         appOpenAd = ad
                         isLoadingAd = false
                         loadTime = Date().time
-                        if (BuildConfig.DEBUG) {
+                        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             Log.d("base_main_ads", "OpenApp Loaded")
                         }
                         onShowAdCompleteListener.onLoadSuccess()
@@ -345,7 +345,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                      */
                     override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                         isLoadingAd = false
-                        if (BuildConfig.DEBUG) {
+                        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                             val errMessage =
                                 "OpenApp Error: ${loadAdError.message} - code + ${loadAdError.code}"
                             Log.d("base_main_ads", errMessage)
@@ -357,14 +357,14 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                             override fun onAdLoaded(ad: MaxAd?) {
                                 isLoadingAd = false
                                 loadTime = Date().time
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     Log.d("base_main_ads", "OpenApp Loaded")
                                 }
                                 onShowAdCompleteListener.onLoadSuccess()
                             }
 
                             override fun onAdDisplayed(ad: MaxAd?) {
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     Log.d("base_main_ads", "OpenApp Applovin Showed")
                                 }
                                 onShowAdCompleteListener.onShowAdComplete()
@@ -373,7 +373,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                             override fun onAdHidden(ad: MaxAd?) {
                                 applovinOpenAd = null
                                 isShowingAd = false
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     Log.d("base_main_ads", "OpenApp Applovin Dismiss")
                                 }
                                 onShowAdCompleteListener.onShowAdDismiss()
@@ -386,7 +386,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                                 applovinOpenAd = null
                                 isLoadingAd = false
                                 isShowingAd = false
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     val errMessage =
                                         "OpenApp Applovin Error: ${error?.message} - code + ${error?.code}"
                                     Log.d("base_main_ads", errMessage)
@@ -398,7 +398,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                                 applovinOpenAd = null
                                 isShowingAd = false
 
-                                if (BuildConfig.DEBUG) {
+                                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                                     val errMessage =
                                         "Open Applovin Show Error: ${error?.message} - code + ${error?.code}"
                                     Log.d("base_main_ads", errMessage)
@@ -485,7 +485,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                     // Set the reference to null so isAdAvailable() returns false.
                     appOpenAd = null
                     isShowingAd = false
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "OpenApp Dismiss")
                     }
                     onShowAdCompleteListener.onShowAdDismiss()
@@ -496,7 +496,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
                     appOpenAd = null
                     isShowingAd = false
 
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         val errMessage =
                             "Open App Show Error: ${adError.message} - code + ${adError.code}"
                         Log.d("base_main_ads", errMessage)
@@ -506,7 +506,7 @@ open class BaseApplication : Application(), Application.ActivityLifecycleCallbac
 
                 /** Called when fullscreen content is shown. */
                 override fun onAdShowedFullScreenContent() {
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "OpenApp Showed")
                     }
                     onShowAdCompleteListener.onShowAdComplete()

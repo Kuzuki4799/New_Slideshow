@@ -4,41 +4,35 @@
     android:id="@+id/ly_splash_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
+    android:background="@color/main_black_2"
     android:orientation="vertical"
     android:visibility="visible">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/llProgress">
+        android:layout_above="@+id/llProgress"
+        android:layout_alignParentTop="true">
 
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_40sdp"
+            android:src="@drawable/ic_splash" />
+
+        <TextView
+            style="@style/textNormalBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:elevation="@dimen/_5sdp"
             android:gravity="center"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_140sdp"
-                android:layout_height="@dimen/_140sdp"
-                android:src="@drawable/icon_splash" />
-
-            <TextView
-                style="@style/textNormalBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:elevation="@dimen/_5sdp"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_25sdp" />
-        </LinearLayout>
+            android:includeFontPadding="false"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
     </RelativeLayout>
 
     <LinearLayout

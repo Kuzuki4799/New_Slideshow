@@ -17,11 +17,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/numberImageLabel"
+        style="@style/textNormalBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:textColor="@color/black"
         android:textSize="@dimen/normalTextSize"
+        android:layout_marginBottom="@dimen/_10sdp"
         app:layout_constraintBottom_toTopOf="@id/imageListView"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -62,9 +62,9 @@ class VideoSlideActivity2 : BaseSlideShow() {
         needShowDialog = true
 
         setScreenTitle(getString(R.string.edit_video))
-        changeTransitionTools.visibility = View.GONE
-        changeDurationTools.visibility = View.GONE
-        changeFilterTools.visibility = View.GONE
+        llTransfer.visibility = View.GONE
+        llTime.visibility = View.GONE
+        llFilter.visibility = View.GONE
         changeTrimsTools.visibility = View.GONE
 
         intent.getStringArrayListExtra("Video picked list")?.let {
@@ -115,7 +115,7 @@ class VideoSlideActivity2 : BaseSlideShow() {
 
     override fun doInitActions() {
 
-        setRightButton(R.drawable.ic_save_vector) {
+        setRightButton(R.drawable.ic_save) {
             doExportVideo()
         }
         videoControllerView.onChangeListener = object : VideoControllerView.OnChangeListener {

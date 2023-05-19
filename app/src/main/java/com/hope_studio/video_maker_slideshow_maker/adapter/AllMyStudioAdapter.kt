@@ -26,11 +26,12 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
     var onClickOpenMenu: ((View, MyStudioDataModel) -> Unit)? = null
 
     override fun doGetViewType(position: Int): Int {
-        return if (mItemList[position].filePath.isEmpty()) {
-            R.layout.item_header_view_date
-        } else {
-            R.layout.item_all_my_studio
-        }
+//        return if (mItemList[position].filePath.isEmpty()) {
+//            R.layout.item_header_view_date
+//        } else {
+//            R.layout.item_all_my_studio
+//        }
+        return R.layout.item_all_my_studio
     }
 
     @SuppressLint("SetTextI18n", "DefaultLocale")
@@ -124,7 +125,7 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
         if (arrayList.size < 1) return
         val finalItems = arrayListOf<MyStudioDataModel>()
 
-        finalItems.add(MyStudioDataModel("", arrayList[0].dateAdded, arrayList[0].duration))
+//        finalItems.add(MyStudioDataModel("", arrayList[0].dateAdded, arrayList[0].duration))
         finalItems.add(arrayList[0])
 
         val preItemCalendar = Calendar.getInstance()
@@ -133,28 +134,30 @@ class AllMyStudioAdapter : BaseAdapter<MyStudioDataModel>() {
             val preItem = arrayList[index - 1]
             val item = arrayList[index]
 
-            preItemCalendar.timeInMillis = preItem.dateAdded
-            currentItemCalendar.timeInMillis = item.dateAdded
+//            preItemCalendar.timeInMillis = preItem.dateAdded
+//            currentItemCalendar.timeInMillis = item.dateAdded
+//
+//            if (preItemCalendar.get(Calendar.YEAR) != currentItemCalendar.get(Calendar.YEAR)) {
+//                finalItems.add(MyStudioDataModel("", item.dateAdded, -1))
+//                finalItems.add(item)
+//            } else {
+//                if (preItemCalendar.get(Calendar.MONTH) != currentItemCalendar.get(Calendar.MONTH)) {
+//                    finalItems.add(MyStudioDataModel("", item.dateAdded, item.duration))
+//                    finalItems.add(item)
+//                } else {
+//                    if (preItemCalendar.get(Calendar.DAY_OF_MONTH) != currentItemCalendar.get(
+//                            Calendar.DAY_OF_MONTH
+//                        )
+//                    ) {
+//                        finalItems.add(MyStudioDataModel("", item.dateAdded, item.duration))
+//                        finalItems.add(item)
+//                    } else {
+//                        finalItems.add(item)
+//                    }
+//                }
+//            }
 
-            if (preItemCalendar.get(Calendar.YEAR) != currentItemCalendar.get(Calendar.YEAR)) {
-                finalItems.add(MyStudioDataModel("", item.dateAdded, -1))
-                finalItems.add(item)
-            } else {
-                if (preItemCalendar.get(Calendar.MONTH) != currentItemCalendar.get(Calendar.MONTH)) {
-                    finalItems.add(MyStudioDataModel("", item.dateAdded, item.duration))
-                    finalItems.add(item)
-                } else {
-                    if (preItemCalendar.get(Calendar.DAY_OF_MONTH) != currentItemCalendar.get(
-                            Calendar.DAY_OF_MONTH
-                        )
-                    ) {
-                        finalItems.add(MyStudioDataModel("", item.dateAdded, item.duration))
-                        finalItems.add(item)
-                    } else {
-                        finalItems.add(item)
-                    }
-                }
-            }
+            finalItems.add(item)
         }
         mItemList.clear()
         mItemList.addAll(finalItems)

@@ -323,55 +323,6 @@ object FacebookAds {
         }
     }
 
-    fun loadInterstitialRewardedFacebookAds(
-        activity: Activity, id: String, onRewardAdCallback: BaseAds.OnRewardAdCallback
-    ) {
-        if (checkInterstitialRewardFacebook()) {
-            onRewardAdCallback.onRewardLoadSuccess()
-        } else {
-            interstitialAd = InterstitialAd(activity, id)
-            val adListener: AbstractAdListener = object : AbstractAdListener() {
-                override fun onError(ad: Ad, error: AdError) {
-                    super.onError(ad, error)
-                    onRewardAdCallback.onRewardLoadFail()
-                    if (BuildConfig.DEBUG) {
-                        val errMessage =
-                            "Interstitial Facebook Error: ${error.errorMessage} - code + ${error.errorCode}}"
-                        Log.d("base_main_ads", errMessage)
-                    }
-                }
-
-                override fun onAdLoaded(ad: Ad) {
-                    super.onAdLoaded(ad)
-                    if (BuildConfig.DEBUG) {
-                        Log.d("base_main_ads", "Interstitial Facebook Load")
-                    }
-                    onRewardAdCallback.onRewardLoadSuccess()
-                }
-
-                override fun onAdClicked(ad: Ad) {
-                    super.onAdClicked(ad)
-                }
-
-                override fun onInterstitialDisplayed(ad: Ad) {
-                    super.onInterstitialDisplayed(ad)
-                    BaseAds.isShowAds = true
-                    if (BuildConfig.DEBUG) {
-                        Log.d("base_main_ads", "Interstitial Facebook Show")
-                    }
-                }
-
-                override fun onInterstitialDismissed(ad: Ad) {
-                    super.onInterstitialDismissed(ad)
-                    onRewardAdCallback.onRewardClose()
-                }
-            }
-            val interstitialLoadAdConfig =
-                interstitialAd?.buildLoadAdConfig()?.withAdListener(adListener)?.build()
-            interstitialAd?.loadAd(interstitialLoadAdConfig)
-        }
-    }
-
     fun loadRewardedInterstitialFacebookAds(
         activity: Activity, id: String, onRewardAdCallback: BaseAds.OnRewardAdCallback
     ) {

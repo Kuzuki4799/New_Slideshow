@@ -7,8 +7,8 @@ import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.base.BaseViewHolder
 import com.hope_studio.video_maker_slideshow_maker.models.GSTransitionDataModel
-import com.hope_studio.video_maker_slideshow_maker.slide_show_transition.GSTransitionUtils
-import com.hope_studio.video_maker_slideshow_maker.slide_show_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.GSTransitionUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
 import kotlinx.android.synthetic.main.item_gs_transition_list.view.*
 
 class GSTransitionListAdapter(private val onSelectTransition: (GSTransitionDataModel) -> Unit) :

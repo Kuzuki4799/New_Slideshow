@@ -15,6 +15,6 @@ object AnalyticsUtils {
     }
 
     fun pushEventAnalytic(nameEvent: String, bundle: Bundle?) {
-        if (!BuildConfig.DEBUG) firebaseAnalytics.value?.logEvent(nameEvent, bundle)
+        if (!com.hope_studio.base_ads.BuildConfig.DEBUG) firebaseAnalytics.value?.logEvent(nameEvent, bundle)
     }
 }

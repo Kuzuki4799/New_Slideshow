@@ -77,7 +77,7 @@ object BaseAds {
                 }
 
                 override fun onError(e: ANError) {
-                    if (BuildConfig.DEBUG) {
+                    if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                         Log.d("base_main_ads", "Load Api Error: ${e.localizedMessage}")
                     }
                     onCallApiCallback.onCallFail()
@@ -293,6 +293,16 @@ object BaseAds {
         if (BillingUtils.getDataBilling(context)) return ""
         if (!dataAds.getShowAds() || !dataAds.getShowNativeAds() || !dataAds.getShowNativeScroll()) return ""
         return dataAds.getAdsByType(AdsType.APPLOVIN.value).native
+    }
+
+    fun getKeyNativeBannerApplovin(context: Context): String {
+        if (!NetWorkUtils.isNetworkConnected(context)) return ""
+        val dataAds = ShareUtils[context, DataModel::class.java.name, DataModel::class.java]
+        if (dataAds == null) return ""
+        if (dataAds.getSizeAds() == 0) return ""
+        if (BillingUtils.getDataBilling(context)) return ""
+        if (!dataAds.getShowAds() || !dataAds.getShowBannerNativeAds() || !dataAds.getShowNativeScroll()) return ""
+        return dataAds.getAdsByType(AdsType.APPLOVIN.value).banner_native
     }
 
     fun loadBaseNativeBannerAd(
@@ -703,7 +713,7 @@ object BaseAds {
 
     fun showInterstitialAdExit(activity: BaseActivity) {
         isFinishApp = true
-        val dialogLoad = LoadingDialog(activity)
+        val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(activity)
         loadAndShowInterstitialAd(activity, dialogLoad, 0) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 activity.finishAndRemoveTask()
@@ -757,7 +767,7 @@ object BaseAds {
 
     private fun callbackShowInterstitial(
         activity: Activity, position: Int, type: String,
-        dialog: LoadingDialog, listener: () -> Unit
+        dialog: com.hope_studio.base_ads.dialog.LoadingDialog, listener: () -> Unit
     ): OnInterstitialAdCallback {
         return object : OnInterstitialAdCallback {
             override fun onInterstitialClose() {
@@ -818,8 +828,8 @@ object BaseAds {
     }
 
     private fun callbackShowGifInterstitial(
-        activity: Activity, dialogLoad: LoadingDialog, position: Int,
-        type: String, dialog: LoadingDialog, listener: () -> Unit
+        activity: Activity, dialogLoad: com.hope_studio.base_ads.dialog.LoadingDialog, position: Int,
+        type: String, dialog: com.hope_studio.base_ads.dialog.LoadingDialog, listener: () -> Unit
     ): OnInterstitialAdCallback {
         return object : OnInterstitialAdCallback {
             override fun onInterstitialClose() {
@@ -925,7 +935,7 @@ object BaseAds {
     }
 
     fun loadAndShowGifInterstitialAd(
-        activity: Activity, dialogLoad: LoadingDialog, position: Int, listener: () -> Unit
+        activity: Activity, dialogLoad: com.hope_studio.base_ads.dialog.LoadingDialog, position: Int, listener: () -> Unit
     ) {
         if (!NetWorkUtils.isNetworkConnected(activity)) {
             return
@@ -1048,7 +1058,7 @@ object BaseAds {
     private var listener: (() -> Unit)? = null
 
     fun loadAndShowInterstitialAd(
-        activity: Activity, dialogLoad: LoadingDialog, position: Int, listener: () -> Unit
+        activity: Activity, dialogLoad: com.hope_studio.base_ads.dialog.LoadingDialog, position: Int, listener: () -> Unit
     ) {
         if (!NetWorkUtils.isNetworkConnected(activity)) {
             listener.invoke()
@@ -1078,13 +1088,13 @@ object BaseAds {
 
         if (!TimerApp.checkTimeShowConfig(activity, dataAds.getTimeShow())) {
             if (!isFinishApp) {
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Not Enough Time Show")
                 }
                 listener.invoke()
                 return
             } else {
-                if (BuildConfig.DEBUG) {
+                if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
                     Log.d("base_main_ads", "Exit when Not Enough Time Show")
                 }
             }
@@ -1174,9 +1184,9 @@ object BaseAds {
             }
 
             AdsType.FACEBOOK.value -> {
-                if (FacebookAds.getInterstitialFacebookAd() != null) {
-                    if (FacebookAds.getInterstitialFacebookAd()!!.isAdLoaded) {
-                        FacebookAds.getInterstitialFacebookAd()?.show()
+                if (FacebookAds.getRewardedInterstitialFacebookAd() != null) {
+                    if (FacebookAds.getRewardedInterstitialFacebookAd()!!.isAdLoaded) {
+                        FacebookAds.getRewardedInterstitialFacebookAd()?.show()
                     } else onRewardDoneCallback.onRewardDone()
                 } else onRewardDoneCallback.onRewardDone()
             }
@@ -1192,7 +1202,7 @@ object BaseAds {
     }
 
     private fun callbackShowReward(
-        activity: Activity, position: Int, type: String, dialog: LoadingDialog,
+        activity: Activity, position: Int, type: String, dialog: com.hope_studio.base_ads.dialog.LoadingDialog,
         onRewardDoneCallback: OnRewardDoneCallback
     ): OnRewardAdCallback {
         return object : OnRewardAdCallback {
@@ -1203,15 +1213,6 @@ object BaseAds {
                 isShowAds = false
                 onRewardDoneCallback.onRewardDone()
                 ShareUtils.putLong(activity, TIME_CONFIG_SHOW, System.currentTimeMillis())
-
-                if (nameRewardPos == AdsType.FACEBOOK.value) {
-                    if (getPreLoad(activity)) {
-                        loadInterstitialAd(activity, 0)
-                        if (BuildConfig.DEBUG) {
-                            Log.d("base_main_ads", "Load Interstitial Facebook before Reward")
-                        }
-                    }
-                }
             }
 
             override fun onRewardShowFail() {
@@ -1257,7 +1258,7 @@ object BaseAds {
             return
         }
 
-        val dialogLoad = LoadingDialog(activity)
+        val dialogLoad = com.hope_studio.base_ads.dialog.LoadingDialog(activity)
         if (hasDialog) {
             DialogWatchAds(activity, str, object : BaseDialog.OnDialogCallback {
                 override fun onDialogListener() {
@@ -1270,7 +1271,7 @@ object BaseAds {
     }
 
     fun loadAndShowRewardAd(
-        activity: Activity, dialogLoad: LoadingDialog, position: Int,
+        activity: Activity, dialogLoad: com.hope_studio.base_ads.dialog.LoadingDialog, position: Int,
         onRewardDoneCallback: OnRewardDoneCallback
     ) {
         val dataAds = ShareUtils[activity, DataModel::class.java.name, DataModel::class.java]
@@ -1304,7 +1305,7 @@ object BaseAds {
             }
 
             AdsType.FACEBOOK.value -> {
-                FacebookAds.loadInterstitialRewardedFacebookAds(
+                FacebookAds.loadRewardedInterstitialFacebookAds(
                     activity, dataPos.reward,
                     callbackShowReward(
                         activity, position, AdsType.FACEBOOK.value, dialogLoad, onRewardDoneCallback

@@ -63,9 +63,7 @@ class MyStudioActivity : BaseActivity() {
         allMyStudioListView.apply {
             adapter = mAllMyStudioAdapter
             layoutManager = GridLayoutManager(
-                context,
-                numberCols.toInt(),
-                LinearLayoutManager.VERTICAL,
+                context, numberCols.toInt(), LinearLayoutManager.VERTICAL,
                 false
             ).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -90,6 +88,7 @@ class MyStudioActivity : BaseActivity() {
                 openSelectMode()
             }
         }
+
         mAllMyStudioAdapter.onSelectChange = {
             Thread {
                 val number = mAllMyStudioAdapter.getNumberItemSelected()
@@ -107,6 +106,7 @@ class MyStudioActivity : BaseActivity() {
                 }
             }.start()
         }
+
         mAllMyStudioAdapter.onClickItem = {
             if (!mSelectMode)
                 ShareVideoActivity.gotoActivity(this, it.filePath)
@@ -154,20 +154,16 @@ class MyStudioActivity : BaseActivity() {
         showYesNoDialog(getString(R.string.do_you_want_delete_item)) {
             val file = File(path)
             if (file.exists()) {
-
                 try {
                     file.delete()
                     mAllMyStudioAdapter.onDeleteItem(path)
                     updateEmptyIcon()
                     doSendBroadcast(path)
                 } catch (e: Exception) {
-
+                    e.printStackTrace()
                 }
-
-
             }
         }
-
     }
 
     private fun openSelectMode() {
@@ -229,7 +225,6 @@ class MyStudioActivity : BaseActivity() {
     }
 
     private fun getAllMyStudioItem() {
-
         Thread {
             if (mAllMyStudioAdapter.itemCount > 0) {
                 val deletePathList = ArrayList<String>()
@@ -260,9 +255,7 @@ class MyStudioActivity : BaseActivity() {
                             if (item.exists())
                                 myStudioDataList.add(
                                     MyStudioDataModel(
-                                        item.absolutePath,
-                                        item.lastModified(),
-                                        duration
+                                        item.absolutePath, item.lastModified(), duration
                                     )
                                 )
 
@@ -287,11 +280,7 @@ class MyStudioActivity : BaseActivity() {
                     dismissProgressDialog()
                 }
             }
-
-
         }.start()
-
-
     }
 
     private fun updateEmptyIcon() {
@@ -330,5 +319,4 @@ class MyStudioActivity : BaseActivity() {
         super.onResume()
         getAllMyStudioItem()
     }
-
 }

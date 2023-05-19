@@ -12,9 +12,9 @@ import com.hope_studio.video_maker_slideshow_maker.data.RenderImageSlideData
 import com.hope_studio.video_maker_slideshow_maker.data.StickerDrawerData
 import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpeg
 import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpegCmd
-import com.hope_studio.video_maker_slideshow_maker.slide_show_package_2.SlideShowDrawer
-import com.hope_studio.video_maker_slideshow_maker.slide_show_package_2.SlideShowForRender
-import com.hope_studio.video_maker_slideshow_maker.slide_show_theme.SlideThemeDrawer
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowDrawer
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowForRender
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.SlideThemeDrawer
 import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
 import com.hope_studio.video_maker_slideshow_maker.utils.Logger
 import kotlin.math.roundToInt

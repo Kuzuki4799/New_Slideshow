@@ -8,8 +8,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icHeadPhone"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="24dp"
         android:src="@drawable/ic_headphone"
         app:layout_constraintBottom_toTopOf="@id/icVideoVolume"
@@ -29,7 +29,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="32dp"
         android:text="@string/no_sound"
-        android:textColor="@color/orangeA02"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="@id/icHeadPhone"
         app:layout_constraintEnd_toStartOf="@id/icDelete"
         app:layout_constraintStart_toEndOf="@id/icHeadPhone"
@@ -40,6 +40,7 @@
         android:layout_height="12dp"
         android:layout_marginEnd="10dp"
         android:src="@drawable/ic_forward_orange"
+        android:tint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="@id/soundNameLabel"
         app:layout_constraintEnd_toEndOf="@id/soundNameLabel"
         app:layout_constraintTop_toTopOf="@id/soundNameLabel" />
@@ -56,8 +57,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icVideoVolume"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:src="@drawable/ic_video_volume"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,8 +76,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icMusic"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:src="@drawable/ic_music_active"
         app:layout_constraintStart_toStartOf="@id/icVideoVolume"
@@ -86,7 +87,7 @@
         android:id="@+id/musicVolumeSeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:highlightColor="@color/orangeA01"
+        app:highlightColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="@id/icMusic"
         app:layout_constraintEnd_toEndOf="@id/soundNameLabel"
         app:layout_constraintStart_toStartOf="@id/soundNameLabel"

@@ -318,7 +318,7 @@ object BillingUtils {
     }
 
     fun launchPurchaseFlow(context: BaseActivity, skuDetails: SkuDetails?) {
-        if (BuildConfig.DEBUG) {
+        if (com.hope_studio.base_ads.BuildConfig.DEBUG) {
             Handler().postDelayed({
                 if (onPurchaseCallback != null) {
                     onPurchaseCallback?.onPurchaseListener()

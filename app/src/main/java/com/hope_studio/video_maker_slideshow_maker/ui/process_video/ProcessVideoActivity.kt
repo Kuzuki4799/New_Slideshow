@@ -19,10 +19,10 @@ import com.hope_studio.video_maker_slideshow_maker.data.VideoInSlideData
 import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpeg
 import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpegCmd
 import com.hope_studio.video_maker_slideshow_maker.gs_effect.GSEffectUtils
-import com.hope_studio.video_maker_slideshow_maker.image_slide_show.drawer.ImageSlideData
+import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideData
 import com.hope_studio.video_maker_slideshow_maker.modules.encode.ImageSlideEncode
-import com.hope_studio.video_maker_slideshow_maker.slide_show_theme.data.ThemeData
-import com.hope_studio.video_maker_slideshow_maker.slide_show_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
 import com.hope_studio.video_maker_slideshow_maker.ui.share_video.ShareVideoActivity
 import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
 import com.hope_studio.video_maker_slideshow_maker.utils.Logger

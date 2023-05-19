@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.22962962962962963" />
+        <entry key="app/src/main/res/drawable-nodpi/bg_join_spilit.xml" value="0.166" />
         <entry key="app/src/main/res/drawable-nodpi/ic_cat1.xml" value="0.124" />
         <entry key="app/src/main/res/drawable-nodpi/ic_cat10.xml" value="0.124" />
         <entry key="app/src/main/res/drawable-nodpi/ic_catus_5.xml" value="0.124" />
         <entry key="app/src/main/res/drawable-nodpi/ic_common14.xml" value="0.124" />
         <entry key="app/src/main/res/drawable-nodpi/ic_headphone.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable-nodpi/ic_rate.xml" value="0.166" />
         <entry key="app/src/main/res/drawable-nodpi/ic_restaurent10.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_button_add_sticker.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_button_edit_video_in_home.xml" value="0.124" />
@@ -23,6 +25,7 @@
         <entry key="app/src/main/res/drawable/bg_button_text.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_button_transition.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_button_trim_video_in_home.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_button_use_music.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/bg_cancel_button.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_check_box.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.124" />
@@ -32,7 +35,9 @@
         <entry key="app/src/main/res/drawable/bg_corner_top.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_corner_txt.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_gradient_splash.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/bg_label_no_sound.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/bg_ok_button.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/bg_ripple_circle_back_button.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_ripple_circle_white_button.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/bg_splash_5.xml" value="0.124" />
@@ -40,6 +45,7 @@
         <entry key="app/src/main/res/drawable/bg_stroke_white.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/home_banner_bg_vector.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_add_photo_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_back_vector.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_btn_add_music.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_btn_duration.xml" value="0.124" />
@@ -49,26 +55,68 @@
         <entry key="app/src/main/res/drawable/ic_btn_text.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_btn_transition.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_camera_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_cancel_added_sticker.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_check_all.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_check_all_none.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_checked_box.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_close_gray.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_color_active.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_color_default.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_confirm_added_sticker.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_create_video.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_delete_white.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_edit_video_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_effect.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_font_active.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_font_default.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_font_style_active.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_font_style_default.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_forward_orange.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_home_white.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_join.xml" value="0.166" />
+        <entry key="app/src/main/res/drawable/ic_join_video_vector.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_keyboard_active.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_movie.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_music.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_music_active.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/ic_music_list_normal.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_music_selected.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_myvideo.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_navigation_more.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_no_project.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_none_check.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_pause.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_play.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_play_circle_outline_white_24dp.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_rate.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_rating_vecotr.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_record_gradient_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_save_vector.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_search_white_24dp.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.166" />
         <entry key="app/src/main/res/drawable/ic_share_vector.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_slide_show_vector.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_spinner.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_split.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_sticker.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_text.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_text_align_center.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_text_align_left.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_text_style_italic.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_text_style_strike.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_thumb.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_time.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_transition.xml" value="0.1705" />
+        <entry key="app/src/main/res/drawable/ic_trim_sound.xml" value="0.1705" />
         <entry key="app/src/main/res/drawable/ic_trim_video_gradient.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_trim_video_vector.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/ic_video_volume.xml" value="0.124" />
         <entry key="app/src/main/res/layout/activity_base_layout.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/activity_base_tools_edit.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_base_main_layout.xml" value="0.2942708333333333" />
+        <entry key="app/src/main/res/layout/activity_base_tools_edit.xml" value="0.27345062255859376" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/activity_join_video.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
@@ -78,9 +126,10 @@
         <entry key="app/src/main/res/layout/activity_select_music.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_share_video.xml" value="0.19654541015625002" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_trim_video.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/base_header_view.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/dialog_music_cutter.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_media_folder.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_media_list.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/item_all_my_studio.xml" value="0.3098958333333333" />
@@ -122,6 +171,8 @@
         <entry key="app/src/main/res/layout/layout_progress_dialog.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/layout_yes_no_dialog.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/native_ad_big.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/tn_activity_music.xml" value="0.3098958333333333" />
+        <entry key="base_ads/src/main/res/layout/activity_finish2.xml" value="0.3098958333333333" />
       </map>
     </option>
   </component>

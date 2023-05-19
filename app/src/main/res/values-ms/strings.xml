@@ -75,4 +75,11 @@
   <string name="anser_grant_permission">Sekiranya anda tidak memberikan kebenaran, anda tidak boleh menggunakan aplikasi ini.</string>
   <string name="goto_setting_and_grant_permission">Goto Setting -&gt; Kebenaran dan berikan kebenaran penyimpanan luaran baca!</string>
   <string name="setting">Menetapkan</string>
+
+  <string name="transfer">Peralihan</string>
+  <string name="time">Masa</string>
+  <string name="music">Muzik</string>
+  <string name="sticker">Pelekat</string>
+  <string name="text">Teks</string>
+  <string name="filter">Filter</string>
 </resources>

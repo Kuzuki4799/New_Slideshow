@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF89B1</color>
-    <color name="colorPrimaryDark">#FFACBA</color>
+    <color name="colorPrimary">#f12711</color>
+    <color name="colorPrimaryDark">#0DA192</color>
 
 
-    <color name="gradient_left">#FF89B1</color>
-    <color name="gradient_right">#FFACBA</color>
+    <color name="gradient_left">#f12711</color>
+    <color name="gradient_right">#0DA192</color>
 
     <color name="colorAccent">#D81B60</color>
 
@@ -36,5 +36,7 @@
     <color name="grayA04">#f1f1f1</color>
 
     <color name="pinkA01">#FF4E8A</color>
+
+    <color name="asd">#FF604D</color>
 
 </resources>

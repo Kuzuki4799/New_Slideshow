@@ -75,4 +75,11 @@
   <string name="anser_grant_permission">Jika Anda tidak memberikan izin, Anda tidak dapat menggunakan aplikasi ini.</string>
   <string name="goto_setting_and_grant_permission">Pengaturan Goto -&gt; Izin dan berikan izin baca penyimpanan eksternal!</string>
   <string name="setting">Pengaturan</string>
+
+  <string name="transfer">Transisi</string>
+  <string name="time">Waktu</string>
+  <string name="music">Musik</string>
+  <string name="sticker">Stiker</string>
+  <string name="text">Teks</string>
+  <string name="filter">Filter</string>
 </resources>

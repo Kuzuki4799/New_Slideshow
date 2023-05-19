@@ -83,7 +83,7 @@ class ControlSliderStartEnd : View {
         }
 
         mHighlightPaint.apply {
-            color = Color.parseColor("#FF604D")
+            color = Color.parseColor("#0DA192")
             isAntiAlias = true
             style = Paint.Style.FILL
         }
