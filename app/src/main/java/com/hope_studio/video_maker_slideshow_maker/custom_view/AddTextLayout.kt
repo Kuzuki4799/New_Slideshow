@@ -15,12 +15,12 @@ import android.widget.Toast
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.adapter.ColorListAdapter
-import com.hope_studio.video_maker_slideshow_maker.adapter.FontListAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.ColorListAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.FontListAdapter
 import com.hope_studio.video_maker_slideshow_maker.data.TextStickerAttrData
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.RawResourceReader
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
 import kotlinx.android.synthetic.main.layout_add_text.view.*
 import kotlinx.android.synthetic.main.layout_edit_text_color.view.*
 import kotlinx.android.synthetic.main.layout_edit_text_fonts.view.*

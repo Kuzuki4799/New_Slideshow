@@ -3,9 +3,9 @@ package com.hope_studio.video_maker_slideshow_maker.modules.encode
 import android.media.MediaCodec
 import android.media.MediaExtractor
 import android.media.MediaMuxer
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import java.nio.ByteBuffer
 
 class JoinVideoSameType(val videoPathList:ArrayList<String>, val videoConvertedHashMap:HashMap<String,String>) {

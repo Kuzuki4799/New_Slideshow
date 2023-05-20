@@ -1,7 +1,7 @@
 package com.hope_studio.video_maker_slideshow_maker.models
 
 import com.hope_studio.video_maker_slideshow_maker.data.AudioData
-import com.hope_studio.video_maker_slideshow_maker.utils.Utils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Utils
 
 class AudioDataModel(private val audioData: AudioData) {
 

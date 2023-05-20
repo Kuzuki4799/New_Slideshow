@@ -6,13 +6,13 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.adapter.AllMyStudioAdapter
-import com.hope_studio.video_maker_slideshow_maker.base.BaseActivity
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.AllMyStudioAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseActivity
 import com.hope_studio.video_maker_slideshow_maker.models.MyStudioDataModel
 import com.hope_studio.video_maker_slideshow_maker.ui.edit_video.VideoSlideActivity2
 import com.hope_studio.video_maker_slideshow_maker.ui.share_video.ShareVideoActivity
 import com.hope_studio.video_maker_slideshow_maker.ui.trim_video.TrimVideoActivity
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import kotlinx.android.synthetic.main.activity_base_layout.*
 import kotlinx.android.synthetic.main.activity_my_studio.*
 import kotlinx.android.synthetic.main.base_header_view.view.*

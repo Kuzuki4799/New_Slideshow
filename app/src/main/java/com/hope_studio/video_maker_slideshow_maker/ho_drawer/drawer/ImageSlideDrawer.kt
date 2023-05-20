@@ -1,9 +1,9 @@
 package com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer
 
 import android.opengl.GLES20
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer

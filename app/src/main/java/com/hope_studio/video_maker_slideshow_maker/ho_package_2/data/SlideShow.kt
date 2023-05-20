@@ -3,9 +3,9 @@ package com.hope_studio.video_maker_slideshow_maker.ho_package_2.data
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.view.View
-import com.hope_studio.video_maker_slideshow_maker.utils.BitmapUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

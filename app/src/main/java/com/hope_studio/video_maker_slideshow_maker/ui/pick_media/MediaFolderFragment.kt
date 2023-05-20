@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.adapter.MediaFolderAdapter
-import com.hope_studio.video_maker_slideshow_maker.adapter.MediaListAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.MediaFolderAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.MediaListAdapter
 import com.hope_studio.video_maker_slideshow_maker.models.MediaDataModel
 import com.hope_studio.video_maker_slideshow_maker.ui.trim_video.TrimVideoActivity
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import kotlinx.android.synthetic.main.fragment_media_folder.*
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware

@@ -13,7 +13,7 @@ import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.data.BitmapWithIndexData
 import com.hope_studio.video_maker_slideshow_maker.data.RecordedData
 import com.hope_studio.video_maker_slideshow_maker.models.RecordedDataModel
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -14,8 +14,8 @@ import androidx.core.content.res.ResourcesCompat
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.data.TextStickerAttrData
 
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import kotlin.math.atan2
 import kotlin.math.hypot
 import kotlin.math.roundToInt

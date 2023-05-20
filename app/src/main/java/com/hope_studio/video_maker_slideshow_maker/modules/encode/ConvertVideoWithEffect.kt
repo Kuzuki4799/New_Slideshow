@@ -8,10 +8,10 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.util.Size
 import android.view.Surface
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.data.StickerDrawerData
 import com.hope_studio.video_maker_slideshow_maker.gs_effect.GSEffect
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 
 class ConvertVideoWithEffect(val gsEffect: GSEffect= GSEffect(), val videoOutWidth:Int, val videoOutHeight:Int, val srcPath:String, val startOffset:Int,val stickerDrawerDataList:ArrayList<StickerDrawerData>,val updateProgress:(Long)->Unit) {
     companion object {

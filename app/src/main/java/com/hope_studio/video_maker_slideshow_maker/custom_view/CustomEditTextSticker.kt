@@ -10,7 +10,7 @@ import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.res.ResourcesCompat
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 import kotlin.math.PI
 import kotlin.math.atan
 import kotlin.math.roundToInt

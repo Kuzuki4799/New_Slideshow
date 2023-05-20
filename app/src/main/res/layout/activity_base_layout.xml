@@ -8,7 +8,7 @@
     android:background="@color/colorGrayBg"
     android:layoutDirection="ltr"
     android:textAlignment="viewStart"
-    tools:context=".base.BaseActivity">
+    tools:context=".ho_base.BaseActivity">
 
     <include
         android:id="@+id/headerView"

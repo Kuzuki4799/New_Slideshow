@@ -7,7 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 import java.lang.Exception
 import kotlin.math.roundToInt
 import kotlin.math.roundToLong

@@ -14,12 +14,12 @@ import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
-import com.hope_studio.video_maker_slideshow_maker.base.BaseActivity
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseActivity
 import com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
 import com.hope_studio.video_maker_slideshow_maker.modules.share.Share
 import com.base.activity.HomeActivity
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import com.hope_studio.base_ads.ads.BaseAds
 import com.hope_studio.base_ads.utils.ShareUtils
 import kotlinx.android.synthetic.main.activity_share_video.*

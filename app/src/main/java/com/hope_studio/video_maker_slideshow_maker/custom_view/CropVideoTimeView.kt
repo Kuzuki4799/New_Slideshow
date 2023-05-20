@@ -7,8 +7,8 @@ import android.media.MediaMetadataRetriever
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -6,9 +6,9 @@ import android.view.View
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.FrameData
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.Slide
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.SlideRenderData
-import com.hope_studio.video_maker_slideshow_maker.utils.BitmapUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import kotlin.math.max
 
 class SlideShowForRender (private val mImageList:ArrayList<String>, private val mBitmapHashMap: HashMap<String, String>, private val mDelayTimeMilSec:Int) {

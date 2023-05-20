@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 
 class CornerImageView(context: Context, attrs: AttributeSet?) :
     AppCompatImageView(context, attrs) {

@@ -2,7 +2,7 @@ package com.hope_studio.video_maker_slideshow_maker.modules.rate
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 
 class RatingManager {
     private val mPreferenceName = "RatingPreference"

@@ -10,8 +10,8 @@ import android.os.CountDownTimer
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.adapter.*
-import com.hope_studio.video_maker_slideshow_maker.base.BaseSlideShow
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.*
+import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseSlideShow
 import com.hope_studio.video_maker_slideshow_maker.custom_view.EditTextSticker
 import com.hope_studio.video_maker_slideshow_maker.custom_view.StickerView
 import com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
@@ -24,7 +24,7 @@ import com.hope_studio.video_maker_slideshow_maker.ho_transition.GSTransitionUti
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
 import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.PickMediaActivity
 import com.hope_studio.video_maker_slideshow_maker.ui.process_video.ProcessVideoActivity
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import kotlinx.android.synthetic.main.activity_base_tools_edit.*
 import kotlinx.android.synthetic.main.layout_change_duration_tools.view.*
 import kotlinx.android.synthetic.main.layout_change_filter_tools.view.*

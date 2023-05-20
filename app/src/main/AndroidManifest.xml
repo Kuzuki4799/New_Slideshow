@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name="com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication"
+        android:name="com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication"
         android:allowBackup="false"
         android:icon="@drawable/icon"
         android:label="@string/app_name"

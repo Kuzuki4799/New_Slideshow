@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import android.opengl.GLES11Ext
 import android.opengl.GLES20
 import android.opengl.GLUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer

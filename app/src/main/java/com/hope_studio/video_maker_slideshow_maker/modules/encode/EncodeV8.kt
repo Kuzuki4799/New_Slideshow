@@ -10,13 +10,13 @@ import android.opengl.EGLExt
 import android.view.Surface
 import com.hope_studio.video_maker_slideshow_maker.data.RenderImageSlideData
 import com.hope_studio.video_maker_slideshow_maker.data.StickerDrawerData
-import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpeg
-import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpegCmd
+import com.hope_studio.video_maker_slideshow_maker.ho_ffmpeg.FFmpeg
+import com.hope_studio.video_maker_slideshow_maker.ho_ffmpeg.FFmpegCmd
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowForRender
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.SlideThemeDrawer
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import kotlin.math.roundToInt
 
 

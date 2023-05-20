@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 import kotlin.math.roundToInt
 
 class RenderingProgressBar(context: Context, attrs: AttributeSet?) : View(context, attrs) {

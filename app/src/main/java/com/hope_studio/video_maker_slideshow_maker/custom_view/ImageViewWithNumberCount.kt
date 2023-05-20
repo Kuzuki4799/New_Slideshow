@@ -9,7 +9,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.res.ResourcesCompat
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.utils.DimenUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 
 class ImageViewWithNumberCount : AppCompatImageView {
 

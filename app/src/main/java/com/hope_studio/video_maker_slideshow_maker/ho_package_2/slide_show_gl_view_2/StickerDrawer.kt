@@ -3,10 +3,10 @@ package com.hope_studio.video_maker_slideshow_maker.ho_package_2.slide_show_gl_v
 import android.graphics.Bitmap
 import android.opengl.GLES20
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
-import com.hope_studio.video_maker_slideshow_maker.utils.RawResourceReader
-import com.hope_studio.video_maker_slideshow_maker.utils.ShaderHelper
-import com.hope_studio.video_maker_slideshow_maker.utils.TextureHelper
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.ShaderHelper
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.TextureHelper
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer

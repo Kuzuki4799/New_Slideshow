@@ -12,10 +12,10 @@ import androidx.core.content.ContextCompat
 import com.hope_studio.base_ads.ads.BaseAds
 import com.hope_studio.video_maker_slideshow_maker.BuildConfig
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.enum_.MediaKind
-import com.hope_studio.video_maker_slideshow_maker.enum_.VideoActionKind
+import com.hope_studio.video_maker_slideshow_maker.ho_enum_.MediaKind
+import com.hope_studio.video_maker_slideshow_maker.ho_enum_.VideoActionKind
 import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.PickMediaActivity
-import com.hope_studio.video_maker_slideshow_maker.utils.*
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import com.hope_studio.base_ads.dialog.DialogRating
 import com.hope_studio.video_maker_slideshow_maker.ui.my_studio.MyStudioActivity
 import kotlinx.android.synthetic.main.activity_home.*

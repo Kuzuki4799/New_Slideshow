@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.hope_studio.video_maker_slideshow_maker.BuildConfig
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.jutice.asset.StickerFileAsset
-import com.hope_studio.video_maker_slideshow_maker.adapter.StickerListAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.StickerListAdapter
 import kotlinx.android.synthetic.main.layout_choose_sticker.view.*
 
 class ChooseStickerLayout : LinearLayout {

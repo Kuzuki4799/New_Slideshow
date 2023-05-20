@@ -7,10 +7,10 @@ import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.data.MusicReturnData
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import java.io.File
 import java.util.*
 

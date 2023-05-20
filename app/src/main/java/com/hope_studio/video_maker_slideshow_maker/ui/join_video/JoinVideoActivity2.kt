@@ -12,14 +12,14 @@ import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.adapter.VideoInJoinerAdapter
-import com.hope_studio.video_maker_slideshow_maker.base.BaseActivity
+import com.hope_studio.video_maker_slideshow_maker.ho_adapter.VideoInJoinerAdapter
+import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseActivity
 import com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
 import com.hope_studio.video_maker_slideshow_maker.models.VideoForJoinDataModel
 import com.hope_studio.video_maker_slideshow_maker.ui.process_video.ProcessVideoActivity
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Utils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Utils
 import kotlinx.android.synthetic.main.activity_join_video.*
 import java.io.File
 

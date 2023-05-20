@@ -3,11 +3,11 @@ package com.hope_studio.video_maker_slideshow_maker.modules.local_storage
 import android.database.Cursor
 import android.provider.MediaStore
 import androidx.lifecycle.MutableLiveData
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.data.AudioData
 import com.hope_studio.video_maker_slideshow_maker.data.MediaData
-import com.hope_studio.video_maker_slideshow_maker.enum_.MediaKind
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_enum_.MediaKind
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers

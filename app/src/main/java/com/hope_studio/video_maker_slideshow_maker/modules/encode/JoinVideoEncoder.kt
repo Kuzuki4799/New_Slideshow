@@ -5,10 +5,10 @@ import android.opengl.EGL14
 import android.opengl.EGLConfig
 import android.opengl.EGLExt
 import android.view.Surface
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
-import com.hope_studio.video_maker_slideshow_maker.video_player_slide.VideoPlayerSlideDrawer
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_slide.VideoPlayerSlideDrawer
 import kotlin.math.roundToInt
 
 class JoinVideoEncoder (val videoPathList: ArrayList<String>):MediaPlayer.OnCompletionListener {

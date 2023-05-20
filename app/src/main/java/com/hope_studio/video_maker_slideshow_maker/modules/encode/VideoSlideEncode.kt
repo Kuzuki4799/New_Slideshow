@@ -12,11 +12,11 @@ import android.view.Surface
 import com.hope_studio.video_maker_slideshow_maker.data.StickerDrawerData
 import com.hope_studio.video_maker_slideshow_maker.data.StickerForRenderData
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.slide_show_gl_view_2.StickerDrawer
-import com.hope_studio.video_maker_slideshow_maker.utils.BitmapUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
-import com.hope_studio.video_maker_slideshow_maker.video_player.VideoPlayDrawer
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_player.VideoPlayDrawer
 import kotlin.math.roundToInt
 
 class VideoSlideEncode(

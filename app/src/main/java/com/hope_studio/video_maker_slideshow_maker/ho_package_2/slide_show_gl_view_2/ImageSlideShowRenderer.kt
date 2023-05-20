@@ -2,14 +2,14 @@ package com.hope_studio.video_maker_slideshow_maker.ho_package_2.slide_show_gl_v
 
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.SlideShow
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.SlideThemeDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
-import com.hope_studio.video_maker_slideshow_maker.utils.RawResourceReader
-import com.hope_studio.video_maker_slideshow_maker.utils.ShaderHelper
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.ShaderHelper
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 

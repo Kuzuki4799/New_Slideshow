@@ -1,8 +1,8 @@
 package com.hope_studio.video_maker_slideshow_maker.ho_transition
 
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.*
-import com.hope_studio.video_maker_slideshow_maker.utils.RawResourceReader
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
 
 object  GSTransitionUtils {
 

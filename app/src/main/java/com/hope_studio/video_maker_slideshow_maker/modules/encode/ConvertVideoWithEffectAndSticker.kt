@@ -7,12 +7,12 @@ import android.opengl.Matrix
 import android.os.Handler
 import android.os.HandlerThread
 import android.view.Surface
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.data.StickerForRenderData
 import com.hope_studio.video_maker_slideshow_maker.gs_effect.GSEffect
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.RawResourceReader
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
 import java.nio.ByteBuffer
 import java.security.InvalidParameterException
 

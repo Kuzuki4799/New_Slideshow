@@ -11,8 +11,8 @@ import android.opengl.GLES20
 import android.view.Surface
 import com.hope_studio.video_maker_slideshow_maker.data.StickerDrawerData
 import com.hope_studio.video_maker_slideshow_maker.data.StickerForRenderData
-import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpeg
-import com.hope_studio.video_maker_slideshow_maker.ffmpeg.FFmpegCmd
+import com.hope_studio.video_maker_slideshow_maker.ho_ffmpeg.FFmpeg
+import com.hope_studio.video_maker_slideshow_maker.ho_ffmpeg.FFmpegCmd
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideData
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideDataContainer
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideDrawer
@@ -20,10 +20,10 @@ import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideTh
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.slide_show_gl_view_2.StickerDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
-import com.hope_studio.video_maker_slideshow_maker.utils.BitmapUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.FileUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import java.io.File
 
 class ImageSlideEncode(

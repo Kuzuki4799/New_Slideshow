@@ -7,11 +7,11 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.util.Size
 import android.view.Surface
-import com.hope_studio.video_maker_slideshow_maker.application.VideoMakerApplication
+import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.gs_effect.GSEffect
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
-import com.hope_studio.video_maker_slideshow_maker.utils.MediaUtils
-import com.hope_studio.video_maker_slideshow_maker.utils.RawResourceReader
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
 
 class ConvertVideoToMp4(val gsEffect: GSEffect= GSEffect(), val videoOutWidth:Int, val videoOutHeight:Int, val srcPath:String, val updateProgress:(Long)->Unit) {
 

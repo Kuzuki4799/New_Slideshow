@@ -7,7 +7,7 @@ import android.os.Build
 import android.widget.Toast
 import androidx.core.content.FileProvider
 import com.hope_studio.video_maker_slideshow_maker.BuildConfig
-import com.hope_studio.video_maker_slideshow_maker.utils.Logger
+import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import java.io.File
 
 class Share {
