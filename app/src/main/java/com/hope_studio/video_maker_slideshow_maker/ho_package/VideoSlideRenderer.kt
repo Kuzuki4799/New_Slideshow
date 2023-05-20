@@ -6,7 +6,7 @@ import android.opengl.GLES20
 import android.opengl.GLSurfaceView
 import android.util.Size
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.SlideThemeDrawer
-import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
@@ -64,7 +64,7 @@ class VideoSlideRenderer(val mVideoSlideGLView: VideoSlideGLView)  : GLSurfaceVi
         mThemeDrawer?.drawFrame()
     }
 
-    fun changeTheme(themeData:ThemeData) {
+    fun changeTheme(themeData: ThemeData) {
         mThemeData = themeData
         mThemeDrawer?.changeTheme(themeData)
     }

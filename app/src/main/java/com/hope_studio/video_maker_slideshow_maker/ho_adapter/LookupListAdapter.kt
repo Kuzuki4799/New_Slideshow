@@ -4,7 +4,7 @@ import android.view.View
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.models.LookupDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_models.LookupDataModel
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.LookupUtils
 import kotlinx.android.synthetic.main.item_lookup.view.*

@@ -3,7 +3,7 @@ package com.hope_studio.video_maker_slideshow_maker.ho_slide
 import android.content.Context
 import android.opengl.GLSurfaceView
 import android.util.AttributeSet
-import com.hope_studio.video_maker_slideshow_maker.data.VideoInSlideData
+import com.hope_studio.video_maker_slideshow_maker.ho_data.VideoInSlideData
 
 class VideoPlayerSlideGLView (context: Context, attributes: AttributeSet?) : GLSurfaceView(context, attributes) {
 

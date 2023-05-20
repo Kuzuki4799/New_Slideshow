@@ -7,7 +7,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.models.MyStudioDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_models.MyStudioDataModel
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Utils
 import kotlinx.android.synthetic.main.item_all_my_studio.view.*

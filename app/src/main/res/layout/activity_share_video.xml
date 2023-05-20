@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:paddingBottom="@dimen/_20sdp"
-        tools:context=".ui.share_video.ShareVideoActivity">
+        tools:context=".ho_ui.ShareVideoActivity">
 
         <View
             android:id="@+id/bgViewInShare"
@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="@id/bgViewInShare"
             app:layout_constraintTop_toTopOf="@id/bgViewInShare" />
 
-        <com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
+        <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.VideoControllerView
             android:id="@+id/videoControllerView"
             android:layout_width="0dp"
             android:layout_height="28dp"
@@ -101,7 +101,7 @@
             app:layout_constraintTop_toBottomOf="@id/line"
             app:layout_constraintTop_toTopOf="@id/logoFacebook" />
 
-        <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerImageView
+        <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.CornerImageView
             android:id="@+id/logoMore"
             android:layout_width="50dp"
             android:layout_height="50dp"

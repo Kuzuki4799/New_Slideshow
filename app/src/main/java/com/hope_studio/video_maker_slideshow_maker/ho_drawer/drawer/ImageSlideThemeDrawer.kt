@@ -5,7 +5,7 @@ import android.media.MediaPlayer
 import android.opengl.GLES20
 import android.opengl.Matrix
 import android.view.Surface
-import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.ShaderHelper

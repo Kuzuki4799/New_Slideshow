@@ -3,9 +3,9 @@ package com.hope_studio.video_maker_slideshow_maker.ho_package_2
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.view.View
-import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.FrameData
-import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.Slide
-import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.SlideRenderData
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.ho_data.FrameData
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.ho_data.Slide
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.ho_data.SlideRenderData
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.FileUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger

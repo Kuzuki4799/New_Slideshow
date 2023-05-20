@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="@id/cropTimeView"
         app:rippleColor="@color/whiteAlpha70" />
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.CropVideoTimeView
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.CropVideoTimeView
         android:id="@+id/cropTimeView"
         android:layout_width="0dp"
         android:layout_height="80dp"

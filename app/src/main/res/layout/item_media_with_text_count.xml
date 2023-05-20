@@ -7,7 +7,7 @@
     android:clickable="true"
     android:focusable="true">
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.ImageViewWithNumberCount
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.ImageViewWithNumberCount
         android:id="@+id/mediaThumb"
         android:layout_width="match_parent"
         android:layout_height="0dp"

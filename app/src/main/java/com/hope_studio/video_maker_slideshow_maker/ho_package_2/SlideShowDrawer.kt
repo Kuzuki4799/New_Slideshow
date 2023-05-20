@@ -2,7 +2,7 @@ package com.hope_studio.video_maker_slideshow_maker.ho_package_2
 
 import android.opengl.GLES20
 import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
-import com.hope_studio.video_maker_slideshow_maker.ho_package_2.data.FrameData
+import com.hope_studio.video_maker_slideshow_maker.ho_package_2.ho_data.FrameData
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.ShaderHelper

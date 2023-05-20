@@ -14,10 +14,10 @@ import com.hope_studio.video_maker_slideshow_maker.BuildConfig
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_enum_.MediaKind
 import com.hope_studio.video_maker_slideshow_maker.ho_enum_.VideoActionKind
-import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.PickMediaActivity
+import com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_pick_media.PickMediaActivity
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import com.hope_studio.base_ads.dialog.DialogRating
-import com.hope_studio.video_maker_slideshow_maker.ui.my_studio.MyStudioActivity
+import com.hope_studio.video_maker_slideshow_maker.ho_ui.MyStudioActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import java.io.File
 import java.io.FileOutputStream

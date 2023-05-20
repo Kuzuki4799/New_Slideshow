@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.pick_media.PickMediaActivity">
+    tools:context=".ho_ui.ho_pick_media.PickMediaActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -37,7 +37,7 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerView
+        <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.CornerView
             android:id="@+id/bgWhiteView"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -54,7 +54,7 @@
             android:background="@color/colorPrimaryDark"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
+        <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.RippleTextView
             android:id="@+id/startButton"
             style="@style/textNormalBold"
             android:layout_width="wrap_content"

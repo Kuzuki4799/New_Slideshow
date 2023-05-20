@@ -7,7 +7,7 @@ import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.models.VideoForJoinDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_models.VideoForJoinDataModel
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Utils

@@ -4,10 +4,10 @@ import android.view.View
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.custom_view.ControlSliderStartEnd
-import com.hope_studio.video_maker_slideshow_maker.data.AudioData
-import com.hope_studio.video_maker_slideshow_maker.data.MusicReturnData
-import com.hope_studio.video_maker_slideshow_maker.models.AudioDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_custom_view.ControlSliderStartEnd
+import com.hope_studio.video_maker_slideshow_maker.ho_data.AudioData
+import com.hope_studio.video_maker_slideshow_maker.ho_data.MusicReturnData
+import com.hope_studio.video_maker_slideshow_maker.ho_models.AudioDataModel
 import kotlinx.android.synthetic.main.item_music_list.view.*
 
 class MusicListAdapter(val callback: MusicCallback) : BaseAdapter<AudioDataModel>() {

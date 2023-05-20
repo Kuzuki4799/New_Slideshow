@@ -5,7 +5,7 @@ import android.graphics.Point
 import android.opengl.GLSurfaceView
 import android.util.AttributeSet
 import android.util.Size
-import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
 
 class VideoSlideGLView (context: Context, attributes: AttributeSet?) : GLSurfaceView(context, attributes) {
 

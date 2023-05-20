@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="4dp">
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerImageView
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.CornerImageView
         android:id="@+id/imageThumb"
         android:layout_width="match_parent"
         android:layout_height="0dp"

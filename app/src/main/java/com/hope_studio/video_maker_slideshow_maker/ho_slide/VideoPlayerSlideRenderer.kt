@@ -3,7 +3,7 @@ package com.hope_studio.video_maker_slideshow_maker.ho_slide
 import android.media.MediaPlayer
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
-import com.hope_studio.video_maker_slideshow_maker.data.VideoInSlideData
+import com.hope_studio.video_maker_slideshow_maker.ho_data.VideoInSlideData
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10

@@ -6,8 +6,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.data.MediaData
-import com.hope_studio.video_maker_slideshow_maker.models.MediaAlbumDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_data.MediaData
+import com.hope_studio.video_maker_slideshow_maker.ho_models.MediaAlbumDataModel
 import kotlinx.android.synthetic.main.item_media_album.view.*
 
 class MediaFolderAdapter : BaseAdapter<MediaAlbumDataModel>() {

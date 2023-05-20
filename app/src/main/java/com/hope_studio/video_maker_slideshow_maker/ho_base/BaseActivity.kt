@@ -20,7 +20,7 @@ import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import com.airbnb.lottie.LottieAnimationView
 import com.hope_studio.video_maker_slideshow_maker.BuildConfig
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.modules.rate.RatingManager
+import com.hope_studio.video_maker_slideshow_maker.ho_modules.ho_rate.RatingManager
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import com.hope_studio.base_ads.ads.BaseAds
 import com.hope_studio.base_ads.base.BaseActivity

@@ -7,8 +7,8 @@ import android.opengl.Matrix
 import android.view.Surface
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
-import com.hope_studio.video_maker_slideshow_maker.data.VideoInSlideData
-import com.hope_studio.video_maker_slideshow_maker.gs_effect.GSEffectUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_data.VideoInSlideData
+import com.hope_studio.video_maker_slideshow_maker.ho_gs_effect.GSEffectUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Logger
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.MediaUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader

@@ -4,7 +4,7 @@ import android.view.View
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.models.TextStickerAddedDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_models.TextStickerAddedDataModel
 import kotlinx.android.synthetic.main.item_text_sticker_added.view.*
 
 class TextStickerAddedAdapter(private val onChange: OnChange) :

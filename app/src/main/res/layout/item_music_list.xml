@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.hope_studio.video_maker_slideshow_maker.custom_view.ControlSliderStartEnd
+        <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.ControlSliderStartEnd
             android:id="@+id/audioControllerEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
             app:layout_constraintEnd_toEndOf="@id/musicNameLabel"
             app:layout_constraintStart_toStartOf="@id/musicNameLabel" />
 
-        <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
+        <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.RippleTextView
             android:id="@+id/buttonUseMusic"
             style="@style/textNormal"
             android:layout_width="wrap_content"

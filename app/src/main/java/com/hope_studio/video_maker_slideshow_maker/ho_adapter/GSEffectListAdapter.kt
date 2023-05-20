@@ -4,8 +4,8 @@ import android.view.View
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.gs_effect.GSEffectUtils
-import com.hope_studio.video_maker_slideshow_maker.models.GSEffectDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_gs_effect.GSEffectUtils
+import com.hope_studio.video_maker_slideshow_maker.ho_models.GSEffectDataModel
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.BitmapUtils
 import kotlinx.android.synthetic.main.item_gs_transition_list.view.*
 

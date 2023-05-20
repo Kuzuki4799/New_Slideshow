@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="@id/slideBgPreview"
         app:layout_constraintTop_toTopOf="@id/slideBgPreview" />
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.VideoControllerView
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.VideoControllerView
         android:id="@+id/videoControllerView"
         android:layout_width="0dp"
         android:layout_height="28dp"

@@ -1,6 +1,6 @@
 package com.hope_studio.video_maker_slideshow_maker.ho_utils
 
-import com.hope_studio.video_maker_slideshow_maker.data.LookupData
+import com.hope_studio.video_maker_slideshow_maker.ho_data.LookupData
 
 object LookupUtils {
 

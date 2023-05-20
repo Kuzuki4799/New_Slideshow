@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/icVideoVolume"
         app:layout_constraintStart_toStartOf="@id/icVideoVolume" />
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.RippleTextView
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.RippleTextView
         android:id="@+id/soundNameLabel"
         style="@style/textNormal"
         android:layout_width="0dp"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.SeekBarWithText
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.SeekBarWithText
         android:id="@+id/videoVolumeSeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
         app:layout_constraintStart_toStartOf="@id/icVideoVolume"
         app:layout_constraintTop_toBottomOf="@id/icVideoVolume" />
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.SeekBarWithText
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.SeekBarWithText
         android:id="@+id/musicVolumeSeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

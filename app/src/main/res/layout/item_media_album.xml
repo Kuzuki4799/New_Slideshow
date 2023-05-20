@@ -7,7 +7,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp">
 
-    <com.hope_studio.video_maker_slideshow_maker.custom_view.CornerView
+    <com.hope_studio.video_maker_slideshow_maker.ho_custom_view.CornerView
         android:id="@+id/bg"
         android:layout_width="0dp"
         android:layout_height="0dp"

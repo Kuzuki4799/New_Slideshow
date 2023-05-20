@@ -6,7 +6,7 @@ import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerAppl
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideFrame
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideThemeDrawer
-import com.hope_studio.video_maker_slideshow_maker.ho_theme.data.ThemeData
+import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.RawResourceReader
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.ShaderHelper

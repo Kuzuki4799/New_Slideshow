@@ -25,7 +25,7 @@
         tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity"
         tools:replace="android:allowBackup">
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.splash.SplashActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
@@ -36,42 +36,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.my_studio.MyStudioActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.MyStudioActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.edit_video.VideoSlideActivity2"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.VideoSlideActivity2"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.slide_show_v2.ImageSlideShowActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.ImageSlideShowActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.join_video.JoinVideoActivity2"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.JoinVideoActivity2"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.share_video.ShareVideoActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.ShareVideoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.trim_video.TrimVideoActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.TrimVideoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.pick_media.PickMediaActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_pick_media.PickMediaActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/PickPhotoScreenTheme" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.process_video.ProcessVideoActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.ProcessVideoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hope_studio.video_maker_slideshow_maker.ui.select_music.SelectMusicActivity"
+            android:name="com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_select_music.SelectMusicActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

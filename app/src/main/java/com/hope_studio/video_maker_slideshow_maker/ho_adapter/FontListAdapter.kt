@@ -5,8 +5,8 @@ import androidx.core.content.res.ResourcesCompat
 import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.data.FontsData
-import com.hope_studio.video_maker_slideshow_maker.models.FontModel
+import com.hope_studio.video_maker_slideshow_maker.ho_data.FontsData
+import com.hope_studio.video_maker_slideshow_maker.ho_models.FontModel
 import kotlinx.android.synthetic.main.item_fonts_list.view.*
 
 class FontListAdapter(val callback: (fontId: Int) -> Unit) : BaseAdapter<FontModel>() {

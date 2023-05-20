@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.hope_studio.video_maker_slideshow_maker.R
-import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.MediaFolderFragment
-import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.MediaListFragment
+import com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_pick_media.MediaFolderFragment
+import com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_pick_media.MediaListFragment
 
 class PickMediaPagerAdapter(val context: Context, fragmentManager: FragmentManager) :
     FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

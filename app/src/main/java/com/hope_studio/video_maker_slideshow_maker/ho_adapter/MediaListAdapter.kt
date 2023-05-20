@@ -8,10 +8,10 @@ import com.hope_studio.video_maker_slideshow_maker.R
 import com.hope_studio.video_maker_slideshow_maker.ho_application.VideoMakerApplication
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseAdapter
 import com.hope_studio.video_maker_slideshow_maker.ho_base.BaseViewHolder
-import com.hope_studio.video_maker_slideshow_maker.data.MediaData
+import com.hope_studio.video_maker_slideshow_maker.ho_data.MediaData
 import com.hope_studio.video_maker_slideshow_maker.ho_enum_.MediaKind
-import com.hope_studio.video_maker_slideshow_maker.models.MediaDataModel
-import com.hope_studio.video_maker_slideshow_maker.ui.pick_media.PickMediaActivity
+import com.hope_studio.video_maker_slideshow_maker.ho_models.MediaDataModel
+import com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_pick_media.PickMediaActivity
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.DimenUtils
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.Utils
 import kotlinx.android.synthetic.main.item_header_view_date.view.*
