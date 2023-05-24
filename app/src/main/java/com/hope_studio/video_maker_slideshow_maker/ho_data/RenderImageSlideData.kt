@@ -1,7 +1,7 @@
 package com.hope_studio.video_maker_slideshow_maker.ho_data
 
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
-import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.hop_transition.GSTransition
 import java.io.Serializable
 
 data class RenderImageSlideData(

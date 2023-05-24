@@ -20,6 +20,7 @@
         android:id="@+id/icAddPhotoInChangeTransition"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_marginBottom="40dp"
         android:padding="8dp"
         android:src="@drawable/ic_add_photo_vector"
         app:layout_constraintBottom_toBottomOf="parent"

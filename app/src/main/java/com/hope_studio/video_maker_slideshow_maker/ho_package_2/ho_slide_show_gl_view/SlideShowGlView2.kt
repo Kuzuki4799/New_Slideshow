@@ -4,7 +4,7 @@ import android.content.Context
 import android.opengl.GLSurfaceView
 import android.util.AttributeSet
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
-import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.hop_transition.GSTransition
 
 class SlideShowGlView2 : GLSurfaceView {
 

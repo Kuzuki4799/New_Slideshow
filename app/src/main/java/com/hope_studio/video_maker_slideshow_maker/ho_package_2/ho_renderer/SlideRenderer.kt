@@ -6,7 +6,7 @@ import com.hope_studio.video_maker_slideshow_maker.ho_package_2.SlideShowDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_package_2.ho_data.FrameData
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.SlideThemeDrawer
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
-import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.hop_transition.GSTransition
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 

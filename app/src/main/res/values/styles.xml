@@ -43,7 +43,7 @@
     </style>
 
     <style name="ChooseStickerLayout_TopBar_CollectionIcon">
-        <item name="android:padding">6dp</item>
+        <item name="android:padding">8dp</item>
         <item name="android:layout_width">56dp</item>
         <item name="android:layout_height">56dp</item>
     </style>

@@ -18,10 +18,10 @@ import com.hope_studio.video_maker_slideshow_maker.ho_custom_view.VideoControlle
 import com.hope_studio.video_maker_slideshow_maker.ho_data.StickerForRenderData
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.ImageSlideGLView
 import com.hope_studio.video_maker_slideshow_maker.ho_drawer.ImageSlideRenderer
-import com.hope_studio.video_maker_slideshow_maker.ho_drawer.drawer.ImageSlideDataContainer
+import com.hope_studio.video_maker_slideshow_maker.ho_drawer.hop_drawer.ImageSlideDataContainer
 import com.hope_studio.video_maker_slideshow_maker.ho_theme.ThemeData
 import com.hope_studio.video_maker_slideshow_maker.ho_transition.GSTransitionUtils
-import com.hope_studio.video_maker_slideshow_maker.ho_transition.transition.GSTransition
+import com.hope_studio.video_maker_slideshow_maker.ho_transition.hop_transition.GSTransition
 import com.hope_studio.video_maker_slideshow_maker.ho_ui.ho_pick_media.PickMediaActivity
 import com.hope_studio.video_maker_slideshow_maker.ho_utils.*
 import kotlinx.android.synthetic.main.activity_base_tools_edit.*

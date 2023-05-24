@@ -1,97 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr">
+    android:layout_gravity="center_vertical"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/icTextAlignCenter"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/ic_text_align_center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/icTextAlignLeft"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="42dp"
-        android:src="@drawable/ic_text_align_left"
-        app:layout_constraintBottom_toBottomOf="@id/icTextAlignCenter"
-        app:layout_constraintEnd_toStartOf="@id/icTextAlignCenter"
-        app:layout_constraintTop_toTopOf="@id/icTextAlignCenter" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icTextAlignCenter"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_text_align_center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/icTextAlignRight"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="42dp"
-        android:src="@drawable/ic_text_align_right"
-        app:layout_constraintBottom_toBottomOf="@id/icTextAlignCenter"
-        app:layout_constraintStart_toEndOf="@id/icTextAlignCenter"
-        app:layout_constraintTop_toTopOf="@id/icTextAlignCenter" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icTextAlignLeft"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="42dp"
+            android:src="@drawable/ic_text_align_left"
+            app:layout_constraintBottom_toBottomOf="@id/icTextAlignCenter"
+            app:layout_constraintEnd_toStartOf="@id/icTextAlignCenter"
+            app:layout_constraintTop_toTopOf="@id/icTextAlignCenter" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/textStyleRegular"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_text_style_regular"
-        app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
-        app:layout_constraintEnd_toStartOf="@id/textStyleBold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icTextAlignRight"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="42dp"
+            android:src="@drawable/ic_text_align_right"
+            app:layout_constraintBottom_toBottomOf="@id/icTextAlignCenter"
+            app:layout_constraintStart_toEndOf="@id/icTextAlignCenter"
+            app:layout_constraintTop_toTopOf="@id/icTextAlignCenter" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/textStyleBold"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_text_style_bold"
-        app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
-        app:layout_constraintEnd_toStartOf="@id/textStyleItalic"
-        app:layout_constraintStart_toEndOf="@id/textStyleRegular"
-        app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textStyleRegular"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_text_style_regular"
+            app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
+            app:layout_constraintEnd_toStartOf="@id/textStyleBold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/textStyleItalic"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/ic_text_style_italic"
-        app:layout_constraintEnd_toStartOf="@id/textStyleBoldItalic"
-        app:layout_constraintStart_toEndOf="@id/textStyleBold"
-        app:layout_constraintTop_toBottomOf="@id/icTextAlignCenter" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textStyleBold"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_text_style_bold"
+            app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
+            app:layout_constraintEnd_toStartOf="@id/textStyleItalic"
+            app:layout_constraintStart_toEndOf="@id/textStyleRegular"
+            app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/textStyleBoldItalic"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_text_style_bold_italic"
-        app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
-        app:layout_constraintEnd_toStartOf="@id/textStyleStrike"
-        app:layout_constraintStart_toEndOf="@id/textStyleItalic"
-        app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textStyleItalic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_text_style_italic"
+            app:layout_constraintEnd_toStartOf="@id/textStyleBoldItalic"
+            app:layout_constraintStart_toEndOf="@id/textStyleBold"
+            app:layout_constraintTop_toBottomOf="@id/icTextAlignCenter" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/textStyleStrike"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_text_style_strike"
-        app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
-        app:layout_constraintEnd_toStartOf="@id/textStyleUnderline"
-        app:layout_constraintStart_toEndOf="@id/textStyleBoldItalic"
-        app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textStyleBoldItalic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_text_style_bold_italic"
+            app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
+            app:layout_constraintEnd_toStartOf="@id/textStyleStrike"
+            app:layout_constraintStart_toEndOf="@id/textStyleItalic"
+            app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/textStyleUnderline"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_text_style_underline"
-        app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textStyleStrike"
-        app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textStyleStrike"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_text_style_strike"
+            app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
+            app:layout_constraintEnd_toStartOf="@id/textStyleUnderline"
+            app:layout_constraintStart_toEndOf="@id/textStyleBoldItalic"
+            app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textStyleUnderline"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_text_style_underline"
+            app:layout_constraintBottom_toBottomOf="@id/textStyleItalic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textStyleStrike"
+            app:layout_constraintTop_toTopOf="@id/textStyleItalic" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
